@@ -1,0 +1,307 @@
+<!DOCTYPE HTML><html class="" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title> - 运维速查表</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops"><meta name="description" content=" Permissions: User Group Oth"><meta property="og:url" content="https://quickref.leops.cn/widget/chmod.html"><meta property="og:title" content=" - 运维速查表"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content=" Permissions: User Group Oth"><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=bxz9q"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content=" - 运维速查表"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content=" Permissions: User Group Oth"><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=20tfmf"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/widget/chmod.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1670148321183"><link rel="stylesheet" href="/css/style.css?_v=1670148321183"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-300 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button> <a href="https://github.com/lework/reference" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-github"></i> <span class="hidden">Github</span></button></a></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"><span class="text-slate-700 dark:text-slate-300 font-light"></span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600 dark:text-slate-500"></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="flex items-center justify-center mt-8 mb-3">
+    <div class="w-1/3 px-2">
+        <p class="font-medium text-right">Permissions: </p>
+    </div>
+    <div class="w-1/3 px-2">
+        <input class="appearance-none block w-full bg-grey-lighter dark:bg-slate-800 text-grey-darker border border-red rounded py-2 px-3 focus:outline-none focus:border-emerald-500" id="num" placeholder="777" maxlength="3" type="text">
+    </div>
+    <div class="w-1/3 px-2">
+        <input class="appearance-none block w-full bg-grey-lighter dark-bg-slate-800 text-grey-darker border border-grey-lighter rounded py-2 px-3 focus:outline-none focus:border-emerald-500" id="let" placeholder="rwxrwxrwx" maxlength="9" type="text">
+    </div>
+</div>
+<table class="show-header center-text">
+    <thead>
+    <tr>
+        <th></th>
+        <th>User</th>
+        <th>Group</th>
+        <th>Other</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:right">Read</td>
+        <td><input checked="" id="1" type="checkbox"></td>
+        <td><input checked="" id="4" type="checkbox"></td>
+        <td><input checked="" id="7" type="checkbox"></td>
+    </tr>
+    <tr>
+        <td style="text-align:right">Write</td>
+        <td><input checked="" id="2" type="checkbox"></td>
+        <td><input checked="" id="5" type="checkbox"></td>
+        <td><input checked="" id="8" type="checkbox"></td>
+    </tr>
+    <tr>
+        <td style="text-align:right">Execute</td>
+        <td><input checked="" id="3" type="checkbox"></td>
+        <td><input checked="" id="6" type="checkbox"></td>
+        <td><input checked="" id="9" type="checkbox"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<script>
+  const reg_num = /^[0-7]{3}$/; // some regex to check the num input
+  const reg_let = /^([r\-]{1}[w\-]{1}[x\-]{1}){3}$/; // some regex to check the text input
+
+
+  window.addEventListener("DOMContentLoaded", function () {
+
+    // loop over all the check boxes
+    for (let i = 1; i < 10; i++) {
+      let checkBox = document.getElementById(`${i}`);
+      checkBox.addEventListener('change', function () {
+        change_occured(true, false, false);
+
+        // get rid of bad input classes
+        document.getElementById('num').classList.remove('bad-input');
+
+        document.getElementById('let').classList.remove('bad-input');
+      });
+    }
+
+    // the octal input
+    let num_input = document.getElementById('num');
+    let num_fn = function () {
+
+      // check for bad input
+      if (!reg_num.test(this.value)) {
+        this.classList.add('bad-input');
+      } else {
+        this.classList.remove('bad-input');
+        change_occured(false, true, false);
+      }
+    };
+    num_input.addEventListener('change', num_fn);
+    num_input.addEventListener('keyup', num_fn);
+
+    // the let input
+    let let_input = document.getElementById('let');
+    let let_fn = function () {
+      // check for bad input
+      if (!reg_let.test(this.value)) {
+        this.classList.add('bad-input');
+      } else {
+        this.classList.remove('bad-input');
+        change_occured(false, false, true);
+      }
+    };
+    let_input.addEventListener('change',let_fn);
+    let_input.addEventListener('keyup',let_fn);
+  });
+
+  /* SETUP
+  r-4-1  r-4-4  r-4-7
+  w-2-2  w-2-5  w-2-8
+  x-1-3  x-1-6  x-1-9
+  */
+
+
+  // define a function that runs when a change occures
+  function change_occured(caller_was_check, caller_was_num, caller_was_let) {
+    let num1 = 0, num2 = 0, num3 = 0; // these are the three numbers for the octal
+    let perm_string = ''; // holds the permision string ex. rw-x--r--
+
+    if (caller_was_check) {
+      // loop over all the check boxes and get the permisions
+      for (let i = 1; i < 10; i++) {
+        let checkBox = document.getElementById(`${i}`);
+
+        if (checkBox.checked) { // if checked
+          let current_perm = check_to_octal_and_text(i);
+          perm_string += `${current_perm.perm_let}`;
+
+          if (i <= 3) {
+            num1 += current_perm.perm_num;
+          } else if (i <= 6) {
+            num2 += current_perm.perm_num;
+          } else {
+            num3 += current_perm.perm_num;
+          }
+
+        } else { // if not checked
+          perm_string += '-';
+        }
+      }
+
+      // set the permision input text
+      document.getElementById('let').value = perm_string;
+      document.getElementById('num').value = `${num1}${num2}${num3}`;
+
+    } else if (caller_was_num) {
+      // get the individual numbers
+      let num_input_val = document.getElementById('num').value;
+      num1 = num_input_val.substring(0, 1);
+      num2 = num_input_val.substring(1, 2);
+      num3 = num_input_val.substring(2, 3);
+
+      // set the checkboxes and get the perm string
+      perm_string += octal_to_check_and_txt(num1, 0); //Owner
+      perm_string += octal_to_check_and_txt(num2, 1); //Owner
+      perm_string += octal_to_check_and_txt(num3, 2); //Owner
+
+      // set the permision input text
+      document.getElementById('let').value = perm_string;
+
+    } else if (caller_was_let) {
+      // get the text input
+      let perm_text = document.getElementById('let').value;
+
+      num1 = text_to_check_and_octal(perm_text.substring(0, 3), 0)
+      num2 = text_to_check_and_octal(perm_text.substring(3, 6), 3)
+      num3 = text_to_check_and_octal(perm_text.substring(6, 9), 6)
+
+      // set the octal value
+      document.getElementById('num').value = `${num1}${num2}${num3}`;
+    }
+
+  }
+
+
+  // define a function to converts the checkbox # to the respective permissions
+  // returns perm_num, perm_let
+  function check_to_octal_and_text(check_num) {
+    let perm_num = 0;
+    let perm_let = '-';
+
+    switch (check_num) {
+      case 1:
+      case 4:
+      case 7:
+        perm_num = 4;
+        perm_let = 'r';
+
+        break;
+      case 2:
+      case 5:
+      case 8:
+        perm_num = 2;
+        perm_let = 'w';
+
+        break;
+      case 3:
+      case 6:
+      case 9:
+        perm_num = 1;
+        perm_let = 'x';
+
+        break;
+      default:
+        perm_num = 0;
+        perm_let = '-';
+    }
+    // return values
+    return {
+      perm_num,
+      perm_let
+    };
+  }
+
+
+  /**
+   Takes a number 1-7 and which class it is in:
+   0 = owner
+   1 = Group
+   2 = Public
+
+   Returns: perm text (ex. "rwx") and sets the appropriate checkboxes
+   */
+  function octal_to_check_and_txt(octal_num, class_num) {
+    let perm_text = '';
+    let offset = class_num * 3;
+
+    switch (octal_num) {
+      case '1':
+        document.getElementById(`${1 + offset}`).checked = false;
+        document.getElementById(`${2 + offset}`).checked = false;
+        document.getElementById(`${3 + offset}`).checked = true;
+        perm_text = '--x';
+        break;
+
+      case '2':
+        document.getElementById(`${1 + offset}`).checked = false;
+        document.getElementById(`${2 + offset}`).checked = true;
+        document.getElementById(`${3 + offset}`).checked = false;
+        perm_text = '-w-';
+        break;
+
+      case '3':
+        document.getElementById(`${1 + offset}`).checked = false;
+        document.getElementById(`${2 + offset}`).checked = true;
+        document.getElementById(`${3 + offset}`).checked = true;
+        perm_text = '-wx';
+        break;
+
+      case '4':
+        document.getElementById(`${1 + offset}`).checked = true;
+        document.getElementById(`${2 + offset}`).checked = false;
+        document.getElementById(`${3 + offset}`).checked = false;
+        perm_text = 'r--';
+        break;
+
+      case '5':
+        document.getElementById(`${1 + offset}`).checked = true;
+        document.getElementById(`${2 + offset}`).checked = false;
+        document.getElementById(`${3 + offset}`).checked = true;
+        perm_text = 'r-x';
+        break;
+
+      case '6':
+        document.getElementById(`${1 + offset}`).checked = true;
+        document.getElementById(`${2 + offset}`).checked = true;
+        document.getElementById(`${3 + offset}`).checked = false;
+        perm_text = 'rw-';
+        break;
+
+      case '7':
+        document.getElementById(`${1 + offset}`).checked = true;
+        document.getElementById(`${2 + offset}`).checked = true;
+        document.getElementById(`${3 + offset}`).checked = true;
+        perm_text = 'rwx';
+        break;
+
+      default:
+        document.getElementById(`${1 + offset}`).checked = false;
+        document.getElementById(`${2 + offset}`).checked = false;
+        document.getElementById(`${3 + offset}`).checked = false;
+        perm_text = '---';
+    }
+    return perm_text;
+  }
+
+
+  /**
+   Takes 3 letters (r, w, x, -    ex. 'rw-') and an offset (0,3,6)
+   Returns the octal num and sets the appropriate checkboxes
+   */
+  function text_to_check_and_octal(letters, offset) {
+    let perm_num = 0; // the octal number to return
+
+    // add up the oct num and set the check boxes
+    for (let i = 0; i < 3; i++) {
+      current_let = letters.substring(i, i + 1);
+      if (current_let == 'r') {
+        document.getElementById(`${i + 1 + offset}`).checked = true;
+        perm_num += 4;
+      } else if (current_let == 'w') {
+        document.getElementById(`${i + 1 + offset}`).checked = true;
+        perm_num += 2;
+      } else if (current_let == 'x') {
+        document.getElementById(`${i + 1 + offset}`).checked = true;
+        perm_num += 1;
+      } else {
+        document.getElementById(`${i + 1 + offset}`).checked = false;
+      }
+    }
+    return perm_num;
+  }
+</script>
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Top <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/python.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Python <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/vim.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Vim <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/javascript.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/quickref.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">QuickRef <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/mirrors.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">常见软件镜像 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer><div id="carbon_container"></div></body><script src="/js/main.js?_v=1670148321183"></script></html>

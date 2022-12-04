@@ -1,0 +1,1764 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Bash Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,shell,sh,echo,script,linux"><meta name="description" content="这是一份快速参考速查表，用于入门linux bash shell脚本。. "><meta property="og:url" content="https://quickref.leops.cn/bash.html"><meta property="og:title" content="Bash Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="这是一份快速参考速查表，用于入门linux bash shell脚本。. "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=yrhjw"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Bash Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="这是一份快速参考速查表，用于入门linux bash shell脚本。. "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=dfnbl"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/bash.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1670148321183"><link rel="stylesheet" href="/css/style.css?_v=1670148321183"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/main/source/_posts/bash.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button> <a href="https://github.com/lework/reference" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-github"></i> <span class="hidden">Github</span></button></a></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Bash</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>这是一份快速参考速查表，用于入门linux bash shell脚本。.</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="开始"><a class="h-anchor" href="#开始">#</a>开始</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="hello-sh"><a class="h-anchor" href="#hello-sh">#</a>hello.sh</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-meta">#!/bin/bash</span>
+
+VAR=<span class="hljs-string">&quot;world&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Hello <span class="hljs-variable">$VAR</span>!&quot;</span> <span class="hljs-comment"># =&gt; Hello world!</span>
+</code></pre>
+<p>执行脚本</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">bash hello.sh <span class="hljs-comment"># 以 bash 方式执行脚本</span></span> 
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">sh hello.sh   <span class="hljs-comment"># 以 sh 方式执行脚本</span></span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="变量"><a class="h-anchor" href="#变量">#</a>变量</h3>
+<div class="section">
+<pre><code class="hljs language-bash">varname=<span class="hljs-string">&quot;John&quot;</span>           <span class="hljs-comment"># 定义变量，索引号</span>
+varname=<span class="hljs-string">&#x27;John&#x27;</span>           <span class="hljs-comment"># 定义变量，单引号</span>
+varname = <span class="hljs-string">&quot;John&quot;</span>         <span class="hljs-comment"># =&gt; Error (=左右不能有空格)</span>
+var=                     <span class="hljs-comment"># 空参数</span>
+<span class="hljs-built_in">unset</span> var                <span class="hljs-comment"># 取消变量</span>
+<span class="hljs-built_in">let</span> foo=1+2              <span class="hljs-comment"># 声明变量时，可以直接执行算术表达式。</span>
+<span class="hljs-built_in">readonly</span> variable        <span class="hljs-comment"># 只读变量</span>
+<span class="hljs-built_in">local</span> variable           <span class="hljs-comment"># 定义内部变量，仅在函数内使用</span>
+<span class="hljs-built_in">export</span> VARNAME=value     <span class="hljs-comment"># 定义环境变量</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;varname&#125;</span>    <span class="hljs-comment"># =&gt; John (输出变量内容)</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$varname</span>      <span class="hljs-comment"># =&gt; John (输出变量内容)</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$varname</span>&quot;</span>    <span class="hljs-comment"># =&gt; John (输出变量内容)</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;$varname&#x27;</span>    <span class="hljs-comment"># =&gt; $varname (输出字符串)</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;varname&#125;</span>!&quot;</span> <span class="hljs-comment"># =&gt; John! (输出变量内容)</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="注释"><a class="h-anchor" href="#注释">#</a>注释</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 这是一个内联的Bash注释. 单行注释</span>
+</code></pre>
+<pre><code class="hljs language-bash">: <span class="hljs-string">&#x27;
+This is a
+multi line
+comment
+&#x27;</span>
+</code></pre>
+<p>多行注释使用 <code>:'</code> 开始 和 <code>'</code> 结尾</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="参数"><a class="h-anchor" href="#参数">#</a>参数 </h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$1</code> … <code>$9</code></td>
+<td>参数 1 ... 9</td>
+</tr>
+<tr>
+<td><code>$0</code></td>
+<td>脚本本身的名称</td>
+</tr>
+<tr>
+<td><code>$1</code></td>
+<td>第一个参数</td>
+</tr>
+<tr>
+<td><code>$&#123;10&#125;</code></td>
+<td>位置参数 10</td>
+</tr>
+<tr>
+<td><code>$#</code></td>
+<td>参数数量</td>
+</tr>
+<tr>
+<td><code>$$</code></td>
+<td>shell 的进程 id</td>
+</tr>
+<tr>
+<td><code>$@</code></td>
+<td>传递给脚本/函数的所有参数(识别每个参数)</td>
+</tr>
+<tr>
+<td><code>$*</code></td>
+<td>传递给脚本/函数的所有参数(把所有参数当成一个字符串)</td>
+</tr>
+<tr>
+<td><code>$!</code></td>
+<td>上一个被执行的命令的PID(后台运行的进程)</td>
+</tr>
+<tr>
+<td><code>$?</code></td>
+<td>上一个命令的退出状态(管道命令使用${PIPESTATUS})</td>
+</tr>
+<tr>
+<td><code>$-</code></td>
+<td>为当前 Shell 的启动参数</td>
+</tr>
+<tr>
+<td><code>$_</code></td>
+<td>上一个命令的最后一个参数</td>
+</tr>
+</tbody>
+</table>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables">特殊参数</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="函数"><a class="h-anchor" href="#函数">#</a>函数</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-function"><span class="hljs-title">get_name</span></span>() &#123;
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;John&quot;</span>
+&#125;
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;You are <span class="hljs-subst">$(get_name)</span>&quot;</span>
+</code></pre>
+<p>更多: <a href="#bash-functions">函数</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="条件语句"><a class="h-anchor" href="#条件语句">#</a>条件语句</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [[ -z <span class="hljs-string">&quot;<span class="hljs-variable">$string</span>&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;String is empty&quot;</span>
+<span class="hljs-keyword">elif</span> [[ -n <span class="hljs-string">&quot;<span class="hljs-variable">$string</span>&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;String is not empty&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<p>更多: <a href="#bash-conditionals">Conditionals</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="大括号扩展"><a class="h-anchor" href="#大括号扩展">#</a>大括号扩展</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">echo</span> &#123;A,B&#125;.js
+</code></pre>
+<hr>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#123;A,B&#125;</code></td>
+<td>与 <code>A B</code> 相同</td>
+</tr>
+<tr>
+<td><code>&#123;A,B&#125;.js</code></td>
+<td>与 <code>A.js B.js</code> 相同</td>
+</tr>
+<tr>
+<td><code>&#123;1..5&#125;</code></td>
+<td>与 <code>1 2 3 4 5</code> 相同</td>
+</tr>
+</tbody>
+</table>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.bash-hackers.org/syntax/expansion/brace">Brace expansion</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="shell-执行"><a class="h-anchor" href="#shell-执行">#</a>Shell 执行</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-comment"># =&gt; I&#x27;m in /path/of/current</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I&#x27;m in <span class="hljs-subst">$(PWD)</span>&quot;</span>
+
+<span class="hljs-comment"># Same as:</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I&#x27;m in `pwd`&quot;</span>
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.bash-hackers.org/syntax/expansion/cmdsubst">Command substitution</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="bash-参数扩展"><a class="h-anchor" href="#bash-参数扩展">#</a>Bash 参数扩展</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2 row-span-3">
+<h3 id="语法"><a class="h-anchor" href="#语法">#</a>语法</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$&#123;FOO%word&#125;</code></td>
+<td>从尾开始扫描word，将匹配word正则表达式的字符过滤掉,%为最短匹配</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO%%word&#125;</code></td>
+<td>从尾开始扫描word，将匹配word正则表达式的字符过滤掉,%%为最长匹配</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO#word&#125;</code></td>
+<td>从头开始扫描word，将匹配word正则表达的字符过滤掉,#为最短匹配</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO##word&#125;</code></td>
+<td>从头开始扫描word，将匹配word正则表达的字符过滤掉,##为最长匹配</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO/pattern/string&#125;</code></td>
+<td>替换第一个匹配项</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO//pattern/string&#125;</code></td>
+<td>替换全部匹配项</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO/%pattern/string&#125;</code></td>
+<td>替换后缀</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO/#pattern/string&#125;</code></td>
+<td>替换前缀</td>
+</tr>
+<tr>
+<td><code>$&#123;!prefix*&#125;</code></td>
+<td>将带有前缀为prefix的参数名打印出来</td>
+</tr>
+<tr>
+<td><code>$&#123;!prefix@&#125;</code></td>
+<td>将带有前缀为prefix的参数名打印出来</td>
+</tr>
+<tr>
+<td><code>$&#123;!name[@]&#125;</code></td>
+<td>打印出来name数组有哪些下标</td>
+</tr>
+<tr>
+<td><code>$&#123;!name[*]&#125;</code></td>
+<td>打印出来name数组有哪些下标</td>
+</tr>
+<tr>
+<td><code>$&#123;var#*/&#125;</code></td>
+<td>表示从左边开始删除第一个 / 号及左边的所有字符</td>
+</tr>
+<tr>
+<td><code>$&#123;var##*/&#125;</code></td>
+<td>表示从左边开始删除最后（最右边）一个 / 号及左边的所有字符</td>
+</tr>
+<tr>
+<td><code>$&#123;var%/*&#125;</code></td>
+<td>表示从右边开始，删除第一个 / 号及右边的字符</td>
+</tr>
+<tr>
+<td><code>$&#123;var%%/*&#125;</code></td>
+<td>表示从右边开始，删除最后（最左边）一个 / 号及右边的字符</td>
+</tr>
+</tbody>
+</table>
+<h4 id="子字符串"><a class="h-anchor" href="#子字符串">#</a>子字符串</h4>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$&#123;FOO:3&#125;</code></td>
+<td>截取FOO的值的子字符串, 从3到结束</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO:0:3&#125;</code></td>
+<td>子串 <em>(位置，长度)</em></td>
+</tr>
+<tr>
+<td><code>$&#123;FOO:(-3):3&#125;</code></td>
+<td>从右边开始的子串,  bash 4.2之后才支持负数索引</td>
+</tr>
+</tbody>
+</table>
+<h4 id="长度"><a class="h-anchor" href="#长度">#</a>长度</h4>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$&#123;#FOO&#125;</code></td>
+<td><code>$FOO</code> 的长度</td>
+</tr>
+</tbody>
+</table>
+<h4 id="默认值"><a class="h-anchor" href="#默认值">#</a>默认值</h4>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$&#123;FOO:-val&#125;</code></td>
+<td><code>$FOO</code>，如果未设置，则为 <code>val</code></td>
+</tr>
+<tr>
+<td><code>$&#123;FOO:=val&#125;</code></td>
+<td>如果未设置，则将 <code>$FOO</code> 设置为 <code>val</code></td>
+</tr>
+<tr>
+<td><code>$&#123;FOO:+val&#125;</code></td>
+<td>如果<code>$FOO</code>被设置，则<code>val</code>的值被赋值给<code>$FOO</code>。</td>
+</tr>
+<tr>
+<td><code>$&#123;FOO:?message&#125;</code></td>
+<td>如果 <code>$FOO</code> 未设置，则显示message并退出</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="替换"><a class="h-anchor" href="#替换">#</a>替换</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;food:-Cake&#125;</span>  <span class="hljs-comment">#=&gt; $food or &quot;Cake&quot;</span>
+
+STR=<span class="hljs-string">&quot;/path/to/foo.cpp&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR%.cpp&#125;</span>    <span class="hljs-comment"># /path/to/foo</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR%.cpp&#125;</span>.o  <span class="hljs-comment"># /path/to/foo.o</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR%/*&#125;</span>      <span class="hljs-comment"># /path/to</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR##*.&#125;</span>     <span class="hljs-comment"># cpp (获取文件后缀)</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR##*/&#125;</span>     <span class="hljs-comment"># foo.cpp (文件名)</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR#*/&#125;</span>      <span class="hljs-comment"># path/to/foo.cpp</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR##*/&#125;</span>     <span class="hljs-comment"># foo.cpp</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR/foo/bar&#125;</span> <span class="hljs-comment"># /path/to/bar.cpp</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="切片"><a class="h-anchor" href="#切片">#</a>切片</h3>
+<div class="section">
+<pre><code class="hljs language-bash">name=<span class="hljs-string">&quot;John&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name&#125;</span>           <span class="hljs-comment"># =&gt; John</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name:0:2&#125;</span>       <span class="hljs-comment"># =&gt; Jo</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name::2&#125;</span>        <span class="hljs-comment"># =&gt; Jo</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name::-1&#125;</span>       <span class="hljs-comment"># =&gt; Joh</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name:(-1)&#125;</span>      <span class="hljs-comment"># =&gt; n</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name:(-2)&#125;</span>      <span class="hljs-comment"># =&gt; hn</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name:(-2):2&#125;</span>    <span class="hljs-comment"># =&gt; hn</span>
+
+length=2
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;name:0:length&#125;</span>  <span class="hljs-comment"># =&gt; Jo</span>
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.bash-hackers.org/syntax/pe">Parameter expansion</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="转换"><a class="h-anchor" href="#转换">#</a>转换</h3>
+<div class="section">
+<pre><code class="hljs language-bash">STR=<span class="hljs-string">&quot;HELLO WORLD!&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR,&#125;</span>   <span class="hljs-comment"># =&gt; hELLO WORLD! 首字母小写</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR,,&#125;</span>  <span class="hljs-comment"># =&gt; hello world! 全部小写</span>
+
+STR=<span class="hljs-string">&quot;hello world!&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR^&#125;</span>   <span class="hljs-comment"># =&gt; Hello world! 首字母大写</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;STR^^&#125;</span>  <span class="hljs-comment"># =&gt; HELLO WORLD! 全部大写</span>
+
+ARR=(hello World)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;ARR[@],&#125;</span>&quot;</span> <span class="hljs-comment"># =&gt; hello world 数组中的所有元素首字母小写</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;ARR[@]^&#125;</span>&quot;</span> <span class="hljs-comment"># =&gt; Hello World 数组中的所有元素首字母大写</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="扩展"><a class="h-anchor" href="#扩展">#</a>~扩展</h3>
+<div class="section">
+<pre><code class="hljs language-bash">~          <span class="hljs-comment"># $HOME的值</span>
+~/foo      <span class="hljs-comment"># $HOME/foo</span>
+~fred/foo  <span class="hljs-comment"># 用户fred的主目录的foo子目录</span>
+~+/foo     <span class="hljs-comment"># $PWD/foo</span>
+~-/foo     <span class="hljs-comment"># $&#123;OLDPWD-&#x27;~-&#x27;&#125;/foo</span>
+~N         <span class="hljs-comment"># 将显示一个&#x27;dirs +N&#x27;命令的结果字符串</span>
+~+N        <span class="hljs-comment"># 将显示一个&#x27;dirs +N&#x27;命令的结果字符串</span>
+~-N        <span class="hljs-comment"># 将显示一个&#x27;dirs -N&#x27;命令的结果字符串</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="bash-数组"><a class="h-anchor" href="#bash-数组">#</a>Bash 数组</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="数组定义"><a class="h-anchor" href="#数组定义">#</a>数组定义</h3>
+<div class="section">
+<pre><code class="hljs language-bash">arr_number=(1 2 3 4 5)             <span class="hljs-comment"># 数值类型的数组</span>
+Fruits=(<span class="hljs-string">&#x27;Apple&#x27;</span> <span class="hljs-string">&#x27;Banana&#x27;</span> <span class="hljs-string">&#x27;Orange&#x27;</span>) <span class="hljs-comment"># 字符串类型数组</span>
+
+Fruits[0]=<span class="hljs-string">&quot;Apple&quot;</span>                  <span class="hljs-comment"># 赋值</span>
+Fruits[1]=<span class="hljs-string">&quot;Banana&quot;</span>
+Fruits[2]=<span class="hljs-string">&quot;Orange&quot;</span>
+
+ARRAY1=(foo&#123;1..2&#125;) <span class="hljs-comment"># =&gt; foo1 foo2</span>
+ARRAY2=(&#123;A..D&#125;)    <span class="hljs-comment"># =&gt; A B C D</span>
+
+<span class="hljs-comment"># 合并  =&gt; foo1 foo2 A B C D</span>
+ARRAY3=(<span class="hljs-variable">$&#123;ARRAY1[@]&#125;</span> <span class="hljs-variable">$&#123;ARRAY2[@]&#125;</span>)
+
+<span class="hljs-comment"># 声明构造</span>
+<span class="hljs-built_in">declare</span> -a Numbers=(1 2 3)
+Numbers+=(4 5) <span class="hljs-comment"># 追加 =&gt; 1 2 3 4 5</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="索引"><a class="h-anchor" href="#索引">#</a>索引</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$&#123;Fruits[0]&#125;</code></td>
+<td>第一个元素</td>
+</tr>
+<tr>
+<td><code>$&#123;Fruits[-1]&#125;</code></td>
+<td>最后一个元素</td>
+</tr>
+<tr>
+<td><code>$&#123;Fruits[*]&#125;</code></td>
+<td>所有元素</td>
+</tr>
+<tr>
+<td><code>$&#123;Fruits[@]&#125;</code></td>
+<td>所有元素</td>
+</tr>
+<tr>
+<td><code>$&#123;#Fruits[@]&#125;</code></td>
+<td>总数</td>
+</tr>
+<tr>
+<td><code>$&#123;#Fruits&#125;</code></td>
+<td>第一节长度</td>
+</tr>
+<tr>
+<td><code>$&#123;#Fruits[3]&#125;</code></td>
+<td>第n节长度</td>
+</tr>
+<tr>
+<td><code>$&#123;Fruits[@]:3:2&#125;</code></td>
+<td>范围</td>
+</tr>
+<tr>
+<td><code>$&#123;!Fruits[@]&#125;</code></td>
+<td>所有的key</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="迭代"><a class="h-anchor" href="#迭代">#</a>迭代</h3>
+<div class="section">
+<pre><code class="hljs language-bash">Fruits=(<span class="hljs-string">&#x27;Apple&#x27;</span> <span class="hljs-string">&#x27;Banana&#x27;</span> <span class="hljs-string">&#x27;Orange&#x27;</span>)
+
+<span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;Fruits[@]&#125;</span>&quot;</span>; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$e</span>
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-built_in">let</span> i=0
+<span class="hljs-built_in">let</span> j=<span class="hljs-variable">$&#123;#Fruits[@]&#125;</span>-1
+<span class="hljs-keyword">for</span> (( i=<span class="hljs-number">0</span>;i&lt;j;i++,j-- ))
+  <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;arr[i]&#125;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h4 id="包含索引"><a class="h-anchor" href="#包含索引">#</a>包含索引</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;!Fruits[@]&#125;</span>&quot;</span>; <span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s\t%s\n&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$i</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;Fruits[$i]&#125;</span>&quot;</span>
+<span class="hljs-keyword">done</span>
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="操作"><a class="h-anchor" href="#操作">#</a>操作</h3>
+<div class="section">
+<pre><code class="hljs language-bash">Fruits=(<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;Fruits[@]&#125;</span>&quot;</span> <span class="hljs-string">&quot;Watermelon&quot;</span>)     <span class="hljs-comment"># 添加</span>
+Fruits+=(<span class="hljs-string">&#x27;Watermelon&#x27;</span>)                   <span class="hljs-comment"># 添加</span>
+Fruits=( <span class="hljs-variable">$&#123;Fruits[@]/Ap*/&#125;</span> )             <span class="hljs-comment"># 通过正则表达式匹配删除</span>
+<span class="hljs-built_in">unset</span> Fruits[2]                          <span class="hljs-comment"># 删除指定的一项</span>
+Fruits=(<span class="hljs-variable">$&#123;Fruits[@]/a*/&#125;</span>)                <span class="hljs-comment"># 删除正则表达式匹配到的元素</span>
+Fruits=(<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;Fruits[@]&#125;</span>&quot;</span>)                  <span class="hljs-comment"># 赋值</span>
+Fruits=(<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;Fruits[@]&#125;</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;Veggies[@]&#125;</span>&quot;</span>)  <span class="hljs-comment"># 连接</span>
+lines=(`<span class="hljs-built_in">cat</span> <span class="hljs-string">&quot;logfile&quot;</span>`)                  <span class="hljs-comment"># 从文件中读取</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="数组为参数"><a class="h-anchor" href="#数组为参数">#</a>数组为参数</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">extract</span></span>()
+&#123;
+    <span class="hljs-built_in">local</span> -n myarray=<span class="hljs-variable">$1</span>
+    <span class="hljs-built_in">local</span> idx=<span class="hljs-variable">$2</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;myarray[$idx]&#125;</span>&quot;</span>
+&#125;
+Fruits=(<span class="hljs-string">&#x27;Apple&#x27;</span> <span class="hljs-string">&#x27;Banana&#x27;</span> <span class="hljs-string">&#x27;Orange&#x27;</span>)
+extract Fruits 2     <span class="hljs-comment"># =&gt; Orangle</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="bash-字典"><a class="h-anchor" href="#bash-字典">#</a>Bash 字典</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="字典定义"><a class="h-anchor" href="#字典定义">#</a>字典定义</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">declare</span> -A sounds <span class="hljs-comment"># 定义字典</span>
+array=([2]=valC [0]=valA [1]=valB)  <span class="hljs-comment"># 定义字典</span>
+</code></pre>
+<pre><code class="hljs language-bash">sounds[dog]=<span class="hljs-string">&quot;bark&quot;</span>    <span class="hljs-comment"># 赋值</span>
+sounds[cow]=<span class="hljs-string">&quot;moo&quot;</span>
+sounds[bird]=<span class="hljs-string">&quot;tweet&quot;</span>
+sounds[wolf]=<span class="hljs-string">&quot;howl&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="字典使用"><a class="h-anchor" href="#字典使用">#</a>字典使用</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;sounds[dog]&#125;</span> <span class="hljs-comment"># 输出指定dog元素的值</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;sounds[@]&#125;</span>   <span class="hljs-comment"># 输出所有的value</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;!sounds[@]&#125;</span>  <span class="hljs-comment"># 输出所有的key</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;#sounds[@]&#125;</span>  <span class="hljs-comment"># 输出字典的数量</span>
+<span class="hljs-built_in">unset</span> sounds[dog]   <span class="hljs-comment"># 删除 dog</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="迭代-2"><a class="h-anchor" href="#迭代-2">#</a>迭代</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;sounds[@]&#125;</span>&quot;</span>; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$val</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<hr>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;!sounds[@]&#125;</span>&quot;</span>; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$key</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="bash-条件表达式"><a class="h-anchor" href="#bash-条件表达式">#</a>Bash 条件表达式</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="语法-2"><a class="h-anchor" href="#语法-2">#</a>语法</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 写法一</span>
+<span class="hljs-built_in">test</span> expression
+
+<span class="hljs-comment"># 写法二</span>
+[ expression ]
+
+<span class="hljs-comment"># 写法三</span>
+[[ expression ]]
+
+<span class="hljs-comment"># [ ] 单双括号</span>
+　<span class="hljs-comment"># - [ ] 两个符号左右都要有空格分隔</span>
+　<span class="hljs-comment"># - 内部操作符与操作变量之间要有空格：如  [  ]</span>
+　<span class="hljs-comment"># - 字符串比较中，&gt; &lt; 需要写成\&gt; \&lt; 进行转义</span>
+　<span class="hljs-comment"># - [ ] 中字符串或者$&#123;&#125;变量尽量使用&quot;&quot; 双引号扩住，避免值未定义引用而出错的好办法</span>
+　<span class="hljs-comment"># - [ ] 中可以使用 –a –o 进行逻辑运算</span>
+
+<span class="hljs-comment"># [[ ]] 双方括号</span>
+　<span class="hljs-comment"># [[ ]] 两个符号左右都要有空格分隔</span>
+　<span class="hljs-comment"># 内部操作符与操作变量之间要有空格：如  [[ &quot;a&quot; = &quot;b&quot; ]]</span>
+　<span class="hljs-comment"># 字符串比较中，可以直接使用 &gt; &lt; 无需转义</span>
+　<span class="hljs-comment"># [[ ]] 中字符串或者$&#123;&#125;变量尽量如未使用&quot;&quot; 双引号扩住的话，会进行模式和元字符匹配</span>
+　  <span class="hljs-comment"># [[ &quot;ab&quot;=a* ]] &amp;&amp; echo &quot;ok&quot;</span>
+　<span class="hljs-comment"># [[] ] 内部可以使用 &amp;&amp;  || 进行逻辑运算</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="整数表达式"><a class="h-anchor" href="#整数表达式">#</a>整数表达式</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[[ NUM -eq NUM ]]</code></td>
+<td>等于 <yel>Eq</yel>ual</td>
+</tr>
+<tr>
+<td><code>[[ NUM -ne NUM ]]</code></td>
+<td>不等于 <yel>N</yel>ot <yel>e</yel>qual</td>
+</tr>
+<tr>
+<td><code>[[ NUM -lt NUM ]]</code></td>
+<td>小于 <yel>L</yel>ess <yel>t</yel>han</td>
+</tr>
+<tr>
+<td><code>[[ NUM -le NUM ]]</code></td>
+<td>小于等于 <yel>L</yel>ess than or <yel>e</yel>qual</td>
+</tr>
+<tr>
+<td><code>[[ NUM -gt NUM ]]</code></td>
+<td>大于 <yel>G</yel>reater <yel>t</yel>han</td>
+</tr>
+<tr>
+<td><code>[[ NUM -ge NUM ]]</code></td>
+<td>大于等于 <yel>G</yel>reater than or <yel>e</yel>qual</td>
+</tr>
+<tr>
+<td><code>(( NUM &lt; NUM ))</code></td>
+<td>小于</td>
+</tr>
+<tr>
+<td><code>(( NUM &lt;= NUM ))</code></td>
+<td>小于或等于</td>
+</tr>
+<tr>
+<td><code>(( NUM &gt; NUM ))</code></td>
+<td>大于</td>
+</tr>
+<tr>
+<td><code>(( NUM &gt;= NUM ))</code></td>
+<td>大于或等于</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="字符串表达式"><a class="h-anchor" href="#字符串表达式">#</a>字符串表达式</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[[ -z STR ]]</code></td>
+<td>空字符串</td>
+</tr>
+<tr>
+<td><code>[[ -n STR ]]</code></td>
+<td><yel>N</yel>非空字符串</td>
+</tr>
+<tr>
+<td><code>[[ STR ]]</code></td>
+<td>如果string不为空（长度大于0），则判断为真。</td>
+</tr>
+<tr>
+<td><code>[[ STR1 == STR2 ]]</code></td>
+<td>STR1 等于 STR2</td>
+</tr>
+<tr>
+<td><code>[[ STR = STR ]]</code></td>
+<td>如果string1和string2相同，则判断为真</td>
+</tr>
+<tr>
+<td><code>[[ STR &lt; STR ]]</code></td>
+<td>小于 <em>(ASCII码对比)</em></td>
+</tr>
+<tr>
+<td><code>[[ STR &gt; STR ]]</code></td>
+<td>大于 <em>(ASCII码对比)</em></td>
+</tr>
+<tr>
+<td><code>[[ STR != STR ]]</code></td>
+<td>不相等</td>
+</tr>
+<tr>
+<td><code>[[ STR =~ STR ]]</code></td>
+<td>正则匹配</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="文件表达式"><a class="h-anchor" href="#文件表达式">#</a>文件表达式</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[[ -a file ]]</code></td>
+<td>file存在，则为true</td>
+</tr>
+<tr>
+<td><code>[[ -b file ]]</code></td>
+<td>如果 file 存在并且是一个块（设备）文件，则为true</td>
+</tr>
+<tr>
+<td><code>[[ -c file ]]</code></td>
+<td>如果 file 存在并且是一个字符（设备）文件，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -d file ]]</code></td>
+<td>file存在并且是目录，则为true</td>
+</tr>
+<tr>
+<td><code>[[ -e file ]]</code></td>
+<td>file存在，则为true</td>
+</tr>
+<tr>
+<td><code>[[ -f file ]]</code></td>
+<td>file存在并且是常规文件（不是目录或其他特殊类型的文件），则为true</td>
+</tr>
+<tr>
+<td><code>[[ -g file ]]</code></td>
+<td>如果 file 存在并且设置了组 ID，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -G file ]]</code></td>
+<td>如果 file 存在并且属于有效的组 ID，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -h file ]]</code></td>
+<td>如果 file 存在并且是符号链接，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -k file ]]</code></td>
+<td>如果 file 存在并且设置了它的“sticky bit”，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -L file ]]</code></td>
+<td>如果 file 存在并且是一个符号链接，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -N file ]]</code></td>
+<td>如果 file 存在并且自上次读取后已被修改，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -O file ]]</code></td>
+<td>如果 file 存在并且属于有效的用户 ID，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -p file ]]</code></td>
+<td>如果 file 存在并且是一个命名管道，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -r file ]]</code></td>
+<td>file具有read权限，则为true</td>
+</tr>
+<tr>
+<td><code>[[ -s file ]]</code></td>
+<td>file存在且不为空，则为true</td>
+</tr>
+<tr>
+<td><code>[[ -S file ]]</code></td>
+<td>如果 file 存在且是一个网络 socket，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -t fd   ]]</code></td>
+<td>如果 fd 是一个文件描述符，并且重定向到终端，则为true。 这可以用来判断是否重定向了标准输入／输出错误。</td>
+</tr>
+<tr>
+<td><code>[[ -u file ]]</code></td>
+<td>如果 file 存在并且设置了 setuid 位，则为true。</td>
+</tr>
+<tr>
+<td><code>[[ -w file ]]</code></td>
+<td>file具有write权限，则为true</td>
+</tr>
+<tr>
+<td><code>[[ -x file ]]</code></td>
+<td>file具有执行权限，如果是目录，则具有目录搜索权限，则为true</td>
+</tr>
+<tr>
+<td><code>[[ f1 -nt f2 ]]</code></td>
+<td>f2 f1 比 f2 新</td>
+</tr>
+<tr>
+<td><code>[[ f1 -ot f2 ]]</code></td>
+<td>f1 f2 比 f1 新</td>
+</tr>
+<tr>
+<td><code>[[ f1 -ef f2 ]]</code></td>
+<td>相同的文件</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="逻辑表达式"><a class="h-anchor" href="#逻辑表达式">#</a>逻辑表达式</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> = <span class="hljs-string">&#x27;y&#x27;</span> -a <span class="hljs-variable">$2</span> -gt 0 ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;yes&quot;</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> = <span class="hljs-string">&#x27;n&#x27;</span> -o <span class="hljs-variable">$2</span> -lt 0 ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;no&quot;</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># 以下表示的含义一致</span>
+[  exp1  -a exp2  ]
+[[  exp1 &amp;&amp; exp2 ]]
+[  exp1  ] &amp;&amp; [  exp2  ]
+[[ exp1  ]] &amp;&amp; [[  exp2 ]]
+
+<span class="hljs-comment"># 以下表示的含义一致</span>
+[  exp1  -o exp2  ]
+[[  exp1 || exp2 ]]
+[  exp1  ] || [  exp2  ]
+[[ exp1  ]] || [[  exp2 ]]
+
+<span class="hljs-comment"># 三元表达式</span>
+[ -f /opt/file ] &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;file&#x27;</span> || <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;not file&#x27;</span>     <span class="hljs-comment"># 判断</span>
+[ -f /opt/file ] &amp;&amp; (<span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;file&#x27;</span>; <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;shell&#x27;</span>) || <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;not file&#x27;</span>     <span class="hljs-comment"># 子shell</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="示例"><a class="h-anchor" href="#示例">#</a>示例</h3>
+<div class="section">
+<h4 id="字符串判断"><a class="h-anchor" href="#字符串判断">#</a>字符串判断</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [[ -z <span class="hljs-string">&quot;<span class="hljs-variable">$string</span>&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;String is empty&quot;</span>
+<span class="hljs-keyword">elif</span> [[ -n <span class="hljs-string">&quot;<span class="hljs-variable">$string</span>&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;String is not empty&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This never happens&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h4 id="组合"><a class="h-anchor" href="#组合">#</a>组合</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [[ X &amp;&amp; Y ]]; <span class="hljs-keyword">then</span>
+    ...
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h4 id="相等"><a class="h-anchor" href="#相等">#</a>相等</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$A</span>&quot;</span> == <span class="hljs-string">&quot;<span class="hljs-variable">$B</span>&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    ...
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h4 id="正则表达式"><a class="h-anchor" href="#正则表达式">#</a>正则表达式</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [[ <span class="hljs-string">&#x27;1. abc&#x27;</span> =~ ([a-z]+) ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;BASH_REMATCH[1]&#125;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h4 id="小于"><a class="h-anchor" href="#小于">#</a>小于</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> (( <span class="hljs-variable">$a</span> &lt; <span class="hljs-variable">$b</span> )); <span class="hljs-keyword">then</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$a</span> is smaller than <span class="hljs-variable">$b</span>&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h4 id="是否存在"><a class="h-anchor" href="#是否存在">#</a>是否存在</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> [[ -e <span class="hljs-string">&quot;file.txt&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;file exists&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h4 id="if-其他"><a class="h-anchor" href="#if-其他">#</a>if 其他</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">then</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;hello world&#x27;</span>; <span class="hljs-keyword">fi</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-literal">true</span>
+<span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;hello world&#x27;</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">test</span> <span class="hljs-variable">$USER</span> = <span class="hljs-string">&quot;foo&quot;</span>; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Hello foo.&quot;</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># 检查命令输出结果</span>
+<span class="hljs-keyword">if</span> ping -c 1 google.com; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;It appears you have a working internet connection&quot;</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># Grep 检查</span>
+<span class="hljs-keyword">if</span> grep -q <span class="hljs-string">&#x27;foo&#x27;</span> ~/.bash_history; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;You appear to have typed &#x27;foo&#x27; in the past&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h4 id="case-语句"><a class="h-anchor" href="#case-语句">#</a>case 语句</h4>
+<pre><code class="hljs language-bash">OS=$(<span class="hljs-built_in">uname</span> -s)
+
+<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;<span class="hljs-variable">$OS</span>&quot;</span> <span class="hljs-keyword">in</span>
+  FreeBSD) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This is FreeBSD&quot;</span> ;;
+  Darwin) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This is Mac OSX&quot;</span> ;;
+  AIX) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This is AIX&quot;</span> ;;
+  Minix) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This is Minix&quot;</span> ;;
+  Linux) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;This is Linux&quot;</span> ;;
+  *) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Failed to identify this OS&quot;</span> ;;
+<span class="hljs-keyword">esac</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="其他表达式"><a class="h-anchor" href="#其他表达式">#</a>其他表达式</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[[ -o noclobber ]]</code></td>
+<td>选项是否开启</td>
+</tr>
+<tr>
+<td><code>[[ ! EXPR ]]</code></td>
+<td>Not</td>
+</tr>
+<tr>
+<td><code>[[ X &amp;&amp; Y ]]</code></td>
+<td>And</td>
+</tr>
+<tr>
+<td><code>[[ X || Y ]]</code></td>
+<td>Or</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="bash-循环"><a class="h-anchor" href="#bash-循环">#</a>Bash 循环</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="基本-for-循环"><a class="h-anchor" href="#基本-for-循环">#</a>基本 for 循环</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> /etc/rc.*; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="类似-c-语言的-for-循环"><a class="h-anchor" href="#类似-c-语言的-for-循环">#</a>类似 C 语言的 for 循环</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> ((i = <span class="hljs-number">0</span> ; i &lt; <span class="hljs-number">100</span> ; i++)); <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="范围"><a class="h-anchor" href="#范围">#</a>范围</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> &#123;1..5&#125;; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span>&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h4 id="范围中的步长"><a class="h-anchor" href="#范围中的步长">#</a>范围中的步长</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> &#123;5..50..5&#125;; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span>&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="自动递增"><a class="h-anchor" href="#自动递增">#</a>自动递增</h3>
+<div class="section">
+<pre><code class="hljs language-bash">i=1
+<span class="hljs-keyword">while</span> [[ <span class="hljs-variable">$i</span> -lt 4 ]]; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Number: <span class="hljs-variable">$i</span>&quot;</span>
+    ((i++))
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="自动递减"><a class="h-anchor" href="#自动递减">#</a>自动递减</h3>
+<div class="section">
+<pre><code class="hljs language-bash">i=3
+<span class="hljs-keyword">while</span> [[ <span class="hljs-variable">$i</span> -gt 0 ]]; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Number: <span class="hljs-variable">$i</span>&quot;</span>
+    ((i--))
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="continue"><a class="h-anchor" href="#continue">#</a>Continue</h3>
+<div class="section">
+<pre><code data="3,5" class="language-bash"><span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> $(<span class="hljs-built_in">seq</span> 1 3); <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span> [[ <span class="hljs-variable">$number</span> == 2 ]]; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">continue</span>; <span class="hljs-comment"># 跳出本次循环</span>
+    <span class="hljs-keyword">fi</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$number</span>&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="break"><a class="h-anchor" href="#break">#</a>Break</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> $(<span class="hljs-built_in">seq</span> 1 3); <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span> [[ <span class="hljs-variable">$number</span> == 2 ]]; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">break</span>; <span class="hljs-comment"># 跳出循环</span>
+    <span class="hljs-keyword">fi</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$number</span>&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="select"><a class="h-anchor" href="#select">#</a>select</h3>
+<div class="section">
+<pre><code class="hljs language-bash">select name [<span class="hljs-keyword">in</span> list];
+<span class="hljs-keyword">do</span>
+  statements that can use <span class="hljs-variable">$name</span>
+<span class="hljs-keyword">done</span>
+
+select brand <span class="hljs-keyword">in</span> Samsung Sony iphone symphony Walton
+<span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;You have chosen <span class="hljs-variable">$brand</span>&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="while"><a class="h-anchor" href="#while">#</a>While</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">while</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> =~ ^- &amp;&amp; ! <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> == <span class="hljs-string">&quot;--&quot;</span> ]]; <span class="hljs-keyword">do</span>
+<span class="hljs-keyword">case</span> <span class="hljs-variable">$1</span> <span class="hljs-keyword">in</span>
+  -V | --version )
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$version</span>
+    <span class="hljs-built_in">exit</span>
+    ;;
+  -s | --string )
+    <span class="hljs-built_in">shift</span>; string=<span class="hljs-variable">$1</span>
+    ;;
+  -f | --flag )
+    flag=1
+    ;;
+<span class="hljs-keyword">esac</span>;
+<span class="hljs-built_in">shift</span>; <span class="hljs-comment"># shift n 表示把第n+1个参数移到第1个参数, 即命令结束后$1的值等于$n+1的值</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="until"><a class="h-anchor" href="#until">#</a>Until</h3>
+<div class="section">
+<pre><code class="hljs language-bash">count=0
+until [ <span class="hljs-variable">$count</span> -gt 10 ]; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$count</span>&quot;</span>
+    ((count++))
+<span class="hljs-keyword">done</span>
+
+until <span class="hljs-literal">false</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Hi, until looping ...&#x27;</span>; <span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="死循环"><a class="h-anchor" href="#死循环">#</a>死循环</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span>; <span class="hljs-keyword">do</span>
+    <span class="hljs-comment"># here is some code.</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h4 id="死循环-简写"><a class="h-anchor" href="#死循环-简写">#</a>死循环 (简写)</h4>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">while</span> :; <span class="hljs-keyword">do</span>
+    <span class="hljs-comment"># here is some code.</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="读取文件的每一行"><a class="h-anchor" href="#读取文件的每一行">#</a>读取文件的每一行</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">cat</span> file.txt | <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> line; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$line</span>
+<span class="hljs-keyword">done</span>
+
+&lt; file.txt | <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> line; <span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-variable">$line</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="bash-函数"><a class="h-anchor" href="#bash-函数">#</a>Bash 函数</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="函数定义"><a class="h-anchor" href="#函数定义">#</a>函数定义</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-function"><span class="hljs-title">myfunc</span></span>() &#123;
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello <span class="hljs-variable">$1</span>&quot;</span>
+&#125;
+</code></pre>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">myfunc</span></span>() &#123;
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello <span class="hljs-variable">$1</span>&quot;</span>
+&#125;
+</code></pre>
+<pre><code class="hljs language-bash">myfunc <span class="hljs-string">&quot;John&quot;</span>
+
+<span class="hljs-built_in">unset</span> -f myfunc         <span class="hljs-comment"># 删除定义的函数</span>
+<span class="hljs-built_in">declare</span> -f myfunc       <span class="hljs-comment"># 显示myfunc函数的定义内容</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="返回值"><a class="h-anchor" href="#返回值">#</a>返回值</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-function"><span class="hljs-title">myfunc</span></span>() &#123;
+    <span class="hljs-built_in">local</span> myresult=<span class="hljs-string">&#x27;some value&#x27;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$myresult</span>
+&#125;
+</code></pre>
+<pre><code class="hljs language-bash">result=<span class="hljs-string">&quot;<span class="hljs-subst">$(myfunc)</span>&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="抛出错误"><a class="h-anchor" href="#抛出错误">#</a>抛出错误</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-function"><span class="hljs-title">myfunc</span></span>() &#123;
+    <span class="hljs-built_in">return</span> 1 <span class="hljs-comment"># 返回非0数字</span>
+&#125;
+</code></pre>
+<pre><code class="hljs language-bash"><span class="hljs-keyword">if</span> myfunc; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;success&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;failure&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="bash-选项"><a class="h-anchor" href="#bash-选项">#</a>Bash 选项 </h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="选项"><a class="h-anchor" href="#选项">#</a>选项</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-comment"># - 表示打开， + 表示关闭</span>
+<span class="hljs-built_in">set</span> -u            <span class="hljs-comment"># 如果遇到不存在的变量，Bash 默认忽略它</span>
+<span class="hljs-built_in">set</span> -x            <span class="hljs-comment"># 用来在运行结果之前，先输出执行的那一行命令。</span>
+<span class="hljs-built_in">set</span> -e            <span class="hljs-comment"># 只要发生错误，就终止执行。</span>
+<span class="hljs-built_in">set</span> -n            <span class="hljs-comment"># 等同于set -o noexec，不运行命令，只检查语法是否正确。</span>
+<span class="hljs-built_in">set</span> -f            <span class="hljs-comment"># 等同于set -o noglob，表示不对通配符进行文件名扩展。</span>
+<span class="hljs-built_in">set</span> -v            <span class="hljs-comment"># 等同于set -o verbose，表示打印 Shell 接收到的每一行输入。</span>
+
+<span class="hljs-built_in">set</span> -o noclobber  <span class="hljs-comment"># 避免叠加文件 (echo &quot;hi&quot; &gt; foo)</span>
+<span class="hljs-built_in">set</span> -o errexit    <span class="hljs-comment"># 用于在出错时退出，避免级联错误</span>
+<span class="hljs-built_in">set</span> -o pipefail   <span class="hljs-comment"># 用于在出错时退出，避免管道之间的连续错误</span>
+<span class="hljs-built_in">set</span> -o nounset    <span class="hljs-comment"># 暴露未设置的变量</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="全局选项"><a class="h-anchor" href="#全局选项">#</a>全局选项</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">shopt</span>               <span class="hljs-comment"># 查看所有参数</span>
+<span class="hljs-built_in">shopt</span> globstar      <span class="hljs-comment"># 查看globstar参数</span>
+<span class="hljs-built_in">shopt</span> -s execfail   <span class="hljs-comment"># 打开参数</span>
+<span class="hljs-built_in">shopt</span> -u execfail   <span class="hljs-comment"># 关闭参数</span>
+<span class="hljs-built_in">shopt</span> -q execfail   <span class="hljs-comment"># 查询参数是否打开，返回0表示打开</span>
+
+<span class="hljs-built_in">shopt</span> -s nullglob   <span class="hljs-comment"># 不匹配的 glob 被删除 (&#x27;*.foo&#x27; =&gt; &#x27;&#x27;)</span>
+<span class="hljs-built_in">shopt</span> -s failglob   <span class="hljs-comment"># 不匹配的 glob 抛出错误</span>
+<span class="hljs-built_in">shopt</span> -s nocaseglob <span class="hljs-comment"># 不区分大小写</span>
+<span class="hljs-built_in">shopt</span> -s dotglob    <span class="hljs-comment"># 通配符匹配.文件 (&quot;*.sh&quot; =&gt; &quot;.foo.sh&quot;)</span>
+<span class="hljs-built_in">shopt</span> -s globstar   <span class="hljs-comment"># 允许 ** 进行递归匹配 (&#x27;lib/**/*.rb&#x27; =&gt; &#x27;lib/a/b/c.rb&#x27;)</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="bash-历史"><a class="h-anchor" href="#bash-历史">#</a>Bash 历史</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="命令"><a class="h-anchor" href="#命令">#</a>命令</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>history</code></td>
+<td>显示历史</td>
+</tr>
+<tr>
+<td><code>sudo !!</code></td>
+<td>使用 sudo 运行上一个命令</td>
+</tr>
+<tr>
+<td><code>shopt -s histverify</code></td>
+<td>不要立即执行扩展结果</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="表达式"><a class="h-anchor" href="#表达式">#</a>表达式</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!$</code></td>
+<td>展开最新命令的最后一个参数</td>
+</tr>
+<tr>
+<td><code>!*</code></td>
+<td>展开最新命令的所有参数</td>
+</tr>
+<tr>
+<td><code>!-n</code></td>
+<td>展开第 <code>n</code> 个最近的命令</td>
+</tr>
+<tr>
+<td><code>!n</code></td>
+<td>展开历史中的第 <code>n</code> 个命令</td>
+</tr>
+<tr>
+<td><code>!&lt;command&gt;</code></td>
+<td>展开最近调用的命令 <code>&lt;command&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="操作-2"><a class="h-anchor" href="#操作-2">#</a>操作</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!!</code></td>
+<td>再次执行最后一条命令</td>
+</tr>
+<tr>
+<td><code>!!:s/&lt;FROM&gt;/&lt;TO&gt;/</code></td>
+<td>在最近的命令中将第一次出现的 <code>&lt;FROM&gt;</code> 替换为 <code>&lt;TO&gt;</code></td>
+</tr>
+<tr>
+<td><code>!!:gs/&lt;FROM&gt;/&lt;TO&gt;/</code></td>
+<td>在最近的命令中将所有出现的 <code>&lt;FROM&gt;</code> 替换为 <code>&lt;TO&gt;</code></td>
+</tr>
+<tr>
+<td><code>!$:t</code></td>
+<td>仅从最近命令的最后一个参数扩展基本名称</td>
+</tr>
+<tr>
+<td><code>!$:h</code></td>
+<td>仅从最近命令的最后一个参数展开目录</td>
+</tr>
+</tbody>
+</table>
+<p><code>!!</code> 和 <code>!$</code> 可以替换为任何有效的扩展。</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="切片-2"><a class="h-anchor" href="#切片-2">#</a>切片</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!!:n</code></td>
+<td>仅扩展最近命令中的第 <code>n</code> 个标记(命令为 <code>0</code>；第一个参数为 <code>1</code>)</td>
+</tr>
+<tr>
+<td><code>!^</code></td>
+<td>从最近的命令展开第一个参数</td>
+</tr>
+<tr>
+<td><code>!$</code></td>
+<td>从最近的命令中展开最后一个标记</td>
+</tr>
+<tr>
+<td><code>!!:n-m</code></td>
+<td>从最近的命令扩展令牌范围</td>
+</tr>
+<tr>
+<td><code>!!:n-$</code></td>
+<td>从最近的命令中将第 <code>n</code> 个标记展开到最后</td>
+</tr>
+</tbody>
+</table>
+<p><code>!!</code> 可以替换为任何有效的扩展，即 <code>!cat</code>、<code>!-2</code>、<code>!42</code> 等。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="信号"><a class="h-anchor" href="#信号">#</a>信号</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="常见信号"><a class="h-anchor" href="#常见信号">#</a>常见信号</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">trap</span> -l
+ 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL
+ 5) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE
+ 9) SIGKILL     10) SIGUSR1     11) SIGSEGV     12) SIGUSR2
+13) SIGPIPE     14) SIGALRM     15) SIGTERM     17) SIGCHLD
+18) SIGCONT     19) SIGSTOP     20) SIGTSTP     21) SIGTTIN
+22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO
+30) SIGPWR      31) SIGSYS      35) SIGRTMIN    36) SIGRTMIN+1
+37) SIGRTMIN+2  38) SIGRTMIN+3  39) SIGRTMIN+4  40) SIGRTMIN+5
+41) SIGRTMIN+6  42) SIGRTMIN+7  43) SIGRTMIN+8  44) SIGRTMIN+9
+45) SIGRTMIN+10 46) SIGRTMIN+11 47) SIGRTMIN+12 48) SIGRTMIN+13
+49) SIGRTMIN+14 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8
+57) SIGRTMAX-7  58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4
+61) SIGRTMAX-3  62) SIGRTMAX-2  63) SIGRTMAX-1  64) SIGRTMAX
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>信号编号</th>
+<th>信号名称                                           通知内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>HUP</td>
+<td>通知重启过程。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>INT</td>
+<td>通知中断过程。（Ctrl + c）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>QUIT</td>
+<td>通知终止过程。（创建核心）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>KILL</td>
+<td>通知强制终止的过程</td>
+</tr>
+<tr>
+<td>15</td>
+<td>TERM</td>
+<td>通知终止过程。（默认）</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="信号处理"><a class="h-anchor" href="#信号处理">#</a>信号处理</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">trap</span> <span class="hljs-string">&#x27;command&#x27;</span> 1 2 3 15
+<span class="hljs-built_in">trap</span> <span class="hljs-string">&#x27;command&#x27;</span> EXIT
+
+<span class="hljs-built_in">trap</span> <span class="hljs-string">&#x27;echo &quot;trapped.&quot;; exit 1&#x27;</span> 1 2 3 15
+<span class="hljs-built_in">trap</span> <span class="hljs-string">&#x27;&#x27;</span> 1 2 3 15   <span class="hljs-comment"># 忽略信号处理</span>
+
+<span class="hljs-keyword">function</span> egress &#123;
+  command1
+  command2
+  command3
+&#125;
+
+<span class="hljs-built_in">trap</span> egress EXIT   <span class="hljs-comment"># 使用函数</span>
+
+<span class="hljs-comment"># 处理脚本错误</span>
+<span class="hljs-built_in">trap</span> <span class="hljs-string">&#x27;echo Error at about $LINENO&#x27;</span> ERR
+
+
+<span class="hljs-function"><span class="hljs-title">traperr</span></span>() &#123;
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;ERROR: <span class="hljs-variable">$&#123;BASH_SOURCE[1]&#125;</span> at about <span class="hljs-variable">$&#123;BASH_LINENO[0]&#125;</span>&quot;</span>
+&#125;
+
+<span class="hljs-built_in">set</span> -o errtrace
+<span class="hljs-built_in">trap</span> traperr ERR
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="颜色"><a class="h-anchor" href="#颜色">#</a>颜色</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="常见颜色"><a class="h-anchor" href="#常见颜色">#</a>常见颜色</h3>
+<div class="section">
+<pre><code class="hljs language-bash">NOCOLOR=<span class="hljs-string">&#x27;\033[0m&#x27;</span>
+RED=<span class="hljs-string">&#x27;\033[0;31m&#x27;</span>
+GREEN=<span class="hljs-string">&#x27;\033[0;32m&#x27;</span>
+ORANGE=<span class="hljs-string">&#x27;\033[0;33m&#x27;</span>
+BLUE=<span class="hljs-string">&#x27;\033[0;34m&#x27;</span>
+PURPLE=<span class="hljs-string">&#x27;\033[0;35m&#x27;</span>
+CYAN=<span class="hljs-string">&#x27;\033[0;36m&#x27;</span>
+LIGHTGRAY=<span class="hljs-string">&#x27;\033[0;37m&#x27;</span>
+DARKGRAY=<span class="hljs-string">&#x27;\033[1;30m&#x27;</span>
+LIGHTRED=<span class="hljs-string">&#x27;\033[1;31m&#x27;</span>
+LIGHTGREEN=<span class="hljs-string">&#x27;\033[1;32m&#x27;</span>
+YELLOW=<span class="hljs-string">&#x27;\033[1;33m&#x27;</span>
+LIGHTBLUE=<span class="hljs-string">&#x27;\033[1;34m&#x27;</span>
+LIGHTPURPLE=<span class="hljs-string">&#x27;\033[1;35m&#x27;</span>
+LIGHTCYAN=<span class="hljs-string">&#x27;\033[1;36m&#x27;</span>
+WHITE=<span class="hljs-string">&#x27;\033[1;37m&#x27;</span>
+
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;The first five colors of the rainbow are <span class="hljs-variable">$&#123;RED&#125;</span>red <span class="hljs-variable">$&#123;ORANGE&#125;</span>orange <span class="hljs-variable">$&#123;YELLOW&#125;</span>yellow <span class="hljs-variable">$&#123;GREEN&#125;</span>green <span class="hljs-variable">$&#123;NOCOLOR&#125;</span>and <span class="hljs-variable">$&#123;BLUE&#125;</span>blue<span class="hljs-variable">$&#123;NOCOLOR&#125;</span>&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="16色"><a class="h-anchor" href="#16色">#</a>16色 </h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Foreground (text)</span>
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;Default \e[31mRed&quot;</span>
+
+<span class="hljs-comment"># Background</span>
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;Default \e[41mRed&quot;</span>
+
+<span class="hljs-keyword">for</span> clbg <span class="hljs-keyword">in</span> &#123;40..47&#125; &#123;100..107&#125; 49 ; <span class="hljs-keyword">do</span>
+    <span class="hljs-comment">#Foreground</span>
+    <span class="hljs-keyword">for</span> clfg <span class="hljs-keyword">in</span> &#123;30..37&#125; &#123;90..97&#125; 39 ; <span class="hljs-keyword">do</span>
+        <span class="hljs-comment">#Formatting</span>
+        <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> 0 1 2 4 5 7 ; <span class="hljs-keyword">do</span>
+            <span class="hljs-comment">#Print the result</span>
+            <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[<span class="hljs-variable">$&#123;attr&#125;</span>;<span class="hljs-variable">$&#123;clbg&#125;</span>;<span class="hljs-variable">$&#123;clfg&#125;</span>m ^[<span class="hljs-variable">$&#123;attr&#125;</span>;<span class="hljs-variable">$&#123;clbg&#125;</span>;<span class="hljs-variable">$&#123;clfg&#125;</span>m \e[0m&quot;</span>
+        <span class="hljs-keyword">done</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-comment">#Newline</span>
+    <span class="hljs-keyword">done</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="tput-颜色"><a class="h-anchor" href="#tput-颜色">#</a>tput 颜色</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">export</span> TERM=xterm
+<span class="hljs-comment">#　tput Color Capabilities:</span>
+tput setab [1-7] – Set a background color using ANSI escape
+tput setb [1-7] – Set a background color
+tput setaf [1-7] – Set a foreground color using ANSI escape
+tput setf [1-7] – Set a foreground color
+
+<span class="hljs-comment">#　tput Text Mode Capabilities:</span>
+tput bold – Set bold mode
+tput dim – turn on half-bright mode
+tput smul – begin underline mode
+tput rmul – <span class="hljs-built_in">exit</span> underline mode
+tput rev – Turn on reverse mode
+tput smso – Enter standout mode (bold on rxvt)
+tput rmso – Exit standout mode
+tput sgr0 – Turn off all attributes
+
+<span class="hljs-comment">#　Color Code for tput:</span>
+0 – Black   1 – Red      2 – Green   3 – Yellow
+4 – Blue    5 – Magenta  6 – Cyan    7 – White
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="256色"><a class="h-anchor" href="#256色">#</a>256色</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Foreground (text)</span>
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\e[38;5;82mHello \e[38;5;198mWorld&quot;</span>
+
+<span class="hljs-comment"># Background</span>
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\e[40;38;5;82mHello \e[30;48;5;82m World \e[0m&quot;</span>
+
+<span class="hljs-keyword">for</span> clbg <span class="hljs-keyword">in</span> &#123;40..47&#125; &#123;100..107&#125; 49 ; <span class="hljs-keyword">do</span>
+    <span class="hljs-comment">#Foreground</span>
+    <span class="hljs-keyword">for</span> clfg <span class="hljs-keyword">in</span> &#123;30..37&#125; &#123;90..97&#125; 39 ; <span class="hljs-keyword">do</span>
+        <span class="hljs-comment">#Formatting</span>
+        <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> 0 1 2 4 5 7 ; <span class="hljs-keyword">do</span>
+            <span class="hljs-comment">#Print the result</span>
+            <span class="hljs-built_in">echo</span> -en <span class="hljs-string">&quot;\e[<span class="hljs-variable">$&#123;attr&#125;</span>;<span class="hljs-variable">$&#123;clbg&#125;</span>;<span class="hljs-variable">$&#123;clfg&#125;</span>m ^[<span class="hljs-variable">$&#123;attr&#125;</span>;<span class="hljs-variable">$&#123;clbg&#125;</span>;<span class="hljs-variable">$&#123;clfg&#125;</span>m \e[0m&quot;</span>
+        <span class="hljs-keyword">done</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-comment">#Newline</span>
+    <span class="hljs-keyword">done</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="其他"><a class="h-anchor" href="#其他">#</a>其他</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2 col-span-2">
+<h3 id="重定向"><a class="h-anchor" href="#重定向">#</a>重定向</h3>
+<div class="section">
+<pre><code class="hljs language-bash">cmd1|cmd2   <span class="hljs-comment"># pipe;将cmd1的标准输出作为cmd2的标准输入</span>
+&lt;file       <span class="hljs-comment"># 从文件中获取标准输入</span>
+&gt;file       <span class="hljs-comment"># 将标准输出定向到文件</span>
+&gt;&gt;file      <span class="hljs-comment"># 将标准输出定向到文件;如果文件已经存在，则附加到文件</span>
+&gt;|file      <span class="hljs-comment"># 强制标准输出到文件，即使设置了noclobber也是如此</span>
+n&gt;|file     <span class="hljs-comment"># 强制从文件描述符n输出到文件，即使设置了noclobber也是如此</span>
+&lt;&gt;file      <span class="hljs-comment"># 使用file作为标准输入和标准输出</span>
+n&lt;&gt;file     <span class="hljs-comment"># 使用file作为文件描述符n的输入和输出</span>
+n&gt;file      <span class="hljs-comment"># 将文件描述符n指向文件</span>
+n&lt;file      <span class="hljs-comment"># 从文件中获取文件描述符n</span>
+n&gt;&gt;file     <span class="hljs-comment"># 将文件描述n指向文件;如果文件已经存在,则附加到文件</span>
+n&gt;&amp;         <span class="hljs-comment"># 将标准输出复制到文件描述符n</span>
+n&lt;&amp;         <span class="hljs-comment"># 复制文件描述符n的标准输入</span>
+n&gt;&amp;m        <span class="hljs-comment"># 文件描述符n是输出文件描述符的副本</span>
+n&lt;&amp;m        <span class="hljs-comment"># 文件描述符n是输入文件描述符的副本</span>
+&amp;&gt;file      <span class="hljs-comment"># 将标准输出和标准错误指向文件</span>
+&lt;&amp;-         <span class="hljs-comment"># 关闭标准输入</span>
+&gt;&amp;-         <span class="hljs-comment"># 关闭标准输出</span>
+n&gt;&amp;-        <span class="hljs-comment"># 关闭文件描述符n的输出</span>
+n&lt;&amp;-        <span class="hljs-comment"># 关闭文件描述符n的输入</span>
+
+<span class="hljs-comment"># 追加内容到文件</span>
+<span class="hljs-built_in">cat</span> &gt;&gt; a.log &lt;&lt;<span class="hljs-string">EOF
+123
+EOF</span>
+
+<span class="hljs-comment"># 将标准错误重定向到标准输出</span>
+<span class="hljs-built_in">nohup</span> <span class="hljs-built_in">command</span> &gt; myout.file 2&gt;&amp;1 &amp;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="数值计算"><a class="h-anchor" href="#数值计算">#</a>数值计算</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 第一种：$[]</span>
+<span class="hljs-comment"># 第二种：$(())</span>
+<span class="hljs-comment"># 第三种: expr</span>
+<span class="hljs-comment"># 第四种：let</span>
+
+((i=<span class="hljs-variable">$j</span>+<span class="hljs-variable">$k</span>))     等价于   i=`<span class="hljs-built_in">expr</span> <span class="hljs-variable">$j</span> + <span class="hljs-variable">$k</span>`
+((i=<span class="hljs-variable">$j</span>-<span class="hljs-variable">$k</span>))     等价于   i=`<span class="hljs-built_in">expr</span> <span class="hljs-variable">$j</span> -<span class="hljs-variable">$k</span>`
+((i=<span class="hljs-variable">$j</span>*<span class="hljs-variable">$k</span>))     等价于   i=`<span class="hljs-built_in">expr</span> <span class="hljs-variable">$j</span> \*<span class="hljs-variable">$k</span>`
+((i=<span class="hljs-variable">$j</span>/<span class="hljs-variable">$k</span>))     等价于   i=`<span class="hljs-built_in">expr</span> <span class="hljs-variable">$j</span> /<span class="hljs-variable">$k</span>`
+
++：加法
+-：减法
+*：乘法
+/：除法（整除）
+%：余数
+**：指数
+++：自增运算（前缀或后缀）
+--：自减运算（前缀或后缀）
+
+
+$((a + <span class="hljs-number">200</span>))      <span class="hljs-comment"># $a + 200</span>
+$((<span class="hljs-variable">$RANDOM</span>%<span class="hljs-number">200</span>))  <span class="hljs-comment"># 0..199 之间的随机数</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="子shell"><a class="h-anchor" href="#子shell">#</a>子shell</h3>
+<div class="section">
+<pre><code class="hljs language-bash">(<span class="hljs-built_in">cd</span> somedir; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I&#x27;m now in <span class="hljs-variable">$PWD</span>&quot;</span>)
+<span class="hljs-built_in">pwd</span> <span class="hljs-comment"># still in first directory</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="检查命令"><a class="h-anchor" href="#检查命令">#</a>检查命令</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">command</span> -V <span class="hljs-built_in">cd</span>
+<span class="hljs-comment">#=&gt; &quot;cd is a function/alias/whatever&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="source"><a class="h-anchor" href="#source">#</a>Source</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">source</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;0%/*&#125;</span>/../share/foo.sh&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="脚本目录"><a class="h-anchor" href="#脚本目录">#</a>脚本目录</h3>
+<div class="section">
+<pre><code class="hljs language-bash">DIR=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;0%/*&#125;</span>&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="printf"><a class="h-anchor" href="#printf">#</a>printf</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;Hello %s, I&#x27;m %s&quot;</span> Sven Olga
+<span class="hljs-comment">#=&gt; &quot;Hello Sven, I&#x27;m Olga</span>
+
+<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;1 + 1 = %d&quot;</span> 2
+<span class="hljs-comment">#=&gt; &quot;1 + 1 = 2&quot;</span>
+
+<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;Print a float: %f&quot;</span> 2
+<span class="hljs-comment">#=&gt; &quot;Print a float: 2.000000&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="反斜杠转义"><a class="h-anchor" href="#反斜杠转义">#</a>反斜杠转义</h3>
+<div class="section">
+<ul class="cols-4 marker-none">
+<li> </li>
+<li>!</li>
+<li>&quot;</li>
+<li>#</li>
+<li>&amp;</li>
+<li>'</li>
+<li>(</li>
+<li>)</li>
+<li>,</li>
+<li>;</li>
+<li>&lt;</li>
+<li>&gt;</li>
+<li>[</li>
+<li>|</li>
+<li>\</li>
+<li>]</li>
+<li>^</li>
+<li>{</li>
+<li>}</li>
+<li>`</li>
+<li>$</li>
+<li>*</li>
+<li>?</li>
+</ul>
+<p>使用 <code>\</code> 转义这些特殊字符</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="可选参数"><a class="h-anchor" href="#可选参数">#</a>可选参数</h3>
+<div class="section">
+<pre><code class="hljs language-bash">args=(<span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>)
+args+=(foo)
+args+=(bar)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;args[@]&#125;</span>&quot;</span>
+</code></pre>
+<p>将参数放入数组中，然后追加</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="转到上一个目录"><a class="h-anchor" href="#转到上一个目录">#</a>转到上一个目录</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">pwd</span> <span class="hljs-comment"># /home/user/foo</span>
+<span class="hljs-built_in">cd</span> bar/
+<span class="hljs-built_in">pwd</span> <span class="hljs-comment"># /home/user/foo/bar</span>
+<span class="hljs-built_in">cd</span> -
+<span class="hljs-built_in">pwd</span> <span class="hljs-comment"># /home/user/foo</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="读取输入"><a class="h-anchor" href="#读取输入">#</a>读取输入</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;Proceed? [y/n]: &quot;</span>
+<span class="hljs-built_in">read</span> ans
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$ans</span>
+</code></pre>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">read</span> -n 1 ans    <span class="hljs-comment"># 读取一个字符</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="条件执行"><a class="h-anchor" href="#条件执行">#</a>条件执行</h3>
+<div class="section">
+<pre><code class="hljs language-bash">git commit &amp;&amp; git push
+git commit || <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Commit failed&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="严格模式"><a class="h-anchor" href="#严格模式">#</a>严格模式</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">set</span> -euo pipefail
+IFS=$<span class="hljs-string">&#x27;\n\t&#x27;</span>
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://redsymbol.net/articles/unofficial-bash-strict-mode/">Unofficial bash strict mode</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="heredoc"><a class="h-anchor" href="#heredoc">#</a>Heredoc</h3>
+<div class="section">
+<pre><code class="hljs language-sh"><span class="hljs-built_in">cat</span> &lt;&lt;<span class="hljs-string">END
+hello world
+END</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://devhints.io/bash">Devhints</a> <em>(devhints.io)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.bash-hackers.org/">Bash-hackers wiki</a> <em>(bash-hackers.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.bash-hackers.org/syntax/shellvars">Shell vars</a> <em>(bash-hackers.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://learnxinyminutes.com/docs/bash/">Learn bash in y minutes</a> <em>(learnxinyminutes.com)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://mywiki.wooledge.org/BashGuide">Bash Guide</a> <em>(mywiki.wooledge.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.shellcheck.net/">ShellCheck</a> <em>(shellcheck.net)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://devmanual.gentoo.org/tools-reference/bash/index.html">shell - Standard Shell</a> <em>(devmanual.gentoo.org)</em></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Top <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/python.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Python <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/vim.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Vim <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/javascript.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/quickref.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">QuickRef <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/mirrors.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">常见软件镜像 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer><div id="carbon_container"></div></body><script src="/js/main.js?_v=1670148321183"></script></html>
