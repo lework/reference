@@ -1,0 +1,21 @@
+<section class="text-slate-800 max-container">
+    <div class=" mx-auto flex py-12 items-center justify-center flex-col">
+        <span class="inline-block h-1 w-10 rounded-full bg-emerald-500 mt-8 mb-6"></span>
+        <div class="text-center lg:w-2/3 w-full">
+            <h3 class="sm:text-4xl text-3xl mb-4 font-medium text-slate-800 dark:text-slate-300">有什么东西缺失了?</h3>
+            <p class="mb-8 leading-relaxed dark:text-slate-300">
+              以上列表中没有看到你想要的东西？你是否在寻找一些速查表或参考资料，或者你有一些片段的速查表来分享，这是一个最好的机会!
+            </p>
+            <div class="flex flex-col md:flex-row justify-center">
+                <a href="<%- request_cheatsheet() %>"
+                   class="inline-flex text-slate-50 dark:text-slate-300 bg-emerald-500 dark:bg-opacity-80 self-center md:self-auto border-0 py-2 px-6 focus:outline-none hover:shadow-xl hover:bg-emerald-600 rounded-full text-lg fadeIn">
+                   申请速查表
+                </a>
+                <a href="<%- contributing() %>"
+                   class="mt-6 md:mt-0 md:ml-4 inline-flex text-slate-700 dark:text-slate-300 bg-slate-300 dark:bg-slate-800 self-center md:self-auto  border-0 py-2 px-6 focus:outline-none hover:shadow-xl hover:bg-slate-400 rounded-full text-lg fadeIn">
+                   我也有一个
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
