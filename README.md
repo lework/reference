@@ -10,7 +10,7 @@
 
 专为运维人员而分享的速查表(备忘单)，目的是为了方便运维小伙伴在日常工作中查阅。
 
-很高兴在**备忘单""中看到你的最佳技能速查表，如果您看到这里的速查表不合适，您可以通过提交[PR](#contributing)来修复它或提供更好的速查表。
+很高兴在**备忘单**中看到你的最佳技能速查表，如果您看到这里的速查表不合适，您可以通过提交[PR](#contributing)来修复它或提供更好的速查表。
 
 本仓库由 [Reference](https://github.com/Fechin/reference) 而来。在此感谢 [Fechin](https://github.com/Fechin)。
 
@@ -46,7 +46,7 @@
 
 感谢你对备忘单的贡献，正是你这样的人使[quickref.leops.cn](https://quickref.leops.cn)成为一个了不起的网站🎉。请随时[提交问题](https://github.com/lework/reference/issues/new?assignee=leops)和改进请求。
 
-**参考[QuickRef Cheatsheet](https://quickref.leops.cn/quickref)**的速查表是个不错的做法
+**参考[QuickRef Cheatsheet](https://quickref.leops.cn/quickref)** 的速查表是个不错的做法
 
 ### Development setup
 
