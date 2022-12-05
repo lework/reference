@@ -1,0 +1,804 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>常见公共服务 Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,dns,ip,ntp"><meta name="description" content="用于系统设置的常见公共服务。 "><meta property="og:url" content="https://quickref.leops.cn/public.html"><meta property="og:title" content="常见公共服务 Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="用于系统设置的常见公共服务。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=442mzi"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="常见公共服务 Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="用于系统设置的常见公共服务。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=jz7b1"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/public.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1670211847042"><link rel="stylesheet" href="/css/style.css?_v=1670211847042"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/public.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">常见公共服务</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>用于系统设置的常见公共服务。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="ip地址"><a class="h-anchor" href="#ip地址">#</a>IP地址</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2 row-span-2">
+<h3 id="ip-地址分类"><a class="h-anchor" href="#ip-地址分类">#</a>IP 地址分类</h3>
+<div class="section">
+<table class="show-header">
+<thead>
+<tr>
+<th>类别</th>
+<th>最大网络数</th>
+<th>IP地址范围</th>
+<th>单个网段最大主机数</th>
+<th>私有IP地址范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>126(2^7-2)</td>
+<td>1.0.0.1-127.255.255.254</td>
+<td>16777214</td>
+<td>10.0.0.0-10.255.255.255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>16384(2^14)</td>
+<td>128.0.0.1-191.255.255.254</td>
+<td>65534</td>
+<td>172.16.0.0-172.31.255.255</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2097152(2^21)</td>
+<td>192.0.0.1-223.255.255.254</td>
+<td>254</td>
+<td>192.168.0.0-192.168.255.255</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="hljs">
+<span class="hljs-attribute">D</span>类：是多播地址。该类IP地址的最前面为 <span class="hljs-number">1110</span>，所以地址的网络号取值于<span class="hljs-number">224</span>~<span class="hljs-number">239</span>之间。一般用于多路广播用户。
+
+<span class="hljs-attribute">E</span>类：是保留地址。该类IP地址的最前面为 <span class="hljs-number">1111</span>，所以地址的网络号取值于<span class="hljs-number">240</span>~<span class="hljs-number">255</span>之间。
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="公网-ip-地址检测"><a class="h-anchor" href="#公网-ip-地址检测">#</a>公网 IP 地址检测</h3>
+<div class="section">
+<pre><code class="hljs language-bash">curl ip.sb
+curl cip.cc
+curl https://icanhazip.com/
+curl http://checkip.amazonaws.com/
+curl https://ip.hellobike.com/service/getIpInfo
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="ip-地址库"><a class="h-anchor" href="#ip-地址库">#</a>IP 地址库</h3>
+<div class="section">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://ip.taobao.com">http://ip.taobao.com</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.ipip.net/">https://www.ipip.net/</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.cz88.net/ip/">http://www.cz88.net/ip/</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.maxmind.com/en/geoip2-databases">https://www.maxmind.com/en/geoip2-databases</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="dns"><a class="h-anchor" href="#dns">#</a>Dns</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="ipv4-dns"><a class="h-anchor" href="#ipv4-dns">#</a>IPv4 DNS </h3>
+<div class="section">
+<h4 id="公共-dns-服务器-ip-地址"><a class="h-anchor" href="#公共-dns-服务器-ip-地址">#</a>公共 DNS 服务器 IP 地址</h4>
+<table class="show-header">
+<thead>
+<tr>
+<th style="text-align:left">服务商</th>
+<th style="text-align:left">主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">114 DNS</td>
+<td style="text-align:left">114.114.114.114</td>
+<td>114.114.115.115</td>
+</tr>
+<tr>
+<td style="text-align:left">阿里 AliDNS</td>
+<td style="text-align:left">223.5.5.5</td>
+<td>223.6.6.6</td>
+</tr>
+<tr>
+<td style="text-align:left">百度 BaiduDNS</td>
+<td style="text-align:left">180.76.76.76</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">DNSPod DNS+</td>
+<td style="text-align:left">119.29.29.29</td>
+<td>182.254.116.116</td>
+</tr>
+<tr>
+<td style="text-align:left">CNNIC SDNS</td>
+<td style="text-align:left">1.2.4.8</td>
+<td>210.2.4.8</td>
+</tr>
+<tr>
+<td style="text-align:left">oneDNS</td>
+<td style="text-align:left">117.50.11.11</td>
+<td>52.80.66.66</td>
+</tr>
+<tr>
+<td style="text-align:left">DNS 派 电信/移动/铁通</td>
+<td style="text-align:left">101.226.4.6</td>
+<td>218.30.118.6</td>
+</tr>
+<tr>
+<td style="text-align:left">DNS 派 联通</td>
+<td style="text-align:left">123.125.81.6</td>
+<td>140.207.198.6</td>
+</tr>
+<tr>
+<td style="text-align:left">Cloudflare DNS</td>
+<td style="text-align:left">1.1.1.1</td>
+<td>1.0.0.1</td>
+</tr>
+<tr>
+<td style="text-align:left">Google DNS</td>
+<td style="text-align:left">8.8.8.8</td>
+<td>8.8.4.4</td>
+</tr>
+<tr>
+<td style="text-align:left">IBM Quad9</td>
+<td style="text-align:left">9.9.9.9</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">DNS.SB</td>
+<td style="text-align:left">185.222.222.222</td>
+<td>185.184.222.222</td>
+</tr>
+<tr>
+<td style="text-align:left">OpenDNS</td>
+<td style="text-align:left">208.67.222.222</td>
+<td>208.67.220.220</td>
+</tr>
+</tbody>
+</table>
+<h4 id="全国各地电信-dns-服务器-ip-地址"><a class="h-anchor" href="#全国各地电信-dns-服务器-ip-地址">#</a>全国各地电信 DNS 服务器 IP 地址</h4>
+<table class="show-header">
+<thead>
+<tr>
+<th style="text-align:left">服务商</th>
+<th style="text-align:left">主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">安徽电信 DNS</td>
+<td style="text-align:left">61.132.163.68</td>
+<td>202.102.213.68</td>
+</tr>
+<tr>
+<td style="text-align:left">北京电信 DNS</td>
+<td style="text-align:left">219.141.136.10</td>
+<td>219.141.140.10</td>
+</tr>
+<tr>
+<td style="text-align:left">重庆电信 DNS</td>
+<td style="text-align:left">61.128.192.68</td>
+<td>61.128.128.68</td>
+</tr>
+<tr>
+<td style="text-align:left">福建电信 DNS</td>
+<td style="text-align:left">218.85.152.99</td>
+<td>218.85.157.99</td>
+</tr>
+<tr>
+<td style="text-align:left">甘肃电信 DNS</td>
+<td style="text-align:left">202.100.64.68</td>
+<td>61.178.0.93</td>
+</tr>
+<tr>
+<td style="text-align:left">广东电信 DNS</td>
+<td style="text-align:left">202.96.128.86</td>
+<td>202.96.128.166</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">202.96.134.33</td>
+<td>202.96.128.68</td>
+</tr>
+<tr>
+<td style="text-align:left">广西电信 DNS</td>
+<td style="text-align:left">202.103.225.68</td>
+<td>202.103.224.68</td>
+</tr>
+<tr>
+<td style="text-align:left">贵州电信 DNS</td>
+<td style="text-align:left">202.98.192.67</td>
+<td>202.98.198.167</td>
+</tr>
+<tr>
+<td style="text-align:left">河南电信 DNS</td>
+<td style="text-align:left">222.88.88.88</td>
+<td>222.85.85.85</td>
+</tr>
+<tr>
+<td style="text-align:left">黑龙江电信</td>
+<td style="text-align:left">219.147.198.230</td>
+<td>219.147.198.242</td>
+</tr>
+<tr>
+<td style="text-align:left">湖北电信 DNS</td>
+<td style="text-align:left">202.103.24.68</td>
+<td>202.103.0.68</td>
+</tr>
+<tr>
+<td style="text-align:left">湖南电信 DNS</td>
+<td style="text-align:left">222.246.129.80</td>
+<td>59.51.78.211</td>
+</tr>
+<tr>
+<td style="text-align:left">江苏电信 DNS</td>
+<td style="text-align:left">218.2.2.2</td>
+<td>218.4.4.4</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">61.147.37.1</td>
+<td>218.2.135.1</td>
+</tr>
+<tr>
+<td style="text-align:left">江西电信 DNS</td>
+<td style="text-align:left">202.101.224.69</td>
+<td>202.101.226.68</td>
+</tr>
+<tr>
+<td style="text-align:left">内蒙古电信</td>
+<td style="text-align:left">219.148.162.31</td>
+<td>222.74.39.50</td>
+</tr>
+<tr>
+<td style="text-align:left">山东电信 DNS</td>
+<td style="text-align:left">219.146.1.66</td>
+<td>219.147.1.66</td>
+</tr>
+<tr>
+<td style="text-align:left">陕西电信 DNS</td>
+<td style="text-align:left">218.30.19.40</td>
+<td>61.134.1.4</td>
+</tr>
+<tr>
+<td style="text-align:left">上海电信 DNS</td>
+<td style="text-align:left">202.96.209.133</td>
+<td>116.228.111.118</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">202.96.209.5</td>
+<td>180.168.255.118</td>
+</tr>
+<tr>
+<td style="text-align:left">四川电信 DNS</td>
+<td style="text-align:left">61.139.2.69</td>
+<td>218.6.200.139</td>
+</tr>
+<tr>
+<td style="text-align:left">天津电信 DNS</td>
+<td style="text-align:left">219.150.32.132</td>
+<td>219.146.0.132</td>
+</tr>
+<tr>
+<td style="text-align:left">云南电信 DNS</td>
+<td style="text-align:left">222.172.200.68</td>
+<td>61.166.150.123</td>
+</tr>
+<tr>
+<td style="text-align:left">浙江电信 DNS</td>
+<td style="text-align:left">202.101.172.35</td>
+<td>61.153.177.196</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">61.153.81.75</td>
+<td>60.191.244.5</td>
+</tr>
+</tbody>
+</table>
+<h4 id="全国各地联通-dns-服务器-ip-地址"><a class="h-anchor" href="#全国各地联通-dns-服务器-ip-地址">#</a>全国各地联通 DNS 服务器 IP 地址</h4>
+<table class="show-header">
+<thead>
+<tr>
+<th style="text-align:left">服务商</th>
+<th style="text-align:left">主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">北京联通 DNS</td>
+<td style="text-align:left">123.123.123.123</td>
+<td>123.123.123.124</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">202.106.0.20</td>
+<td>202.106.195.68</td>
+</tr>
+<tr>
+<td style="text-align:left">重庆联通 DNS</td>
+<td style="text-align:left">221.5.203.98</td>
+<td>221.7.92.98</td>
+</tr>
+<tr>
+<td style="text-align:left">广东联通 DNS</td>
+<td style="text-align:left">210.21.196.6</td>
+<td>221.5.88.88</td>
+</tr>
+<tr>
+<td style="text-align:left">河北联通 DNS</td>
+<td style="text-align:left">202.99.160.68</td>
+<td>202.99.166.4</td>
+</tr>
+<tr>
+<td style="text-align:left">河南联通 DNS</td>
+<td style="text-align:left">202.102.224.68</td>
+<td>202.102.227.68</td>
+</tr>
+<tr>
+<td style="text-align:left">黑龙江联通</td>
+<td style="text-align:left">202.97.224.69</td>
+<td>202.97.224.68</td>
+</tr>
+<tr>
+<td style="text-align:left">吉林联通 DNS</td>
+<td style="text-align:left">202.98.0.68</td>
+<td>202.98.5.68</td>
+</tr>
+<tr>
+<td style="text-align:left">江苏联通 DNS</td>
+<td style="text-align:left">221.6.4.66</td>
+<td>221.6.4.67</td>
+</tr>
+<tr>
+<td style="text-align:left">内蒙古联通</td>
+<td style="text-align:left">202.99.224.68</td>
+<td>202.99.224.8</td>
+</tr>
+<tr>
+<td style="text-align:left">山东联通 DNS</td>
+<td style="text-align:left">202.102.128.68</td>
+<td>202.102.152.3</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">202.102.134.68</td>
+<td>202.102.154.3</td>
+</tr>
+<tr>
+<td style="text-align:left">山西联通 DNS</td>
+<td style="text-align:left">202.99.192.66</td>
+<td>202.99.192.68</td>
+</tr>
+<tr>
+<td style="text-align:left">陕西联通 DNS</td>
+<td style="text-align:left">221.11.1.67</td>
+<td>221.11.1.68</td>
+</tr>
+<tr>
+<td style="text-align:left">上海联通 DNS</td>
+<td style="text-align:left">210.22.70.3</td>
+<td>210.22.84.3</td>
+</tr>
+<tr>
+<td style="text-align:left">四川联通 DNS</td>
+<td style="text-align:left">119.6.6.6</td>
+<td>124.161.87.155</td>
+</tr>
+<tr>
+<td style="text-align:left">天津联通 DNS</td>
+<td style="text-align:left">202.99.104.68</td>
+<td>202.99.96.68</td>
+</tr>
+<tr>
+<td style="text-align:left">浙江联通 DNS</td>
+<td style="text-align:left">221.12.1.227</td>
+<td>221.12.33.227</td>
+</tr>
+<tr>
+<td style="text-align:left">辽宁联通 DNS</td>
+<td style="text-align:left">202.96.69.38</td>
+<td>202.96.64.68</td>
+</tr>
+</tbody>
+</table>
+<h4 id="全国各地移动-dns-服务器-ip-地址"><a class="h-anchor" href="#全国各地移动-dns-服务器-ip-地址">#</a>全国各地移动 DNS 服务器 IP 地址</h4>
+<table class="show-header">
+<thead>
+<tr>
+<th style="text-align:left">服务商</th>
+<th style="text-align:left">主 IP 地址</th>
+<th>备用  IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">江苏移动 DNS</td>
+<td style="text-align:left">221.131.143.69</td>
+<td>112.4.0.55</td>
+</tr>
+<tr>
+<td style="text-align:left">安徽移动 DNS</td>
+<td style="text-align:left">211.138.180.2</td>
+<td>211.138.180.3</td>
+</tr>
+<tr>
+<td style="text-align:left">山东移动 DNS</td>
+<td style="text-align:left">218.201.96.130</td>
+<td>211.137.191.26</td>
+</tr>
+<tr>
+<td style="text-align:left" colspan="3"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="配置"><a class="h-anchor" href="#配置">#</a>配置</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">cp</span> /etc/resolv.conf&#123;,-bak&#125;
+<span class="hljs-built_in">cat</span> &gt; /etc/resolv.conf &lt;&lt;<span class="hljs-string">EOF
+nameserver 223.5.5.5
+nameserver 223.6.6.6
+EOF</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="ipv6-dns"><a class="h-anchor" href="#ipv6-dns">#</a>IPv6 DNS </h3>
+<div class="section">
+<h4 id="国内公共-ipv6-dns-服务器-ip-地址"><a class="h-anchor" href="#国内公共-ipv6-dns-服务器-ip-地址">#</a>国内公共 IPv6 DNS 服务器 IP 地址</h4>
+<table class="show-header">
+<thead>
+<tr>
+<th>服务商</th>
+<th>主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阿里 Alidns</td>
+<td>2400:3200::1</td>
+<td>2400:3200:baba::1</td>
+</tr>
+<tr>
+<td>百度 DNS</td>
+<td>2400:da00::6666</td>
+<td></td>
+</tr>
+<tr>
+<td>中国电信</td>
+<td>240e:4c:4008::1</td>
+<td>240e:4c:4808::1</td>
+</tr>
+<tr>
+<td>下一代互联网北京研究中心</td>
+<td>240C::6666</td>
+<td>240C::6644</td>
+</tr>
+<tr>
+<td>CNNIC IPv6 DNS</td>
+<td>2001:dc7:1000::1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="国内教育网-ipv6-dns-服务器-ip-地址"><a class="h-anchor" href="#国内教育网-ipv6-dns-服务器-ip-地址">#</a>国内教育网 IPv6 DNS 服务器 IP 地址</h4>
+<table class="show-header">
+<thead>
+<tr>
+<th>服务商</th>
+<th>主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北京邮电大学</td>
+<td>2001:da8:202:10::36</td>
+<td>2001:da8:202:10::37</td>
+</tr>
+<tr>
+<td>上海交通大学</td>
+<td>2001:da8:8000:1:202:120:2:100</td>
+<td>2001:da8:8000:1:202:120:2:101</td>
+</tr>
+<tr>
+<td>中科院网络信息中心</td>
+<td>2001:cc0:2fff:1::6666</td>
+<td></td>
+</tr>
+<tr>
+<td>北京交通大学</td>
+<td>2001:da8:205:2060::188</td>
+<td></td>
+</tr>
+<tr>
+<td>清华大学</td>
+<td>2001:da8:ff:305:20c:29ff:fe1f:a92a</td>
+<td></td>
+</tr>
+<tr>
+<td>清华大学 TUNA 协会</td>
+<td>2001:da8::666</td>
+<td></td>
+</tr>
+<tr>
+<td>北京科技大学</td>
+<td>2001:da8:208:10::6</td>
+<td></td>
+</tr>
+<tr>
+<td>科技网</td>
+<td>2001:cc0:2fff:2::6</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="国外知名公共-ipv6-dns-服务器-ip-地址"><a class="h-anchor" href="#国外知名公共-ipv6-dns-服务器-ip-地址">#</a>国外知名公共 IPv6 DNS 服务器 IP 地址</h4>
+<table class="show-header">
+<thead>
+<tr>
+<th>服务商</th>
+<th>主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google</td>
+<td>2001:4860:4860::8888</td>
+<td>2001:4860:4860::8844</td>
+</tr>
+<tr>
+<td>Cloudflare</td>
+<td>2606:4700:4700::1111</td>
+<td>2606:4700:4700::1001</td>
+</tr>
+<tr>
+<td>OpenDNS</td>
+<td>2620:0:ccc::2</td>
+<td>2620:0:ccd::2</td>
+</tr>
+<tr>
+<td>Quad9</td>
+<td>2620:fe::fe</td>
+<td>2620:fe::9</td>
+</tr>
+<tr>
+<td>Neustar</td>
+<td>2610:a1:1018::1</td>
+<td>2610:a1:1019::1</td>
+</tr>
+<tr>
+<td></td>
+<td>2610:a1:1018::5</td>
+<td>2610:a1:1019::1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="dns-over-tls"><a class="h-anchor" href="#dns-over-tls">#</a>DNS OVER TLS</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="ipv4-dns-2"><a class="h-anchor" href="#ipv4-dns-2">#</a>ipv4 DNS </h3>
+<div class="section">
+<table class="show-header">
+<thead>
+<tr>
+<th>服务商</th>
+<th>主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dns.sb</td>
+<td>185.222.222.222@853</td>
+<td>185.184.222.222@853</td>
+</tr>
+<tr>
+<td>Quad9</td>
+<td>9.9.9.9@853</td>
+<td>9.9.9.10@853</td>
+</tr>
+<tr>
+<td>Cloudflare</td>
+<td>1.1.1.1@853</td>
+<td>1.0.0.1@853</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>8.8.8.8@853</td>
+<td>8.8.4.4@853</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="ipv6-dns-2"><a class="h-anchor" href="#ipv6-dns-2">#</a>ipv6 DNS </h3>
+<div class="section">
+<table class="show-header">
+<thead>
+<tr>
+<th>服务商</th>
+<th>主 IP 地址</th>
+<th>备用 IP 地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dns.sb</td>
+<td>2a09::@853</td>
+<td>2a09::1@853</td>
+</tr>
+<tr>
+<td>Quad9</td>
+<td>2620:fe::fe@853</td>
+<td>2620:fe::10@853</td>
+</tr>
+<tr>
+<td>Cloudflare</td>
+<td>2606:4700:4700::1111</td>
+<td>2606:4700:4700::1001</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>2001:4860:4860::8888</td>
+<td>2001:4860:4860::8844</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="dns-over-https"><a class="h-anchor" href="#dns-over-https">#</a>DNS OVER HTTPS</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-3">
+<h3 id="https"><a class="h-anchor" href="#https">#</a>HTTPS</h3>
+<div class="section">
+<table class="show-header">
+<thead>
+<tr>
+<th>服务商</th>
+<th>HTTPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dns.sb</td>
+<td>https://doh.dns.sb/dns-query</td>
+</tr>
+<tr>
+<td>Quad9</td>
+<td>https://dns.quad9.net/dns-query</td>
+</tr>
+<tr>
+<td>Cloudflare</td>
+<td>https://cloudflare-dns.com/dns-query https://1.1.1.1/dns-query</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>https://dns.google/dns-query</td>
+</tr>
+<tr>
+<td>alidns</td>
+<td>https://dns.alidns.com/dns-query</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="hljs language-bash">curl -H <span class="hljs-string">&#x27;accept: application/dns-json&#x27;</span> <span class="hljs-string">&#x27;https://cloudflare-dns.com/dns-query?name=baidu.com&amp;type=AAAA&#x27;</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="ntp"><a class="h-anchor" href="#ntp">#</a>NTP</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2 row-span-2">
+<h3 id="国内知名公共-ntp-服务器地址"><a class="h-anchor" href="#国内知名公共-ntp-服务器地址">#</a>国内知名公共 NTP 服务器地址</h3>
+<div class="section">
+<table class="show-header">
+<thead>
+<tr>
+<th>服务商</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国家授时中心</td>
+<td>ntp.ntsc.ac.cn</td>
+</tr>
+<tr>
+<td>中国 NTP 快速授时服务</td>
+<td>cn.ntp.org.cn</td>
+</tr>
+<tr>
+<td>教育网</td>
+<td>edu.ntp.org.cn</td>
+</tr>
+<tr>
+<td>教育网（高校自建）</td>
+<td>ntp.sjtu.edu.cn<br>ntp.neu.edu.cn<br>ntp.bupt.edu.cn<br>ntp.shu.edu.cn</td>
+</tr>
+<tr>
+<td>国际 NTP 快速授时服务</td>
+<td>cn.pool.ntp.org</td>
+</tr>
+<tr>
+<td>阿里云</td>
+<td>time.pool.aliyun.com(windows)<br>time1-7.aliyun.com(unix)</td>
+</tr>
+<tr>
+<td>腾讯云</td>
+<td>time1-5.cloud.tencent.com</td>
+</tr>
+<tr>
+<td>苹果</td>
+<td>time1-7.apple.com</td>
+</tr>
+<tr>
+<td>亚洲 NTP 地址</td>
+<td>0.cn.pool.ntp.org<br>1.cn.pool.ntp.org<br>0.asia.pool.ntp.org<br>1.asia.pool.ntp.org<br>0.centos.pool.ntp.org<br>1.centos.pool.ntp.org</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="ntp-配置"><a class="h-anchor" href="#ntp-配置">#</a>ntp 配置</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">cp</span> /etc/ntp.conf&#123;,-bak&#125;
+<span class="hljs-built_in">cat</span> &gt; /etc/ntp.conf &lt;&lt;<span class="hljs-string">EOF
+driftfile /var/lib/ntp/drift
+server 1.cn.pool.ntp.org
+server 0.asia.pool.ntp.org
+server 2.asia.pool.ntp.org
+EOF</span>
+systemctl restart ntpd
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="chrony-配置"><a class="h-anchor" href="#chrony-配置">#</a>chrony 配置</h3>
+<div class="section">
+<pre><code class="hljs language-bash"><span class="hljs-built_in">cp</span> /etc/chrony.conf&#123;,-bak&#125;
+<span class="hljs-built_in">cat</span> &gt; /etc/chrony.conf &lt;&lt;<span class="hljs-string">EOF
+server 0.cn.pool.ntp.org iburst
+server 1.cn.pool.ntp.org iburst
+server 0.asia.pool.ntp.org iburst
+server 1.asia.pool.ntp.org iburst
+server 0.centos.pool.ntp.org iburst
+server 1.centos.pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+logdir /var/log/chrony
+EOF</span>
+systemctl restart chronyd
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Top <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/python.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Python <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/vim.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Vim <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/javascript.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/quickref.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">QuickRef <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/mirrors.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">常见软件镜像 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/public.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">常见公共服务 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer><div id="carbon_container"></div></body><script src="/js/main.js?_v=1670211847042"></script></html>
