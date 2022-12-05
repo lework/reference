@@ -25,6 +25,7 @@
                 <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900">
                     <i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i>
                 </button>
+                <% if (!postPage) { %>
                 <a href="<%- github_url() %>" target="_blank">
                     <button type="button"
                             class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900">
@@ -32,6 +33,7 @@
                         <span class="hidden">Github</span>
                     </button>
                 </a>
+                <% } %>
             </div>
         </div>
     </div>

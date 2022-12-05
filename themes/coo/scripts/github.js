@@ -3,12 +3,12 @@ hexo.extend.helper.register("request_cheatsheet", function () {
 });
 
 hexo.extend.helper.register("contributing", function () {
-    return `${this.config.github}/blob/main/README.md#contributing`;
+    return `${this.config.github}/blob/master/README.md#contributing`;
 });
 
 
 hexo.extend.helper.register("edit_page", function () {
-    return `${this.config.github}/blob/main/source/_posts/${this.page.slug}.md`
+    return `${this.config.github}/blob/master/source/_posts/${this.page.slug}.md`
 });
 
 hexo.extend.helper.register("github_url", function () {
