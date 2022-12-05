@@ -38,6 +38,8 @@ $ sh hell0.sh & # 以 后台 方式执行脚本
 ```bash
 varname="John"           # 定义变量，索引号
 varname='John'           # 定义变量，单引号
+varname=`echo John`      # command赋值变量 用` `
+varname=$(echo John)     # command赋值变量 用$()
 varname = "John"         # => Error (=左右不能有空格)
 var=                     # 空参数
 unset var                # 取消变量
