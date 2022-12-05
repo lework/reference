@@ -29,6 +29,7 @@ echo "Hello $VAR!" # => Hello world!
 ```shell script
 $ bash hello.sh # 以 bash 方式执行脚本 
 $ sh hello.sh   # 以 sh 方式执行脚本
+$ sh hell0.sh & # 以 后台 方式执行脚本
 ```
 
 
