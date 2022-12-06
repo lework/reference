@@ -1,0 +1,1382 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Python3 Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,script,interpret"><meta name="description" content="The Python cheat sheet is a one-page reference sheet for the Python 3 programming language. "><meta property="og:url" content="https://quickref.leops.cn/python3.html"><meta property="og:title" content="Python3 Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="The Python cheat sheet is a one-page reference sheet for the Python 3 programming language. "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=yy7ou"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Python3 Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="The Python cheat sheet is a one-page reference sheet for the Python 3 programming language. "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=zmp4i"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/python3.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1670291333286"><link rel="stylesheet" href="/css/style.css?_v=1670291333286"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/python3.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Python3</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>The <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.python.org/">Python</a> cheat sheet is a one-page reference sheet for the Python 3 programming language.</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="getting-started"><a class="h-anchor" href="#getting-started">#</a>Getting Started</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="introduction"><a class="h-anchor" href="#introduction">#</a>Introduction</h3>
+<div class="section">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.python.org/">Python</a>  <em>(python.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://learnxinyminutes.com/docs/python/">Learn X in Y minutes</a> <em>(learnxinyminutes.com)</em></li>
+<li><a href="/regex#regex-in-python">Regex in python</a> <em>(quickref.me)</em></li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="hello-world"><a class="h-anchor" href="#hello-world">#</a>Hello World</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello, World!&quot;</span>)
+Hello, World!
+</code></pre>
+<p>The famous &quot;Hello World&quot; program in Python</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="variables"><a class="h-anchor" href="#variables">#</a>Variables</h3>
+<div class="section">
+<pre><code class="hljs language-python">age = <span class="hljs-number">18</span>      <span class="hljs-comment"># age is of type int</span>
+name = <span class="hljs-string">&quot;John&quot;</span> <span class="hljs-comment"># name is now of type str</span>
+<span class="hljs-built_in">print</span>(name)
+</code></pre>
+<p>Python can't declare a variable without assignment.</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="data-types"><a class="h-anchor" href="#data-types">#</a>Data Types</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>Text</td>
+</tr>
+<tr>
+<td><code>int</code>, <code>float</code>, <code>complex</code></td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td><code>list</code>, <code>tuple</code>, <code>range</code></td>
+<td>Sequence</td>
+</tr>
+<tr>
+<td><code>dict</code></td>
+<td>Mapping</td>
+</tr>
+<tr>
+<td><code>set</code>, <code>frozenset</code></td>
+<td>Set</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><code>bytes</code>, <code>bytearray</code>, <code>memoryview</code></td>
+<td>Binary</td>
+</tr>
+</tbody>
+</table>
+<p>See: <a href="#python-data-types">Data Types</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="slicing-string"><a class="h-anchor" href="#slicing-string">#</a>Slicing String</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>msg = <span class="hljs-string">&quot;Hello, World!&quot;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(msg[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>])
+llo
+</code></pre>
+<p>See: <a href="#python-strings">Strings</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="lists"><a class="h-anchor" href="#lists">#</a>Lists</h3>
+<div class="section">
+<pre><code class="hljs language-python">mylist = []
+mylist.append(<span class="hljs-number">1</span>)
+mylist.append(<span class="hljs-number">2</span>)
+<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> mylist:
+    <span class="hljs-built_in">print</span>(item) <span class="hljs-comment"># prints out 1,2</span>
+</code></pre>
+<p>See: <a href="#python-lists">Lists</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="if-else"><a class="h-anchor" href="#if-else">#</a>If Else</h3>
+<div class="section">
+<pre><code class="hljs language-python">num = <span class="hljs-number">200</span>
+<span class="hljs-keyword">if</span> num &gt; <span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;num is greater than 0&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;num is not greater than 0&quot;</span>)
+</code></pre>
+<p>See: <a href="#python-flow-control">Flow control</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="loops"><a class="h-anchor" href="#loops">#</a>Loops</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">6</span>):
+    <span class="hljs-keyword">if</span> item == <span class="hljs-number">3</span>: <span class="hljs-keyword">break</span>
+    <span class="hljs-built_in">print</span>(item)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Finally finished!&quot;</span>)
+</code></pre>
+<p>See: <a href="#python-loops">Loops</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="functions"><a class="h-anchor" href="#functions">#</a>Functions</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">my_function</span>():
+<span class="hljs-meta">... </span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello from a function&quot;</span>)
+...
+<span class="hljs-meta">&gt;&gt;&gt; </span>my_function()
+Hello <span class="hljs-keyword">from</span> a function
+</code></pre>
+<p>See: <a href="#python-functions">Functions</a></p>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="file-handling"><a class="h-anchor" href="#file-handling">#</a>File Handling</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;myfile.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&#x27;utf8&#x27;</span>) <span class="hljs-keyword">as</span> file:
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file:
+        <span class="hljs-built_in">print</span>(line)
+</code></pre>
+<p>See: <a href="#python-file-handling">File Handling</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="arithmetic"><a class="h-anchor" href="#arithmetic">#</a>Arithmetic</h3>
+<div class="section">
+<pre><code class="hljs language-python">result = <span class="hljs-number">10</span> + <span class="hljs-number">30</span> <span class="hljs-comment"># =&gt; 40</span>
+result = <span class="hljs-number">40</span> - <span class="hljs-number">10</span> <span class="hljs-comment"># =&gt; 30</span>
+result = <span class="hljs-number">50</span> * <span class="hljs-number">5</span>  <span class="hljs-comment"># =&gt; 250</span>
+result = <span class="hljs-number">16</span> / <span class="hljs-number">4</span>  <span class="hljs-comment"># =&gt; 4.0 (Float Division)</span>
+result = <span class="hljs-number">16</span> // <span class="hljs-number">4</span> <span class="hljs-comment"># =&gt; 4 (Integer Division)</span>
+result = <span class="hljs-number">25</span> % <span class="hljs-number">2</span>  <span class="hljs-comment"># =&gt; 1</span>
+result = <span class="hljs-number">5</span> ** <span class="hljs-number">3</span>  <span class="hljs-comment"># =&gt; 125</span>
+</code></pre>
+<p>The <code>/</code> means quotient of x and y, and the <code>//</code> means floored quotient of x and y, also see <a target="_blank" rel="noopener external nofollow noreferrer" href="https://stackoverflow.com/a/183870/13192320">StackOverflow</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="plus-equals"><a class="h-anchor" href="#plus-equals">#</a>Plus-Equals</h3>
+<div class="section">
+<pre><code class="hljs language-python">counter = <span class="hljs-number">0</span>
+counter += <span class="hljs-number">10</span>           <span class="hljs-comment"># =&gt; 10</span>
+counter = <span class="hljs-number">0</span>
+counter = counter + <span class="hljs-number">10</span>  <span class="hljs-comment"># =&gt; 10</span>
+
+message = <span class="hljs-string">&quot;Part 1.&quot;</span>
+
+<span class="hljs-comment"># =&gt; Part 1.Part 2.</span>
+message += <span class="hljs-string">&quot;Part 2.&quot;</span>   
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="f-strings-python-3-6"><a class="h-anchor" href="#f-strings-python-3-6">#</a>f-Strings (Python 3.6+)</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>website = <span class="hljs-string">&#x27;Quickref.ME&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&quot;Hello, <span class="hljs-subst">&#123;website&#125;</span>&quot;</span>
+<span class="hljs-string">&quot;Hello, Quickref.ME&quot;</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>num = <span class="hljs-number">10</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;num&#125;</span> + 10 = <span class="hljs-subst">&#123;num + <span class="hljs-number">10</span>&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;10 + 10 = 20&#x27;</span>
+</code></pre>
+<p>See: <a href="#python-f-strings-since-python-3-6">Python F-Strings</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-built-in-data-types"><a class="h-anchor" href="#python-built-in-data-types">#</a>Python Built-in Data Types</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="strings"><a class="h-anchor" href="#strings">#</a>Strings</h3>
+<div class="section">
+<pre><code class="hljs language-python">hello = <span class="hljs-string">&quot;Hello World&quot;</span>
+hello = <span class="hljs-string">&#x27;Hello World&#x27;</span>
+
+multi_string = <span class="hljs-string">&quot;&quot;&quot;Multiline Strings
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit &quot;&quot;&quot;</span>
+</code></pre>
+<p>See: <a href="#python-strings">Strings</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="numbers"><a class="h-anchor" href="#numbers">#</a>Numbers</h3>
+<div class="section">
+<pre><code class="hljs language-python">x = <span class="hljs-number">1</span>    <span class="hljs-comment"># int</span>
+y = <span class="hljs-number">2.8</span>  <span class="hljs-comment"># float</span>
+z = <span class="hljs-number">1j</span>   <span class="hljs-comment"># complex</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(x))
+&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;int&#x27;</span>&gt;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="booleans"><a class="h-anchor" href="#booleans">#</a>Booleans</h3>
+<div class="section">
+<pre><code class="hljs language-python">my_bool = <span class="hljs-literal">True</span> 
+my_bool = <span class="hljs-literal">False</span>
+
+<span class="hljs-built_in">bool</span>(<span class="hljs-number">0</span>)     <span class="hljs-comment"># =&gt; False</span>
+<span class="hljs-built_in">bool</span>(<span class="hljs-number">1</span>)     <span class="hljs-comment"># =&gt; True</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="lists-2"><a class="h-anchor" href="#lists-2">#</a>Lists</h3>
+<div class="section">
+<pre><code class="hljs language-python">list1 = [<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]
+list2 = [<span class="hljs-literal">True</span>, <span class="hljs-literal">False</span>, <span class="hljs-literal">False</span>]
+list3 = [<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>]
+list4 = <span class="hljs-built_in">list</span>((<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>))
+</code></pre>
+<p>See: <a href="#python-lists">Lists</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="tuple"><a class="h-anchor" href="#tuple">#</a>Tuple</h3>
+<div class="section">
+<pre><code class="hljs language-python">my_tuple = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+my_tuple = <span class="hljs-built_in">tuple</span>((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+</code></pre>
+<p>Similar to List but immutable</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="set"><a class="h-anchor" href="#set">#</a>Set</h3>
+<div class="section">
+<pre><code class="hljs language-python">set1 = &#123;<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>&#125;   
+set2 = <span class="hljs-built_in">set</span>((<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>))
+</code></pre>
+<p>Set of unique items/objects</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="dictionary"><a class="h-anchor" href="#dictionary">#</a>Dictionary</h3>
+<div class="section">
+<pre><code class="hljs wrap language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>empty_dict = &#123;&#125;
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = &#123;<span class="hljs-string">&quot;one&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;two&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;three&quot;</span>: <span class="hljs-number">3</span>&#125;
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">&quot;one&quot;</span>]
+<span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.keys()
+dict_keys([<span class="hljs-string">&#x27;one&#x27;</span>, <span class="hljs-string">&#x27;two&#x27;</span>, <span class="hljs-string">&#x27;three&#x27;</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.values()
+dict_values([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.update(&#123;<span class="hljs-string">&quot;four&quot;</span>: <span class="hljs-number">4</span>&#125;)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.keys()
+dict_keys([<span class="hljs-string">&#x27;one&#x27;</span>, <span class="hljs-string">&#x27;two&#x27;</span>, <span class="hljs-string">&#x27;three&#x27;</span>, <span class="hljs-string">&#x27;four&#x27;</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-string">&#x27;four&#x27;</span>]
+<span class="hljs-number">4</span>
+</code></pre>
+<p>Key: Value pair, JSON like object</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="casting"><a class="h-anchor" href="#casting">#</a>Casting</h3>
+<div class="section">
+<h4 id="integers"><a class="h-anchor" href="#integers">#</a>Integers</h4>
+<pre><code class="hljs language-python">x = <span class="hljs-built_in">int</span>(<span class="hljs-number">1</span>)   <span class="hljs-comment"># x will be 1</span>
+y = <span class="hljs-built_in">int</span>(<span class="hljs-number">2.8</span>) <span class="hljs-comment"># y will be 2</span>
+z = <span class="hljs-built_in">int</span>(<span class="hljs-string">&quot;3&quot;</span>) <span class="hljs-comment"># z will be 3</span>
+</code></pre>
+<h4 id="floats"><a class="h-anchor" href="#floats">#</a>Floats</h4>
+<pre><code class="hljs language-python">x = <span class="hljs-built_in">float</span>(<span class="hljs-number">1</span>)     <span class="hljs-comment"># x will be 1.0</span>
+y = <span class="hljs-built_in">float</span>(<span class="hljs-number">2.8</span>)   <span class="hljs-comment"># y will be 2.8</span>
+z = <span class="hljs-built_in">float</span>(<span class="hljs-string">&quot;3&quot;</span>)   <span class="hljs-comment"># z will be 3.0</span>
+w = <span class="hljs-built_in">float</span>(<span class="hljs-string">&quot;4.2&quot;</span>) <span class="hljs-comment"># w will be 4.2</span>
+</code></pre>
+<h4 id="strings-2"><a class="h-anchor" href="#strings-2">#</a>Strings</h4>
+<pre><code class="hljs language-python">x = <span class="hljs-built_in">str</span>(<span class="hljs-string">&quot;s1&quot;</span>) <span class="hljs-comment"># x will be &#x27;s1&#x27;</span>
+y = <span class="hljs-built_in">str</span>(<span class="hljs-number">2</span>)    <span class="hljs-comment"># y will be &#x27;2&#x27;</span>
+z = <span class="hljs-built_in">str</span>(<span class="hljs-number">3.0</span>)  <span class="hljs-comment"># z will be &#x27;3.0&#x27;</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-advanced-data-types"><a class="h-anchor" href="#python-advanced-data-types">#</a>Python Advanced Data Types</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2 row-span-3">
+<h3 id="heaps"><a class="h-anchor" href="#heaps">#</a>Heaps</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> heapq
+
+myList = [<span class="hljs-number">9</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>]
+heapq.heapify(myList) <span class="hljs-comment"># turn myList into a Min Heap</span>
+<span class="hljs-built_in">print</span>(myList)    <span class="hljs-comment"># =&gt; [1, 3, 2, 5, 9, 4]</span>
+<span class="hljs-built_in">print</span>(myList[<span class="hljs-number">0</span>]) <span class="hljs-comment"># first value is always the smallest in the heap</span>
+
+heapq.heappush(myList, <span class="hljs-number">10</span>) <span class="hljs-comment"># insert 10</span>
+x = heapq.heappop(myList)  <span class="hljs-comment"># pop and return smallest item</span>
+<span class="hljs-built_in">print</span>(x)                   <span class="hljs-comment"># =&gt; 1</span>
+</code></pre>
+<h4 id="negate-all-values-to-use-min-heap-as-max-heap"><a class="h-anchor" href="#negate-all-values-to-use-min-heap-as-max-heap">#</a>Negate all values to use Min Heap as Max Heap</h4>
+<pre><code class="hljs language-python">myList = [<span class="hljs-number">9</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>]
+myList = [-val <span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> myList] <span class="hljs-comment"># multiply by -1 to negate</span>
+heapq.heapify(myList)
+
+x = heapq.heappop(myList)
+<span class="hljs-built_in">print</span>(-x) <span class="hljs-comment"># =&gt; 9 (making sure to multiply by -1 again)</span>
+</code></pre>
+<p>Heaps are binary trees for which every parent node has a value less than or equal to any of its children. Useful for accessing min/max value quickly. Time complexity: O(n) for heapify, O(log n) push and pop. See: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.python.org/3/library/heapq.html">Heapq</a></p>
+</div>
+</div>
+<div class="h3-wrap row-span-3">
+<h3 id="stacks-and-queues"><a class="h-anchor" href="#stacks-and-queues">#</a>Stacks and Queues</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
+
+q = deque()          <span class="hljs-comment"># empty</span>
+q = deque([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]) <span class="hljs-comment"># with values</span>
+
+q.append(<span class="hljs-number">4</span>)     <span class="hljs-comment"># append to right side</span>
+q.appendleft(<span class="hljs-number">0</span>) <span class="hljs-comment"># append to left side</span>
+<span class="hljs-built_in">print</span>(q)    <span class="hljs-comment"># =&gt; deque([0, 1, 2, 3, 4])</span>
+
+x = q.pop() <span class="hljs-comment"># remove &amp; return from right</span>
+y = q.popleft() <span class="hljs-comment"># remove &amp; return from left</span>
+<span class="hljs-built_in">print</span>(x)    <span class="hljs-comment"># =&gt; 4</span>
+<span class="hljs-built_in">print</span>(y)    <span class="hljs-comment"># =&gt; 0</span>
+<span class="hljs-built_in">print</span>(q)    <span class="hljs-comment"># =&gt; deque([1, 2, 3])</span>
+
+q.rotate(<span class="hljs-number">1</span>) <span class="hljs-comment"># rotate 1 step to the right</span>
+<span class="hljs-built_in">print</span>(q)    <span class="hljs-comment"># =&gt; deque([3, 1, 2])</span>
+</code></pre>
+<p>Deque is a double-ended queue with O(1) time for append/pop operations from both sides. Used as stacks and queues. See: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.python.org/3/library/collections.html#collections.deque">Deque</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-strings"><a class="h-anchor" href="#python-strings">#</a>Python Strings</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="array-like"><a class="h-anchor" href="#array-like">#</a>Array-like</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>hello = <span class="hljs-string">&quot;Hello, World&quot;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(hello[<span class="hljs-number">1</span>])
+e
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(hello[-<span class="hljs-number">1</span>])
+d
+</code></pre>
+<p>Get the character at position 1 or last</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="looping"><a class="h-anchor" href="#looping">#</a>Looping</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> char <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;foo&quot;</span>:
+<span class="hljs-meta">... </span>    <span class="hljs-built_in">print</span>(char)
+f
+o
+o
+</code></pre>
+<p>Loop through the letters in the word &quot;foo&quot;</p>
+</div>
+</div>
+<div class="h3-wrap row-span-4">
+<h3 id="slicing-string-2"><a class="h-anchor" href="#slicing-string-2">#</a>Slicing string</h3>
+<div class="section">
+<pre><code class="hljs language-java"> ┌───┬───┬───┬───┬───┬───┬───┐
+ | m | y | b | a | c | o | n |
+ └───┴───┴───┴───┴───┴───┴───┘
+ <span class="hljs-number">0</span>   <span class="hljs-number">1</span>   <span class="hljs-number">2</span>   <span class="hljs-number">3</span>   <span class="hljs-number">4</span>   <span class="hljs-number">5</span>   <span class="hljs-number">6</span>   <span class="hljs-number">7</span>
+-<span class="hljs-number">7</span>  -<span class="hljs-number">6</span>  -<span class="hljs-number">5</span>  -<span class="hljs-number">4</span>  -<span class="hljs-number">3</span>  -<span class="hljs-number">2</span>  -<span class="hljs-number">1</span>
+</code></pre>
+<hr>
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&#x27;mybacon&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>]
+<span class="hljs-string">&#x27;bac&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[<span class="hljs-number">0</span>:<span class="hljs-number">2</span>]
+<span class="hljs-string">&#x27;my&#x27;</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&#x27;mybacon&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[:<span class="hljs-number">2</span>]
+<span class="hljs-string">&#x27;my&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[<span class="hljs-number">2</span>:]
+<span class="hljs-string">&#x27;bacon&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[:<span class="hljs-number">2</span>] + s[<span class="hljs-number">2</span>:]
+<span class="hljs-string">&#x27;mybacon&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[:]
+<span class="hljs-string">&#x27;mybacon&#x27;</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&#x27;mybacon&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[-<span class="hljs-number">5</span>:-<span class="hljs-number">1</span>]
+<span class="hljs-string">&#x27;baco&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[<span class="hljs-number">2</span>:<span class="hljs-number">6</span>]
+<span class="hljs-string">&#x27;baco&#x27;</span>
+</code></pre>
+<h4 id="with-a-stride"><a class="h-anchor" href="#with-a-stride">#</a>With a stride</h4>
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&#x27;12345&#x27;</span> * <span class="hljs-number">5</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s
+<span class="hljs-string">&#x27;1234512345123451234512345&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[::<span class="hljs-number">5</span>]
+<span class="hljs-string">&#x27;11111&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[<span class="hljs-number">4</span>::<span class="hljs-number">5</span>]
+<span class="hljs-string">&#x27;55555&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[::-<span class="hljs-number">5</span>]
+<span class="hljs-string">&#x27;55555&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s[::-<span class="hljs-number">1</span>]
+<span class="hljs-string">&#x27;5432154321543215432154321&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="string-length"><a class="h-anchor" href="#string-length">#</a>String Length</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>hello = <span class="hljs-string">&quot;Hello, World!&quot;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(hello))
+<span class="hljs-number">13</span>
+</code></pre>
+<p>The len() function returns the length of a string</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="multiple-copies"><a class="h-anchor" href="#multiple-copies">#</a>Multiple copies</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&#x27;===+&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>n = <span class="hljs-number">8</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s * n
+<span class="hljs-string">&#x27;===+===+===+===+===+===+===+===+&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="check-string"><a class="h-anchor" href="#check-string">#</a>Check String</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&#x27;spam&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;I saw spamalot!&#x27;</span>
+<span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;I saw The Holy Grail!&#x27;</span>
+<span class="hljs-literal">True</span>
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="concatenates"><a class="h-anchor" href="#concatenates">#</a>Concatenates</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&#x27;spam&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>t = <span class="hljs-string">&#x27;egg&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s + t
+<span class="hljs-string">&#x27;spamegg&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&#x27;spam&#x27;</span> <span class="hljs-string">&#x27;egg&#x27;</span>
+<span class="hljs-string">&#x27;spamegg&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="formatting"><a class="h-anchor" href="#formatting">#</a>Formatting </h3>
+<div class="section">
+<pre><code class="hljs language-python">name = <span class="hljs-string">&quot;John&quot;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello, %s!&quot;</span> % name)
+</code></pre>
+<pre><code class="hljs language-python">name = <span class="hljs-string">&quot;John&quot;</span>
+age = <span class="hljs-number">23</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;%s is %d years old.&quot;</span> % (name, age))
+</code></pre>
+<h4 id="format-method"><a class="h-anchor" href="#format-method">#</a>format() Method</h4>
+<pre><code class="hljs language-python">txt1 = <span class="hljs-string">&quot;My name is &#123;fname&#125;, I&#x27;m &#123;age&#125;&quot;</span>.<span class="hljs-built_in">format</span>(fname=<span class="hljs-string">&quot;John&quot;</span>, age=<span class="hljs-number">36</span>)
+txt2 = <span class="hljs-string">&quot;My name is &#123;0&#125;, I&#x27;m &#123;1&#125;&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-number">36</span>)
+txt3 = <span class="hljs-string">&quot;My name is &#123;&#125;, I&#x27;m &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-number">36</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="input"><a class="h-anchor" href="#input">#</a>Input</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Enter your name: &quot;</span>)
+Enter your name: Tom
+<span class="hljs-meta">&gt;&gt;&gt; </span>name
+<span class="hljs-string">&#x27;Tom&#x27;</span>
+</code></pre>
+<p>Get input data from console</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="join"><a class="h-anchor" href="#join">#</a>Join</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;#&quot;</span>.join([<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-string">&quot;Peter&quot;</span>, <span class="hljs-string">&quot;Vicky&quot;</span>])
+<span class="hljs-string">&#x27;John#Peter#Vicky&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="endswith"><a class="h-anchor" href="#endswith">#</a>Endswith</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&quot;Hello, world!&quot;</span>.endswith(<span class="hljs-string">&quot;!&quot;</span>)
+<span class="hljs-literal">True</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-f-strings-since-python-3-6"><a class="h-anchor" href="#python-f-strings-since-python-3-6">#</a>Python F-Strings (Since Python 3.6+)</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="f-strings-usage"><a class="h-anchor" href="#f-strings-usage">#</a>f-Strings usage</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>website = <span class="hljs-string">&#x27;Quickref.ME&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&quot;Hello, <span class="hljs-subst">&#123;website&#125;</span>&quot;</span>
+<span class="hljs-string">&quot;Hello, Quickref.ME&quot;</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>num = <span class="hljs-number">10</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;num&#125;</span> + 10 = <span class="hljs-subst">&#123;num + <span class="hljs-number">10</span>&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;10 + 10 = 20&#x27;</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&quot;&quot;&quot;He said <span class="hljs-subst">&#123;<span class="hljs-string">&quot;I&#x27;m John&quot;</span>&#125;</span>&quot;&quot;&quot;</span>
+<span class="hljs-string">&quot;He said I&#x27;m John&quot;</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;5 <span class="hljs-subst">&#123;<span class="hljs-string">&quot;&#123;stars&#125;&quot;</span>&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;5 &#123;stars&#125;&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;&#123;&#123;5&#125;&#125; <span class="hljs-subst">&#123;<span class="hljs-string">&quot;stars&quot;</span>&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;&#123;5&#125; stars&#x27;</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>name = <span class="hljs-string">&#x27;Eric&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>age = <span class="hljs-number">27</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&quot;&quot;&quot;Hello!
+<span class="hljs-meta">... </span>    I&#x27;m <span class="hljs-subst">&#123;name&#125;</span>.
+<span class="hljs-meta">... </span>    I&#x27;m <span class="hljs-subst">&#123;age&#125;</span>.&quot;&quot;&quot;</span>
+<span class="hljs-string">&quot;Hello!\n    I&#x27;m Eric.\n    I&#x27;m 27.&quot;</span>
+</code></pre>
+<p>it is available since Python 3.6, also see: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">Formatted string literals</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="f-strings-fill-align"><a class="h-anchor" href="#f-strings-fill-align">#</a>f-Strings Fill Align</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-number">10</span>&#125;</span>&#x27;</span>     <span class="hljs-comment"># [width]</span>
+<span class="hljs-string">&#x27;text      &#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-string">&quot;test&quot;</span>:*&gt;<span class="hljs-number">10</span>&#125;</span>&#x27;</span>   <span class="hljs-comment"># fill left</span>
+<span class="hljs-string">&#x27;******test&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-string">&quot;test&quot;</span>:*&lt;<span class="hljs-number">10</span>&#125;</span>&#x27;</span>   <span class="hljs-comment"># fill right</span>
+<span class="hljs-string">&#x27;test******&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-string">&quot;test&quot;</span>:*^<span class="hljs-number">10</span>&#125;</span>&#x27;</span>   <span class="hljs-comment"># fill center</span>
+<span class="hljs-string">&#x27;***test***&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">12345</span>:<span class="hljs-number">0</span>&gt;<span class="hljs-number">10</span>&#125;</span>&#x27;</span>    <span class="hljs-comment"># fill with numbers</span>
+<span class="hljs-string">&#x27;0000012345&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="f-strings-type"><a class="h-anchor" href="#f-strings-type">#</a>f-Strings Type</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">10</span>:b&#125;</span>&#x27;</span>        <span class="hljs-comment"># binary type</span>
+<span class="hljs-string">&#x27;1010&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">10</span>:o&#125;</span>&#x27;</span>        <span class="hljs-comment"># octal type</span>
+<span class="hljs-string">&#x27;12&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">200</span>:x&#125;</span>&#x27;</span>       <span class="hljs-comment"># hexadecimal type</span>
+<span class="hljs-string">&#x27;c8&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">200</span>:X&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;C8&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">345600000000</span>:e&#125;</span>&#x27;</span> <span class="hljs-comment"># scientific notation</span>
+<span class="hljs-string">&#x27;3.456000e+11&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">65</span>:c&#125;</span>&#x27;</span>       <span class="hljs-comment"># character type</span>
+<span class="hljs-string">&#x27;A&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">10</span>:#b&#125;</span>&#x27;</span>      <span class="hljs-comment"># [type] with notation (base)</span>
+<span class="hljs-string">&#x27;0b1010&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">10</span>:#o&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;0o12&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">10</span>:#x&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;0xa&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="f-strings-others"><a class="h-anchor" href="#f-strings-others">#</a>F-Strings Others</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;-<span class="hljs-number">12345</span>:<span class="hljs-number">0</span>=<span class="hljs-number">10</span>&#125;</span>&#x27;</span>  <span class="hljs-comment"># negative numbers</span>
+<span class="hljs-string">&#x27;-000012345&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">12345</span>:<span class="hljs-number">0</span>10&#125;</span>&#x27;</span>    <span class="hljs-comment"># [0] shortcut (no align)</span>
+<span class="hljs-string">&#x27;0000012345&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;-<span class="hljs-number">12345</span>:<span class="hljs-number">0</span>10&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;-000012345&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math       <span class="hljs-comment"># [.precision]</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>math.pi
+<span class="hljs-number">3.141592653589793</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;math.pi:<span class="hljs-number">.2</span>f&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;3.14&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">1000000</span>:,<span class="hljs-number">.2</span>f&#125;</span>&#x27;</span> <span class="hljs-comment"># [grouping_option]</span>
+<span class="hljs-string">&#x27;1,000,000.00&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">1000000</span>:_<span class="hljs-number">.2</span>f&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;1_000_000.00&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">0.25</span>:<span class="hljs-number">0</span>%&#125;</span>&#x27;</span>      <span class="hljs-comment"># percentage</span>
+<span class="hljs-string">&#x27;25.000000%&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">0.25</span>:<span class="hljs-number">.0</span>%&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;25%&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="f-strings-sign"><a class="h-anchor" href="#f-strings-sign">#</a>F-Strings Sign</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;<span class="hljs-number">12345</span>:+&#125;</span>&#x27;</span>      <span class="hljs-comment"># [sign] (+/-)</span>
+<span class="hljs-string">&#x27;+12345&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;-<span class="hljs-number">12345</span>:+&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;-12345&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;-<span class="hljs-number">12345</span>:+<span class="hljs-number">10</span>&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;    -12345&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;-<span class="hljs-number">12345</span>:+<span class="hljs-number">0</span>10&#125;</span>&#x27;</span>
+<span class="hljs-string">&#x27;-000012345&#x27;</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-lists"><a class="h-anchor" href="#python-lists">#</a>Python Lists</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="defining"><a class="h-anchor" href="#defining">#</a>Defining</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>li1 = []
+<span class="hljs-meta">&gt;&gt;&gt; </span>li1
+[]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li2 = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li2
+[<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li3 = <span class="hljs-built_in">list</span>((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+<span class="hljs-meta">&gt;&gt;&gt; </span>li3
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li4 = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">11</span>))
+<span class="hljs-meta">&gt;&gt;&gt; </span>li4
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="generate"><a class="h-anchor" href="#generate">#</a>Generate</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-keyword">lambda</span> x : x % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>, <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">20</span>)))
+[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>, <span class="hljs-number">15</span>, <span class="hljs-number">17</span>, <span class="hljs-number">19</span>]
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>[x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span> (<span class="hljs-number">1</span>, <span class="hljs-number">11</span>) <span class="hljs-keyword">if</span>  x % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>]
+[<span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">25</span>, <span class="hljs-number">49</span>, <span class="hljs-number">81</span>]
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>[x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>] <span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">5</span>]
+[<span class="hljs-number">6</span>, <span class="hljs-number">7</span>]
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-keyword">lambda</span> x: x &gt; <span class="hljs-number">5</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>]))
+[<span class="hljs-number">6</span>, <span class="hljs-number">7</span>]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="append"><a class="h-anchor" href="#append">#</a>Append</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>li = []
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.append(<span class="hljs-number">1</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-number">1</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.append(<span class="hljs-number">2</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.append(<span class="hljs-number">4</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.append(<span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2 row-span-3">
+<h3 id="list-slicing"><a class="h-anchor" href="#list-slicing">#</a>List Slicing</h3>
+<div class="section">
+<p>Syntax of list slicing:</p>
+<pre><code class="hljs language-python">a_list[start:end]
+a_list[start:end:step]
+</code></pre>
+<h4 id="slicing"><a class="h-anchor" href="#slicing">#</a>Slicing</h4>
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>]
+[<span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[-<span class="hljs-number">5</span>:-<span class="hljs-number">2</span>]
+[<span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>]
+[<span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>]
+</code></pre>
+<h4 id="omitting-index"><a class="h-anchor" href="#omitting-index">#</a>Omitting index</h4>
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a[:<span class="hljs-number">4</span>]
+[<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]
+[<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">2</span>:]
+[<span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">2</span>:<span class="hljs-built_in">len</span>(a)]
+[<span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+[<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[:]
+[<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+</code></pre>
+<h4 id="with-a-stride-2"><a class="h-anchor" href="#with-a-stride-2">#</a>With a stride</h4>
+<pre><code class="hljs language-python">[<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">0</span>:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>]
+[<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">1</span>:<span class="hljs-number">6</span>:<span class="hljs-number">2</span>]
+[<span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">6</span>:<span class="hljs-number">0</span>:-<span class="hljs-number">2</span>]
+[<span class="hljs-string">&#x27;lobster&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+[<span class="hljs-string">&#x27;spam&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;lobster&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>a[::-<span class="hljs-number">1</span>]
+[<span class="hljs-string">&#x27;lobster&#x27;</span>, <span class="hljs-string">&#x27;ham&#x27;</span>, <span class="hljs-string">&#x27;tomato&#x27;</span>, <span class="hljs-string">&#x27;bacon&#x27;</span>, <span class="hljs-string">&#x27;egg&#x27;</span>, <span class="hljs-string">&#x27;spam&#x27;</span>]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="remove"><a class="h-anchor" href="#remove">#</a>Remove</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>li = [<span class="hljs-string">&#x27;bread&#x27;</span>, <span class="hljs-string">&#x27;butter&#x27;</span>, <span class="hljs-string">&#x27;milk&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.pop()
+<span class="hljs-string">&#x27;milk&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-string">&#x27;bread&#x27;</span>, <span class="hljs-string">&#x27;butter&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">del</span> li[<span class="hljs-number">0</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-string">&#x27;butter&#x27;</span>]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="access"><a class="h-anchor" href="#access">#</a>Access</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>li = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li[<span class="hljs-number">0</span>]
+<span class="hljs-string">&#x27;a&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>li[-<span class="hljs-number">1</span>]
+<span class="hljs-string">&#x27;d&#x27;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>li[<span class="hljs-number">4</span>]
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+IndexError: <span class="hljs-built_in">list</span> index out of <span class="hljs-built_in">range</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="concatenating"><a class="h-anchor" href="#concatenating">#</a>Concatenating </h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>odd = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>odd.extend([<span class="hljs-number">9</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>odd
+[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>odd = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>odd + [<span class="hljs-number">9</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>]
+[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="sort-reverse"><a class="h-anchor" href="#sort-reverse">#</a>Sort &amp; Reverse</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>li = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.sort()
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.reverse()
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="count"><a class="h-anchor" href="#count">#</a>Count</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>li = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>li.count(<span class="hljs-number">3</span>)
+<span class="hljs-number">2</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="repeating"><a class="h-anchor" href="#repeating">#</a>Repeating</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>li = [<span class="hljs-string">&quot;re&quot;</span>] * <span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>li
+[<span class="hljs-string">&#x27;re&#x27;</span>, <span class="hljs-string">&#x27;re&#x27;</span>, <span class="hljs-string">&#x27;re&#x27;</span>]
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-flow-control"><a class="h-anchor" href="#python-flow-control">#</a>Python Flow control</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="basic"><a class="h-anchor" href="#basic">#</a>Basic</h3>
+<div class="section">
+<pre><code class="hljs language-python">num = <span class="hljs-number">5</span>
+<span class="hljs-keyword">if</span> num &gt; <span class="hljs-number">10</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;num is totally bigger than 10.&quot;</span>)
+<span class="hljs-keyword">elif</span> num &lt; <span class="hljs-number">10</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;num is smaller than 10.&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;num is indeed 10.&quot;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="one-line"><a class="h-anchor" href="#one-line">#</a>One line</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">330</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = <span class="hljs-number">200</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>r = <span class="hljs-string">&quot;a&quot;</span> <span class="hljs-keyword">if</span> a &gt; b <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;b&quot;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(r)
+a
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="else-if"><a class="h-anchor" href="#else-if">#</a>else if</h3>
+<div class="section">
+<pre><code class="hljs language-python">value = <span class="hljs-literal">True</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> value:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Value is False&quot;</span>)
+<span class="hljs-keyword">elif</span> value <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Value is None&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Value is True&quot;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-loops"><a class="h-anchor" href="#python-loops">#</a>Python Loops</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="basic-2"><a class="h-anchor" href="#basic-2">#</a>Basic</h3>
+<div class="section">
+<pre><code class="hljs language-python">primes = [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>]
+<span class="hljs-keyword">for</span> prime <span class="hljs-keyword">in</span> primes:
+    <span class="hljs-built_in">print</span>(prime)
+</code></pre>
+<p>Prints: 2 3 5 7</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="with-index"><a class="h-anchor" href="#with-index">#</a>With index</h3>
+<div class="section">
+<pre><code class="hljs language-python">animals = [<span class="hljs-string">&quot;dog&quot;</span>, <span class="hljs-string">&quot;cat&quot;</span>, <span class="hljs-string">&quot;mouse&quot;</span>]
+<span class="hljs-comment"># enumerate() adds counter to an iterable</span>
+<span class="hljs-keyword">for</span> i, value <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(animals):
+    <span class="hljs-built_in">print</span>(i, value)
+</code></pre>
+<p>Prints: 0 dog 1 cat 2 mouse</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="while"><a class="h-anchor" href="#while">#</a>While</h3>
+<div class="section">
+<pre><code class="hljs language-python">x = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> x &lt; <span class="hljs-number">4</span>:
+    <span class="hljs-built_in">print</span>(x)
+    x += <span class="hljs-number">1</span>  <span class="hljs-comment"># Shorthand for x = x + 1</span>
+</code></pre>
+<p>Prints: 0 1 2 3</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="break"><a class="h-anchor" href="#break">#</a>Break</h3>
+<div class="section">
+<pre><code class="hljs language-python">x = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+    x = index * <span class="hljs-number">10</span>
+    <span class="hljs-keyword">if</span> index == <span class="hljs-number">5</span>:
+     <span class="hljs-keyword">break</span>
+    <span class="hljs-built_in">print</span>(x)
+</code></pre>
+<p>Prints: 0 10 20 30 40</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="continue"><a class="h-anchor" href="#continue">#</a>Continue</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>, <span class="hljs-number">8</span>): 
+    x = index * <span class="hljs-number">10</span>
+    <span class="hljs-keyword">if</span> index == <span class="hljs-number">5</span>:
+     <span class="hljs-keyword">continue</span>
+    <span class="hljs-built_in">print</span>(x)
+</code></pre>
+<p>Prints: 30 40 60 70</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="range"><a class="h-anchor" href="#range">#</a>Range</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):
+    <span class="hljs-built_in">print</span>(i) <span class="hljs-comment"># Prints: 0 1 2 3</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>, <span class="hljs-number">8</span>):
+    <span class="hljs-built_in">print</span>(i) <span class="hljs-comment"># Prints: 4 5 6 7</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>):
+    <span class="hljs-built_in">print</span>(i) <span class="hljs-comment"># Prints: 4 6 8</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="with-zip"><a class="h-anchor" href="#with-zip">#</a>With zip()</h3>
+<div class="section">
+<pre><code class="hljs language-python">words = [<span class="hljs-string">&#x27;Mon&#x27;</span>, <span class="hljs-string">&#x27;Tue&#x27;</span>, <span class="hljs-string">&#x27;Wed&#x27;</span>]
+nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+<span class="hljs-comment"># Use zip to pack into a tuple list</span>
+<span class="hljs-keyword">for</span> w, n <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(words, nums):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;%d:%s, &#x27;</span> %(n, w))
+</code></pre>
+<p>Prints: 1:Mon, 2:Tue, 3:Wed,</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="for-else"><a class="h-anchor" href="#for-else">#</a>for/else</h3>
+<div class="section">
+<pre><code class="hljs language-python">nums = [<span class="hljs-number">60</span>, <span class="hljs-number">70</span>, <span class="hljs-number">30</span>, <span class="hljs-number">110</span>, <span class="hljs-number">90</span>]
+<span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> nums:
+    <span class="hljs-keyword">if</span> n &gt; <span class="hljs-number">100</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;%d is bigger than 100&quot;</span> %n)
+        <span class="hljs-keyword">break</span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Not found!&quot;</span>)
+</code></pre>
+<p>Also see: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://book.pythontips.com/en/latest/for_-_else.html">Python Tips</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-functions"><a class="h-anchor" href="#python-functions">#</a>Python Functions</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="basic-3"><a class="h-anchor" href="#basic-3">#</a>Basic</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello_world</span>():  
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello, World!&#x27;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="return"><a class="h-anchor" href="#return">#</a>Return</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">x, y</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;x is %s, y is %s&quot;</span> %(x, y))
+    <span class="hljs-keyword">return</span> x + y
+
+add(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>)    <span class="hljs-comment"># =&gt; 11</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="positional-arguments"><a class="h-anchor" href="#positional-arguments">#</a>Positional arguments</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">varargs</span>(<span class="hljs-params">*args</span>):
+    <span class="hljs-keyword">return</span> args
+
+varargs(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)  <span class="hljs-comment"># =&gt; (1, 2, 3)</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="keyword-arguments"><a class="h-anchor" href="#keyword-arguments">#</a>Keyword arguments</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">keyword_args</span>(<span class="hljs-params">**kwargs</span>):
+    <span class="hljs-keyword">return</span> kwargs
+
+<span class="hljs-comment"># =&gt; &#123;&quot;big&quot;: &quot;foot&quot;, &quot;loch&quot;: &quot;ness&quot;&#125;</span>
+keyword_args(big=<span class="hljs-string">&quot;foot&quot;</span>, loch=<span class="hljs-string">&quot;ness&quot;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="returning-multiple"><a class="h-anchor" href="#returning-multiple">#</a>Returning multiple</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">swap</span>(<span class="hljs-params">x, y</span>):
+    <span class="hljs-keyword">return</span> y, x
+
+x = <span class="hljs-number">1</span>
+y = <span class="hljs-number">2</span>
+x, y = swap(x, y)  <span class="hljs-comment"># =&gt; x = 2, y = 1</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="default-value"><a class="h-anchor" href="#default-value">#</a>Default Value</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">x, y=<span class="hljs-number">10</span></span>):
+    <span class="hljs-keyword">return</span> x + y
+
+add(<span class="hljs-number">5</span>)      <span class="hljs-comment"># =&gt; 15</span>
+add(<span class="hljs-number">5</span>, <span class="hljs-number">20</span>)  <span class="hljs-comment"># =&gt; 25</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="anonymous-functions"><a class="h-anchor" href="#anonymous-functions">#</a>Anonymous functions</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># =&gt; True</span>
+(<span class="hljs-keyword">lambda</span> x: x &gt; <span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)
+
+<span class="hljs-comment"># =&gt; 5</span>
+(<span class="hljs-keyword">lambda</span> x, y: x ** <span class="hljs-number">2</span> + y ** <span class="hljs-number">2</span>)(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-modules"><a class="h-anchor" href="#python-modules">#</a>Python Modules</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="import-modules"><a class="h-anchor" href="#import-modules">#</a>Import modules</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> math
+<span class="hljs-built_in">print</span>(math.sqrt(<span class="hljs-number">16</span>))  <span class="hljs-comment"># =&gt; 4.0</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="from-a-module"><a class="h-anchor" href="#from-a-module">#</a>From a module</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> ceil, floor
+<span class="hljs-built_in">print</span>(ceil(<span class="hljs-number">3.7</span>))   <span class="hljs-comment"># =&gt; 4.0</span>
+<span class="hljs-built_in">print</span>(floor(<span class="hljs-number">3.7</span>))  <span class="hljs-comment"># =&gt; 3.0</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="import-all"><a class="h-anchor" href="#import-all">#</a>Import all</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> *
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="shorten-module"><a class="h-anchor" href="#shorten-module">#</a>Shorten module</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> math <span class="hljs-keyword">as</span> m
+
+<span class="hljs-comment"># =&gt; True</span>
+math.sqrt(<span class="hljs-number">16</span>) == m.sqrt(<span class="hljs-number">16</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="functions-and-attributes"><a class="h-anchor" href="#functions-and-attributes">#</a>Functions and attributes</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> math
+<span class="hljs-built_in">dir</span>(math)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-file-handling"><a class="h-anchor" href="#python-file-handling">#</a>Python File Handling</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="read-file"><a class="h-anchor" href="#read-file">#</a>Read file</h3>
+<div class="section">
+<h4 id="line-by-line"><a class="h-anchor" href="#line-by-line">#</a>Line by line</h4>
+<pre><code class="hljs language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;myfile.txt&quot;</span>) <span class="hljs-keyword">as</span> file:
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file:
+        <span class="hljs-built_in">print</span>(line)
+</code></pre>
+<h4 id="with-line-number"><a class="h-anchor" href="#with-line-number">#</a>With line number</h4>
+<pre><code class="hljs language-python">file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;myfile.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>)
+<span class="hljs-keyword">for</span> i, line <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(file, start=<span class="hljs-number">1</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Number %s: %s&quot;</span> % (i, line))
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="string"><a class="h-anchor" href="#string">#</a>String</h3>
+<div class="section">
+<h4 id="write-a-string"><a class="h-anchor" href="#write-a-string">#</a>Write a string</h4>
+<pre><code class="hljs language-python">contents = &#123;<span class="hljs-string">&quot;aa&quot;</span>: <span class="hljs-number">12</span>, <span class="hljs-string">&quot;bb&quot;</span>: <span class="hljs-number">21</span>&#125;
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;myfile1.txt&quot;</span>, <span class="hljs-string">&quot;w+&quot;</span>) <span class="hljs-keyword">as</span> file:
+    file.write(<span class="hljs-built_in">str</span>(contents))
+</code></pre>
+<h4 id="read-a-string"><a class="h-anchor" href="#read-a-string">#</a>Read a string</h4>
+<pre><code class="hljs language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;myfile1.txt&#x27;</span>, <span class="hljs-string">&quot;r+&quot;</span>) <span class="hljs-keyword">as</span> file:
+    contents = file.read()
+<span class="hljs-built_in">print</span>(contents)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="object"><a class="h-anchor" href="#object">#</a>Object</h3>
+<div class="section">
+<h4 id="write-an-object"><a class="h-anchor" href="#write-an-object">#</a>Write an object</h4>
+<pre><code class="hljs language-python">contents = &#123;<span class="hljs-string">&quot;aa&quot;</span>: <span class="hljs-number">12</span>, <span class="hljs-string">&quot;bb&quot;</span>: <span class="hljs-number">21</span>&#125;
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;myfile2.txt&quot;</span>, <span class="hljs-string">&quot;w+&quot;</span>) <span class="hljs-keyword">as</span> file:
+    file.write(json.dumps(contents))
+</code></pre>
+<h4 id="read-an-object"><a class="h-anchor" href="#read-an-object">#</a>Read an object</h4>
+<pre><code class="hljs language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;myfile2.txt&#x27;</span>, <span class="hljs-string">&quot;r+&quot;</span>) <span class="hljs-keyword">as</span> file:
+    contents = json.load(file)
+<span class="hljs-built_in">print</span>(contents)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="delete-a-file"><a class="h-anchor" href="#delete-a-file">#</a>Delete a File</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> os
+os.remove(<span class="hljs-string">&quot;myfile.txt&quot;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="check-and-delete"><a class="h-anchor" href="#check-and-delete">#</a>Check and Delete</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">if</span> os.path.exists(<span class="hljs-string">&quot;myfile.txt&quot;</span>):
+    os.remove(<span class="hljs-string">&quot;myfile.txt&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The file does not exist&quot;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="delete-folder"><a class="h-anchor" href="#delete-folder">#</a>Delete Folder</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> os
+os.rmdir(<span class="hljs-string">&quot;myfolder&quot;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="python-classes-inheritance"><a class="h-anchor" href="#python-classes-inheritance">#</a>Python Classes &amp; Inheritance</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="defining-2"><a class="h-anchor" href="#defining-2">#</a>Defining</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyNewClass</span>:
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-comment"># Class Instantiation</span>
+my = MyNewClass()
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="constructors"><a class="h-anchor" href="#constructors">#</a>Constructors</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, voice</span>):
+        self.voice = voice
+ 
+cat = Animal(<span class="hljs-string">&#x27;Meow&#x27;</span>)
+<span class="hljs-built_in">print</span>(cat.voice)    <span class="hljs-comment"># =&gt; Meow</span>
+ 
+dog = Animal(<span class="hljs-string">&#x27;Woof&#x27;</span>) 
+<span class="hljs-built_in">print</span>(dog.voice)    <span class="hljs-comment"># =&gt; Woof</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="method"><a class="h-anchor" href="#method">#</a>Method</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>:
+
+    <span class="hljs-comment"># Method of the class</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">bark</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Ham-Ham&quot;</span>)
+ 
+charlie = Dog()
+charlie.bark()   <span class="hljs-comment"># =&gt; &quot;Ham-Ham&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="class-variables"><a class="h-anchor" href="#class-variables">#</a>Class Variables </h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyClass</span>:
+    class_variable = <span class="hljs-string">&quot;A class variable!&quot;</span>
+
+<span class="hljs-comment"># =&gt; A class variable!</span>
+<span class="hljs-built_in">print</span>(MyClass.class_variable)
+
+x = MyClass()
+ 
+<span class="hljs-comment"># =&gt; A class variable!</span>
+<span class="hljs-built_in">print</span>(x.class_variable)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="super-function"><a class="h-anchor" href="#super-function">#</a>Super() Function</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentClass</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_test</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Parent Method&quot;</span>)
+ 
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildClass</span>(<span class="hljs-title class_ inherited__">ParentClass</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_test</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Child Method&quot;</span>)
+        <span class="hljs-comment"># Calls the parent&#x27;s print_test()</span>
+        <span class="hljs-built_in">super</span>().print_test() 
+</code></pre>
+<hr>
+<pre><code class="hljs language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>child_instance = ChildClass()
+<span class="hljs-meta">&gt;&gt;&gt; </span>child_instance.print_test()
+Child Method
+Parent Method
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="repr-method"><a class="h-anchor" href="#repr-method">#</a>repr() method</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):
+        self.name = name
+ 
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__repr__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> self.name
+ 
+john = Employee(<span class="hljs-string">&#x27;John&#x27;</span>)
+<span class="hljs-built_in">print</span>(john)  <span class="hljs-comment"># =&gt; John</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="user-defined-exceptions"><a class="h-anchor" href="#user-defined-exceptions">#</a>User-defined exceptions</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CustomError</span>(<span class="hljs-title class_ inherited__">Exception</span>):
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="polymorphism"><a class="h-anchor" href="#polymorphism">#</a>Polymorphism</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentClass</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_self</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;A&#x27;</span>)
+ 
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildClass</span>(<span class="hljs-title class_ inherited__">ParentClass</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_self</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;B&#x27;</span>)
+ 
+obj_A = ParentClass()
+obj_B = ChildClass()
+ 
+obj_A.print_self() <span class="hljs-comment"># =&gt; A</span>
+obj_B.print_self() <span class="hljs-comment"># =&gt; B</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="overriding"><a class="h-anchor" href="#overriding">#</a>Overriding</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ParentClass</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_self</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Parent&quot;</span>)
+ 
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildClass</span>(<span class="hljs-title class_ inherited__">ParentClass</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_self</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Child&quot;</span>)
+ 
+child_instance = ChildClass()
+child_instance.print_self() <span class="hljs-comment"># =&gt; Child</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="inheritance"><a class="h-anchor" href="#inheritance">#</a>Inheritance</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>: 
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, legs</span>):
+        self.name = name
+        self.legs = legs
+        
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-title class_ inherited__">Animal</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">sound</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Woof!&quot;</span>)
+ 
+Yoki = Dog(<span class="hljs-string">&quot;Yoki&quot;</span>, <span class="hljs-number">4</span>)
+<span class="hljs-built_in">print</span>(Yoki.name) <span class="hljs-comment"># =&gt; YOKI</span>
+<span class="hljs-built_in">print</span>(Yoki.legs) <span class="hljs-comment"># =&gt; 4</span>
+Yoki.sound()     <span class="hljs-comment"># =&gt; Woof!</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="miscellaneous"><a class="h-anchor" href="#miscellaneous">#</a>Miscellaneous</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="comments"><a class="h-anchor" href="#comments">#</a>Comments</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># This is a single line comments.</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-string">&quot;&quot;&quot; Multiline strings can be written
+    using three &quot;s, and are often used
+    as documentation.
+&quot;&quot;&quot;</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-string">&#x27;&#x27;&#x27; Multiline strings can be written
+    using three &#x27;s, and are often used
+    as documentation.
+&#x27;&#x27;&#x27;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="generators"><a class="h-anchor" href="#generators">#</a>Generators</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">double_numbers</span>(<span class="hljs-params">iterable</span>):
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> iterable:
+        <span class="hljs-keyword">yield</span> i + i
+</code></pre>
+<p>Generators help you make lazy code.</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="generator-to-list"><a class="h-anchor" href="#generator-to-list">#</a>Generator to list</h3>
+<div class="section">
+<pre><code class="hljs language-python">values = (-x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>])
+gen_to_list = <span class="hljs-built_in">list</span>(values)
+
+<span class="hljs-comment"># =&gt; [-1, -2, -3, -4, -5]</span>
+<span class="hljs-built_in">print</span>(gen_to_list)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-3">
+<h3 id="handle-exceptions"><a class="h-anchor" href="#handle-exceptions">#</a>Handle exceptions</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">try</span>:
+    <span class="hljs-comment"># Use &quot;raise&quot; to raise an error</span>
+    <span class="hljs-keyword">raise</span> IndexError(<span class="hljs-string">&quot;This is an index error&quot;</span>)
+<span class="hljs-keyword">except</span> IndexError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-keyword">pass</span>                 <span class="hljs-comment"># Pass is just a no-op. Usually you would do recovery here.</span>
+<span class="hljs-keyword">except</span> (TypeError, NameError):
+    <span class="hljs-keyword">pass</span>                 <span class="hljs-comment"># Multiple exceptions can be handled together, if required.</span>
+<span class="hljs-keyword">else</span>:                    <span class="hljs-comment"># Optional clause to the try/except block. Must follow all except blocks</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;All good!&quot;</span>)   <span class="hljs-comment"># Runs only if the code in try raises no exceptions</span>
+<span class="hljs-keyword">finally</span>:                 <span class="hljs-comment"># Execute under all circumstances</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;We can clean up resources here&quot;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/docker.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">docker <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/quickref.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">QuickRef <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/mirrors.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">常见软件镜像 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer><div id="carbon_container"></div></body><script src="/js/main.js?_v=1670291333286"></script></html>
