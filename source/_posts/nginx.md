@@ -8,7 +8,7 @@ tags:
 categories:
   - 工具
 date: 2022-12-06 20:11:09
-intro:
+intro: 这个 [nginx](https://nginx.org/en/) 快速参考备忘单显示了它的常用命和配置使用清单。
 ---
 
 基础
