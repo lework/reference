@@ -1,0 +1,496 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>find Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,linux,command,search"><meta name="description" content="这是 Linux find 命令备忘清单的快速参考列表，包含常用选项和示例。 "><meta property="og:url" content="https://quickref.leops.cn/find.html"><meta property="og:title" content="find Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="这是 Linux find 命令备忘清单的快速参考列表，包含常用选项和示例。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=sv8pn"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="find Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="这是 Linux find 命令备忘清单的快速参考列表，包含常用选项和示例。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=2qx1kh"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/find.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1670511327553"><link rel="stylesheet" href="/css/style.css?_v=1670511327553"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/find.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">find</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>这是 Linux find 命令备忘清单的快速参考列表，包含常用选项和示例。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="入门"><a class="h-anchor" href="#入门">#</a>入门</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="用法"><a class="h-anchor" href="#用法">#</a>用法</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find [path...] [options] [expression]</span>
+</code></pre>
+<p>通配符</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name <span class="hljs-string">&quot;*.txt&quot;</span></span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name <span class="hljs-string">&quot;2020*.csv&quot;</span></span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name <span class="hljs-string">&quot;json_*&quot;</span></span>
+</code></pre>
+<hr>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://gist.github.com/gr1ev0us/3a9b9d9dbdd38f6379288eb2686fc538">Find 备忘清单</a> <em>(gist.github.com)</em></li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="参数示例"><a class="h-anchor" href="#参数示例">#</a>参数示例</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>示例</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-type</code></td>
+<td>find . -type d</td>
+<td>仅查找目录</td>
+</tr>
+<tr>
+<td><code>-name</code></td>
+<td>find . -type f -name &quot;*.txt&quot;</td>
+<td>按名称查找文件</td>
+</tr>
+<tr>
+<td><code>-iname</code></td>
+<td>find . -type f -iname &quot;hello&quot;</td>
+<td>按名称查找文件（不区分大小写）</td>
+</tr>
+<tr>
+<td><code>-size</code></td>
+<td>find . -size +1G</td>
+<td>查找大于 1G 的文件</td>
+</tr>
+<tr>
+<td><code>-user</code></td>
+<td>find . -type d -user jack</td>
+<td>查找杰克的文件</td>
+</tr>
+<tr>
+<td><code>-regex</code></td>
+<td>find /var -regex '.*/tmp/.*[0-9]*.file'</td>
+<td>将正则表达式与查找一起使用</td>
+</tr>
+<tr>
+<td><code>-maxdepth</code></td>
+<td>find . -maxdepth 1 -name &quot;a.txt&quot;</td>
+<td>在当前目录和子目录中</td>
+</tr>
+<tr>
+<td><code>-mindepth</code></td>
+<td>find / -mindepth 3 -maxdepth 5 -name pass</td>
+<td>在子目录级别 2 和 4 之间</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="类型"><a class="h-anchor" href="#类型">#</a>类型</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-type d</code></td>
+<td>目录</td>
+</tr>
+<tr>
+<td><code>-type f</code></td>
+<td>文件</td>
+</tr>
+<tr>
+<td><code>-type l</code></td>
+<td>符号链接</td>
+</tr>
+<tr>
+<td><code>-type b</code></td>
+<td>缓冲块</td>
+</tr>
+<tr>
+<td><code>-type c</code></td>
+<td>无缓冲字符</td>
+</tr>
+<tr>
+<td><code>-type p</code></td>
+<td>命名管道</td>
+</tr>
+<tr>
+<td><code>-type s</code></td>
+<td>插座</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="大小"><a class="h-anchor" href="#大小">#</a>大小</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-size b</code></td>
+<td>512 字节块（默认）</td>
+</tr>
+<tr>
+<td><code>-size c</code></td>
+<td>字节</td>
+</tr>
+<tr>
+<td><code>-size k</code></td>
+<td>千字节</td>
+</tr>
+<tr>
+<td><code>-size M</code></td>
+<td>兆字节</td>
+</tr>
+<tr>
+<td><code>-size G</code></td>
+<td>千兆字节</td>
+</tr>
+<tr>
+<td><code>-size T</code></td>
+<td>太字节_（仅限 BSD）_</td>
+</tr>
+<tr>
+<td><code>-size P</code></td>
+<td>PB <em>（仅 BSD）</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="大小-2"><a class="h-anchor" href="#大小-2">#</a>大小 +/-</h3>
+<div class="section">
+<p>查找所有大于 10MB 的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -size +10M</span>
+</code></pre>
+<p>查找所有小于 10MB 的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -size -10M</span>
+</code></pre>
+<p>查找所有正好为 10M 的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -size 10M</span>
+</code></pre>
+<p>查找 100MB 和 1GB 之间的大小</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -size +100M -size -1G</span>
+</code></pre>
+<p>像往常一样，<code>+</code> 和 <code>-</code> 前缀表示大于和小于。</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="名称"><a class="h-anchor" href="#名称">#</a>名称</h3>
+<div class="section">
+<p>在当前目录中使用名称查找文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name tecmint.txt</span>
+</code></pre>
+<p>查找主目录下的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find /home -name tecmint.txt</span>
+</code></pre>
+<p>使用名称查找文件并忽略大小写</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find /home -iname tecmint.txt</span>
+</code></pre>
+<p>使用名称查找目录</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -<span class="hljs-built_in">type</span> d -name tecmint</span>
+</code></pre>
+<p>使用名称查找php文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name tecmint.php</span>
+</code></pre>
+<p>查找目录下的所有php文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&quot;*.php&quot;</span></span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="权限"><a class="h-anchor" href="#权限">#</a>权限</h3>
+<div class="section">
+<p>查找权限为 777 的文件。</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -perm 0777 -<span class="hljs-built_in">print</span></span>
+</code></pre>
+<p>查找未经许可的文件 777.</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -<span class="hljs-built_in">type</span> f ! -perm 777</span>
+</code></pre>
+<p>查找 SUID 集文件。</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -perm /u=s</span>
+</code></pre>
+<p>查找 SGID 集文件。</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -perm /g=s</span>
+</code></pre>
+<p>查找只读文件。</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -perm /u=r</span>
+</code></pre>
+<p>查找可执行文件。</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -perm /a=x</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="所有者和组"><a class="h-anchor" href="#所有者和组">#</a>所有者和组</h3>
+<div class="section">
+<p>根据用户查找单个文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -user root -name tecmint.txt</span>
+</code></pre>
+<p>根据用户查找所有文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find /home -user tecmint</span>
+</code></pre>
+<p>根据组查找所有文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find /home -group developer</span>
+</code></pre>
+<p>查找用户的特定文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find /home -user tecmint -iname <span class="hljs-string">&quot;*.txt&quot;</span></span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="多个文件名"><a class="h-anchor" href="#多个文件名">#</a>多个文件名</h3>
+<div class="section">
+<pre><code class="hljs language-wrap-text">$ find . -type f \( -name &quot;*.sh&quot; -or -name &quot;*.txt&quot; \)
+</code></pre>
+
+<p>查找带有 <code>.sh</code> 或 <code>.txt</code> 扩展名的文件</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="多个目录"><a class="h-anchor" href="#多个目录">#</a>多个目录</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find /opt /usr /var -name foo.scala -<span class="hljs-built_in">type</span> f</span>
+</code></pre>
+
+<p>查找具有多个目录的文件</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="空的"><a class="h-anchor" href="#空的">#</a>空的</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> d -empty</span>
+</code></pre>
+<p>删除目录中的所有空文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -empty -delete</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="查找日期和时间"><a class="h-anchor" href="#查找日期和时间">#</a>查找日期和时间</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="方法"><a class="h-anchor" href="#方法">#</a>方法</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>atime</code></td>
+<td>访问时间（上次文件<yel>打开</yel>）</td>
+</tr>
+<tr>
+<td><code>mtime</code></td>
+<td>修改时间（上次文件<yel>内容被修改</yel>）</td>
+</tr>
+<tr>
+<td><code>ctime</code></td>
+<td>更改时间（上次文件 <yel>inode 已更改</yel>）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="示例"><a class="h-anchor" href="#示例">#</a>示例</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-mtime +0</code></td>
+<td>24 小时前修改</td>
+</tr>
+<tr>
+<td><code>-mtime 0</code></td>
+<td>从现在到 1 天前修改</td>
+</tr>
+<tr>
+<td><code>-mtime -1</code></td>
+<td>不到 1 天前修改（与 <code>-mtime 0</code> 相同）</td>
+</tr>
+<tr>
+<td><code>-mtime 1</code></td>
+<td>24 至 48 小时前修改</td>
+</tr>
+<tr>
+<td><code>-mtime +1</code></td>
+<td>超过 48 小时前修改</td>
+</tr>
+<tr>
+<td><code>-mtime +1w</code></td>
+<td>上次修改时间超过 1 周前</td>
+</tr>
+<tr>
+<td><code>-atime 0</code></td>
+<td>从现在到 24 小时前最后一次访问</td>
+</tr>
+<tr>
+<td><code>-atime +0</code></td>
+<td>访问时间超过 24 小时</td>
+</tr>
+<tr>
+<td><code>-atime 1</code></td>
+<td>在 24 至 48 小时前访问</td>
+</tr>
+<tr>
+<td><code>-atime +1</code></td>
+<td>访问时间超过 48 小时</td>
+</tr>
+<tr>
+<td><code>-atime -1</code></td>
+<td>不到 24 小时前访问过（与 <code>-atime 0</code> 相同）</td>
+</tr>
+<tr>
+<td><code>-ctime -6h30m</code></td>
+<td>文件状态在过去 6 小时 30 分钟内发生变化</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="更多示例"><a class="h-anchor" href="#更多示例">#</a>更多示例</h3>
+<div class="section">
+<p>查找最近 50 天修改的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -mtime 50</span>
+</code></pre>
+<p>查找最近 50 天访问的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -atime 50</span>
+</code></pre>
+<p>查找最近 50-100 天修改的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -mtime +50 –mtime -100</span>
+</code></pre>
+<p>查找最近 1 小时内更改的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -cmin -60</span>
+</code></pre>
+<p>查找最近 1 小时内修改过的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -mmin -60</span>
+</code></pre>
+<p>查找最近 1 小时内访问过的文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -amin -60</span>
+</code></pre>
+<p>查看文件最多的目录</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> /*; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>; find <span class="hljs-variable">$i</span> | <span class="hljs-built_in">wc</span> -l; <span class="hljs-keyword">done</span></span> 
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="查找并执行"><a class="h-anchor" href="#查找并执行">#</a>查找并执行</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-3">
+<h3 id="查找和删除"><a class="h-anchor" href="#查找和删除">#</a>查找和删除</h3>
+<div class="section">
+<p>查找并删除多个文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&quot;*.mp3&quot;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> -f &#123;&#125; \;</span>
+</code></pre>
+<p>查找和删除单个文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&quot;tecmint.txt&quot;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> -f &#123;&#125; \;</span>
+</code></pre>
+<p>查找和删除 100mb 文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -<span class="hljs-built_in">type</span> f -size +100m -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> -f &#123;&#125; \;</span>
+</code></pre>
+<p>查找特定文件并删除</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -<span class="hljs-built_in">type</span> f -name *.mp3 -size +10m -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> &#123;&#125; \;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找和替换"><a class="h-anchor" href="#查找和替换">#</a>查找和替换</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find ./ -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">exec</span> sed -i <span class="hljs-string">&#x27;s/find/replace/g&#x27;</span> &#123;&#125; \;</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">find ./ -<span class="hljs-built_in">type</span> f -readable -writable -<span class="hljs-built_in">exec</span> sed -i <span class="hljs-string">&quot;s/old/new/g&quot;</span> &#123;&#125; \;</span>
+</code></pre>
+<p>参见：<a href="./sed.md">sed</a> 命令</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找和重命名"><a class="h-anchor" href="#查找和重命名">#</a>查找和重命名</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&#x27;file*&#x27;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">mv</span> &#123;&#125; &#123;&#125;_renamed \;</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&#x27;file*&#x27;</span> -<span class="hljs-built_in">exec</span> sh -c <span class="hljs-string">&#x27;x=&quot;&#123;&#125;&quot;; mv &quot;$x&quot; &quot;$&#123;x&#125;.bak&quot;&#x27;</span> \;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找和移动"><a class="h-anchor" href="#查找和移动">#</a>查找和移动</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name <span class="hljs-string">&#x27;*.mp3&#x27;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">mv</span> &#123;&#125; /tmp/music \;</span>
+</code></pre>
+<p>查找并将其移动到特定目录</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找和复制"><a class="h-anchor" href="#查找和复制">#</a>查找和复制</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -name <span class="hljs-string">&#x27;*2020*.xml&#x27;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">cp</span> -r <span class="hljs-string">&quot;&#123;&#125;&quot;</span> /tmp/backup \;</span>
+</code></pre>
+<p>查找并将其复制到特定目录</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找并连接"><a class="h-anchor" href="#查找并连接">#</a>查找并连接</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find download -<span class="hljs-built_in">type</span> f -iname <span class="hljs-string">&#x27;*.csv&#x27;</span> | xargs <span class="hljs-built_in">cat</span> &gt; merged.csv</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">find download -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&#x27;*.gz&#x27;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">cat</span> &#123;&#125; \; &gt; output</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找和排序"><a class="h-anchor" href="#查找和排序">#</a>查找和排序</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%T+\t%p\n&quot;</span> | <span class="hljs-built_in">sort</span></span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%T+\t%p\n&quot;</span> | <span class="hljs-built_in">sort</span> -r</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="查找和-chmod"><a class="h-anchor" href="#查找和-chmod">#</a>查找和 chmod</h3>
+<div class="section">
+<p>查找文件并将权限设置为 644。</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -<span class="hljs-built_in">type</span> f -perm 0777 -<span class="hljs-built_in">print</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 644 &#123;&#125; \;</span>
+</code></pre>
+<p>查找目录并将权限设置为 755。</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find / -<span class="hljs-built_in">type</span> d -perm 777 -<span class="hljs-built_in">print</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 755 &#123;&#125; \;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找并-tar"><a class="h-anchor" href="#查找并-tar">#</a>查找并 tar</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&quot;*.java&quot;</span> | xargs tar cvf myfile.tar</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&quot;*.java&quot;</span> | xargs tar rvf myfile.tar</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="查找并排除目录"><a class="h-anchor" href="#查找并排除目录">#</a>查找并排除目录</h3>
+<div class="section">
+<p>查找当前目录及子目录中的所有<code>js</code>文件，但是排除掉<code>node_modules</code>目录中的</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&quot;*.js&quot;</span> -not -path <span class="hljs-string">&quot;./node_modules/*&quot;</span></span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/chmod.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">chmod <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/chmod.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">chmod <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/find.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">find <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/dockerfile.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">dockerfile <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/nginx.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Nginx <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer><div id="carbon_container"></div></body><script src="/js/main.js?_v=1670511327553"></script></html>
