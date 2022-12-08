@@ -1,7 +1,7 @@
 ---
 title: chmod
-icon: icon-sed
-background: bg-blue-400
+icon: icon-permission
+background: bg-red-400
 tags:
   - linux
   - tools
