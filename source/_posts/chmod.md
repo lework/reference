@@ -259,7 +259,8 @@ $ find /path -type f -exec chmod 644 {} \;
 
 请参阅：[命令替换](https://tldp.org/LDP/abs/html/commandsub.html)
 
-另见
+
+## 更多资源 {.cols-1}
 ----
 
 * [使用 chmod 修改文件权限](https://www.linode.com/docs/guides/modify-file-permissions-with-chmod/) _(linode.com)_

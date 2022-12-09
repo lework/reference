@@ -409,9 +409,7 @@ docker pull registry.cn-hangzhou.aliyuncs.com/kainstall/kube-scheduler:[镜像�
 更多: [sync_image](https://github.com/lework/sync_image)
 
 
-其他
---------------------
-
+## 更多资源 {.cols-1}
 ### github   {.col-span-2}
 
 #### 仅限访问和下载，请不要提交账号信息，需保护自己的隐私。

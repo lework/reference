@@ -1,8 +1,8 @@
 ---
-title: dockerfile
+title: Dockerfile
 date: 2022-12-06 21:19:41
 icon: icon-docker
-background: bg-[#e44230]
+background: bg-[#58aee9]
 label: dokcer
 tags:
     - container
@@ -202,3 +202,8 @@ docker buildx build \
    -t myusername/hello . \
    --push
 ```
+
+
+## 更多资源 {.cols-1}
+
+- [Dockerfile 官方参考](https://docs.docker.com/engine/reference/builder/) _(docker.com)_

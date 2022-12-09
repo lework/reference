@@ -821,8 +821,8 @@ location = /robots.txt {
 ```
 
 
-另见
----
+## 更多资源 {.cols-1}
 
+- [Nginx 配置](https://nginxconfig.io/) _(nginxconfig.io)_
 - [Nginx 安装维护入门学习笔记](https://jaywcjlove.github.io/nginx-tutorial) _(jaywcjlove.github.io)_
 - [advanced-nginx-cheatsheet](https://virtubox.github.io/advanced-nginx-cheatsheet/) _(virtubox.github.io)_
