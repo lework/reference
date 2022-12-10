@@ -57,7 +57,7 @@ $ chmod -R 755 my_directory
 
 ### 解释
 
-```shell
+```shell script {.wrap}
 $ ls -l
 -rw-r--r--  1 root root 3 Jun 29 15:35 a.log
 drwxr-xr-x  2 root root 2 Jun 30 18:06 dir
@@ -241,7 +241,7 @@ $ chmod 400 /path/to/access_key.pem
 
 ### 网络权限
 
-```shell
+```shell script {.wrap}
 $ chmod -R 644 /var/www/html/
 $ chmod 644 .htaccess
 $ chmod 644 robots.txt

@@ -204,19 +204,17 @@ $ find /home -user tecmint -iname "*.txt"
 
 ### 多个文件名 
 
-```wrap-text
+```shell script {.wrap}
 $ find . -type f \( -name "*.sh" -or -name "*.txt" \)
 ```
-<!--rehype:className=wrap-text -->
 
 查找带有 `.sh` 或 `.txt` 扩展名的文件
 
 ### 多个目录
 
-```shell
+```shell script {.wrap}
 $ find /opt /usr /var -name foo.scala -type f
 ```
-<!--rehype:className=wrap-text -->
 
 查找具有多个目录的文件
 
@@ -298,7 +296,7 @@ $ find / -mmin -60
 $ find / -amin -60
 ```
 查看文件最多的目录
-```shell
+```shell script {.wrap}
 $ for i in /*; do echo $i; find $i | wc -l; done 
 ```
 
@@ -333,7 +331,7 @@ $ find / -type f -name *.mp3 -size +10m -exec rm {} \;
 
 ### 查找和替换
 
-```shell
+```shell script {.wrap}
 $ find ./ -type f -exec sed -i 's/find/replace/g' {} \;
 $ find ./ -type f -readable -writable -exec sed -i "s/old/new/g" {} \;
 ```
@@ -342,7 +340,7 @@ $ find ./ -type f -readable -writable -exec sed -i "s/old/new/g" {} \;
 
 ### 查找和重命名
 
-```shell
+```shell script {.wrap}
 $ find . -type f -name 'file*' -exec mv {} {}_renamed \;
 $ find . -type f -name 'file*' -exec sh -c 'x="{}"; mv "$x" "${x}.bak"' \;
 ```
