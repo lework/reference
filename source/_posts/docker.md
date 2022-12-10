@@ -1,5 +1,5 @@
 ---
-title: docker
+title: Docker
 date: 2022-12-05 21:17:56
 icon: icon-docker
 background: bg-[#488fdf]
@@ -65,7 +65,114 @@ $ docker run -it --rm -p 8001:8080 --name my-nginx nginx
 参数 `<container>` 可以是容器 id 或名称
 
 
+Docker 安装 {.cols-2}
+----------
 
+### 脚本安装
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+bash get-docker.sh
+```
+
+### debian {.row-span-2}
+```bash
+apt-get update
+apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -
+add-apt-repository \
+   "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+apt-get update
+apt-get install -y docker-ce bash-completion
+cp /usr/share/bash-completion/completions/docker /etc/bash_completion.d/
+
+cat > /etc/docker/daemon.json <<EOF
+{
+  "data-root": "/var/lib/docker",
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "200m",
+    "max-file": "5"
+  },
+  "default-ulimits": {
+    "nofile": {
+      "Name": "nofile",
+      "Hard": 655360,
+      "Soft": 655360
+    },
+    "nproc": {
+      "Name": "nproc",
+      "Hard": 655360,
+      "Soft": 655360
+    }
+  },
+  "live-restore": true,
+  "oom-score-adjust": -1000,
+  "max-concurrent-downloads": 10,
+  "max-concurrent-uploads": 10,
+  "storage-driver": "overlay2",
+  "storage-opts": ["overlay2.override_kernel_check=true"],
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "registry-mirrors": [
+    "https://yssx4sxy.mirror.aliyuncs.com/"
+  ]
+}
+EOF
+
+systemctl enable docker && systemctl restart docker
+
+# 删除
+apt-get remove -y docker docker-engine docker.io containerd runc
+rm -rf /var/lib/docker
+```
+
+### Centos 
+```bash
+curl -o /etc/yum.repos.d/docker-ce.repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
+sed -i 's#download.docker.com#mirrors.ustc.edu.cn/docker-ce#g' /etc/yum.repos.d/docker-ce.repo
+yum -y install docker-ce bash-completion
+cp /usr/share/bash-completion/completions/docker /etc/bash_completion.d/
+
+mkdir  /etc/docker
+cat > /etc/docker/daemon.json <<EOF
+{
+  "data-root": "/var/lib/docker",
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "200m",
+    "max-file": "5"
+  },
+  "default-ulimits": {
+    "nofile": {
+      "Name": "nofile",
+      "Hard": 655360,
+      "Soft": 655360
+    },
+    "nproc": {
+      "Name": "nproc",
+      "Hard": 655360,
+      "Soft": 655360
+    }
+  },
+  "live-restore": true,
+  "oom-score-adjust": -1000,
+  "max-concurrent-downloads": 10,
+  "max-concurrent-uploads": 10,
+  "storage-driver": "overlay2",
+  "storage-opts": ["overlay2.override_kernel_check=true"],
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "registry-mirrors": [
+    "https://yssx4sxy.mirror.aliyuncs.com/"
+  ]
+}
+EOF
+systemctl enable --now docker
+
+# 删除
+yum autoremove docker-ce
+rm -rf /var/lib/docker
+```
 
 Docker 容器 {.cols-2}
 ----------
@@ -149,6 +256,7 @@ Docker 镜像 {.cols-2}
 | `docker load < ubuntu.tar.gz`      | 加载一个 tar 存储库 |
 | `docker load --input ubuntu.tar`   | 加载一个 tar 存储库 |
 | `docker save busybox > ubuntu.tar` | 将镜像保存到 tar 存档 |
+| `docker save busybox | gzip > ubuntu.tar.gz` | 将镜像保存到 gzip 存档 |
 | `docker history`                   | 显示镜像的历史 |
 | `docker commit nginx`              | 将容器另存为镜像。|
 | `docker tag nginx eon01/nginx`     | 标记镜像 |
