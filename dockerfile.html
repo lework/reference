@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Dockerfile Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,container,virtual,dockerfile"><meta name="description" content="这是 Dockerfile 的快速参考备忘单。 "><meta property="og:url" content="https://quickref.leops.cn/dockerfile.html"><meta property="og:title" content="Dockerfile Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="这是 Dockerfile 的快速参考备忘单。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=t1vhu"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dockerfile Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="这是 Dockerfile 的快速参考备忘单。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=8j1n1"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/dockerfile.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1670583133438"><link rel="stylesheet" href="/css/style.css?_v=1670583133438"><script>
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Dockerfile Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,container,virtual,dockerfile"><meta name="description" content="这是 Dockerfile 的快速参考备忘单。 "><meta property="og:url" content="https://quickref.leops.cn/dockerfile.html"><meta property="og:title" content="Dockerfile Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="这是 Dockerfile 的快速参考备忘单。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=ggo1qf"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dockerfile Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="这是 Dockerfile 的快速参考备忘单。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=3f6oy"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/dockerfile.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1670666271758"><link rel="stylesheet" href="/css/style.css?_v=1670666271758"><script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             let html = document.documentElement.classList;
             html.toggle('dark')
@@ -111,82 +111,159 @@
 </code></pre>
 </div>
 </div>
+<div class="h3-wrap col-span-2 row-span-2">
+<h3 id="python"><a class="h-anchor" href="#python">#</a>python</h3>
+<div class="section">
+<pre><code class="hljs language-yaml"><span class="hljs-string">FROM</span> <span class="hljs-string">python:3.6-alpine3.8</span>
+
+<span class="hljs-comment"># Add non-changing settings at the top to profit from docker layer caching</span>
+<span class="hljs-string">ENV</span> <span class="hljs-string">FLASK_APP=logapp.py</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">PYTHONUNBUFFERED=TRUE</span>
+<span class="hljs-string">RUN</span> <span class="hljs-string">addgroup</span> <span class="hljs-string">-g</span> <span class="hljs-number">1000</span> <span class="hljs-string">-S</span> <span class="hljs-string">flask</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">adduser</span> <span class="hljs-string">-u</span> <span class="hljs-number">1000</span> <span class="hljs-string">-S</span> <span class="hljs-string">flask</span> <span class="hljs-string">-G</span> <span class="hljs-string">flask</span>
+
+<span class="hljs-string">WORKDIR</span> <span class="hljs-string">/home/flask/app/web</span>
+
+<span class="hljs-comment"># Skips pip install if requirements hasn&#x27;t changed</span>
+<span class="hljs-string">COPY</span> <span class="hljs-string">requirements.txt</span> <span class="hljs-string">./</span>
+<span class="hljs-string">RUN</span> <span class="hljs-string">pip</span> <span class="hljs-string">install</span> <span class="hljs-string">--no-cache-dir</span> <span class="hljs-string">-r</span> <span class="hljs-string">requirements.txt</span>
+
+<span class="hljs-comment"># Copy app files</span>
+<span class="hljs-string">COPY</span> <span class="hljs-string">*.py</span> <span class="hljs-string">/home/flask/app/web</span>
+
+<span class="hljs-comment"># Make the app run under non-root user &amp; fix permissions</span>
+<span class="hljs-comment"># WORKDIR sets root:root :(</span>
+<span class="hljs-string">RUN</span> <span class="hljs-string">chown</span> <span class="hljs-string">-R</span> <span class="hljs-string">flask:flask</span> <span class="hljs-string">/home/flask</span>
+<span class="hljs-string">USER</span> <span class="hljs-string">flask</span>
+
+<span class="hljs-string">CMD</span> [<span class="hljs-string">&quot;gunicorn&quot;</span>, <span class="hljs-string">&quot;-b&quot;</span>, <span class="hljs-string">&quot;:8000&quot;</span>, <span class="hljs-string">&quot;-w&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;--access-logfile&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-string">&quot;--error-logfile&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-string">&quot;flask_frontend:app&quot;</span>]
+</code></pre>
 </div>
 </div>
-<div class="h2-wrap">
-<h2 id="dockerfile-指令参数"><a class="h-anchor" href="#dockerfile-指令参数">#</a>Dockerfile 指令参数</h2>
+<div class="h3-wrap">
+<h3 id="下载文件和解压"><a class="h-anchor" href="#下载文件和解压">#</a>下载文件和解压</h3>
+<div class="section">
+<pre><code class="hljs language-yaml"><span class="hljs-string">RUN</span> <span class="hljs-string">set</span> <span class="hljs-string">-eux;</span> <span class="hljs-string">\</span>
+	<span class="hljs-string">\</span>
+	<span class="hljs-string">curl</span> <span class="hljs-string">-fL</span> <span class="hljs-string">-o</span> <span class="hljs-string">/openjdk.tgz</span> <span class="hljs-string">&quot;$JAVA_URL&quot;</span><span class="hljs-string">;</span> <span class="hljs-string">\</span>
+	<span class="hljs-string">echo</span> <span class="hljs-string">&quot;$JAVA_SHA256 */openjdk.tgz&quot;</span> <span class="hljs-string">|</span> <span class="hljs-string">sha256sum</span> <span class="hljs-string">-c</span> <span class="hljs-string">-;</span> <span class="hljs-string">\</span>
+	<span class="hljs-string">mkdir</span> <span class="hljs-string">-p</span> <span class="hljs-string">&quot;$JAVA_HOME&quot;</span><span class="hljs-string">;</span> <span class="hljs-string">\</span>
+	<span class="hljs-string">tar</span> <span class="hljs-string">--extract</span> <span class="hljs-string">--file</span> <span class="hljs-string">/openjdk.tgz</span> <span class="hljs-string">--directory</span> <span class="hljs-string">&quot;$JAVA_HOME&quot;</span> <span class="hljs-string">--strip-components</span> <span class="hljs-number">1</span><span class="hljs-string">;</span> <span class="hljs-string">\</span>
+	<span class="hljs-string">rm</span> <span class="hljs-string">/openjdk.tgz;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="安装清理"><a class="h-anchor" href="#安装清理">#</a>安装清理</h3>
+<div class="section">
+<pre><code class="hljs language-yaml"><span class="hljs-comment"># centos</span>
+<span class="hljs-string">RUN</span> <span class="hljs-string">yum</span> <span class="hljs-string">clean</span> <span class="hljs-string">all</span>
+
+<span class="hljs-comment"># debian</span>
+<span class="hljs-string">RUN</span> <span class="hljs-string">apt-get</span> <span class="hljs-string">purge</span> <span class="hljs-string">-y</span> <span class="hljs-string">--auto-remove</span> <span class="hljs-string">-o</span> <span class="hljs-string">APT::AutoRemove::RecommendsImportant=false;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">rm</span> <span class="hljs-string">-rf</span> <span class="hljs-string">/var/lib/apt/lists/*</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">rm</span> <span class="hljs-string">-rf</span> <span class="hljs-string">/tmp/*</span> <span class="hljs-string">/var/tmp/*</span>
+
+<span class="hljs-comment"># alpine</span>
+<span class="hljs-string">RUN</span> <span class="hljs-string">apk</span> <span class="hljs-string">add</span> <span class="hljs-string">--no-cache</span> <span class="hljs-string">python3</span> <span class="hljs-string">\</span>
+     <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">rm</span> <span class="hljs-string">-rf</span> <span class="hljs-string">/var/cache/apk/*</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="metadata"><a class="h-anchor" href="#metadata">#</a>metadata</h3>
+<div class="section">
+<pre><code class="hljs language-yaml"><span class="hljs-string">ARG</span> <span class="hljs-string">GIT_COMMIT=unknown</span>
+<span class="hljs-string">ARG</span> <span class="hljs-string">GIT_BRANCH=unknown</span>
+<span class="hljs-string">ARG</span> <span class="hljs-string">GIT_TAG=unknown</span>
+<span class="hljs-string">ARG</span> <span class="hljs-string">BUILD_TIME=unknown</span>
+
+<span class="hljs-comment"># metadata</span>
+<span class="hljs-comment"># https://github.com/opencontainers/image-spec/blob/master/annotations.md</span>
+<span class="hljs-string">LABEL</span> <span class="hljs-string">maintainer=&quot;DevOps</span> <span class="hljs-string">Team</span> <span class="hljs-string">&lt;devops@company.com&gt;&quot;</span> <span class="hljs-string">\</span>
+      <span class="hljs-string">org.opencontainers.image.title=&quot;Company</span> <span class="hljs-string">Inc.</span> <span class="hljs-string">File</span> <span class="hljs-string">Downloader&quot;</span> <span class="hljs-string">\</span>
+      <span class="hljs-string">org.opencontainers.image.description=&quot;Offers</span> <span class="hljs-string">Basic</span> <span class="hljs-string">Auth</span> <span class="hljs-string">protected</span> <span class="hljs-string">downloads</span> <span class="hljs-string">of</span> <span class="hljs-string">container</span> <span class="hljs-string">files.&quot;</span> <span class="hljs-string">\</span>
+      <span class="hljs-string">org.opencontainers.image.vendor=&quot;Company</span> <span class="hljs-string">Inc.&quot;</span> <span class="hljs-string">\</span>
+      <span class="hljs-string">org.opencontainers.image.created=&quot;$BUILD_TIME&quot;</span> <span class="hljs-string">\</span>
+      <span class="hljs-string">org.opencontainers.image.revision=&quot;$GIT_COMMIT&quot;</span> <span class="hljs-string">\</span>
+      <span class="hljs-string">org.opencontainers.image.version=&quot;$GIT_TAG&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="gosu"><a class="h-anchor" href="#gosu">#</a>gosu</h3>
+<div class="section">
+<pre><code class="hljs language-yaml"><span class="hljs-string">ENV</span> <span class="hljs-string">GOSU_VERSION</span> <span class="hljs-number">1.10</span>
+<span class="hljs-string">RUN</span> <span class="hljs-string">set</span> <span class="hljs-string">-x</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">wget</span> <span class="hljs-string">-O</span> <span class="hljs-string">/usr/local/bin/gosu</span> <span class="hljs-string">&quot;https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">wget</span> <span class="hljs-string">-O</span> <span class="hljs-string">/usr/local/bin/gosu.asc</span> <span class="hljs-string">&quot;https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">export</span> <span class="hljs-string">GNUPGHOME=&quot;$(mktemp</span> <span class="hljs-string">-d)&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">gpg</span> <span class="hljs-string">--batch</span> <span class="hljs-string">--keyserver</span> <span class="hljs-string">ha.pool.sks-keyservers.net</span> <span class="hljs-string">--recv-keys</span> <span class="hljs-string">B42F6819007F00F88E364FD4036A9C25BF357DD4</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">gpg</span> <span class="hljs-string">--batch</span> <span class="hljs-string">--verify</span> <span class="hljs-string">/usr/local/bin/gosu.asc</span> <span class="hljs-string">/usr/local/bin/gosu</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> &#123; <span class="hljs-string">command</span> <span class="hljs-string">-v</span> <span class="hljs-string">gpgconf</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">gpgconf</span> <span class="hljs-string">--kill</span> <span class="hljs-string">all</span> <span class="hljs-string">||</span> <span class="hljs-string">:;</span> &#125; <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">rm</span> <span class="hljs-string">-r</span> <span class="hljs-string">&quot;$GNUPGHOME&quot;</span> <span class="hljs-string">/usr/local/bin/gosu.asc</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">chmod</span> <span class="hljs-string">+x</span> <span class="hljs-string">/usr/local/bin/gosu</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">gosu</span> <span class="hljs-string">nobody</span> <span class="hljs-literal">true</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="tini"><a class="h-anchor" href="#tini">#</a>tini</h3>
+<div class="section">
+<pre><code class="hljs language-yaml"><span class="hljs-string">RUN</span> <span class="hljs-string">set</span> <span class="hljs-string">-x</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">export</span> <span class="hljs-string">TINI_VERSION=0.14.0</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">apt-get</span> <span class="hljs-string">update</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">apt-get</span> <span class="hljs-string">install</span> <span class="hljs-string">-y</span> <span class="hljs-string">--no-install-recommends</span> <span class="hljs-string">wget</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">rm</span> <span class="hljs-string">-rf</span> <span class="hljs-string">/var/lib/apt/lists/*</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">wget</span> <span class="hljs-string">-O</span> <span class="hljs-string">/usr/local/bin/tini</span> <span class="hljs-string">&quot;https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">wget</span> <span class="hljs-string">-O</span> <span class="hljs-string">/usr/local/bin/tini.asc</span> <span class="hljs-string">&quot;https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini.asc&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">export</span> <span class="hljs-string">GNUPGHOME=&quot;$(mktemp</span> <span class="hljs-string">-d)&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">gpg</span> <span class="hljs-string">--batch</span> <span class="hljs-string">--keyserver</span> <span class="hljs-string">ha.pool.sks-keyservers.net</span> <span class="hljs-string">--recv-keys</span> <span class="hljs-string">6380DC428747F6C393FEACA59A84159D7001A4E5</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">gpg</span> <span class="hljs-string">--batch</span> <span class="hljs-string">--verify</span> <span class="hljs-string">/usr/local/bin/tini.asc</span> <span class="hljs-string">/usr/local/bin/tini</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">rm</span> <span class="hljs-string">-r</span> <span class="hljs-string">&quot;$GNUPGHOME&quot;</span> <span class="hljs-string">/usr/local/bin/tini.asc</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">chmod</span> <span class="hljs-string">+x</span> <span class="hljs-string">/usr/local/bin/tini</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">tini</span> <span class="hljs-string">-h</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">apt-get</span> <span class="hljs-string">purge</span> <span class="hljs-string">-y</span> <span class="hljs-string">--auto-remove</span> <span class="hljs-string">wget</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="dockerfile-指令"><a class="h-anchor" href="#dockerfile-指令">#</a>Dockerfile 指令 </h2>
 <div class="h3-wrap-list">
-<div class="h3-wrap col-span-2">
+<div class="h3-wrap">
 <h3 id="主要命令"><a class="h-anchor" href="#主要命令">#</a>主要命令</h3>
 <div class="section">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>FROM image</code></td>
-<td>构建的基础镜像</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>LABEL </code></td>
-<td>设置元数据</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</code></td>
-<td>将上下文中的路径复制到位置 <code>dest</code> 的容器中</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>ADD [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</code></td>
-<td>与 <code>COPY</code> 相同，但解压缩存档并接受 http url</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>RUN &lt;command&gt;</code></td>
-<td>在容器内运行任意命令</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>USER &lt;user&gt;[:&lt;group&gt;]</code></td>
-<td>设置默认用户名</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>WORKDIR /path/to/workdir</code></td>
-<td>设置默认工作目录</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>CMD command param1 param2</code></td>
-<td>设置默认命令</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>ENTRYPOINT command param1 param2</code></td>
-<td>设置启动脚本</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>ENV &lt;key&gt;=&lt;value&gt; ...</code></td>
-<td>设置环境变量</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>EXPOSE &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</code></td>
-<td>运行时侦听指定的网络端口</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#from">FROM</a> 为其他指令设置基础镜像 (Base Image)。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#maintainer-deprecated">MAINTAINER (deprecated - use LABEL instead)</a> 为生成的镜像设置作者字段。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#run">RUN</a> 在当前镜像的基础上生成一个新层并执行命令。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> 设置容器默认执行命令。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#expose">EXPOSE</a> 告知 Docker 容器在运行时所要监听的网络端口。注意：并没有实际上将端口设置为可访问。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#env">ENV</a> 设置环境变量。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#add">ADD</a> 将文件、目录或远程文件复制到容器中。缓存无效。请尽量用 <code>COPY</code> 代替 <code>ADD</code>。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#copy">COPY</a> 将文件或文件夹复制到容器中。注意：将使用 ROOT 用户复制文件，故无论 USER / WORKDIR 指令如何配置，你都需要手动修改其所有者（<code>chown</code>），<code>ADD</code> 也是一样。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#entrypoint">ENTRYPOINT</a> 将容器设为可执行的。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#volume">VOLUME</a> 在容器内部创建挂载点 (mount point) 指向外部挂载的卷标或其他容器。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#user">USER</a> 设置随后执行 RUN / CMD / ENTRYPOINT 命令的用户名。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#workdir">WORKDIR</a> 设置工作目录 (working directory)。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#arg">ARG</a> 定义编译时 (build-time) 变量。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#onbuild">ONBUILD</a> 添加触发指令，当该镜像被作为其他镜像的基础镜像时该指令会被触发。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#stopsignal">STOPSIGNAL</a> 设置停止容器时，向容器内发送的系统调用信号 (system call signal)。</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/config/labels-custom-metadata/">LABEL</a> 将键值对元数据 (key/value metadata) 应用到镜像、容器或是守护进程。</li>
+</ul>
 </div>
 </div>
-</div>
-</div>
-<div class="h2-wrap">
-<h2 id="dockerignore-文件"><a class="h-anchor" href="#dockerignore-文件">#</a>.dockerignore 文件</h2>
-<div class="h3-wrap-list">
-<div class="h3-wrap col-span-2">
-<h3 id="示例-2"><a class="h-anchor" href="#示例-2">#</a>示例</h3>
+<div class="h3-wrap">
+<h3 id="dockerignore"><a class="h-anchor" href="#dockerignore">#</a>.dockerignore</h3>
 <div class="section">
+<p>在 Dockerfile 文件的根目录下放置 <code>.dockerignore</code> 文件，有助于避免不必要地向docker进程发送大型或敏感文件和目录</p>
 <pre><code class="hljs"><span class="hljs-comment"># 注释说明</span>
-*/temp*
-*<span class="hljs-regexp">/*/</span>temp*
+*<span class="hljs-string">/temp</span>*
+*/*<span class="hljs-string">/temp</span>*
 temp?
+*<span class="hljs-string">.md</span>
+!README*<span class="hljs-string">.md</span>
+README-secret.md
 </code></pre>
 <table>
 <thead>
@@ -213,12 +290,15 @@ temp?
 <td>排除根目录中名称为<br> <code>temp</code> 的单字符扩展名的文件和目录</td>
 </tr>
 <tr>
+<td style="text-align:left"><code>!README*.md</code></td>
+<td>以!（感叹号）开头的行可用于排除例外</td>
+</tr>
+<tr>
 <td style="text-align:left"></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>如果此文件存在，排除与其中的模式匹配的文件和目录，有利于避免 <code>ADD</code> 或 <code>COPY</code> 将敏感文件添加到镜像中。匹配是使用 Go 的 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://golang.org/pkg/path/filepath#Match">filepath.Match</a> 规则完成的。</p>
 </div>
 </div>
 </div>
@@ -227,7 +307,7 @@ temp?
 <h2 id="docker-buildkit"><a class="h-anchor" href="#docker-buildkit">#</a>Docker BuildKit</h2>
 <div class="h3-wrap-list">
 <div class="h3-wrap col-span-2">
-<h3 id="示例-3"><a class="h-anchor" href="#示例-3">#</a>示例</h3>
+<h3 id="示例-2"><a class="h-anchor" href="#示例-2">#</a>示例</h3>
 <div class="section">
 <pre><code class="hljs language-yaml"><span class="hljs-comment"># syntax=docker/dockerfile:1</span>
 <span class="hljs-string">FROM</span> <span class="hljs-string">node:alpine</span> <span class="hljs-string">as</span> <span class="hljs-string">builder</span>
@@ -261,6 +341,11 @@ temp?
 docker buildx build \ 
    -t myusername/hello . \
    --push
+
+docker buildx build \
+      --progress=plain \
+      -t lework/docker-buildkit \
+      -f Dockerfile.buildkit .
 </code></pre>
 </div>
 </div>
@@ -271,8 +356,11 @@ docker buildx build \
 <div class="h3-wrap-list">
 <ul>
 <li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/">Dockerfile 官方参考</a> <em>(docker.com)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/reference/builder/#dockerfile-examples">Examples</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/">Best practices for writing Dockerfiles</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/moby/buildkit">Buildkit</a></li>
 </ul>
 </div>
 </div>
 
-        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/docker-compose.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Docker-Compose <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/docker.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">docker <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/docker-compose.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Docker-Compose <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/chmod.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">chmod <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/find.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">find <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/dockerfile.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Dockerfile <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer><div id="carbon_container"></div></body><script src="/js/main.js?_v=1670583133438"></script></html>
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/containerd.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Containerd <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/docker-compose.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Docker-Compose <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/docker.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Docker <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/containerd.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Containerd <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/docker-compose.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Docker-Compose <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/chmod.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">chmod <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/find.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">find <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1670666271758"></script></html>
