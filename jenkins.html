@@ -1,0 +1,298 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Jenkins Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,ci,cd,jenkins"><meta name="description" content="Jenkins 是一个免费的开源自动化服务器。Jenkins 通过持续集成和促进持续交付的技术方面，帮助自动化软件开发过程中的非人工部分。它是一个基于服务器的系统，运行在servlet容器(如Apache Tomcat)"><meta property="og:url" content="https://quickref.leops.cn/jenkins.html"><meta property="og:title" content="Jenkins Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="Jenkins 是一个免费的开源自动化服务器。Jenkins 通过持续集成和促进持续交付的技术方面，帮助自动化软件开发过程中的非人工部分。它是一个基于服务器的系统，运行在servlet容器(如Apache Tomcat)"><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=nq8py"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Jenkins Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="Jenkins 是一个免费的开源自动化服务器。Jenkins 通过持续集成和促进持续交付的技术方面，帮助自动化软件开发过程中的非人工部分。它是一个基于服务器的系统，运行在servlet容器(如Apache Tomcat)"><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=2dwiq"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/jenkins.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1671013868162"><link rel="stylesheet" href="/css/style.css?_v=1671013868162"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/jenkins.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Jenkins</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>Jenkins 是一个免费的开源自动化服务器。<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jenkins.io/">Jenkins</a> 通过持续集成和促进持续交付的技术方面，帮助自动化软件开发过程中的非人工部分。它是一个基于服务器的系统，运行在servlet容器(如Apache Tomcat)中。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="安装"><a class="h-anchor" href="#安装">#</a>安装</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="centos"><a class="h-anchor" href="#centos">#</a>centos</h3>
+<div class="section">
+<pre><code class="hljs"><span class="hljs-comment"># Step 1: Install Java</span>
+$ sudo yum install fontconfig java-<span class="hljs-number">11</span>-openjdk
+
+<span class="hljs-comment"># Step 2: Add Jenkins Repository</span>
+$ sudo rpm --import https:<span class="hljs-regexp">//</span>pkg.jenkins.io<span class="hljs-regexp">/redhat/</span>jenkins.io.key
+
+<span class="hljs-comment"># Step 3: Add Jenkins repo to the system</span>
+$ sudo cat &lt;&lt;EOF &gt; <span class="hljs-regexp">/etc/yum</span>.repos.d/jenkins.repo
+[jenkins]
+name=Jenkins
+baseurl=http:<span class="hljs-regexp">//</span>pkg.jenkins.io/redhat-stable
+gpgcheck=<span class="hljs-number">1</span>
+EOF
+
+<span class="hljs-comment"># Step 4: Install Jenkins</span>
+$ sudo yum install Jenkins
+
+<span class="hljs-comment"># Step 5: Verify installation</span>
+$ sudo systemctl status Jenkins
+
+<span class="hljs-comment"># Step 6: Once Jenkins is up and running, access it from the link:</span>
+<span class="hljs-comment"># http://localhost:8080</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="debian-ubuntu"><a class="h-anchor" href="#debian-ubuntu">#</a>debian/ubuntu</h3>
+<div class="section">
+<pre><code class="hljs"><span class="hljs-comment"># Step 1: Install Java</span>
+$ sudo apt update
+$ sudo apt install fontconfig openjdk-<span class="hljs-number">11</span>-jre
+
+<span class="hljs-comment"># Step 2: Add Jenkins Repository</span>
+$ curl -fsSL https:<span class="hljs-regexp">//</span>pkg.jenkins.io<span class="hljs-regexp">/debian-stable/</span>jenkins.io.key | sudo tee \
+  <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/keyrings/</span>jenkins-keyring.asc &gt; <span class="hljs-regexp">/dev/</span>null
+
+<span class="hljs-comment"># Step 3: Add Jenkins repo to the system</span>
+$ echo deb [signed-by=<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/keyrings/</span>jenkins-keyring.asc] \
+  https:<span class="hljs-regexp">//</span>pkg.jenkins.io<span class="hljs-regexp">/debian-stable binary/</span> | sudo tee \
+  <span class="hljs-regexp">/etc/</span>apt<span class="hljs-regexp">/sources.list.d/</span>jenkins.list &gt; <span class="hljs-regexp">/dev/</span>null
+
+<span class="hljs-comment"># Step 4: Install Jenkins</span>
+$ sudo apt update
+$ sudo apt install Jenkins
+
+<span class="hljs-comment"># Step 5: Verify installation</span>
+$ systemctl status Jenkins
+
+<span class="hljs-comment"># Step 6: Once Jenkins is up and running, access it from the link:</span>
+<span class="hljs-comment"># http://localhost:8080</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="docker"><a class="h-anchor" href="#docker">#</a>docker</h3>
+<div class="section">
+<pre><code class="hljs language-bash">$ sudo <span class="hljs-built_in">mkdir</span> -p /data/jenkins
+$ sudo docker run \
+  --name jenkins \
+  -p 8080:8080 \
+  -p 50000:50000 \
+  --<span class="hljs-built_in">env</span> JENKINS_ADMIN_ID=admin \
+  --<span class="hljs-built_in">env</span> JENKINS_ADMIN_PASSWORD=password \
+  --restart always \
+   -v /data/jenkins:/var/jenkins_home \
+  jenkins:jenkins
+
+<span class="hljs-comment"># http://localhost:8080</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="war"><a class="h-anchor" href="#war">#</a>war</h3>
+<div class="section">
+<pre><code class="hljs language-bash">$ sudo yum install fontconfig java-11-openjdk
+$ sudo wget https://get.jenkins.io/war-stable/2.375.1/jenkins.war
+$ sudo java -jar jenkins.war
+
+<span class="hljs-comment"># http://localhost:8080</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="介绍"><a class="h-anchor" href="#介绍">#</a>介绍 </h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="目录结构"><a class="h-anchor" href="#目录结构">#</a>目录结构</h3>
+<div class="section">
+<ul>
+<li><code>$jenkins_home/config.xml</code> 	jenkins配置文件</li>
+<li><code>$jenkins_home/secrets/initialAdminPassword</code>	初始化admin密码</li>
+<li><code>$jenkins_home/hudson.model.UpdateCenter.xml</code>	更新插件配置文件</li>
+<li><code>$jenkins_home/update-center-rootCAs/</code>	校验更新插件内容的CA目录</li>
+<li><code>$jenkins_home/plugins/</code>	插件目录</li>
+<li><code>$jenkins_home/jobs/</code>	任务目录</li>
+<li><code>$jenkins_home/users/</code>	用户目录</li>
+<li><code>$jenkins_home/secrets/</code>	凭证目录</li>
+<li><code>$jenkins_home/logs/</code>	日志目录</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="job-类型"><a class="h-anchor" href="#job-类型">#</a>JOB 类型</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Freestyle</code></td>
+<td>自由式构建作业是通用构建作业，可提供最大的灵活性。它可以用于任何类型的项目。</td>
+</tr>
+<tr>
+<td><code>Pipeline</code></td>
+<td>该项目以代码形式运行整个软件开发工作流程。它可以将整个工作流作为一个代码运行。</td>
+</tr>
+<tr>
+<td><code>Multiconfiguration</code></td>
+<td>多配置项目允许您在不同的环境中运行相同的构建作业。它用于在不同环境中测试应用程序。</td>
+</tr>
+<tr>
+<td><code>Folder</code></td>
+<td>该项目允许用户创建文件夹以在一个文件夹或子文件夹中组织和分类类似的作业。</td>
+</tr>
+<tr>
+<td><code>GitHub Organisation</code></td>
+<td>此项目扫描您的整个 GitHub 组织并为包含 Jenkinsfile 的每个存储库创建管道作业</td>
+</tr>
+<tr>
+<td><code>Multibranch Pipeline</code></td>
+<td>此项目类型允许您为同一项目的不同分支实施不同的 Jenkinsfile。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="插件"><a class="h-anchor" href="#插件">#</a>插件 </h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="常用插件"><a class="h-anchor" href="#常用插件">#</a>常用插件</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/role-strategy">Role-based Authorization Strategy</a></td>
+<td>生产当中常用的Jenkins用户视图权限管理插件。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/periodicbackup">Periodic Backup</a></td>
+<td>备份</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/notification">Notification</a></td>
+<td>发送任务通知</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/git-parameter">Git Parameter</a></td>
+<td>在参数化构建步骤当中，可添加Git的branch或者tag来作为参数进行构建。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/ansicolor">AnsiColor</a></td>
+<td>输出颜色</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/git-parameter">SSH Agent</a></td>
+<td>ssh 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/build-name-setter">Build Name and Description Setter</a></td>
+<td>修改构建名称和描述</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/publish-over-ssh">Publish Over SSH</a></td>
+<td>通过ssh上传文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/build-user-vars-plugin">user build vars</a></td>
+<td>让整个Jenkins系统中的用户参数成为一个可调用的变量</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/throttle-concurrents">Throttle Concurrent Builds</a></td>
+<td>允许限制每个节点或全局运行的项目并发构建的数量。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/uno-choice">Active Choices</a></td>
+<td>根据所选参数，自动调出对应参数所依赖的后续参数</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/rebuild">Rebuilder</a></td>
+<td>直接重复上次构建</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/email-ext">Email Extension</a></td>
+<td>邮件通知</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/ws-cleanup">Workspace Cleanup</a></td>
+<td>删除 workspace</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://plugins.jenkins.io/leastload/">Least Load</a></td>
+<td>使用slave最小负载的job调度算法</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="updatecenter"><a class="h-anchor" href="#updatecenter">#</a>UpdateCenter</h3>
+<div class="section">
+<p>使用国内镜像源</p>
+<pre><code class="hljs language-bash">[ ! -d /var/lib/jenkins/update-center-rootCAs ] \
+  &amp;&amp; <span class="hljs-built_in">mkdir</span> /var/lib/jenkins/update-center-rootCAs
+wget https://cdn.jsdelivr.net/gh/lework/jenkins-update-center/rootCA/update-center.crt \
+  -O /var/lib/jenkins/update-center-rootCAs/update-center.crt
+<span class="hljs-built_in">chown</span> jenkins.jenkins -R /var/lib/jenkins/update-center-rootCAs
+sed -i <span class="hljs-string">&#x27;s#https://updates.jenkins.io/update-center.json#https://cdn.jsdelivr.net/gh/lework/jenkins-update-center/updates/aliyun/update-center.json#&#x27;</span> \
+  /var/lib/jenkins/hudson.model.UpdateCenter.xml
+systemctl restart jenkins
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="json-api"><a class="h-anchor" href="#json-api">#</a>JSON API</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="任务管理"><a class="h-anchor" href="#任务管理">#</a>任务管理</h3>
+<div class="section">
+<pre><code class="hljs"><span class="hljs-comment"># 打印所有的任务</span>
+GET <span class="hljs-regexp">/api/</span>json?tree=jobs[name]&amp;pretty=true
+
+<span class="hljs-comment"># 开启任务</span>
+POST <span class="hljs-regexp">/job/</span>enable
+
+<span class="hljs-comment"># 构建任务</span>
+POST <span class="hljs-regexp">/&lt;name&gt;/</span>build
+
+<span class="hljs-comment"># 带参数的构建任务</span>
+POST <span class="hljs-regexp">/&lt;name&gt;/</span>buildWithParameters?&lt;params&gt;
+
+<span class="hljs-comment"># 任务信息</span>
+GET <span class="hljs-regexp">/job/</span>jobName<span class="hljs-regexp">/lastBuild/</span>api/json
+GET <span class="hljs-regexp">/job/</span>repoName<span class="hljs-regexp">/job/</span>BranchName<span class="hljs-regexp">/lastBuild/</span>api/json
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="应用管理"><a class="h-anchor" href="#应用管理">#</a>应用管理</h3>
+<div class="section">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://localhost:8080/jenkins/exit">http://localhost:8080/jenkins/exit </a> − 关闭 Jenkins</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://localhost:8080/jenkins/restart">http://localhost:8080/jenkins/restart </a> − 重启 Jenkins</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://localhost:8080/jenkins/reload">http://localhost:8080/jenkins/reload </a> − 重载</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jenkins.io/doc/book/">官方文档</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/dennyzhang/cheatsheet-jenkins-groovy-A4">jenkins-groovy 示例 </a></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Top <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/python.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Python <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/vim.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Vim <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/javascript.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/cron.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">cron <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/jenkins.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/sla.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">SLA <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/grep.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">grep <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1671013868162"></script></html>
