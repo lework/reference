@@ -1,0 +1,439 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>sed Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,text,editor,replace,utility"><meta name="description" content="Sed 是一个流编辑器，此 Sed 备忘清单包含 Sed 命令和一些常见的 Sed 技巧。 "><meta property="og:url" content="https://quickref.leops.cn/sed.html"><meta property="og:title" content="sed Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="Sed 是一个流编辑器，此 Sed 备忘清单包含 Sed 命令和一些常见的 Sed 技巧。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=1i39a"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="sed Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="Sed 是一个流编辑器，此 Sed 备忘清单包含 Sed 命令和一些常见的 Sed 技巧。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=515abi"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/sed.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1671023832672"><link rel="stylesheet" href="/css/style.css?_v=1671023832672"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/sed.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">sed</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>Sed 是一个流编辑器，此 Sed 备忘清单包含 Sed 命令和一些常见的 Sed 技巧。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="入门"><a class="h-anchor" href="#入门">#</a>入门</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="sed-用法"><a class="h-anchor" href="#sed-用法">#</a>Sed 用法</h3>
+<div class="section">
+<p>语法</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed [options] <span class="hljs-built_in">command</span> [input-file]</span>
+</code></pre>
+<p>带管道</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cat</span> report.txt | sed <span class="hljs-string">&#x27;s/Nick/John/g&#x27;</span></span>
+</code></pre>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;123abc&#x27;</span> | sed <span class="hljs-string">&#x27;s/[0-9]+//g&#x27;</span></span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="选项示例"><a class="h-anchor" href="#选项示例">#</a>选项示例</h3>
+<div class="section">
+<table class="show-header">
+<thead>
+<tr>
+<th>参数</th>
+<th>示例</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i</code></td>
+<td>sed -ibak 's/On/Off/' php.ini</td>
+<td>直接备份和修改输入文件</td>
+</tr>
+<tr>
+<td><code>-E</code></td>
+<td>sed -E 's/[0-9]+//g' input-file</td>
+<td>使用扩展正则表达式</td>
+</tr>
+<tr>
+<td><code>-n</code></td>
+<td>sed -n '3 p' config.conf</td>
+<td>禁止默认图案空间打印</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>sed -f script.sed config.conf</td>
+<td>执行 sed 脚本文件</td>
+</tr>
+<tr>
+<td><code>-e</code></td>
+<td>sed -e 'command1' -e 'command2' input-file</td>
+<td>执行多个 sed 命令</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="多个命令"><a class="h-anchor" href="#多个命令">#</a>多个命令</h3>
+<div class="section">
+<pre><code class="hljs wrap language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> | sed -e <span class="hljs-string">&#x27;s/h/H/g&#x27;</span> -e <span class="hljs-string">&#x27;s/w/W/g&#x27;</span></span>
+Hello World
+</code></pre>
+<p>使用 <code>-e</code> 执行多个 sed 命令</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="sed-脚本"><a class="h-anchor" href="#sed-脚本">#</a>Sed 脚本</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;s/h/H/g&#x27;</span> &gt;&gt; hello.sed</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;s/w/W/g&#x27;</span> &gt;&gt; hello.sed</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> | sed -f hello.sed</span>
+Hello World
+</code></pre>
+<p>使用 <code>-f</code> 执行 sed 脚本文件</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="examples"><a class="h-anchor" href="#examples">#</a>Examples</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/old/new/g&#x27;</span> file.txt</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/old/new/g&#x27;</span> file.txt &gt; new.txt</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/old/new/g&#x27;</span> -i file.txt</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/old/new/g&#x27;</span> -i.backup file.txt</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="sed-命令"><a class="h-anchor" href="#sed-命令">#</a>Sed 命令</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="命令"><a class="h-anchor" href="#命令">#</a>命令</h3>
+<div class="section">
+<table class="show-header">
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>p</code></td>
+<td style="text-align:left">sed -n '1,4 p' input.txt</td>
+<td style="text-align:left">打印第 1-4 行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p</code></td>
+<td style="text-align:left">sed -n -e '1,4 p' -e '6,7 p' input.txt</td>
+<td style="text-align:left">打印第 1-4 行和第 6-7 行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>d</code></td>
+<td style="text-align:left">sed '1,4 d' input.txt</td>
+<td style="text-align:left">打印除 1-4 之外的行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>w</code></td>
+<td style="text-align:left">sed -n '1,4 w output.txt' input.txt</td>
+<td style="text-align:left">将模式空间写入文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a</code></td>
+<td style="text-align:left">sed '2 a new-line' input.txt</td>
+<td style="text-align:left">在后面追加一行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i</code></td>
+<td style="text-align:left">sed '2 i new-line' input.txt</td>
+<td style="text-align:left">在前面插入行</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="空间命令"><a class="h-anchor" href="#空间命令">#</a>空间命令</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>n</code></td>
+<td style="text-align:left">打印模式空间，空模式空间，读取下一行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>x</code></td>
+<td style="text-align:left">用保持空间交换模式空间</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>h</code></td>
+<td style="text-align:left">复制模式空间以保持空间</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>H</code></td>
+<td style="text-align:left">追加模式空间以保持空间</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>g</code></td>
+<td style="text-align:left">将保持空间复制到模式空间</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>G</code></td>
+<td style="text-align:left">将保持空间附加到模式空间</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="flags"><a class="h-anchor" href="#flags">#</a>Flags</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/old/new/[flags]&#x27;</span> [input-file]</span>
+</code></pre>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>g</code></td>
+<td>全球替代</td>
+</tr>
+<tr>
+<td><code>1,2...</code></td>
+<td>替换第 n 次出现</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>仅打印替换的行</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>仅将替换的行写入文件</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>搜索时忽略大小写</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>在命令行中替换并执行</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="循环命令"><a class="h-anchor" href="#循环命令">#</a>循环命令</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b label</code></td>
+<td>分支到标签（用于循环）</td>
+</tr>
+<tr>
+<td><code>t label</code></td>
+<td>仅在成功替换时分支到标签（用于循环）</td>
+</tr>
+<tr>
+<td><code>:label</code></td>
+<td>b 和 t 命令的标签（用于循环）</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>将下一行追加到模式空间</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>多行打印第一行</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>删除多行中的第一行</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="杂项标志"><a class="h-anchor" href="#杂项标志">#</a>杂项标志</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ \| ^ @ ! #</code></td>
+<td>替换分隔符可以是任何字符</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>获取匹配的模式</td>
+</tr>
+<tr>
+<td><code>( ) \1 \2 \3</code></td>
+<td>使用 <code>(</code> 和 <code>)</code> 进行分组。<br>使用 <code>\1</code>、<code>\2</code> 替换来引用组</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="sed-示例"><a class="h-anchor" href="#sed-示例">#</a>Sed 示例</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="替换文本"><a class="h-anchor" href="#替换文本">#</a>替换文本</h3>
+<div class="section">
+<p>替换所有出现的字符串</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/old/new/g&#x27;</span> file.txt</span>
+</code></pre>
+<p>仅替换第 n 次出现的字符串</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/old/new/2&#x27;</span> file.txt</span>
+</code></pre>
+<p>仅在第 5 行替换替换字符串</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;5 s/old/new/&#x27;</span> file.txt</span>
+</code></pre>
+<p>将“world”替换为“universe”，但前提是该行以“hello”开头</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/hello/s/world/universe/&#x27;</span> file.txt</span>
+</code></pre>
+<p>从每行的末尾删除“\”</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/\\$//&#x27;</span> file.txt</span>
+</code></pre>
+<p>删除每行开头的所有空格</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/^\s*//&#x27;</span> file.txt</span>
+</code></pre>
+<p>删除评论。 即使是那些在行尾的</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;s/#.*$//&#x27;</span> file.txt</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="搜索文本"><a class="h-anchor" href="#搜索文本">#</a>搜索文本</h3>
+<div class="section">
+<p>搜索字符串并仅打印匹配的行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed -n <span class="hljs-string">&#x27;/hello/p&#x27;</span> file.txt</span>
+</code></pre>
+<p>不区分大小写的搜索</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed -n <span class="hljs-string">&#x27;/hello/Ip&#x27;</span> file.txt</span>
+</code></pre>
+<p>搜索字符串，但仅输出不匹配的行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed -n <span class="hljs-string">&#x27;/hello/!p&#x27;</span> file.txt</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="追加行"><a class="h-anchor" href="#追加行">#</a>追加行</h3>
+<div class="section">
+<p>在第 2 行之后追加一行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;2a Text after line 2&#x27;</span> file.txt</span>
+</code></pre>
+<p>在文件末尾追加一行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;$a THE END!&#x27;</span> file.txt</span>
+</code></pre>
+<p>从第 3 行开始，每 3 行后追加一行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;3~3a Some text&#x27;</span> file.txt</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="编号"><a class="h-anchor" href="#编号">#</a>编号</h3>
+<div class="section">
+<p>文件的数字行（简单的左对齐）</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed = file.txt | sed <span class="hljs-string">&#x27;N;s/\n/\t/&#x27;</span></span>
+</code></pre>
+<p>文件的数字行（数字在左，右对齐）</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed = file.txt | sed <span class="hljs-string">&#x27;N; s/^/   /; s/ *\(.\&#123;6,\&#125;\)\n/\1  /&#x27;</span></span>
+</code></pre>
+<p>文件的数字行，但如果行不为空，则仅打印数字</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/./=&#x27;</span> file.txt | sed <span class="hljs-string">&#x27;/./N; s/\n/ /&#x27;</span></span>
+</code></pre>
+<p>计算行数（模拟“wc -l”）</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed -n <span class="hljs-string">&#x27;$=&#x27;</span></span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="前置行"><a class="h-anchor" href="#前置行">#</a>前置行</h3>
+<div class="section">
+<p>在第 5 行之前插入文本</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;5i line number five&#x27;</span> file.txt</span>
+</code></pre>
+<p>在包含“hello”的每一行之前插入“示例：”</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/hello/i Example: &#x27;</span> file.txt</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="删除行"><a class="h-anchor" href="#删除行">#</a>删除行</h3>
+<div class="section">
+<p>删除文件中的第 5-7 行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;5,7d&#x27;</span> file.txt</span>
+</code></pre>
+<p>删除从第 3 行开始的每 2 行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;3~2d&#x27;</span> file.txt</span>
+</code></pre>
+<p>删除文件的最后一行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;$d&#x27;</span> file.txt</span>
+</code></pre>
+<p>删除以“Hello”开头的行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/^Hello/d&#x27;</span> file.txt</span>
+</code></pre>
+<p>删除所有空行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/^$/d&#x27;</span> file.txt</span>
+</code></pre>
+<p>删除以“#”开头的行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/^#/d&#x27;</span> file.txt</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="文件间距"><a class="h-anchor" href="#文件间距">#</a>文件间距</h3>
+<div class="section">
+<p>双倍行距</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed G</span>
+</code></pre>
+<p>删除所有空行和双空格</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/^$/d;G&#x27;</span></span>
+</code></pre>
+<p>三倍空间文件</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;G;G&#x27;</span></span>
+</code></pre>
+<p>撤消双倍行距</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;n;d&#x27;</span></span>
+</code></pre>
+<p>在匹配“正则表达式”的行上方插入一个空行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/regex/&#123;x;p;x;&#125;&#x27;</span></span>
+</code></pre>
+<p>在匹配“正则表达式”的行下方插入一个空行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/regex/G&#x27;</span></span>
+</code></pre>
+<p>在匹配“正则表达式”的行周围插入一个空行</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sed <span class="hljs-string">&#x27;/regex/&#123;x;p;x;G;&#125;&#x27;</span></span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://gist.github.com/ssstonebraker/6140154">sed 备忘单</a> <em>(gist.github.com)</em></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/grep.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">grep <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/sed.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">sed <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/cron.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">cron <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/jenkins.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/sla.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">SLA <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1671023832672"></script></html>
