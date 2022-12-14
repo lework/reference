@@ -1,7 +1,7 @@
 ---
 title: 常见公共服务
 date: 2022-12-04 10:50:43
-icon: icon-logo
+icon: icon-style
 background: bg-blue-900
 tags:
     - dns

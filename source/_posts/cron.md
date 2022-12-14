@@ -1,7 +1,7 @@
 ---
 title: cron
 icon: icon-cron
-background: bg[#6950a1]
+background: bg-[#6950a1]
 tags:
   - schedule
   - crontab

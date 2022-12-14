@@ -1,5 +1,6 @@
 ---
 title: SLA
+icon: icon-style
 background: bg-green-400
 tags:
     - sre
