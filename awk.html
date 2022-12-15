@@ -1,0 +1,1111 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>awk Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,bash,text,script"><meta name="description" content="这是 GNU awk 的单页快速参考备忘单，其中涵盖了常用的 awk 表达式和命令。 "><meta property="og:url" content="https://quickref.leops.cn/awk.html"><meta property="og:title" content="awk Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="这是 GNU awk 的单页快速参考备忘单，其中涵盖了常用的 awk 表达式和命令。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=249a7"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="awk Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="这是 GNU awk 的单页快速参考备忘单，其中涵盖了常用的 awk 表达式和命令。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=sicbu"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/awk.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1671110782239"><link rel="stylesheet" href="/css/style.css?_v=1671110782239"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/awk.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">awk</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>这是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.gnu.org/software/gawk/manual/gawk.html">GNU awk</a> 的单页快速参考备忘单，其中涵盖了常用的 <code>awk</code> 表达式和命令。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="入门"><a class="h-anchor" href="#入门">#</a>入门</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="试试"><a class="h-anchor" href="#试试">#</a>试试</h3>
+<div class="section">
+<p>该程序可用于选择文件中的特定记录并对其执行操作</p>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">awk -F: <span class="hljs-string">&#x27;&#123;print $1, $NF&#125;&#x27;</span> /etc/passwd</span>
+</code></pre>
+<hr>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><code>-F:</code></td>
+<td>冒号作为分隔符</td>
+</tr>
+<tr>
+<td></td>
+<td><code>&#123;...&#125;</code></td>
+<td>awk 程序</td>
+</tr>
+<tr>
+<td></td>
+<td><code>print</code></td>
+<td>打印当前记录</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$1</code></td>
+<td>第一个字段</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$NF</code></td>
+<td>最后一个字段</td>
+</tr>
+<tr>
+<td></td>
+<td><code>/etc/passwd</code></td>
+<td>输入数据文件</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="awk-程序"><a class="h-anchor" href="#awk-程序">#</a>Awk 程序</h3>
+<div class="section">
+<pre><code class="hljs language-bash">BEGIN          &#123;&lt;初始化&gt;&#125; 
+   &lt;pattern 1&gt; &#123;&lt;计划动作&gt;&#125; 
+   &lt;pattern 2&gt; &#123;&lt;计划动作&gt;&#125; 
+   ...
+END            &#123;&lt; 最后的动作 &gt;&#125;
+</code></pre>
+<h4 id="示例"><a class="h-anchor" href="#示例">#</a>示例</h4>
+<pre><code class="hljs language-bash">awk <span class="hljs-string">&#x27;
+    BEGIN &#123; print &quot;\n&gt;&gt;&gt;Start&quot; &#125;
+    !/(login|shutdown)/ &#123; print NR, $0 &#125;
+    END &#123; print &quot;&lt;&lt;&lt;END\n&quot; &#125;
+&#x27;</span> /etc/passwd
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="变量"><a class="h-anchor" href="#变量">#</a>变量</h3>
+<div class="section">
+<pre><code class="hljs language-bash">          <span class="hljs-variable">$1</span>      <span class="hljs-variable">$2</span>/$(NF-1)    <span class="hljs-variable">$3</span>/<span class="hljs-variable">$NF</span>
+           ▼          ▼           ▼ 
+        ┌──────┬──────────────┬───────┐
+<span class="hljs-variable">$0</span>/NR ▶ │  ID  │  WEBSITE     │  URI  │
+        ├──────┼──────────────┼───────┤
+<span class="hljs-variable">$0</span>/NR ▶ │  1   │  baidu.com   │  awk  │
+        ├──────┼──────────────┼───────┤
+<span class="hljs-variable">$0</span>/NR ▶ │  2   │  google.com  │  25   │
+        └──────┴──────────────┴───────┘
+</code></pre>
+<hr>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">第一个和最后一个字段</span>
+awk -F: &#x27;&#123;print $1,$NF&#125;&#x27; /etc/passwd
+<span class="hljs-meta prompt_"># </span><span class="language-bash">带行号</span>
+awk -F: &#x27;&#123;print NR, $0&#125;&#x27; /etc/passwd
+<span class="hljs-meta prompt_"># </span><span class="language-bash">倒数第二个字段</span>
+awk -F: &#x27;&#123;print $(NF-1)&#125;&#x27; /etc/passwd
+<span class="hljs-meta prompt_"># </span><span class="language-bash">自定义字符串</span>
+awk -F: &#x27;&#123;print $1 &quot;=&quot; $6&#125;&#x27; /etc/passwd
+</code></pre>
+<p>查看: <a href="#awk-%E5%8F%98%E9%87%8F">Awk 变量</a></p>
+</div>
+</div>
+<div class="h3-wrap row-span-2 col-span-2">
+<h3 id="awk-程序示例"><a class="h-anchor" href="#awk-程序示例">#</a>Awk 程序示例</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;print &quot;hello world&quot;&#125;&#x27;        # 打印 &quot;hello world&quot;
+awk -F: &#x27;&#123;print $1&#125;&#x27; /etc/passwd         # -F: 指定字段分隔符
+<span class="hljs-meta prompt_"># </span><span class="language-bash">/pattern/ 仅对匹配的模式执行操作</span>
+awk -F: &#x27;/root/ &#123;print $1&#125;&#x27; /etc/passwd                     
+<span class="hljs-meta prompt_"># </span><span class="language-bash">BEGIN 块在开始时执行一次</span>
+awk -F: &#x27;BEGIN &#123; print &quot;uid&quot;&#125; &#123; print $1 &#125;&#x27; /etc/passwd     
+<span class="hljs-meta prompt_"># </span><span class="language-bash">END 块在最后执行一次</span>
+awk -F: &#x27;&#123;print $1&#125; END &#123; print &quot;-done-&quot;&#125;&#x27; /etc/passwd
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="条件"><a class="h-anchor" href="#条件">#</a>条件</h3>
+<div class="section">
+<pre><code class="hljs language-bash">awk -F: <span class="hljs-string">&#x27;$3&gt;30 &#123;print $1&#125;&#x27;</span> /etc/passwd
+</code></pre>
+<p>查看: <a href="#awk-%E6%9D%A1%E4%BB%B6">Conditions 条件</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="生成-1000-个空格"><a class="h-anchor" href="#生成-1000-个空格">#</a>生成 1000 个空格</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN&#123;
+    while (a++ &lt; 1000)
+        s=s &quot; &quot;;
+    print s
+&#125;&#x27;
+</code></pre>
+<p>查看: <a href="#awk-%E5%BE%AA%E7%8E%AF">Loops</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="数组-arrays"><a class="h-anchor" href="#数组-arrays">#</a>数组 Arrays</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+   fruits[&quot;mango&quot;] = &quot;yellow&quot;;
+   fruits[&quot;orange&quot;] = &quot;orange&quot;
+   for(fruit in fruits) &#123;
+     print fruit &quot; 的颜色是 &quot; fruits[fruit]
+   &#125;
+&#125;&#x27;
+</code></pre>
+<p>查看: <a href="#awk-%E6%95%B0%E7%BB%84">Awk 数组</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="函数-functions"><a class="h-anchor" href="#函数-functions">#</a>函数 Functions</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">=&gt; 5</span>
+awk &#x27;BEGIN&#123;print length(&quot;hello&quot;)&#125;&#x27;
+<span class="hljs-meta prompt_"># </span><span class="language-bash">=&gt; HELLO</span>
+awk &#x27;BEGIN&#123;print toupper(&quot;hello&quot;)&#125;&#x27;
+<span class="hljs-meta prompt_"># </span><span class="language-bash">=&gt; hel</span>
+awk &#x27;BEGIN&#123;print substr(&quot;hello&quot;, 1, 3)&#125;&#x27;
+</code></pre>
+<p>查看: <a href="#awk-%E5%87%BD%E6%95%B0">Functions</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="awk-变量"><a class="h-anchor" href="#awk-变量">#</a>Awk 变量</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="内置变量"><a class="h-anchor" href="#内置变量">#</a>内置变量</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$0</code></td>
+<td style="text-align:left">全线</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1, $2...$NF</code></td>
+<td style="text-align:left">第一个，第二个……最后一个字段</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>NR</code></td>
+<td style="text-align:left">记录总数(<code>N</code>umber of <code>R</code>ecords)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>NF</code></td>
+<td style="text-align:left">N个字段(<code>N</code>number of <code>F</code>ields)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>OFS</code></td>
+<td style="text-align:left"><code>O</code>utput <code>F</code>ield <code>S</code>eparator<br> 输出字段分隔符 <em>(default &quot; &quot;)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>FS</code></td>
+<td style="text-align:left">input <code>F</code>ield <code>S</code>eparator <br> 输入字段分隔符 <em>(default &quot; &quot;)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ORS</code></td>
+<td style="text-align:left"><code>O</code>utput <code>R</code>ecord <code>S</code>eparator <br> 输出记录分隔符 <em>(default &quot;\n&quot;)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>RS</code></td>
+<td style="text-align:left">input <code>R</code>ecord <code>S</code>eparator <br> 输入记录分隔符 <em>(default &quot;\n&quot;)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>FILENAME</code></td>
+<td style="text-align:left">文件名</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="表达式"><a class="h-anchor" href="#表达式">#</a>表达式</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$1 == &quot;root&quot;</code></td>
+<td style="text-align:left">第一个字段等于根</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&#123;print $(NF-1)&#125;</code></td>
+<td style="text-align:left">倒数第二个字段</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>NR!=1&#123;print $0&#125;</code></td>
+<td style="text-align:left">从第 2 条记录开始</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>NR &gt; 3</code></td>
+<td style="text-align:left">从第 4 条记录开始</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>NR == 1</code></td>
+<td style="text-align:left">第一次记录</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>END&#123;print NR&#125;</code></td>
+<td style="text-align:left">总记录</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>BEGIN&#123;print OFMT&#125;</code></td>
+<td style="text-align:left">输出格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&#123;print NR, $0&#125;</code></td>
+<td style="text-align:left">行号</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&#123;print NR &quot;  &quot; $0&#125;</code></td>
+<td style="text-align:left">行号(选项卡)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&#123;$1 = NR; print&#125;</code></td>
+<td style="text-align:left">用行号替换第一个字段</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$NF &gt; 4</code></td>
+<td style="text-align:left">最后一个字段 &gt; 4</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>NR % 2 == 0</code></td>
+<td style="text-align:left">甚至记录</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>NR==10, NR==20</code></td>
+<td style="text-align:left">记录 10 到 20</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>BEGIN&#123;print ARGC&#125;</code></td>
+<td style="text-align:left">总 <code>arguments</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ORS=NR%5?&quot;,&quot;:&quot;\n&quot;</code></td>
+<td style="text-align:left">连接记录</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="示例-2"><a class="h-anchor" href="#示例-2">#</a>示例</h3>
+<div class="section">
+<p>打印总和和平均值</p>
+<pre><code class="hljs language-shell">awk -F: &#x27;&#123;sum += $3&#125;
+     END &#123; print sum, sum/NR &#125;
+&#x27; /etc/passwd
+</code></pre>
+<p>打印参数</p>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    for (i = 1; i &lt; ARGC; i++)
+        print ARGV[i] &#125;&#x27; a b c
+</code></pre>
+<p>输出字段分隔符为逗号</p>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123; FS=&quot;:&quot;;OFS=&quot;,&quot;&#125;
+    &#123;print $1,$2,$3,$4&#125;&#x27; /etc/passwd
+</code></pre>
+<p>匹配位置</p>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    if (match(&quot;One Two Three&quot;, &quot;Tw&quot;))
+        print RSTART &#125;&#x27;
+</code></pre>
+<p>匹配时长</p>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    if (match(&quot;One Two Three&quot;, &quot;re&quot;))
+        print RLENGTH &#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="仅限-gnu-awk"><a class="h-anchor" href="#仅限-gnu-awk">#</a>仅限 GNU awk</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>ENVIRON</code></td>
+<td style="text-align:left">环境变量</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>IGNORECASE</code></td>
+<td style="text-align:left">忽略大小写</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CONVFMT</code></td>
+<td style="text-align:left">转换格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ERRNO</code></td>
+<td style="text-align:left">系统错误</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>FIELDWIDTHS</code></td>
+<td style="text-align:left">固定宽度字段</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="环境变量"><a class="h-anchor" href="#环境变量">#</a>环境变量</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>ARGC</code></td>
+<td style="text-align:left">数字或参数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ARGV</code></td>
+<td style="text-align:left">参数数组</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>FNR</code></td>
+<td style="text-align:left">文件记录数(<code>F</code>ile <code>N</code>umber of <code>R</code>ecords)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>OFMT</code></td>
+<td style="text-align:left">数字格式 <em>(default &quot;%.6g&quot;)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>RSTART</code></td>
+<td style="text-align:left">字符串中的位置</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>RLENGTH</code></td>
+<td style="text-align:left">比赛时长</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>SUBSEP</code></td>
+<td style="text-align:left">多维数组分隔符 <em>(default &quot;\034&quot;)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ARGIND</code></td>
+<td style="text-align:left">参数索引</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="定义变量"><a class="h-anchor" href="#定义变量">#</a>定义变量</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk -v var1=&quot;Hello&quot; -v var2=&quot;Wold&quot; &#x27;
+    END &#123;print var1, var2&#125;
+&#x27; &lt;/dev/null
+</code></pre>
+<h4 id="使用-shell-变量"><a class="h-anchor" href="#使用-shell-变量">#</a>使用 shell 变量</h4>
+<pre><code class="hljs language-shell">awk -v varName=&quot;$PWD&quot; &#x27;
+    END &#123;print varName&#125;&#x27; &lt;/dev/null
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="awk-运算符"><a class="h-anchor" href="#awk-运算符">#</a>Awk 运算符</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="运算符"><a class="h-anchor" href="#运算符">#</a>运算符</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&#123;print $1&#125;</code></td>
+<td style="text-align:left">第一个字段</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$2 == &quot;foo&quot;</code></td>
+<td style="text-align:left">等于</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$2 != &quot;foo&quot;</code></td>
+<td style="text-align:left">不等于</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&quot;foo&quot; in array</code></td>
+<td style="text-align:left">在数组中</td>
+</tr>
+</tbody>
+</table>
+<h4 id="正则表达式"><a class="h-anchor" href="#正则表达式">#</a>正则表达式</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/regex/</code></td>
+<td style="text-align:left">行匹配</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>!/regex/</code></td>
+<td style="text-align:left">行不匹配</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1 ~ /regex/</code></td>
+<td style="text-align:left">字段匹配</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1 !~ /regex/</code></td>
+<td style="text-align:left">字段不匹配</td>
+</tr>
+</tbody>
+</table>
+<h4 id="更多条件"><a class="h-anchor" href="#更多条件">#</a>更多条件</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>($2 &lt;= 4 \|\| $3 &lt; 20)</code></td>
+<td style="text-align:left">或者</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>($1 == 4 &amp;&amp; $3 &lt; 20)</code></td>
+<td style="text-align:left">和</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="运算符-2"><a class="h-anchor" href="#运算符-2">#</a>运算符</h3>
+<div class="section">
+<h4 id="算术运算"><a class="h-anchor" href="#算术运算">#</a>算术运算</h4>
+<ul class="cols-3 marker-none">
+<li><code>+</code></li>
+<li><code>-</code></li>
+<li><code>*</code></li>
+<li><code>/</code></li>
+<li><code>%</code></li>
+<li><code>++</code></li>
+<li><code>--</code></li>
+</ul>
+<h4 id="速记作业"><a class="h-anchor" href="#速记作业">#</a>速记作业</h4>
+<ul class="cols-3 marker-none">
+<li><code>+=</code></li>
+<li><code>-=</code></li>
+<li><code>*=</code></li>
+<li><code>/=</code></li>
+<li><code>%=</code></li>
+</ul>
+<h4 id="比较运算符"><a class="h-anchor" href="#比较运算符">#</a>比较运算符</h4>
+<ul class="cols-3 marker-none">
+<li><code>==</code></li>
+<li><code>!=</code></li>
+<li><code>&lt;</code></li>
+<li><code>&gt;</code></li>
+<li><code>&lt;=</code></li>
+<li><code>&gt;=</code></li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="示例-3"><a class="h-anchor" href="#示例-3">#</a>示例</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    if (&quot;foo&quot; ~ &quot;^fo+$&quot;)
+        print &quot;Fooey!&quot;;
+&#125;&#x27;
+</code></pre>
+<h4 id="不匹配"><a class="h-anchor" href="#不匹配">#</a>不匹配</h4>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    if (&quot;boo&quot; !~ &quot;^fo+$&quot;)
+        print &quot;Boo!&quot;;
+&#125;&#x27;
+</code></pre>
+<h4 id="如果在数组中"><a class="h-anchor" href="#如果在数组中">#</a>如果在数组中</h4>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    assoc[&quot;foo&quot;] = &quot;bar&quot;;
+    assoc[&quot;bar&quot;] = &quot;baz&quot;;
+    if (&quot;foo&quot; in assoc)
+        print &quot;Fooey!&quot;;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="awk-函数"><a class="h-anchor" href="#awk-函数">#</a>Awk 函数</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="常用功能"><a class="h-anchor" href="#常用功能">#</a>常用功能</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>index(s,t)</code></td>
+<td style="text-align:left">字符串 <code>s</code> 中出现字符串 <code>t</code> 的位置，如果未找到则为 <code>0</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>length(s)</code></td>
+<td style="text-align:left">字符串 <code>s</code> 的长度(如果没有 <code>arg</code>，则为 <code>$0</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rand</code></td>
+<td style="text-align:left"><code>0</code> 到 <code>1</code> 之间的随机数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>substr(s,index,len)</code></td>
+<td style="text-align:left">返回从索引开始的 <code>s</code> 的 <code>len-char</code> 子字符串(从 <code>1</code> 开始计数)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>srand</code></td>
+<td style="text-align:left">为 <code>rand</code> 设置种子并返回之前的种子</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>int(x)</code></td>
+<td style="text-align:left">将 <code>x</code> 截断为整数值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>split(s,a,fs)</code></td>
+<td style="text-align:left">将字符串 <code>s</code> 拆分为数组 <code>a</code> 由 <code>fs</code> 拆分，返回 <code>a</code> 的长度</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>match(s,r)</code></td>
+<td style="text-align:left">字符串 <code>s</code> 中出现正则表达式 <code>r</code> 的位置，如果未找到，则为 <code>0</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sub(r,t,s)</code></td>
+<td style="text-align:left">将 <code>t</code> 替换为字符串 <code>s</code> 中第一次出现的正则表达式 <code>r</code>(如果未给出 <code>s</code>，则替换为 <code>$0</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gsub(r,t,s)</code></td>
+<td style="text-align:left">用 <code>t</code> 替换字符串 <code>s</code> 中所有出现的正则表达式 <code>r</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>system(cmd)</code></td>
+<td style="text-align:left">执行cmd并返回退出状态</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>tolower(s)</code></td>
+<td style="text-align:left">字符串 <code>s</code> 转小写</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>toupper(s)</code></td>
+<td style="text-align:left">字符串 <code>s</code> 转大写</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getline</code></td>
+<td style="text-align:left">将 <code>$0</code> 设置为当前输入文件中的下一个输入记录</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="用户定义函数"><a class="h-anchor" href="#用户定义函数">#</a>用户定义函数</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;
+    # 返回最小数量
+    function find_min(num1, num2)&#123;
+       if (num1 &lt; num2)
+       return num1
+       return num2
+    &#125;
+    # 返回最大数量
+    function find_max(num1, num2)&#123;
+       if (num1 &gt; num2)
+       return num1
+       return num2
+    &#125;
+    # 主功能
+    function main(num1, num2)&#123;
+       result = find_min(num1, num2)
+       print &quot;Minimum =&quot;, result
+      
+       result = find_max(num1, num2)
+       print &quot;Maximum =&quot;, result
+    &#125;
+    # 脚本执行从这里开始
+    BEGIN &#123;
+       main(10, 60)
+    &#125;
+&#x27;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="awk-数组"><a class="h-anchor" href="#awk-数组">#</a>Awk 数组</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="带索引的数组"><a class="h-anchor" href="#带索引的数组">#</a>带索引的数组</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    arr[0] = &quot;foo&quot;;
+    arr[1] = &quot;bar&quot;;
+    print(arr[0]); # =&gt; foo
+    delete arr[0];
+    print(arr[0]); # =&gt; &quot;&quot;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="带键的数组"><a class="h-anchor" href="#带键的数组">#</a>带键的数组</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    assoc[&quot;foo&quot;] = &quot;bar&quot;;
+    assoc[&quot;bar&quot;] = &quot;baz&quot;;
+    print(&quot;baz&quot; in assoc); # =&gt; 0
+    print(&quot;foo&quot; in assoc); # =&gt; 1
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="带拆分的数组"><a class="h-anchor" href="#带拆分的数组">#</a>带拆分的数组</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    split(&quot;foo:bar:baz&quot;, arr, &quot;:&quot;);
+    for (key in arr)
+        print arr[key];
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="带有排序的数组"><a class="h-anchor" href="#带有排序的数组">#</a>带有排序的数组</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    arr[0] = 3
+    arr[1] = 2
+    arr[2] = 4
+    n = asort(arr)
+    for (i = 1; i &lt;= n ; i++)
+        print(arr[i])
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="多维"><a class="h-anchor" href="#多维">#</a>多维</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    multidim[0,0] = &quot;foo&quot;;
+    multidim[0,1] = &quot;bar&quot;;
+    multidim[1,0] = &quot;baz&quot;;
+    multidim[1,1] = &quot;boo&quot;;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="多维迭代"><a class="h-anchor" href="#多维迭代">#</a>多维迭代</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    array[1,2]=3;
+    array[2,3]=5;
+    for (comb in array) &#123;
+        split(comb,sep,SUBSEP);
+        print sep[1], sep[2], 
+        array[sep[1],sep[2]]
+    &#125;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="awk-条件"><a class="h-anchor" href="#awk-条件">#</a>Awk 条件</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="if-else-语句"><a class="h-anchor" href="#if-else-语句">#</a>if-else 语句</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk -v count=2 &#x27;BEGIN &#123;
+    if (count == 1)
+        print &quot;Yes&quot;;
+    else
+        print &quot;Huh?&quot;;
+&#125;&#x27;
+</code></pre>
+<h4 id="三元运算符"><a class="h-anchor" href="#三元运算符">#</a>三元运算符</h4>
+<pre><code class="hljs language-shell">awk -v count=2 &#x27;BEGIN &#123;
+    print (count==1) ? &quot;Yes&quot; : &quot;Huh?&quot;;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="存在"><a class="h-anchor" href="#存在">#</a>存在</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    assoc[&quot;foo&quot;] = &quot;bar&quot;;
+    assoc[&quot;bar&quot;] = &quot;baz&quot;;
+    if (&quot;foo&quot; in assoc)
+        print &quot;Fooey!&quot;;
+&#125;&#x27;
+</code></pre>
+<h4 id="不存在"><a class="h-anchor" href="#不存在">#</a>不存在</h4>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    assoc[&quot;foo&quot;] = &quot;bar&quot;;
+    assoc[&quot;bar&quot;] = &quot;baz&quot;;
+    if (&quot;Huh&quot; in assoc == 0 )
+        print &quot;Huh!&quot;;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="switch"><a class="h-anchor" href="#switch">#</a>switch</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk -F: &#x27;&#123;
+    switch (NR * 2 + 1) &#123;
+        case 3:
+        case &quot;11&quot;:
+            print NR - 1
+            break
+        case /2[[:digit:]]+/:
+            print NR
+        default:
+            print NR + 1
+        case -1:
+            print NR * -1
+    &#125;
+&#125;&#x27; /etc/passwd
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="awk-循环"><a class="h-anchor" href="#awk-循环">#</a>Awk 循环</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="for-i"><a class="h-anchor" href="#for-i">#</a>for...i</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    for (i = 0; i &lt; 10; i++)
+        print &quot;i=&quot; i;
+&#125;&#x27;
+</code></pre>
+<h4 id="1-到-100-之间的-2-的幂"><a class="h-anchor" href="#1-到-100-之间的-2-的幂">#</a>1 到 100 之间的 2 的幂</h4>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    for (i = 1; i &lt;= 100; i *= 2)
+        print i
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="for-in"><a class="h-anchor" href="#for-in">#</a>for...in</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    assoc[&quot;key1&quot;] = &quot;val1&quot;
+    assoc[&quot;key2&quot;] = &quot;val2&quot;
+    for (key in assoc)
+        print assoc[key];
+&#125;&#x27;
+</code></pre>
+<h4 id="arguments"><a class="h-anchor" href="#arguments">#</a>Arguments</h4>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    for (argnum in ARGV)
+        print ARGV[argnum];
+&#125;&#x27; a b c
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-3">
+<h3 id="示例-4"><a class="h-anchor" href="#示例-4">#</a>示例</h3>
+<div class="section">
+<h4 id="反向记录"><a class="h-anchor" href="#反向记录">#</a>反向记录</h4>
+<pre><code class="hljs language-shell">awk -F: &#x27;&#123; x[NR] = $0 &#125;
+    END &#123;
+        for (i = NR; i &gt; 0; i--)
+        print x[i]
+    &#125;
+&#x27; /etc/passwd
+</code></pre>
+<h4 id="反向字段"><a class="h-anchor" href="#反向字段">#</a>反向字段</h4>
+<pre><code class="hljs language-shell">awk -F: &#x27;&#123;
+    for (i = NF; i &gt; 0; i--)
+        printf(&quot;%s &quot;,$i);
+    print &quot;&quot;
+&#125;&#x27; /etc/passwd
+</code></pre>
+<h4 id="按记录求和"><a class="h-anchor" href="#按记录求和">#</a>按记录求和</h4>
+<pre><code class="hljs language-shell">awk -F: &#x27;&#123;
+    s=0;
+    for (i = 1; i &lt;= NF; i++)
+        s += $i;
+    print s
+&#125;&#x27; /etc/passwd
+</code></pre>
+<h4 id="总结整个文件"><a class="h-anchor" href="#总结整个文件">#</a>总结整个文件</h4>
+<pre><code class="hljs language-shell">awk -F: &#x27;
+    &#123;for (i = 1; i &lt;= NF; i++)
+        s += $i;
+    &#125;;
+    END&#123;print s&#125;
+&#x27; /etc/passwd
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="while"><a class="h-anchor" href="#while">#</a>while</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    while (a &lt; 10) &#123;
+        print &quot;- &quot; &quot; concatenation: &quot; a
+        a++;
+    &#125;
+&#125;&#x27;
+</code></pre>
+<h4 id="do-while"><a class="h-anchor" href="#do-while">#</a>do...while</h4>
+<pre><code class="hljs language-shell">awk &#x27;&#123;
+    i = 1
+    do &#123;
+        print $0
+        i++
+    &#125; while (i &lt;= 5)
+&#125;&#x27; /etc/passwd
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="break"><a class="h-anchor" href="#break">#</a>Break</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    break_num = 5
+    for (i = 0; i &lt; 10; i++) &#123;
+        print i
+        if (i == break_num)
+            break
+    &#125;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="continue"><a class="h-anchor" href="#continue">#</a>Continue</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk &#x27;BEGIN &#123;
+    for (x = 0; x &lt;= 10; x++) &#123;
+        if (x == 5 || x == 6)
+            continue
+        printf &quot;%d &quot;, x
+    &#125;
+    print &quot;&quot;
+&#125;&#x27;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="awk-格式化打印"><a class="h-anchor" href="#awk-格式化打印">#</a>Awk 格式化打印</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="用法"><a class="h-anchor" href="#用法">#</a>用法</h3>
+<div class="section">
+<h4 id="右对齐"><a class="h-anchor" href="#右对齐">#</a>右对齐</h4>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN&#123;printf &quot;|%10s|\n&quot;, &quot;hello&quot;&#125;&#x27;
+<span class="hljs-meta prompt_"># </span><span class="language-bash">|     hello|</span>
+</code></pre>
+<h4 id="左对齐"><a class="h-anchor" href="#左对齐">#</a>左对齐</h4>
+<pre><code class="hljs language-shell">awk &#x27;BEGIN&#123;printf &quot;|%-10s|\n&quot;, &quot;hello&quot;&#125;&#x27;
+<span class="hljs-meta prompt_"># </span><span class="language-bash">|hello     |</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="通用说明符"><a class="h-anchor" href="#通用说明符">#</a>通用说明符</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特征符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>c</code></td>
+<td style="text-align:left">ASCII 字符</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>d</code></td>
+<td style="text-align:left">十进制整数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>e</code>, <code>E</code>, <code>f</code></td>
+<td style="text-align:left">浮点格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>o</code></td>
+<td style="text-align:left">无符号八进制值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>s</code></td>
+<td style="text-align:left">细绳</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%</code></td>
+<td style="text-align:left">文字百分比</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="space-空间"><a class="h-anchor" href="#space-空间">#</a>Space 空间</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk -F: &#x27;&#123;
+    printf &quot;%-10s %s\n&quot;, $1, $(NF-1)
+&#125;&#x27; /etc/passwd | head -n 3
+</code></pre>
+<p>输出</p>
+<pre><code class="hljs language-shell">root       /root
+bin        /bin
+daemon     /sbin
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="header-标题头"><a class="h-anchor" href="#header-标题头">#</a>Header 标题头</h3>
+<div class="section">
+<pre><code class="hljs language-shell">awk -F: &#x27;BEGIN &#123;
+    printf &quot;%-10s %s\n&quot;, &quot;User&quot;, &quot;Home&quot;
+    printf &quot;%-10s %s\n&quot;, &quot;----&quot;,&quot;----&quot;&#125;
+    &#123; printf &quot;%-10s %s\n&quot;, $1, $(NF-1) &#125;
+&#x27; /etc/passwd | head -n 5
+</code></pre>
+<p>输出</p>
+<pre><code class="hljs language-shell">User       Home
+----       ----
+root       /root
+bin        /bin
+daemon     /sbin
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="各种各样的"><a class="h-anchor" href="#各种各样的">#</a>各种各样的</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="正则表达式元字符"><a class="h-anchor" href="#正则表达式元字符">#</a>正则表达式元字符</h3>
+<div class="section">
+<ul class="cols-3 marker-none">
+<li><code>\</code></li>
+<li><code>^</code></li>
+<li><code>$</code></li>
+<li><code>.</code></li>
+<li><code>[</code></li>
+<li><code>]</code></li>
+<li><code>|</code></li>
+<li><code>(</code></li>
+<li><code>)</code></li>
+<li><code>*</code></li>
+<li><code>+</code></li>
+<li><code>?</code></li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="转义序列"><a class="h-anchor" href="#转义序列">#</a>转义序列</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th style="text-align:left">:-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>\b</code></td>
+<td style="text-align:left">退格</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\f</code></td>
+<td style="text-align:left">换页</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\n</code></td>
+<td style="text-align:left">换行(换行)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\r</code></td>
+<td style="text-align:left">回车</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\t</code></td>
+<td style="text-align:left">水平选项卡</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\v</code></td>
+<td style="text-align:left">垂直选项卡</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="运行脚本"><a class="h-anchor" href="#运行脚本">#</a>运行脚本</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cat</span> demo.awk</span>
+<span class="hljs-meta prompt_">#</span><span class="language-bash">!/usr/bin/awk -f</span>
+BEGIN &#123; x = 23 &#125;
+      &#123; x += 2 &#125;
+END   &#123; print x &#125;
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">awk -f demo.awk /etc/passwd</span>
+69
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www-zeuthen.desy.de/dv/documentation/unixguide/infohtml/gawk/gawk.html">GNU awk 用户指南</a> <em>(www-zeuthen.desy.de)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://gist.github.com/Rafe/3102414">AWK cheatsheet</a> <em>(gist.github.com)</em></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/grep.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">grep <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/sed.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">sed <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/python3.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Python3 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/jenkins-pipeline.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins Pipeline <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/awk.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">awk <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/sed.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">sed <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/cron.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">cron <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1671110782239"></script></html>
