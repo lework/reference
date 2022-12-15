@@ -1,0 +1,1947 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Jenkins Pipeline Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,ci,cd,jenkins"><meta name="description" content="Jenkins Pipeline是一套插件，将持续交付的实现和实施集成到 Jenkins 中。 "><meta property="og:url" content="https://quickref.leops.cn/jenkins-pipeline.html"><meta property="og:title" content="Jenkins Pipeline Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="Jenkins Pipeline是一套插件，将持续交付的实现和实施集成到 Jenkins 中。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=3zvxc"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Jenkins Pipeline Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="Jenkins Pipeline是一套插件，将持续交付的实现和实施集成到 Jenkins 中。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=vpvvv"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/jenkins-pipeline.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1671103885533"><link rel="stylesheet" href="/css/style.css?_v=1671103885533"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/jenkins-pipeline.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Jenkins Pipeline</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>Jenkins Pipeline是一套插件，将持续交付的实现和实施集成到 Jenkins 中。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap cols-2">
+<h2 id="pipeline"><a class="h-anchor" href="#pipeline">#</a>Pipeline</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="声明式-pipeline"><a class="h-anchor" href="#声明式-pipeline">#</a>声明式 Pipeline</h3>
+<div class="section">
+<p>所有有效的声明式流水线必须包含在一个 <code>pipeline</code> 块中</p>
+<pre><code class="hljs">pipeline &#123;
+   <span class="hljs-built_in">agent</span> any
+
+   stages &#123;
+      stage(<span class="hljs-string">&#x27;Hello&#x27;</span>) &#123;
+         steps &#123;
+            <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Hello World&#x27;</span>
+         &#125;
+         post &#123; 
+         	success &#123;
+         		<span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;post success&#x27;</span>
+         	&#125;
+         &#125;
+      &#125;
+   &#125;
+&#125;
+</code></pre>
+<ul>
+<li>
+<p><strong>pipeline</strong>：代表整条流水线，包含整条流水线的逻辑。</p>
+</li>
+<li>
+<p><strong>agent部分</strong>：指定流水线的执行位置（Jenkins agent）。流水线中的每个阶段都必须在某个地方（物理机、虚拟机或Docker容器）执行，agent部分即指定具体在哪里执行。</p>
+</li>
+<li>
+<p><strong>stages部分</strong>：流水线中多个stage的容器。stages部分至少包含一个stage。</p>
+</li>
+<li>
+<p><strong>stage部分</strong>：阶段，代表流水线的阶段。每个阶段都必须有名称。本例中，build就是此阶段的名称。</p>
+</li>
+<li>
+<p><strong>steps部分</strong>：代表阶段中的一个或多个具体步骤（step）的容器。steps部分至少包含一个步骤，本例中，echo就是一个步骤。在一个stage中有且只有一个steps。</p>
+</li>
+<li>
+<p>post部分包含的是在整个pipeline或阶段完成后一些附加的步骤。</p>
+<blockquote>
+<p>post部分是可选的，所以并不包含在pipeline最简结构中。但这并不代表它作用不大。根据pipeline或阶段的完成状态，post部分分成多种条件块，包括：</p>
+</blockquote>
+<ul>
+<li>always：不论当前完成状态是什么，都执行。</li>
+<li>changed：只要当前完成状态与上一次完成状态不同就执行。</li>
+<li>fixed：上一次完成状态为失败或不稳定（unstable），当前完成状态为成功时执行。</li>
+<li>regression：上一次完成状态为成功，当前完成状态为失败、不稳定或中止（aborted）时执行。</li>
+<li>aborted：当前执行结果是中止状态时（一般为人为中止）执行。</li>
+<li>failure：当前完成状态为失败时执行。</li>
+<li>success：当前完成状态为成功时执行。</li>
+<li>unstable：当前完成状态为不稳定时执行。</li>
+<li>cleanup：清理条件块。不论当前完成状态是什么，在其他所有条件块执行完成后都执行。</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="脚本化-pipeline"><a class="h-anchor" href="#脚本化-pipeline">#</a>脚本化 Pipeline</h3>
+<div class="section">
+<p>脚本化流水线, 与声明式Pipeline一样的是, 是建立在底层流水线的子系统上的。与声明式不同的是, 脚本化流水线实际上是由 Groovy 构建的通用 DSL。</p>
+<pre><code class="hljs">node &#123;
+    stage(&#x27;Example1&#x27;) &#123;
+        <span class="hljs-comment"># 使用 Groovy 的if/else条件语句</span>
+       <span class="hljs-built_in"> if </span>(env.BRANCH_NAME == &#x27;master&#x27;) &#123;
+            echo &#x27;I only<span class="hljs-built_in"> execute </span>on the master branch&#x27;
+        &#125; else &#123;
+            echo &#x27;I<span class="hljs-built_in"> execute </span>elsewhere&#x27;
+        &#125;
+    &#125;
+    stage(&#x27;Example2&#x27;) &#123;
+        <span class="hljs-comment"># 使用 Groovy 的异常处理</span>
+        try &#123;
+            sh &#x27;exit 1&#x27;
+        &#125;
+        catch (exc) &#123;
+            echo &#x27;Something failed, I should sound the klaxons!&#x27;
+           <span class="hljs-built_in"> throw
+</span>        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="tips"><a class="h-anchor" href="#tips">#</a>TIPS</h3>
+<div class="section">
+<ul>
+<li>Jenkins Pipeline 的定义内容被写入一个文本文件(称为<code>Jenkinsfile</code>)</li>
+<li>声明式管道鼓励<a target="_blank" rel="noopener external nofollow noreferrer" href="https://en.wikipedia.org/wiki/Declarative_programming">声明式编程模型</a>, 脚本化管道遵循更加<a target="_blank" rel="noopener external nofollow noreferrer" href="https://en.wikipedia.org/wiki/Imperative_programming">命令式的编程模型</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="pipeline-指令"><a class="h-anchor" href="#pipeline-指令">#</a>Pipeline 指令</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-3">
+<h3 id="parameters-参数"><a class="h-anchor" href="#parameters-参数">#</a>parameters 参数</h3>
+<div class="section">
+<p><code>parameters</code> 指令提供用户在触发管道时应该提供的参数列表。</p>
+<pre><code class="hljs">pipeline &#123;
+  agent any
+  <span class="hljs-keyword">parameters</span> &#123;
+    booleanParam <span class="hljs-comment">defaultValue: true, description:</span> <span class="hljs-comment">&#x27;&#x27;</span><span class="hljs-comment">, name:</span> <span class="hljs-comment">&#x27;userFlag&#x27;</span>
+  &#125;
+  stages <span class="hljs-comment">&#123;</span>
+    stage(<span class="hljs-string">&quot;foo&quot;</span>) &#123;
+      steps <span class="hljs-comment">&#123;</span>
+        echo <span class="hljs-comment">&quot;flag: $&#123;params.userFlag&#125;&quot;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<h4 id="可用参数"><a class="h-anchor" href="#可用参数">#</a>可用参数</h4>
+<ul>
+<li>
+<p><code>string</code>，字符串类型的参数。</p>
+<pre><code class="hljs"><span class="hljs-keyword">parameters</span> &#123;
+  string <span class="hljs-comment">name:</span> <span class="hljs-comment">&#x27;DEPLOY_ENV&#x27;</span><span class="hljs-comment">, defaultValue:</span> <span class="hljs-comment">&#x27;staging&#x27;</span><span class="hljs-comment">, description:</span> <span class="hljs-comment">&#x27;&#x27;</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>text</code>，多行文本类型的参数，换行使用\n。</p>
+<pre><code class="hljs"><span class="hljs-keyword">parameters</span> &#123;
+  text <span class="hljs-comment">name:</span> <span class="hljs-comment">&#x27;DEPLOY_TEXT&#x27;</span><span class="hljs-comment">, defaultValue:</span><span class="hljs-comment">&#x27;One\nTwo\nThree\n&#x27;</span>，<span class="hljs-comment">description:</span> <span class="hljs-comment">&#x27;&#x27;</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>booleanParam</code> 布尔类型的参数。</p>
+<pre><code class="hljs">parameters &#123;
+	<span class="hljs-title function_ invoke__">booleanParam</span>(<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;DEBUG_BUILD&#x27;</span>, <span class="hljs-attr">defaultValue</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;&#x27;</span>) 
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>choice</code>，选择参数类型，使用\n来分隔多个选项。</p>
+<pre><code class="hljs"><span class="hljs-keyword">parameters</span> &#123;
+  choice <span class="hljs-comment">choices: [</span><span class="hljs-comment">&#x27;dev\\ntest\\nstaging&#x27;</span><span class="hljs-comment">], description:</span> <span class="hljs-comment">&#x27;请选择部署的环境&#x27;</span><span class="hljs-comment">, name:</span> <span class="hljs-comment">&#x27;CHOICES&#x27;</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p>password，密码类型。</p>
+<pre><code class="hljs"><span class="hljs-keyword">parameters</span> &#123;
+  <span class="hljs-literal">password</span> defaultValue: <span class="hljs-string">&#x27;test&#x27;</span>, <span class="hljs-literal">description</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-literal">name</span>: <span class="hljs-string">&#x27;test&#x27;</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p>file 文件类型</p>
+<pre><code class="hljs"><span class="hljs-keyword">parameters</span> &#123;
+  file <span class="hljs-comment">description:</span> <span class="hljs-comment">&#x27;&#x27;</span><span class="hljs-comment">, name:</span> <span class="hljs-comment">&#x27;/tmp/file&#x27;</span>
+&#125;
+</code></pre>
+</li>
+</ul>
+<h4 id="插件：active-choices-parameter"><a class="h-anchor" href="#插件：active-choices-parameter">#</a>插件：Active Choices Parameter</h4>
+<p>插件地址: https://plugins.jenkins.io/uno-choice/</p>
+<pre><code class="hljs"><span class="hljs-title function_ invoke__">properties</span>([
+    <span class="hljs-title function_ invoke__">parameters</span>([
+        [<span class="hljs-variable">$class</span>: <span class="hljs-string">&#x27;ChoiceParameter&#x27;</span>, 
+            <span class="hljs-attr">choiceType</span>: <span class="hljs-string">&#x27;PT_SINGLE_SELECT&#x27;</span>, 
+            <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;Select the Env Name from the Dropdown List&#x27;</span>, 
+            <span class="hljs-attr">filterLength</span>: <span class="hljs-number">1</span>, 
+            <span class="hljs-attr">filterable</span>: <span class="hljs-literal">true</span>, 
+            <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Env&#x27;</span>, 
+            <span class="hljs-attr">randomName</span>: <span class="hljs-string">&#x27;choice-parameter-5631314439613978&#x27;</span>, 
+            <span class="hljs-attr">script</span>: [
+                <span class="hljs-variable">$class</span>: <span class="hljs-string">&#x27;GroovyScript&#x27;</span>, 
+                <span class="hljs-attr">fallbackScript</span>: [
+                    <span class="hljs-attr">classpath</span>: [], 
+                    <span class="hljs-attr">sandbox</span>: <span class="hljs-literal">false</span>, 
+                    <span class="hljs-attr">script</span>: 
+                        <span class="hljs-string">&#x27;return[\&#x27;Could not get Env\&#x27;]&#x27;</span>
+                ], 
+                <span class="hljs-attr">script</span>: [
+                    <span class="hljs-attr">classpath</span>: [], 
+                    <span class="hljs-attr">sandbox</span>: <span class="hljs-literal">false</span>, 
+                    <span class="hljs-attr">script</span>: 
+                        <span class="hljs-string">&#x27;return[&quot;Dev&quot;,&quot;QA&quot;,&quot;Stage&quot;,&quot;Prod&quot;]&#x27;</span>
+                ]
+            ]
+        ], 
+        [<span class="hljs-variable">$class</span>: <span class="hljs-string">&#x27;CascadeChoiceParameter&#x27;</span>, 
+            <span class="hljs-attr">choiceType</span>: <span class="hljs-string">&#x27;PT_SINGLE_SELECT&#x27;</span>, 
+            <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;Select the Server from the Dropdown List&#x27;</span>, 
+            <span class="hljs-attr">filterLength</span>: <span class="hljs-number">1</span>, 
+            <span class="hljs-attr">filterable</span>: <span class="hljs-literal">true</span>, 
+            <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Server&#x27;</span>, 
+            <span class="hljs-attr">randomName</span>: <span class="hljs-string">&#x27;choice-parameter-5631314456178619&#x27;</span>, 
+            <span class="hljs-attr">referencedParameters</span>: <span class="hljs-string">&#x27;Env&#x27;</span>, 
+            <span class="hljs-attr">script</span>: [
+                <span class="hljs-variable">$class</span>: <span class="hljs-string">&#x27;GroovyScript&#x27;</span>, 
+                <span class="hljs-attr">fallbackScript</span>: [
+                    <span class="hljs-attr">classpath</span>: [], 
+                    <span class="hljs-attr">sandbox</span>: <span class="hljs-literal">false</span>, 
+                    <span class="hljs-attr">script</span>: 
+                        <span class="hljs-string">&#x27;return[\&#x27;Could not get Environment from Env Param\&#x27;]&#x27;</span>
+                ], 
+                <span class="hljs-attr">script</span>: [
+                    <span class="hljs-attr">classpath</span>: [], 
+                    <span class="hljs-attr">sandbox</span>: <span class="hljs-literal">false</span>, 
+                    <span class="hljs-attr">script</span>: 
+                        <span class="hljs-string">&#x27;&#x27;</span><span class="hljs-string">&#x27; if (Env.equals(&quot;Dev&quot;))&#123;
+                                return[&quot;devaaa001&quot;,&quot;devaaa002&quot;,&quot;devbbb001&quot;,&quot;devbbb002&quot;,&quot;devccc001&quot;,&quot;devccc002&quot;]
+                            &#125;
+                            else if(Env.equals(&quot;QA&quot;))&#123;
+                                return[&quot;qaaaa001&quot;,&quot;qabbb002&quot;,&quot;qaccc003&quot;]
+                            &#125;
+                            else if(Env.equals(&quot;Stage&quot;))&#123;
+                                return[&quot;staaa001&quot;,&quot;stbbb002&quot;,&quot;stccc003&quot;]
+                            &#125;
+                            else if(Env.equals(&quot;Prod&quot;))&#123;
+                                return[&quot;praaa001&quot;,&quot;prbbb002&quot;,&quot;prccc003&quot;]
+                            &#125;
+                        &#x27;</span><span class="hljs-string">&#x27;&#x27;</span>
+                ]
+            ]
+        ]
+    ])
+])
+
+pipeline &#123;
+  environment &#123;
+         vari = <span class="hljs-string">&quot;&quot;</span>
+  &#125;
+  agent any
+  stages &#123;
+      <span class="hljs-title function_ invoke__">stage</span> (<span class="hljs-string">&quot;Example&quot;</span>) &#123;
+        steps &#123;
+         script&#123;
+          <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Hello&#x27;</span>
+          <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;$&#123;params.Env&#125;&quot;</span>
+          <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;$&#123;params.Server&#125;&quot;</span>
+          <span class="hljs-keyword">if</span> (params.Server.<span class="hljs-title function_ invoke__">equals</span>(<span class="hljs-string">&quot;Could not get Environment from Env Param&quot;</span>)) &#123;
+              <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Must be the first build after Pipeline deployment.  Aborting the build&quot;</span>
+              currentBuild.result = <span class="hljs-string">&#x27;ABORTED&#x27;</span>
+              <span class="hljs-keyword">return</span>
+          &#125;
+          <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Crossed param validation&quot;</span>
+        &#125; &#125;
+      &#125;
+  &#125;
+&#125;
+</code></pre>
+<h4 id="应用：由另一个pipeline传参并触发"><a class="h-anchor" href="#应用：由另一个pipeline传参并触发">#</a>应用：由另一个pipeline传参并触发</h4>
+<pre><code class="hljs"><span class="hljs-selector-tag">steps</span> &#123;
+  <span class="hljs-selector-tag">build</span>(
+    <span class="hljs-attribute">job</span>: <span class="hljs-string">&quot;parameters-example&quot;</span>,
+    <span class="hljs-attribute">parameters</span>:[
+       <span class="hljs-built_in">booleanParam</span>(<span class="hljs-attribute">name</span>: <span class="hljs-string">&#x27;userFlag&#x27;</span>, <span class="hljs-attribute">value</span>: true)
+    ]
+  )
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="environment-环境变量"><a class="h-anchor" href="#environment-环境变量">#</a>environment 环境变量</h3>
+<div class="section">
+<p><code>environment</code>：用于设置环境变量，可定义在stage或pipeline部分。</p>
+<pre><code class="hljs">pipeline &#123;
+    agent <span class="hljs-built_in">any</span>
+    environment &#123; 
+        <span class="hljs-variable constant_">CC</span> = <span class="hljs-string">&#x27;clang&#x27;</span>
+    &#125;
+    stages &#123;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Example&#x27;</span></span>) &#123;
+            environment &#123; 
+                <span class="hljs-variable constant_">BB</span> = <span class="hljs-string">&quot;stage&quot;</span>
+            &#125;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;printenv&#x27;</span>
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="jenkins内置变量"><a class="h-anchor" href="#jenkins内置变量">#</a>jenkins内置变量</h4>
+<p>在pipeline执行时，Jenkins通过一个名为env的全局变量，将Jenkins内置环境变量暴露出来。</p>
+<pre><code class="hljs">pipeline &#123;
+  agent any
+    stages &#123;
+      stage(<span class="hljs-string">&#x27;Example&#x27;</span>) &#123;
+        steps &#123;
+          <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Running <span class="hljs-variable">$&#123;env.BUILD_NUMBER&#125;</span> on <span class="hljs-variable">$&#123;env.JENKINS_URL&#125;</span>&quot;</span> //方法一
+          <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Running <span class="hljs-variable">$env</span>.BUILD_NUMBER on <span class="hljs-variable">$env</span>.JENKINS_ URL&quot;</span> //方法二
+          <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Running <span class="hljs-variable">$&#123;BUILD_NUMBER&#125;</span> on <span class="hljs-variable">$&#123;JENKINS_URL&#125;</span>&quot;</span> //方法三
+        &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<h4 id="自定义pipeline环境变量"><a class="h-anchor" href="#自定义pipeline环境变量">#</a>自定义pipeline环境变量</h4>
+<p>environment指令可以在pipeline中定义，代表变量作用域为整个pipeline；也可以在stage中定义，代表变量只在该阶段有效。</p>
+<pre><code class="hljs">pipeline &#123;
+  agent <span class="hljs-built_in">any</span>
+  environment &#123;
+    <span class="hljs-variable constant_">CC</span> = <span class="hljs-string">&#x27;clang&#x27;</span>
+  &#125;
+  stages &#123;
+    <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Example&#x27;</span></span>) &#123;
+      environment &#123;
+        <span class="hljs-variable constant_">DEBUG_</span> <span class="hljs-variable constant_">FLAGS</span> =<span class="hljs-string">&#x27;- g&#x27;</span>
+      &#125;
+      steps &#123;
+        sh <span class="hljs-string">&quot;$&#123;CC&#125; $&#123;DEBUG_ FLAGS&#125;&quot;</span>
+        sh <span class="hljs-string">&#x27;printenv&#x27;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</code></pre>
+<h4 id="自定义全局环境变量"><a class="h-anchor" href="#自定义全局环境变量">#</a>自定义全局环境变量</h4>
+<p>进入Manage Jenkins→Configure System→Global properties页，勾选&quot;Environmentvariables&quot;复选框，单击&quot;Add&quot;按钮，在输入框中输入变量名和变量值即可.</p>
+<p>自定义全局环境变量会被加入 env 属性列表中，所以，使用自定义全局环境变量与使用Jenkins内置变量的方法无异：<code>$&#123;env.name&#125;</code>。</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="options-选项"><a class="h-anchor" href="#options-选项">#</a>options 选项</h3>
+<div class="section">
+<p>options指令可定义在stage或pipeline部分。</p>
+<p><code>options</code>：用于配置Jenkins pipeline本身的选项，比如 <code>options &#123;retry(3)&#125;</code>指当pipeline失败时再重试2次。</p>
+<h4 id="可用选项"><a class="h-anchor" href="#可用选项">#</a>可用选项</h4>
+<ul>
+<li><code>buildDiscarder</code>：保存最近历史构建记录的数量。当pipeline执行完成后，会在硬盘上保存制品和构建执行日志，如果长时间不清理会占用大量空间，设置此选项后会自动清理。此选项只能在pipeline下的options中使用。exp: <code>options &#123; buildDiscarder(logRotator(numToKeepStr: '1')) &#125;</code></li>
+<li><code>checkoutToSubdirectory</code>：Jenkins从版本控制库拉取源码时，默认检出到工作空间的根目录中，此选项可以指定检出到工作空间的子目录中。exp: <code>options &#123; checkoutToSubdirectory('foo') &#125;</code></li>
+<li><code>disableConcurrentBuilds</code>：同一个pipeline，Jenkins默认是可以同时执行多次的，如图3-2所示。此选项是为了禁止pipeline同时执行。exp: <code>options &#123; disableConcurrentBuilds() &#125;</code></li>
+<li><code>disableResume</code>:   如果主服务器重新启动，则不允许管道恢复。 exp: <code>options &#123; disableResume() &#125;</code></li>
+<li><code>newContainerPerStage</code>：当agent为docker或dockerfile时，指定在同一个Jenkins节点上，每个stage都分别运行在一个新的容器中，而不是所有stage都运行在同一个容器中。</li>
+<li><code> overrideIndexTriggers</code>: 允许重写分支索引触发器的默认处理。exp: <code> options &#123; overrideIndexTriggers(true) &#125;</code></li>
+<li><code> preserveStashes</code>:  保存已完成的构建中的存储，以便在阶段重新启动时使用 . exp: <code>options &#123; preserveStashes(buildCount: 5) &#125;</code></li>
+<li><code>quietPeriod</code>:  设置管道的静默期（以秒为单位），以覆盖全局默认值  exp: <code>options &#123; quietPeriod(30) &#125;</code></li>
+<li><code>retry</code>：当发生失败时进行重试，可以指定整个pipeline的重试次数。需要注意的是，这个次数是指总次数，包括第1次失败。以下例子总共会执行4次。当使用retry选项时，options可以被放在stage块中。 exp: <code>options &#123; retry(3) &#125;</code></li>
+<li><code>skipDefaultCheckout</code>:  默认情况下，在agent指令中跳过从源代码管理中检出代码。exp: <code>options &#123; skipDefaultCheckout() &#125;</code></li>
+<li><code>skipStagesAfterUnstable</code>: 一旦构建状态变得不稳定，就跳过阶段。 exp: <code>options &#123; skipStagesAfterUnstable() &#125;</code></li>
+<li><code>timeout</code>：如果 pipeline 执行时间过长，超出了我们设置的 timeout 时间，Jenkins 将中止pipeline。exp: <code>options &#123; timeout(time: 1, unit: 'HOURS') &#125;</code></li>
+<li><code>timestamps</code> : 在管道运行产生的所有控制台输出之前加上发出该管道的时间。 exp：<code>options &#123; timestamps() &#125; </code></li>
+<li><code>parallelsAlwaysFailFast</code>:  将管道中所有后续并行阶段的failfast设置为true。exp: <code>options &#123; parallelsAlwaysFailFast() &#125;</code></li>
+</ul>
+<h4 id="stage-选项"><a class="h-anchor" href="#stage-选项">#</a>stage 选项</h4>
+<ul>
+<li><code>skipDefaultCheckout</code>:  默认情况下，在agent指令中跳过从源代码管理中检出代码。exp: <code>options &#123; skipDefaultCheckout() &#125;</code></li>
+<li><code>timeout</code>：如果 pipeline 执行时间过长，超出了我们设置的 timeout 时间，Jenkins 将中止pipeline。exp: <code>options &#123; timeout(time: 1, unit: 'HOURS') &#125;</code></li>
+<li><code>retry</code>：当发生失败时进行重试，可以指定整个pipeline的重试次数。需要注意的是，这个次数是指总次数，包括第1次失败。以下例子总共会执行4次。当使用retry选项时，options可以被放在stage块中。 exp: <code>options &#123; retry(3) &#125;</code></li>
+<li><code>timestamps</code> : 在管道运行产生的所有控制台输出之前加上发出该管道的时间。 exp：<code>options &#123; timestamps() &#125; </code></li>
+<li><code>parallel</code>：并行执行多个step。在pipeline插件1.2版本后，parallel开始支持对多个阶段进行并行执行。</li>
+<li><code>parameters</code>：与input不同，parameters是执行pipeline前传入的一些参数。</li>
+<li><code>triggers</code>：用于定义执行pipeline的触发器。</li>
+<li><code>when</code>：当满足when定义的条件时，阶段才执行。</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="tools-工具"><a class="h-anchor" href="#tools-工具">#</a>tools 工具</h3>
+<div class="section">
+<p><code>tools</code>指令定义自动安装和安装到路径上的工具的部分。</p>
+<pre><code class="hljs">pipeline &#123;
+    agent <span class="hljs-built_in">any</span>
+    tools &#123;
+        maven <span class="hljs-string">&#x27;apache-maven-3.0.1&#x27;</span> 
+    &#125;
+    stages &#123;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Example&#x27;</span></span>) &#123;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;mvn --version&#x27;</span>
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-3">
+<h3 id="triggers-触发器"><a class="h-anchor" href="#triggers-触发器">#</a>triggers 触发器</h3>
+<div class="section">
+<p><code>triggers</code> 指令定义了应该重新触发管道的自动化方式。</p>
+<h4 id="cron-时间触发"><a class="h-anchor" href="#cron-时间触发">#</a>cron 时间触发</h4>
+<p>接受一个cron样式的字符串来定义一个定期间隔</p>
+<pre><code class="hljs"><span class="hljs-variable">pipeline</span> &#123;
+  <span class="hljs-variable">agent</span> <span class="hljs-variable">any</span>
+  <span class="hljs-variable">triggers</span> &#123;
+   <span class="hljs-function"><span class="hljs-title">cron</span>(<span class="hljs-string">&#x27;0 0 * * *&#x27;</span>)</span>
+  &#125;
+  <span class="hljs-variable">stages</span> &#123;
+    <span class="hljs-function"><span class="hljs-title">stage</span>(<span class="hljs-string">&#x27;Nightly build&#x27;</span>) &#123;
+      <span class="hljs-variable">steps</span> &#123;
+        <span class="hljs-variable">echo</span> <span class="hljs-string">&#x27;这是一个耗时的构建，每天凌晨执行&#x27;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</span></code></pre>
+<h4 id="pollscm-轮询代码仓库"><a class="h-anchor" href="#pollscm-轮询代码仓库">#</a>pollSCM 轮询代码仓库</h4>
+<p>接受一个cron样式的字符串来定义一个定期间隔，Jenkins应该在这个间隔上检查新的源代码更改。如果存在新的更改，将重新触发管道。</p>
+<pre><code class="hljs">pipeline &#123;
+  agent <span class="hljs-built_in">any</span>
+  triggers &#123;
+    <span class="hljs-comment">// 每分钟判断一次代码是否有变化</span>
+    pollSCM(<span class="hljs-string">&#x27;H/1 * * * *&#x27;</span>)
+  &#125;
+&#125;
+
+</code></pre>
+<p>Jenkins trigger cron语法采用的是UNIX cron语法（有些细微的区别）。一条cron包含5个字段，使用空格或Tab分隔，格式为：MINUTE HOUR DOM MONTH DOW。</p>
+<h4 id="upstream-由上游任务触发"><a class="h-anchor" href="#upstream-由上游任务触发">#</a>upstream 由上游任务触发</h4>
+<p>接受逗号分隔的作业字符串和阈值。当字符串中的任何作业以最小阈值结束时，将重新触发管道。</p>
+<pre><code class="hljs"><span class="hljs-comment">// job1 和job2 都是任务名</span>
+triggers &#123;
+  <span class="hljs-built_in">upstream</span>(upstreamProjects: <span class="hljs-string">&#x27;job1,job2&#x27;</span>, threshold: hudson<span class="hljs-selector-class">.model</span><span class="hljs-selector-class">.Result</span>.SUCCESS)
+&#125;
+
+</code></pre>
+<p>当upstreamProjects参数接收多个任务时，使用，分隔。threshold参数是指上游任务的执行结果是什么值时触发。</p>
+<p>hudson.model.Result是一个枚举，包括以下值：</p>
+<ul>
+<li>
+<p>ABORTED：任务被手动中止。</p>
+</li>
+<li>
+<p>FAILURE：构建失败。</p>
+</li>
+<li>
+<p>SUCCESS：构建成功。</p>
+</li>
+<li>
+<p>UNSTABLE：存在一些错误，但不至于构建失败。</p>
+</li>
+<li>
+<p>NOT_BUILT：在多阶段构建时，前面阶段的问题导致后面阶段无法执行。</p>
+</li>
+</ul>
+<p>注意：需要手动触发一次任务，让Jenkins加载pipeline后，trigger指令才会生效。</p>
+<h4 id="gitlab-事件触发"><a class="h-anchor" href="#gitlab-事件触发">#</a>gitlab 事件触发</h4>
+<ul>
+<li>
+<p>GitLab插件（https：//plugins.jenkins.io/gitlab-plugin）</p>
+</li>
+<li>
+<p>git插件（https：//plugins.jenkins.io/git）。</p>
+</li>
+</ul>
+<pre><code class="hljs">pipeline &#123;
+  agent any
+  triggers &#123;
+    <span class="hljs-title function_ invoke__">gitlab</span>(<span class="hljs-attr">trigger0nPush</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-attr">triggerOnMergeRequest</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-attr">branchFilterType</span>: <span class="hljs-string">&#x27;All&#x27;</span>，
+           <span class="hljs-attr">secretToken</span>: <span class="hljs-string">&quot;1234546&quot;</span>)
+  &#125;
+  stages &#123;
+    <span class="hljs-title function_ invoke__">stage</span>(<span class="hljs-string">&#x27;build&#x27;</span>) &#123;
+      steps &#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;hello world from gitlab trigger&quot;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</code></pre>
+<p>GitLab trigger方法有很多参数可配置，下面简单介绍一些常用的参数。</p>
+<ul>
+<li>
+<p>triggerOnPush：当GitLab触发push事件时，是否执行构建。</p>
+</li>
+<li>
+<p>triggerOnMergeRequest：当GitLab触发mergeRequest事件时，是否执行构建。</p>
+</li>
+<li>
+<p>branchFilterType：只有符合条件的分支才会被触发。必选，否则无法实现触发。可以设置的值有：</p>
+</li>
+</ul>
+<p>◦ NameBasedFilter：基于分支名进行过滤，多个分支名使用逗号分隔。</p>
+<p>◦ RegexBasedFilter：基于正则表达对分支名进行过滤。</p>
+<p>◦ All：所有分支都会被触发。</p>
+<ul>
+<li>
+<p>includeBranchesSpec：基于branchFilterType值，输入期望包括的分支的规则。</p>
+</li>
+<li>
+<p>excludeBranchesSpec：基于branchFilterType值，输入期望排除的分支的规则。</p>
+</li>
+</ul>
+<h4 id="generic-webhook-trigger插件触发"><a class="h-anchor" href="#generic-webhook-trigger插件触发">#</a>Generic Webhook Trigger插件触发</h4>
+<p>插件地址：https://plugins.jenkins.io/generic-webhook-trigger</p>
+<pre><code class="hljs">pipeline &#123;
+  agent any
+
+  triggers &#123;
+    <span class="hljs-title function_ invoke__">GenericTrigger</span>(
+      <span class="hljs-attr">genericVariables</span>: [
+        [<span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;ref&#x27;</span>, <span class="hljs-attr">value</span>:<span class="hljs-string">&#x27; $.ref&#x27;</span> ]
+      ],
+      <span class="hljs-attr">token</span>:<span class="hljs-string">&#x27;secret&#x27;</span>,
+      <span class="hljs-attr">causeString</span>: <span class="hljs-string">&#x27;Triggered on $ref&#x27;</span>,
+      <span class="hljs-attr">printContributedVariables</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">printPostContent</span>: <span class="hljs-literal">true</span>
+      )
+  &#125;
+  stages &#123;
+    <span class="hljs-title function_ invoke__">stage</span>(<span class="hljs-string">&#x27;Some step&#x27;</span>) &#123;
+      steps &#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;hello world from Generic Webhook trigger&quot;</span>
+        sh <span class="hljs-string">&quot;echo <span class="hljs-subst">$ref</span>&quot;</span>
+        sh <span class="hljs-string">&quot;printenv&quot;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</code></pre>
+<p>注意：在创建完成后，需要手动运行一次，这样pipeline的触发条件才会生效。</p>
+<p>发起一次POST请求</p>
+<pre><code class="hljs">curl -X POST -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -d <span class="hljs-string">&#x27;&#123;&quot;ref&quot;: &quot;refs/heads/master&quot;&#125;&#x27;</span> -vs http:<span class="hljs-regexp">//</span><span class="hljs-number">192.168</span>.<span class="hljs-number">23.11</span>:<span class="hljs-number">8667</span><span class="hljs-regexp">/jenkins/g</span>eneric-webhook-trigger/invoke?token=secret
+</code></pre>
+<p>接着，我们就看到pipeline被触发执行了。</p>
+<h4 id="jenkins-cron-语法"><a class="h-anchor" href="#jenkins-cron-语法">#</a>jenkins cron 语法</h4>
+<p>Jenkins cron语法遵循<a target="_blank" rel="noopener external nofollow noreferrer" href="https://en.wikipedia.org/wiki/Cron">cron实用程序</a>的语法 （略有不同）。具体来说，每行包含5个由TAB或空格分隔的字段：</p>
+<pre><code class="hljs"><span class="hljs-bullet">*</span> * * * *
+分 时 天 月 周
+第一个<span class="hljs-emphasis">*表示一小时内的分钟数（0–59）
+第二个*</span>表示一天中的时间（0–23）
+第三个<span class="hljs-emphasis">*表示一个月中的某天（1-31）
+第四个*</span>表示一年中的某月（1–12）
+第五个<span class="hljs-emphasis">*表示一周中的第几天，取值0~7，其中0和7代表的都是周日
+</span></code></pre>
+<p>要为一个字段指定多个值，可以使用以下运算符。按优先顺序排列：</p>
+<ul>
+<li><code>*</code> 指定所有有效值</li>
+<li><code>M-N</code> 指定一个范围值</li>
+<li><code>M-N/X</code> 或 <code>*/X</code> 以 <code>X</code> 为间隔数在<code>M-N（指定范围）或*/X（整个范围）每次递增</code></li>
+<li><code>A,B,…,Z</code> 枚举多值</li>
+</ul>
+<p>为了允许定期调度的任务在系统上产生均衡负载，应尽可能使用符号H（用于&quot;hash&quot;)。例如，使用 <code>0 0 * * *</code> （每日凌晨执行）每日多个job同时执行将引起很大的高峰。而使用 <code>H H * * *</code> 仍然会每天执行一次。但是不会同时执行，可以更好的利用有限的资源。使用 <code>H</code> 可以表示一个范围。例如， <code>H H(0-7) * * *</code> 指每日上午12:00（午夜）至上午7:59之间的某段时间执行。H 符号可以看作是一个范围内的随机值，但它实际上是 job 名称的 hash，而不是随机函数，因此对于任何给定的项目，该值都保持稳定。``</p>
+<p>此外还支持<code>@yearly</code>,<code>@annually</code>,<code>@monthly</code>,<code>@weekly</code>,<code>@daily</code>,<code>@midnight</code>,<code>@hourly 作为便利的别名，使用 hash system 保持自动平衡，@hourly等效于 H * * * * 表示在一个小时的任意时间， @midnight 表示在凌晨12:00到凌晨2:59之间。</code></p>
+<p><strong>示例</strong></p>
+<pre><code class="hljs">每十五分钟（也许在:07,:22,:37,:52）
+triggers&#123; cro<span class="hljs-meta">n</span>(<span class="hljs-string">&#x27;H/15 * * * *&#x27;</span>) &#125;
+
+在每小时的前半部分中每十分钟一次（三遍,也许在:04,:14,:24）
+triggers&#123; cro<span class="hljs-meta">n</span>(<span class="hljs-string">&#x27;H(0-29)/10 * * * *&#x27;</span>) &#125;
+
+每隔一个小时的45分钟，每两小时一次，从上午9:45开始，到每个工作日的下午3:45结束。
+triggers&#123; cro<span class="hljs-meta">n</span>(<span class="hljs-string">&#x27;45 9-16/2 * * 1-5&#x27;</span>) &#125;
+
+每个工作日的上午9点至下午5点之间每两小时一次（可能在10:38AM,12:38PM,2:38PM,4:38PM）
+triggers&#123; cro<span class="hljs-meta">n</span>(<span class="hljs-string">&#x27;H H(9-16)/2 * * 1-5&#x27;</span>) &#125;
+
+每月12月1日和15日每天一次
+triggers&#123; cro<span class="hljs-meta">n</span>(<span class="hljs-string">&#x27;H H 1,15 1-11 *&#x27;</span>) &#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="stage-步骤"><a class="h-anchor" href="#stage-步骤">#</a>stage 步骤</h3>
+<div class="section">
+<p><code>stage</code>指令位于<code>stages</code>部分，应该包含一个步骤部分、一个可选的代理部分或其他特定于stage的指令。实际上，管道完成的所有实际工作都将封装在一个或多个阶段指令中。</p>
+<pre><code class="hljs">pipeline &#123;
+    agent <span class="hljs-built_in">any</span>
+    stages &#123;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Example&#x27;</span></span>) &#123;
+            steps &#123;
+                echo <span class="hljs-string">&#x27;Hello World&#x27;</span>
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="input-输入"><a class="h-anchor" href="#input-输入">#</a>input 输入</h3>
+<div class="section">
+<p><code> input</code>指令允许您使用<code>input</code>步骤提示输入。</p>
+<p>执行input步骤会暂停pipeline，直到用户输入参数。</p>
+<pre><code class="hljs">pipeline &#123;
+  agent <span class="hljs-built_in">any</span>
+  stages &#123;
+    <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;deploy&#x27;</span></span>) &#123;
+    steps &#123;
+      input <span class="hljs-attr">message</span>: <span class="hljs-string">&quot;发布或停止&quot;</span>
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<p>带有选项的input</p>
+<pre><code class="hljs"><span class="hljs-comment">// 变量名，用于存储input步骤的返回值</span>
+def approvalMap
+
+pipeline &#123;
+  agent any
+  stages &#123;
+    <span class="hljs-title function_ invoke__">stage</span>(<span class="hljs-string">&#x27;pre deploy&#x27;</span>) &#123;
+      steps &#123;
+        script &#123;
+           approvalMap = <span class="hljs-title function_ invoke__">input</span>(
+             <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;准备发布到哪个环境?&#x27;</span>,
+             <span class="hljs-attr">ok</span>: <span class="hljs-string">&#x27;确定&#x27;</span>,
+             <span class="hljs-attr">parameters</span>: [
+               <span class="hljs-title function_ invoke__">choice</span>(<span class="hljs-attr">choices</span>: <span class="hljs-string">&#x27;dev\ntest\nprod&#x27;</span>, <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;发布到什么环境?&#x27;</span> , <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;ENV&#x27;</span>),
+               <span class="hljs-keyword">string</span>(<span class="hljs-attr">defaultValue</span>:<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-attr">description</span>:<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;myparam&#x27;</span> )
+             ],
+             submitter: <span class="hljs-string">&#x27;admin,admin2,releaseGroup&#x27;</span>,
+             submitterParameter: <span class="hljs-string">&#x27;APPROVER&#x27;</span>
+           )
+         &#125;
+      &#125;
+    &#125;
+    <span class="hljs-title function_ invoke__">stage</span>(<span class="hljs-string">&#x27;deploy&#x27;</span>) &#123;
+     steps &#123;
+       <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;操作者是$&#123;approvalMap[&#x27;APPROVER&#x27;]&#125;&quot;</span>
+       <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;发布到什么环境? $&#123;approvalMap[&#x27;ENV&#x27;]&#125;&quot;</span>
+       <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;自定义参数: $&#123;approvalMap[&#x27;myparam&#x27;]&#125;&quot;</span>
+     &#125;
+   &#125;
+  &#125;
+&#125;
+</code></pre>
+<p><strong>配置选项</strong></p>
+<ul>
+<li><code>message</code> 显示的信息</li>
+<li><code>id</code> input的可选标识符，默认stage名称</li>
+<li><code> ok</code> input表单上&quot;ok&quot;按钮的可选文本。</li>
+<li><code> submitter</code> 允许提交此input的用户或外部组名的可选逗号分隔列表。默认允许任何用户。</li>
+<li><code>submitterParameter</code> 环境变量的可选名称，如果存在，则使用<code>submitter</code>名称进行设置。</li>
+<li><code>parameters</code> 一个可选的参数列表</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="when-条件"><a class="h-anchor" href="#when-条件">#</a>when 条件</h3>
+<div class="section">
+<p><code>when</code> 指令允许管道根据给定的条件来决定是否应该执行阶段。</p>
+<h4 id="内置条件"><a class="h-anchor" href="#内置条件">#</a>内置条件</h4>
+<ul>
+<li>
+<p><code>branch</code> 当正在构建的分支与给出的分支模式匹配时执行阶段</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123; 
+  branch <span class="hljs-symbol">&#x27;master</span>&#x27;
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>buildingTag</code> 如果pipeline所执行的代码被打了tag，则执行</p>
+<pre><code class="hljs"><span class="hljs-variable">when</span> &#123;
+  <span class="hljs-function"><span class="hljs-title">buildingTag</span>( )</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>changelog</code> 如果版本控制库的changelog符合正则表达式，则执行</p>
+<pre><code class="hljs"><span class="hljs-built_in">when</span> &#123;
+  changelog <span class="hljs-string">&#x27;.*^\\[DEPENDENCY\\].+$&#x27;</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>changeset</code> 如果版本控制库的变更集合中包含一个或多个文件符合给定的Ant风格路径表达式，则执行</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123;
+  changeset <span class="hljs-string">&quot;**/*.js&quot;</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>changeRequest</code>  如果当前构建是一个&quot; change request &quot;(也就是GitHub和Bitbucket上的Pull request, GitLab上的Merge request, Gerrit上的change，等等)，则执行这个阶段。</p>
+<pre><code class="hljs"><span class="hljs-variable">when</span> &#123;
+	<span class="hljs-function"><span class="hljs-title">changeRequest</span>()</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>environment</code> 如果环境变量的值与给定的值相同，则执行</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123;
+ environment <span class="hljs-type">name</span>: <span class="hljs-string">&#x27;DEPLOY_TO&#x27;</span>, <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;production&#x27;</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>equals</code> 如果期望值与给定的值相同，则执行</p>
+<pre><code class="hljs"><span class="hljs-built_in">when</span> &#123;
+  <span class="hljs-built_in">equals</span> expected: <span class="hljs-number">2</span>, <span class="hljs-attr">actual</span>: currentBuild.<span class="hljs-built_in">number</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>expression</code> 如果Groovy表达式返回的是true，则执行</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123;
+  expression &#123;
+    <span class="hljs-keyword">return</span> env.BRANCH_NAME != <span class="hljs-string">&#x27;master&#x27;</span>;
+  &#125;
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>tag</code> 如果pipeline所执行的代码被打了tag，且tag名称符合规则，则执行</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123;
+  <span class="hljs-literal">tag</span> <span class="hljs-string">&quot;release-*&quot;</span>
+&#125;
+</code></pre>
+<p>如果tag的参数为空，即tag()，则表示不论tag名称是什么都执行，与buildingTag的效果相同。</p>
+</li>
+<li>
+<p><code>not</code> 当嵌套条件为false时执行阶段。必须包含一个条件。</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123; 
+ <span class="hljs-built_in"> not</span> &#123; 
+    branch <span class="hljs-string">&#x27;master&#x27;</span> 
+  &#125;
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>allOf</code> 当所有嵌套条件都为真时执行。必须至少包含一个条件。</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123; 
+  allOf &#123; 
+    branch <span class="hljs-string">&#x27;master&#x27;</span>
+    environment <span class="hljs-type">name</span>: <span class="hljs-string">&#x27;DEPLOY_TO&#x27;</span>, <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;production&#x27;</span> 
+  &#125;
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>anyOf</code>  当至少一个嵌套条件为真时执行。必须至少包含一个条件。</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123;
+  anyOf &#123;
+    branch <span class="hljs-symbol">&#x27;master</span>&#x27;
+    branch <span class="hljs-symbol">&#x27;staging</span>&#x27;
+  &#125;
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>triggeredBy</code> 当给定的参数触发当前构建时，执行该阶段。</p>
+<pre><code class="hljs"><span class="hljs-keyword">when</span> &#123; triggeredBy <span class="hljs-symbol">&#x27;SCMTrigger</span>&#x27; &#125;
+
+<span class="hljs-keyword">when</span> &#123; triggeredBy <span class="hljs-symbol">&#x27;TimerTrigger</span>&#x27; &#125;
+
+<span class="hljs-keyword">when</span> &#123; triggeredBy <span class="hljs-symbol">&#x27;UpstreamCause</span>&#x27; &#125;
+
+<span class="hljs-keyword">when</span> &#123; triggeredBy cause: <span class="hljs-string">&quot;UserIdCause&quot;</span>, detail: <span class="hljs-string">&quot;vlinde&quot;</span> &#125;
+</code></pre>
+</li>
+<li>
+<p>在进入agent阶段前的when</p>
+<p>默认情况下，如果定义了某个阶段的agent，则在进入该阶段的agent后将对该阶段的when条件进行评估。但是，可以通过在when块中指定beforeAgent选项来更改这一点。如果beforeAgent设置为true，那么将首先计算when条件，并且只有当when条件计算为true时才会进入agent。</p>
+</li>
+<li>
+<p>在进入input步骤前的when</p>
+<p>默认情况下，如果定义了输入条件，则在input之前不会计算阶段的when条件。但是，可以通过在when块中指定beforeInput选项来更改这一点。如果beforeInput设置为true，那么将首先计算when条件，并且只有当when条件计算为true时才会进入input。</p>
+</li>
+<li>
+<p>在进入options步骤前的when</p>
+<p>默认情况下，如果定义了某个阶段的options，那么将在进入该阶段的options后计算该阶段的when条件。但是，可以通过在when块中指定beforeOptions选项来更改这一点。如果beforeOptions设置为true，那么将首先计算when条件，并且只有当when条件计算为true时才会进入这些options。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="高级"><a class="h-anchor" href="#高级">#</a>高级</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="阶段嵌套"><a class="h-anchor" href="#阶段嵌套">#</a>阶段嵌套</h3>
+<div class="section">
+<p>声明式管道中的阶段可以有一个<code>stages</code>部分，其中包含一系列按顺序运行的嵌套阶段。请注意，一个阶段必须有且只有一个<code>steps</code>、<code>stages</code>、<code>parallel</code>或<code>matrix</code>。如果<code>stage</code>指令嵌套在一个<code>parallel</code>或<code>matrix</code>块本身中，则不可能在一个<code>stage</code>指令中嵌套一个<code>parallel</code>或<code>matrix</code>块。然而，在<code>parallel</code>或<code>matrix</code>块中的阶段指令可以使用<code>stage</code>的所有其他功能，包括<code>agent</code>、<code>tools</code>、<code>when</code>等。</p>
+<pre><code class="hljs">pipeline &#123;
+    agent none
+    stages &#123;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Non-Sequential Stage&#x27;</span></span>) &#123;
+            agent &#123;
+                label <span class="hljs-string">&#x27;for-non-sequential&#x27;</span>
+            &#125;
+            steps &#123;
+                echo <span class="hljs-string">&quot;On Non-Sequential Stage&quot;</span>
+            &#125;
+        &#125;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Sequential&#x27;</span></span>) &#123;
+            agent &#123;
+                label <span class="hljs-string">&#x27;for-sequential&#x27;</span>
+            &#125;
+            environment &#123;
+                <span class="hljs-variable constant_">FOR_SEQUENTIAL</span> = <span class="hljs-string">&quot;some-value&quot;</span>
+            &#125;
+            stages &#123;
+                <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;In Sequential 1&#x27;</span></span>) &#123;
+                    steps &#123;
+                        echo <span class="hljs-string">&quot;In Sequential 1&quot;</span>
+                    &#125;
+                &#125;
+                <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;In Sequential 2&#x27;</span></span>) &#123;
+                    steps &#123;
+                        echo <span class="hljs-string">&quot;In Sequential 2&quot;</span>
+                    &#125;
+                &#125;
+                <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Parallel In Sequential&#x27;</span></span>) &#123;
+                    parallel &#123;
+                        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;In Parallel 1&#x27;</span></span>) &#123;
+                            steps &#123;
+                                echo <span class="hljs-string">&quot;In Parallel 1&quot;</span>
+                            &#125;
+                        &#125;
+                        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;In Parallel 2&#x27;</span></span>) &#123;
+                            steps &#123;
+                                echo <span class="hljs-string">&quot;In Parallel 2&quot;</span>
+                            &#125;
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="并行构建"><a class="h-anchor" href="#并行构建">#</a>并行构建</h3>
+<div class="section">
+<p>声明性管道中的阶段可以有一个并行(<code>parallel</code>)部分，其中包含要并行运行的嵌套阶段的列表。请注意，一个阶段必须有且只有一个<code>steps</code>、<code>stages</code>、<code>parallel</code>或<code>matrix</code>。如果<code>stage</code>指令嵌套在一个<code>parallel</code>或<code>matrix</code>块本身中，则不可能在一个<code>stage</code>指令中嵌套一个<code>parallel</code>或<code>matrix</code>块。然而，在<code>parallel</code>或<code>matrix</code>块中的<code>stage</code>指令可以使用阶段的所有其他功能，包括<code>agent</code>、<code>tools</code>、<code>when</code>等。</p>
+<p>此外，通过添加选项<code>failFast true</code> 或<code>options &#123;parallelsAlwaysFailFast()&#125;</code>，使您可以在任何一个阶段失败时强制终止所有阶段</p>
+<pre><code class="hljs">pipeline &#123;
+  agent none
+  stages &#123;
+    <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Run Tests&#x27;</span></span>) &#123;
+      failFast <span class="hljs-literal">true</span>
+      parallel &#123;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Test On Chrome&#x27;</span></span>) &#123;
+          agent &#123; label <span class="hljs-string">&quot;chrome&quot;</span> &#125;
+          steps &#123;
+            echo <span class="hljs-string">&quot;Chrome UI测试&quot;</span>
+          &#125;
+        &#125;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Test On Firefox&#x27;</span></span>) &#123;
+          agent &#123; label <span class="hljs-string">&quot;firefox&quot;</span> &#125;
+          steps &#123;
+            echo <span class="hljs-string">&quot;Firefox UI测试&quot;</span>
+          &#125;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Test On IE&#x27;</span></span>) &#123;
+          agent &#123; label <span class="hljs-string">&quot;ie&quot;</span> &#125;
+          steps &#123;
+            echo <span class="hljs-string">&quot;IE UI测试&quot;</span>
+          &#125;
+        &#125;
+      &#125;<span class="hljs-comment">// end of parallel</span>
+    &#125; <span class="hljs-comment">// end of run tests</span>
+  &#125; <span class="hljs-comment">// end of stages</span>
+&#125; <span class="hljs-comment">// end of pipeline</span>
+</code></pre>
+<p>并行步骤</p>
+<pre><code class="hljs">stage(<span class="hljs-string">&#x27;并行构建&#x27;</span>) &#123;
+  steps &#123;
+    parallel(
+      jdk8: &#123;
+        <span class="hljs-keyword">echo</span> jdk8 build<span class="hljs-comment">&quot;</span>
+      &#125;,
+      jdk9: &#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;jdk9 build&quot;</span>
+      &#125;
+    )
+  &#125;
+&#125; 
+</code></pre>
+<p>并行阶段运行在不同的executor上，而并行步骤运行在同一个executor上。</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="矩阵"><a class="h-anchor" href="#矩阵">#</a>矩阵</h3>
+<div class="section">
+<p>声明性管道中的阶段可以有一个矩阵部分，它定义了一个多维矩阵，其中包含要并行运行的名称-值组合。我们将这些组合称为矩阵中的&quot;细胞&quot;。矩阵中的每个单元可以包括一个或多个阶段，使用该单元的配置按顺序运行。 请注意，一个阶段必须有且只有一个<code>steps</code>、<code>stages</code>、<code>parallel</code>或<code>matrix</code>。如果<code>stage</code>指令嵌套在一个<code>parallel</code>或<code>matrix</code>块本身中，则不可能在一个<code>stage</code>指令中嵌套一个<code>parallel</code>或<code>matrix</code>块。然而，在<code>parallel</code>或<code>matrix</code>块中的<code>stage</code>指令可以使用阶段的所有其他功能，包括<code>agent</code>、<code>tools</code>、<code>when</code>等。</p>
+<p>此外，通过添加选项<code>failFast true</code> 或<code>options &#123;parallelsAlwaysFailFast()&#125;</code>，使您可以在任何一个阶段失败时强制终止所有阶段</p>
+<p>矩阵部分必须包括<code>axes</code>部分和<code>stages</code>部分。<code>axes</code>部分定义了矩阵中每个<code>axis</code>的值。<code>stage</code>部分定义了在每个单元中依次运行的阶段列表。 一个矩阵可以有一个<code>excludes</code>部分来从矩阵中移除无效的单元。</p>
+<pre><code class="hljs">pipeline &#123;
+    <span class="hljs-keyword">parameters</span> &#123;
+        choice(name: <span class="hljs-string">&#x27;PLATFORM_FILTER&#x27;</span>, choices: [<span class="hljs-string">&#x27;all&#x27;</span>, <span class="hljs-string">&#x27;linux&#x27;</span>, <span class="hljs-string">&#x27;windows&#x27;</span>, <span class="hljs-string">&#x27;mac&#x27;</span>], description: <span class="hljs-string">&#x27;Run on specific platform&#x27;</span>)
+    &#125;
+    agent <span class="hljs-comment">none</span>
+    stages <span class="hljs-comment">&#123;</span>
+        stage(<span class="hljs-string">&#x27;BuildAndTest&#x27;</span>) &#123;
+            matrix <span class="hljs-comment">&#123;</span>
+                agent <span class="hljs-comment">&#123;</span>
+                    label <span class="hljs-comment">&quot;$&#123;PLATFORM&#125;-agent&quot;</span>
+                &#125;
+                when <span class="hljs-comment">&#123; anyOf &#123;</span>
+                    expression <span class="hljs-comment">&#123; params.PLATFORM_FILTER ==</span> <span class="hljs-comment">&#x27;all&#x27;</span> <span class="hljs-comment">&#125;</span>
+                    expression <span class="hljs-comment">&#123; params.PLATFORM_FILTER == env.PLATFORM &#125;</span>
+                &#125; &#125;
+                axes <span class="hljs-comment">&#123;</span>
+                    axis <span class="hljs-comment">&#123;</span>
+                        name <span class="hljs-comment">&#x27;PLATFORM&#x27;</span>
+                        values <span class="hljs-comment">&#x27;linux&#x27;</span><span class="hljs-comment">,</span> <span class="hljs-comment">&#x27;windows&#x27;</span><span class="hljs-comment">,</span> <span class="hljs-comment">&#x27;mac&#x27;</span>
+                    &#125;
+                    axis <span class="hljs-comment">&#123;</span>
+                        name <span class="hljs-comment">&#x27;BROWSER&#x27;</span>
+                        values <span class="hljs-comment">&#x27;firefox&#x27;</span><span class="hljs-comment">,</span> <span class="hljs-comment">&#x27;chrome&#x27;</span><span class="hljs-comment">,</span> <span class="hljs-comment">&#x27;safari&#x27;</span><span class="hljs-comment">,</span> <span class="hljs-comment">&#x27;edge&#x27;</span>
+                    &#125;
+                &#125;
+                excludes <span class="hljs-comment">&#123;</span>
+                    exclude <span class="hljs-comment">&#123;</span>
+                        axis <span class="hljs-comment">&#123;</span>
+                            name <span class="hljs-comment">&#x27;PLATFORM&#x27;</span>
+                            values <span class="hljs-comment">&#x27;linux&#x27;</span>
+                        &#125;
+                        axis <span class="hljs-comment">&#123;</span>
+                            name <span class="hljs-comment">&#x27;BROWSER&#x27;</span>
+                            values <span class="hljs-comment">&#x27;safari&#x27;</span>
+                        &#125;
+                    &#125;
+                    exclude <span class="hljs-comment">&#123;</span>
+                        axis <span class="hljs-comment">&#123;</span>
+                            name <span class="hljs-comment">&#x27;PLATFORM&#x27;</span>
+                            notValues <span class="hljs-comment">&#x27;windows&#x27;</span>
+                        &#125;
+                        axis <span class="hljs-comment">&#123;</span>
+                            name <span class="hljs-comment">&#x27;BROWSER&#x27;</span>
+                            values <span class="hljs-comment">&#x27;edge&#x27;</span>
+                        &#125;
+                    &#125;
+                &#125;
+                stages <span class="hljs-comment">&#123;</span>
+                    stage(<span class="hljs-string">&#x27;Build&#x27;</span>) &#123;
+                        steps <span class="hljs-comment">&#123;</span>
+                            echo <span class="hljs-comment">&quot;Do Build for $&#123;PLATFORM&#125; - $&#123;BROWSER&#125;&quot;</span>
+                        &#125;
+                    &#125;
+                    stage(<span class="hljs-string">&#x27;Test&#x27;</span>) &#123;
+                        steps <span class="hljs-comment">&#123;</span>
+                            echo <span class="hljs-comment">&quot;Do Test for $&#123;PLATFORM&#125; - $&#123;BROWSER&#125;&quot;</span>
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="具体步骤"><a class="h-anchor" href="#具体步骤">#</a>具体步骤</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="文件目录相关"><a class="h-anchor" href="#文件目录相关">#</a>文件目录相关</h3>
+<div class="section">
+<ul>
+<li>
+<p><code>deleteDir</code>：删除当前目录deleteDir是一个无参步骤，删除的是当前工作目录。通常它与dir步骤一起使用，用于删除指定目录下的内容。</p>
+</li>
+<li>
+<p><code>dir</code>：切换到目录默认pipeline工作在工作空间目录下，dir步骤可以让我们切换到其他目录。</p>
+<pre><code class="hljs"><span class="hljs-function"><span class="hljs-title">dir</span><span class="hljs-params">(<span class="hljs-string">&#x27;/var/logs&#x27;</span>)</span></span>&#123;
+  <span class="hljs-built_in">deleteDir</span>()
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>fileExists</code>：判断文件是否存在fileExists（'/tmp/a.jar'）判断/tmp/a.jar文件是否存在。如果参数是相对路径，则判断在相对当前工作目录下，该文件是否存在。结果返回布尔类型。</p>
+</li>
+<li>
+<p><code>isUnix</code>：判断是否为类UNIX系统如果当前pipeline运行在一个类UNIX系统上，则返回true。</p>
+</li>
+<li>
+<p><code>pwd</code>：确认当前目录pwd与Linux的pwd命令一样，返回当前所在目录。它有一个布尔类型的可选参数：tmp，如果参数值为true，则返回与当前工作空间关联的临时目录。</p>
+</li>
+<li>
+<p><code>writeFile</code>：将内容写入指定文件中writeFile支持的参数有：</p>
+<ul>
+<li>
+<p>file：文件路径，可以是绝对路径，也可以是相对路径。</p>
+</li>
+<li>
+<p>text：要写入的文件内容。</p>
+</li>
+<li>
+<p>encoding（可选）：目标文件的编码。如果留空，则使用操作系统默认的编码。如果写的是Base64的数据，则可以使用Base64编码。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>readFile</code>：读取文件内容读取指定文件的内容，以文本返回。readFile支持的参数有：</p>
+<ul>
+<li>
+<p>file：路径，可以是绝对路径，也可以是相对路径。</p>
+</li>
+<li>
+<p>encoding（可选）：读取文件时使用的编码。</p>
+</li>
+</ul>
+<pre><code class="hljs">script&#123;
+  <span class="hljs-comment">//&quot;amVua2lucyBib29r&quot; 是&quot;jenkins book&quot; 进行Base64编码后的值</span>
+  <span class="hljs-title function_ invoke__">writeFile</span>(<span class="hljs-attr">file</span>:<span class="hljs-string">&quot;base64File&quot;</span>, <span class="hljs-attr">text</span>:<span class="hljs-string">&quot;amVua2lucyBib29r&quot;</span>，<span class="hljs-attr">encoding</span>: <span class="hljs-string">&quot;Base64&quot;</span>)
+  def content = <span class="hljs-title function_ invoke__">readFile</span>(<span class="hljs-attr">file</span>: <span class="hljs-string">&#x27;base64File&#x27;</span>, <span class="hljs-attr">encoding</span>: <span class="hljs-string">&#x27;UTF-8&#x27;</span>)
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;$&#123; content&#125;&quot;</span>
+  <span class="hljs-comment">//打印结果: jenkins book</span>
+&#125;
+</code></pre>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="制品相关"><a class="h-anchor" href="#制品相关">#</a>制品相关 </h3>
+<div class="section">
+<ul>
+<li>
+<p><code>stash</code>：保存临时文件stash步骤可以将一些文件保存起来，以便被同一次构建的其他步骤或阶段使用。如果整个pipeline的所有阶段在同一台机器上执行，则stash步骤是多余的。</p>
+<p>所以，通常需要stash的文件都是要跨Jenkins node使用的。关于Jenkins node的相关概念，我们会在第14章中进行介绍。stash步骤会将文件存储在tar文件中，对于大文件的stash操作将会消耗Jenkins master的计算资源。Jenkins官方文档推荐，当文件大小为5∼100MB时，应该考虑使用其他替代方案。</p>
+<p>stash步骤的参数列表如下：</p>
+<ul>
+<li>name：字符串类型，保存文件的集合的唯一标识。</li>
+<li>allowEmpty：布尔类型，允许stash内容为空。</li>
+<li>excludes：字符串类型，将哪些文件排除。如果排除多个文件，则使用逗号分隔。留空代表不排除任何文件。</li>
+<li>includes：字符串类型，stash哪些文件，留空代表当前文件夹下的所有文件。</li>
+<li>useDefaultExcludes：布尔类型，如果为true，则代表使用Ant风格路径默认排除文件列表。
+除了name参数，其他参数都是可选的。excludes和includes使用的是Ant风格路径表达式。在3.7.5节中将简单介绍该表达式写法。</li>
+</ul>
+</li>
+<li>
+<p><code>unstash</code>：取出之前stash的文件unstash步骤只有一个name参数，即stash时的唯一标识。通常stash与unstash步骤同时使用。以下是完整示例。</p>
+<pre><code class="hljs">pipeline &#123;
+  <span class="hljs-built_in">agent</span> none
+  stages &#123;
+    stage(<span class="hljs-string">&#x27;stash&#x27;</span>) &#123;
+      <span class="hljs-built_in">agent</span> &#123; label <span class="hljs-string">&quot;master&quot;</span> &#125;
+      steps &#123;
+        writeFile file: <span class="hljs-string">&quot;a. txt&quot;</span>, <span class="hljs-built_in">text</span>: <span class="hljs-string">&quot;$BUILD_NUMBER&quot;</span>
+        stash(<span class="hljs-built_in">name</span>: <span class="hljs-string">&quot;abc&quot;</span>, includes: <span class="hljs-string">&quot;a.txt&quot;</span>)
+      &#125;
+
+    stage(<span class="hljs-string">&#x27;unstash&#x27;</span>) &#123;
+      <span class="hljs-built_in">agent</span> &#123; label <span class="hljs-string">&quot;node2&quot;</span> &#125;
+      steps &#123;
+        script&#123;
+          unstash(<span class="hljs-string">&quot;abc&quot;</span>)
+          def content = readFile(<span class="hljs-string">&quot;a.txt&quot;</span>)
+          <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$&#123;content&#125;&quot;</span>
+         &#125;
+       &#125;
+     &#125;
+   &#125;
+&#125;
+
+</code></pre>
+<p>stash步骤在master节点上执行，而unstash步骤在node2节点上执行。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="命令相关"><a class="h-anchor" href="#命令相关">#</a>命令相关</h3>
+<div class="section">
+<ul>
+<li>
+<p><code>sh</code>：执行shell命令</p>
+<p>sh步骤支持的参数有：</p>
+<ul>
+<li>
+<p>script：将要执行的shell脚本，通常在类UNIX系统上可以是多行脚本。</p>
+</li>
+<li>
+<p>encoding：脚本执行后输出日志的编码，默认值为脚本运行所在系统的编码。</p>
+</li>
+<li>
+<p>returnStatus：布尔类型，默认脚本返回的是状态码，如果是一个非零的状态码，则会引发pipeline执行失败。如果returnStatus参数为true，则不论状态码是什么，pipeline的执行都不会受影响。</p>
+</li>
+<li>
+<p>returnStdout：布尔类型，如果为true，则任务的标准输出将作为步骤的返回值，而不是打印到构建日志中（如果有错误，则依然会打印到日志中）。</p>
+</li>
+</ul>
+<p>除了script参数，其他参数都是可选的。returnStatus与returnStdout参数一般不会同时使用，因为返回值只能有一个。如果同时使用，则只有returnStatus参数生效。</p>
+</li>
+<li>
+<p><code>bat</code> 步骤执行的是Windows的批处理命令。</p>
+</li>
+<li>
+<p><code>powershell</code> 步骤执行的是PowerShell脚本</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="自动化"><a class="h-anchor" href="#自动化">#</a>自动化</h3>
+<div class="section">
+<h4 id="ansible"><a class="h-anchor" href="#ansible">#</a>ansible</h4>
+<p>https://plugins.jenkins.io/ansible</p>
+<pre><code class="hljs">steps &#123;
+  ansiblePlaybook colorized: <span class="hljs-literal">true</span>, extras: <span class="hljs-string">&#x27;-e exvar=t&#x27;</span>, inventory: <span class="hljs-string">&#x27;/etc/ansible.hosts&#x27;</span>, <span class="hljs-built_in">limit</span>: <span class="hljs-string">&#x27;test&#x27;</span>, playbook: <span class="hljs-string">&#x27;/root/playbook.yaml&#x27;</span>
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="构建工具"><a class="h-anchor" href="#构建工具">#</a>构建工具</h3>
+<div class="section">
+<h4 id="maven"><a class="h-anchor" href="#maven">#</a>maven</h4>
+<pre><code class="hljs"><span class="hljs-keyword">pipeline</span> &#123;
+   agent any
+   <span class="hljs-keyword">tools</span> &#123;
+      maven <span class="hljs-string">&quot;mvn-3.5.4&quot;</span>
+   &#125;
+   <span class="hljs-keyword">stages</span> &#123;
+      stage(<span class="hljs-symbol">&#x27;Build</span>&#x27;) &#123;
+         <span class="hljs-keyword">steps</span> &#123;
+            sh <span class="hljs-string">&quot;mvn -Dmaven.test.failure.ignore=true clean package&quot;</span>
+         &#125;
+      &#125;
+   &#125;
+&#125;
+</code></pre>
+<p>使用mvn的配置文件</p>
+<pre><code class="hljs">config<span class="hljs-constructor">FileProvider( [<span class="hljs-params">configFile</span>(<span class="hljs-params">fileId</span>: &#x27;<span class="hljs-params">maven</span>-<span class="hljs-params">global</span>-<span class="hljs-params">settings</span>&#x27;, <span class="hljs-params">variable</span>: &#x27;MAVEN_GLOBAL_ENV&#x27;)</span>]) &#123;
+  sh <span class="hljs-string">&quot;mvn -s $MAVEN_GLOBAL_ENV clean install&quot;</span>
+&#125;
+</code></pre>
+<h4 id="go"><a class="h-anchor" href="#go">#</a>go</h4>
+<pre><code class="hljs"><span class="hljs-keyword">pipeline</span> &#123;
+  agent any
+  <span class="hljs-keyword">environment</span> &#123;
+    GOPATH <span class="hljs-operator">=</span> <span class="hljs-string">&quot;$&#123;env WORKSPACE&#125;/&quot;</span>
+  &#125;
+  <span class="hljs-keyword">tools</span> &#123;
+    go &#x27; go1<span class="hljs-number">.10</span>&#x27;
+  &#125;
+  <span class="hljs-keyword">stages</span> &#123;
+    stage( <span class="hljs-symbol">&#x27;build</span>&#x27;) &#123;
+      <span class="hljs-keyword">steps</span> &#123;
+        sh <span class="hljs-string">&quot;go build&quot;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<h4 id="python"><a class="h-anchor" href="#python">#</a>python</h4>
+<p>使用pyenv</p>
+<pre><code class="hljs"><span class="hljs-keyword">with</span><span class="hljs-constructor">PythonEnv(&#x27;<span class="hljs-operator">/</span><span class="hljs-params">usr</span><span class="hljs-operator">/</span><span class="hljs-params">bin</span><span class="hljs-operator">/</span><span class="hljs-params">python</span>&#x27;)</span> &#123;
+  sh &#x27;python --version&#x27;
+&#125;
+
+</code></pre>
+<h4 id="利用环境变量来支持更多的构建工具"><a class="h-anchor" href="#利用环境变量来支持更多的构建工具">#</a>利用环境变量来支持更多的构建工具</h4>
+<pre><code class="hljs">pipeline &#123;
+  agent any
+  environment &#123;
+    <span class="hljs-attribute">PATH</span>=<span class="hljs-string">&quot;/usr/lib/customtool/bin:<span class="hljs-variable">$PATH</span>&quot;</span>
+    <span class="hljs-attribute">CUSTOM_PATH</span>=<span class="hljs-string">&quot;/usr/lib/customtool/bin&quot;</span>
+  &#125;
+  stages &#123;
+    stage(<span class="hljs-string">&#x27;build&#x27;</span>) &#123;
+      steps &#123;
+        sh <span class="hljs-string">&quot;customtool build&quot;</span>
+        sh <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;CUSTOM_PATH&#125;</span>/customtool build&quot;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<h4 id="利用tools作用域实现多版本编译"><a class="h-anchor" href="#利用tools作用域实现多版本编译">#</a>利用tools作用域实现多版本编译</h4>
+<pre><code class="hljs"><span class="hljs-keyword">pipeline</span> &#123;
+  agent any
+  <span class="hljs-keyword">stages</span>&#123;
+    stage(<span class="hljs-string">&quot;build with jdk- 10.0.2&quot;</span>)&#123;
+      <span class="hljs-keyword">tools</span> &#123;
+        jdk <span class="hljs-string">&quot;jdk - 10. 0.2&quot;</span>
+      &#125;
+      <span class="hljs-keyword">steps</span>&#123;
+        sh <span class="hljs-string">&quot;printenv&quot;</span>
+      &#125;
+    &#125;
+    stage(<span class="hljs-string">&quot;build with jdk-9.0.4&quot;</span>)&#123;
+      <span class="hljs-keyword">tools</span> &#123;
+        jdk <span class="hljs-string">&quot;jdk-9. 0.4&quot;</span>
+      &#125;
+      <span class="hljs-keyword">steps</span>&#123;
+        sh <span class="hljs-string">&quot;printenv&quot;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="代码质量"><a class="h-anchor" href="#代码质量">#</a>代码质量</h3>
+<div class="section">
+<h4 id="pmd"><a class="h-anchor" href="#pmd">#</a>pmd</h4>
+<p>https://pmd.github.io/</p>
+<pre><code class="hljs">post &#123;
+  always&#123;
+    <span class="hljs-title function_ invoke__">pmd</span>(<span class="hljs-attr">canRunOnFailed</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">pattern</span>: <span class="hljs-string">&#x27;**/target/pmd.xml&#x27;</span> )
+  &#125;
+&#125;
+</code></pre>
+<h4 id="junit"><a class="h-anchor" href="#junit">#</a>junit</h4>
+<p>https://plugins.jenkins.io/junit</p>
+<pre><code class="hljs"><span class="hljs-keyword">post</span> &#123;
+  <span class="hljs-keyword">always</span>&#123;
+    junit testResults<span class="hljs-operator">:</span> <span class="hljs-string">&quot;**/target/surefire-reports/*.xml&quot;</span>
+  &#125;
+&#125;
+</code></pre>
+<h4 id="jacoco"><a class="h-anchor" href="#jacoco">#</a>JaCoCo</h4>
+<p>https://plugins.jenkins.io/jacoco</p>
+<pre><code class="hljs">steps&#123;
+  sh <span class="hljs-string">&quot;mvn clean install&quot;</span>
+  jacoco(
+    <span class="hljs-regexp">//</span>代码覆盖率统计文件位置,Ant风格路径表达式
+    execPattern: <span class="hljs-string">&#x27;target/**/*.exec&#x27;</span>,
+    <span class="hljs-regexp">//</span> classes文件位置,Ant风格路径表达式
+    classPattern: <span class="hljs-string">&#x27;target/classes&#x27;</span>,
+    <span class="hljs-regexp">//</span>源码文件位置,Ant风格路径表达式
+    sourcePattern: <span class="hljs-string">&#x27;src/main/java&#x27;</span>,
+    <span class="hljs-regexp">//</span> 排除分析的位置,Ant风格路径表达式
+    exclusionPattern: <span class="hljs-string">&#x27;src/test*&#x27;</span>,
+    <span class="hljs-regexp">//</span>是否禁用每行覆盖率的源文件显示
+    skipCopyOfSrcFiles: false,
+    <span class="hljs-regexp">//</span>如果为true,则对各维度的覆盖率进行比较。如果任何一个维度的当前覆盖率小于最小覆盖率阙值,则构建状态为失败
+    <span class="hljs-regexp">//</span>如果当前覆盖率在最大闽值和最小阅值之间,则当前构建状态为不稳定:如果当前覆盖率大于最大阅值,则构建成功
+    changeBuildStatus: true,
+    <span class="hljs-regexp">//</span>字节码指令覆盖率
+    minimumInstructionCoverage: <span class="hljs-string">&#x27;30&#x27;</span>, maximumInstructionCoverage:<span class="hljs-string">&#x27;70&#x27;</span>,
+    <span class="hljs-regexp">//</span>行覆盖率
+    minimumLineCoverage: <span class="hljs-string">&#x27;30&#x27;</span>, maximumLineCoverage: <span class="hljs-string">&#x27;70&#x27;</span>,
+    <span class="hljs-regexp">//</span>圈复杂度覆盖率
+    minimumComplexityCoverage: <span class="hljs-string">&#x27;30&#x27;</span>, maximumComplexityCoverage: <span class="hljs-string">&#x27;70&#x27;</span>,
+    <span class="hljs-regexp">//</span>方法覆盖率
+    minimunMethodCoverage: <span class="hljs-string">&#x27;30&#x27;</span>, maximumMethodCoverage:<span class="hljs-string">&#x27;70&#x27;</span>,
+    <span class="hljs-regexp">//</span>类覆盖率
+    minimumClassCoverage:<span class="hljs-string">&#x27;30&#x27;</span>, maximumClassCoverage: <span class="hljs-string">&#x27;70&#x27;</span>,
+    <span class="hljs-regexp">//</span>分支覆盖率
+    minimumBranchCoverage:<span class="hljs-string">&#x27;30&#x27;</span>, maximumBranchCoverage:<span class="hljs-string">&#x27;70&#x27;</span> ,
+    <span class="hljs-regexp">//</span>如果为true,则只有所有维度的覆盖率变化量的绝对值小于相应的变化量阈值时,构建结果才为成功
+    buildoverBuild: true,
+    <span class="hljs-regexp">//</span>以下是各个维度覆盖率的变化量阈值
+    deltaInstructionCoverage: <span class="hljs-string">&#x27;80&#x27;</span>, deltaLineCoverage: <span class="hljs-string">&#x27;80&#x27;</span>,
+    deltaMethodCoverage: <span class="hljs-string">&#x27;80&#x27;</span>, deltaClassCoverage: <span class="hljs-string">&#x27;80&#x27;</span>,
+    deltaComplexityCoverage: <span class="hljs-string">&#x27;80&#x27;</span>, deltaBranchCoverage: <span class="hljs-string">&#x27;80&#x27;</span>
+  &#125;
+&#125;
+</code></pre>
+<h4 id="taurus"><a class="h-anchor" href="#taurus">#</a>Taurus</h4>
+<p>https://plugins.jenkins.io/performance</p>
+<pre><code class="hljs"><span class="hljs-keyword">pipeline</span> &#123;
+  agent any
+  <span class="hljs-keyword">stages</span> &#123;
+    stage(<span class="hljs-symbol">&#x27;performance</span> test&#x27;) &#123;
+      <span class="hljs-keyword">steps</span> &#123;
+        bzt params<span class="hljs-operator">:</span> <span class="hljs-symbol">&#x27;blaze_exist_jmeter_config</span>.yml
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<h4 id="sonarqube"><a class="h-anchor" href="#sonarqube">#</a>SonarQube</h4>
+<p>https://plugins.jenkins.io/sonar</p>
+<pre><code class="hljs">script&#123;
+  def sonarHome = tool name: <span class="hljs-string">&#x27;sonarqube3.2.0&#x27;</span>, <span class="hljs-built_in">type</span>: <span class="hljs-string">&#x27;hudson.plugins.sonar.SonarRunnerInstallation&#x27;</span>
+  withSonarQubeEnv(<span class="hljs-string">&#x27;sonar&#x27;</span>) &#123;
+    sh <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;sonarHome&#125;</span>/bin/sonar-scanner -Dsonar.host.url=<span class="hljs-variable">$&#123;SONAR_HOSTURL&#125;</span> -Dsonar.login=<span class="hljs-variable">$&#123;SONAR_AUTH_TOKEN&#125;</span>&quot;</span>
+  &#125;
+&#125;
+
+</code></pre>
+<h4 id="allure"><a class="h-anchor" href="#allure">#</a>allure</h4>
+<p>https://plugins.jenkins.io/allure-jenkins-plugin</p>
+<pre><code class="hljs">script &#123;
+  <span class="hljs-title function_ invoke__">allure</span>([
+    <span class="hljs-attr">includeProperties</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">jdk</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+    <span class="hljs-attr">properties</span>: [],
+    <span class="hljs-attr">reportBuildPolicy</span>: <span class="hljs-string">&#x27;ALWAYS&#x27;</span>,
+    <span class="hljs-attr">results</span>: [[<span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;target/allure-results&#x27;</span> ]]
+  ])
+&#125;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="凭据使用"><a class="h-anchor" href="#凭据使用">#</a>凭据使用</h3>
+<div class="section">
+<h4 id="withcredentials"><a class="h-anchor" href="#withcredentials">#</a>withCredentials</h4>
+<ul>
+<li><strong>Secret text</strong> 是一串需要保密的文本</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-keyword">with</span><span class="hljs-constructor">Credentials( [<span class="hljs-params">string</span>( <span class="hljs-params">credentialsId</span>: &#x27;<span class="hljs-params">secretText</span>&#x27;, <span class="hljs-params">variable</span>: &#x27;<span class="hljs-params">varName</span>&#x27;)</span>]) &#123;
+  echo <span class="hljs-string">&quot;$&#123;varName&#125;&quot;</span>
+&#125;
+</code></pre>
+<ul>
+<li><strong>Username with password</strong> 指用户和密码凭证。</li>
+</ul>
+<pre><code class="hljs">withCredentials([usernamePassword(credentialsId: <span class="hljs-type"></span>&quot;git1ab-userpwd-pair<span class="hljs-string">&#x27;, usernameVariable: &#x27;</span>username<span class="hljs-string">&#x27;,passwordVariable:&#x27;</span> passwd<span class="hljs-string">&#x27;)])&#123;
+  echo &quot;<span class="hljs-subst">$&#123;username&#125;</span>, <span class="hljs-subst">$&#123;passwd&#125;</span>&quot;
+&#125;
+</span></code></pre>
+<ul>
+<li><strong>Secret file</strong> 指需要保密的文本文件</li>
+</ul>
+<p>使用Secret file时，Jenkins会将文件复制到一个临时目录中，再将文件路径设置到一个变量中。构建结束后，所复制的Secret file会被删除。</p>
+<pre><code class="hljs"><span class="hljs-keyword">with</span><span class="hljs-constructor">Credentials( [<span class="hljs-params">file</span>(<span class="hljs-params">credentialsId</span>: &#x27;<span class="hljs-params">ansible</span>-<span class="hljs-params">vault</span>-<span class="hljs-params">password</span>&#x27;, <span class="hljs-params">variable</span>: &#x27;<span class="hljs-params">vault</span>&#x27;)</span>])&#123;
+  sh <span class="hljs-string">&quot;ansible -i hosts playbook.yml --vault-password-file=$&#123;vault&#125;&quot;</span>
+&#125;
+</code></pre>
+<ul>
+<li><strong>SSH Username with private key</strong> 指一对SSH用户名和密钥。</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-title function_">withCredentials</span>(<span class="hljs-params">[sshUserPrivateKey(
+                 keyFileVariable:<span class="hljs-string">&quot;key&quot;</span>,
+                 credentialsId:<span class="hljs-string">&quot;private-key&quot;</span>)]</span>)&#123;
+   echo <span class="hljs-string">&quot;$&#123;key&#125;&quot;</span>
+&#125;
+</code></pre>
+<p>通过环境变量来使用凭证</p>
+<p>credentials helper方法只支持Secret text、Username with password、Secretfile三种凭证。</p>
+<pre><code class="hljs"><span class="hljs-variable">environment</span> &#123;
+  <span class="hljs-variable">AWS_ACCESS_KEY_ID</span> = <span class="hljs-function"><span class="hljs-title">credentials</span>(<span class="hljs-string">&#x27;aws-secret-key-id&#x27;</span>)</span>
+  <span class="hljs-variable">AWS_SECRET_ACCESS_KEY</span> = <span class="hljs-function"><span class="hljs-title">credentials</span>(<span class="hljs-string">&#x27;aws-secret-access-key&#x27;</span>)</span>
+&#125;
+</code></pre>
+<h4 id="hashicorp-vault"><a class="h-anchor" href="#hashicorp-vault">#</a>HashiCorp Vault</h4>
+<p>https://plugins.jenkins.io/hashicorp-vault-plugin</p>
+<p>https://github.com/jenkinsci/hashicorp-vault-pipeline-plugin</p>
+<pre><code class="hljs">pipeline &#123;
+  agent any
+  environment &#123;
+    SECRET = vault path: <span class="hljs-string">&#x27;secret/hello&#x27;</span>, key: <span class="hljs-string">&#x27;value&#x27;</span>
+  &#125;
+  stages &#123;
+    stage(<span class="hljs-string">&quot;read vault key&quot;</span>) &#123;
+      steps &#123;
+        script&#123;
+          def x = vault path: <span class="hljs-string">&#x27;secret/hello&#x27;</span>, key: <span class="hljs-string">&#x27;value&#x27;</span>
+          <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;x&#125;</span>&quot;</span>
+          <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;SECRET&#125;</span>&quot;</span>
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="隐藏敏感信息"><a class="h-anchor" href="#隐藏敏感信息">#</a>隐藏敏感信息</h3>
+<div class="section">
+<p>如果使用的是credentials helper方法或者withCredentials步骤为变量赋值的，那么这个变量的值是不会被明文打印到Jenkins日志中的。</p>
+<pre><code class="hljs">steps &#123;
+  script&#123;
+    def hack = <span class="hljs-string">&#x27;hack it&#x27;</span>
+    <span class="hljs-title function_ invoke__">withCredentials</span>([<span class="hljs-keyword">string</span>(<span class="hljs-attr">credentialsId</span>: <span class="hljs-string">&#x27;abc&#x27;</span>, <span class="hljs-attr">variable</span>: <span class="hljs-string">&#x27;secretText&#x27;</span>)]) &#123;
+      <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;$&#123;secretText&#125;&quot;</span> <span class="hljs-comment">//打印 ****</span>
+      hack = <span class="hljs-string">&quot;$&#123;secretText&#125;&quot;</span>
+  &#125;
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;$&#123;hack&#125;&quot;</span> <span class="hljs-comment">//打印出明文: test</span>
+&#125;
+
+</code></pre>
+<h4 id="masked-pass-word"><a class="h-anchor" href="#masked-pass-word">#</a>Masked Pass-word</h4>
+<p>https://plugins.jenkins.io/mask-passwords</p>
+<pre><code class="hljs">pipeline &#123;
+  agent any
+  environment &#123;
+    SECRET1 = <span class="hljs-string">&quot;secret1&quot;</span>
+    SECRET2 = <span class="hljs-string">&quot;secret2&quot;</span>
+    NOT_ SECRET = <span class="hljs-string">&quot;no secret&quot;</span>
+  &#125;
+  stages &#123;
+    <span class="hljs-title function_ invoke__">stage</span>(<span class="hljs-string">&quot;read vault key&quot;</span>) &#123;
+      steps &#123;
+        <span class="hljs-title function_ invoke__">wrap</span>([<span class="hljs-variable">$class</span>: <span class="hljs-string">&#x27;MaskPasswordsBuildWrapper&#x27;</span>, <span class="hljs-attr">varPasswordPairs</span>: [
+           [<span class="hljs-attr">password</span>: env[<span class="hljs-string">&#x27;SECRET1&#x27;</span>], <span class="hljs-attr">var</span>: <span class="hljs-string">&#x27;s1&#x27;</span>],
+           [<span class="hljs-attr">password</span>: env[<span class="hljs-string">&#x27;SECRET2&#x27;</span>], <span class="hljs-attr">var</span>: <span class="hljs-string">&#x27;s2&#x27;</span>]]]
+        )&#123;
+           <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;被隐藏的密文: $&#123;SECRET1&#125;和$&#123;SECRET2&#125;&quot;</span>
+           <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;secret1&quot;</span> <span class="hljs-comment">// 这也会被隐藏，打印成********</span>
+           <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;明文打印: $&#123;NOT_ SECRET&#125;&quot;</span>
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="制品库"><a class="h-anchor" href="#制品库">#</a>制品库</h3>
+<div class="section">
+<h4 id="archiveartifacts"><a class="h-anchor" href="#archiveartifacts">#</a>archiveArtifacts</h4>
+<pre><code class="hljs"><span class="hljs-string">post</span> &#123;
+  <span class="hljs-string">always</span> &#123;
+    <span class="hljs-attr">archiveArtifacts allowEmptyArchive:</span> <span class="hljs-literal">true</span>, <span class="hljs-attr">artifacts:</span> <span class="hljs-string">&#x27;file.tgz&#x27;</span>, <span class="hljs-attr">fingerprint:</span> <span class="hljs-literal">true</span>, <span class="hljs-attr">onlyIfSuccessful:</span> <span class="hljs-literal">true</span>
+  &#125;
+&#125;
+</code></pre>
+<h4 id="nexus"><a class="h-anchor" href="#nexus">#</a>nexus</h4>
+<p>https://plugins.jenkins.io/nexus-jenkins-plugin</p>
+<pre><code class="hljs"><span class="hljs-title function_ invoke__">stage</span>(<span class="hljs-string">&#x27;Build&#x27;</span>) &#123;
+  steps &#123;
+    sh <span class="hljs-string">&quot;mvn clean test package&quot;</span>
+    <span class="hljs-title function_ invoke__">nexusPublisher</span>(
+      nexus <span class="hljs-attr">InstanceId</span>: <span class="hljs-string">&#x27;nexus3&#x27;</span>,
+      <span class="hljs-attr">nexusRepositoryId</span>:<span class="hljs-string">&#x27;maven-releases&#x27;</span>,
+      <span class="hljs-attr">packages</span>:[
+        [
+        <span class="hljs-variable">$class</span>: <span class="hljs-string">&#x27; MavenPackage&#x27;</span>,
+        <span class="hljs-attr">mavenAssetList</span>:[
+          [<span class="hljs-attr">classifier</span>:
+            <span class="hljs-attr">extension</span>:<span class="hljs-string">&#x27;&#x27;</span>,
+            <span class="hljs-attr">filePath</span>: <span class="hljs-string">&#x27;./target/server-1.0-SNAPSHOT.jar&#x27;</span>
+          ],// end of mavenAssetList
+        <span class="hljs-attr">mavenCoordinate</span>:[
+          <span class="hljs-attr">artifactId</span>: <span class="hljs-string">&#x27;server&#x27;</span>,
+          <span class="hljs-attr">groupId</span>: <span class="hljs-string">&#x27;codes.showme&#x27;</span>,
+          <span class="hljs-attr">packaging</span>: <span class="hljs-string">&#x27;jar&#x27;</span>, <span class="hljs-attr">version</span>: <span class="hljs-string">&#x27;1.0&#x27;</span>
+        ] // end of packages
+     ])
+  &#125;
+&#125;
+</code></pre>
+<h4 id="docker"><a class="h-anchor" href="#docker">#</a>docker</h4>
+<pre><code class="hljs">pipeline &#123;
+  agent <span class="hljs-built_in">any</span>
+  environment &#123;
+    registry = <span class="hljs-string">&quot;http://192.168.0.101:8595&quot;</span>
+    registryCredential = <span class="hljs-string">&#x27;dockernexus&#x27;</span>
+  &#125;
+  stages &#123;
+    <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Build&#x27;</span></span>) &#123;
+      steps &#123;
+        <span class="hljs-title function_">withDockerRegistry</span>(<span class="hljs-params">[ credentialsId: <span class="hljs-string">&quot;$&#123;registryCredential&#125;&quot;</span>, url: <span class="hljs-string">&quot;$&#123;registry&#125;&quot;</span> ]</span>) &#123;
+            sh <span class="hljs-string">&quot;docker build . -t $&#123;registry&#125;/he1lo:v2&quot;</span>
+            sh <span class="hljs-string">&quot;docker push $&#123;registry&#125;/hello:v2&quot;</span>
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</code></pre>
+<h4 id="copy-artifact"><a class="h-anchor" href="#copy-artifact">#</a>Copy Artifact</h4>
+<p>从其他pipeline中拷贝制品</p>
+<p>https://plugins.jenkins.io/copyartifact</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">steps</span> &#123;
+  <span class="hljs-selector-tag">copyArtifacts</span>(
+    <span class="hljs-attribute">projectName</span>: <span class="hljs-string">&quot;core&quot;</span>,
+    <span class="hljs-attribute">selector</span>: <span class="hljs-built_in">lastSuccessful</span>(true)
+  )
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="通知"><a class="h-anchor" href="#通知">#</a>通知</h3>
+<div class="section">
+<h4 id="email"><a class="h-anchor" href="#email">#</a>Email</h4>
+<pre><code class="hljs">post &#123;
+    failure &#123;
+        mail <span class="hljs-keyword">to</span>: <span class="hljs-string">&#x27;team@example.com&#x27;</span>,
+             subject: <span class="hljs-string">&quot;Failed Pipeline: <span class="hljs-variable">$&#123;currentBuild.fullDisplayName&#125;</span>&quot;</span>,
+             body: <span class="hljs-string">&quot;Something is wrong with <span class="hljs-variable">$&#123;env.BUILD_URL&#125;</span>&quot;</span>
+    &#125;
+&#125;
+</code></pre>
+<h4 id="email-ext"><a class="h-anchor" href="#email-ext">#</a>email-ext</h4>
+<p>https://plugins.jenkins.io/email-ext</p>
+<pre><code class="hljs">post &#123;
+  failure &#123;
+    emailext body:
+      <span class="hljs-string">&quot;&quot;</span>&lt;p&gt;EXECUTED: Job &lt;b&gt;\<span class="hljs-string">&#x27; $&#123;env.J0B_NAME&#125;:$&#123;env.BUILD_NUMBER&#125;)\&#x27;</span>
+      &lt;/b&gt;&lt;/p&gt;&lt;p&gt;View console output at <span class="hljs-string">&quot;&lt;a href=&quot;</span><span class="hljs-variable">$&#123;env.BUILD.URL&#125;</span><span class="hljs-string">&quot;&gt;
+      <span class="hljs-variable">$&#123;env.JOB_NAME &#125;</span>:<span class="hljs-variable">$&#123;env.BUILD_NUMBER&#125;</span>&lt;/a&gt;&quot;</span>&lt;/p&gt;
+      &lt;p&gt;&lt;i&gt;(Build <span class="hljs-built_in">log</span> is attached.)&lt;/i&gt;&lt;/p&gt;<span class="hljs-string">&quot;&quot;</span>,
+      compresslog: <span class="hljs-literal">true</span>,
+      attachLog: <span class="hljs-literal">true</span> ，
+      recipientProviders: [culprits(), developers()， requestor() ，brokenBuildSuspects()],
+      replyTo: <span class="hljs-string">&#x27;do-not-rep1y@company.com&#x27;</span>，
+      subject: <span class="hljs-string">&quot;Status: <span class="hljs-variable">$&#123;currentBuild.result?: &#x27;SUCCESS&#x27;&#125;</span> - Job \&#x27;<span class="hljs-variable">$&#123;env.JOB_NAME&#125;</span>:<span class="hljs-variable">$&#123;env.BUILD_NUMBER&#125;</span>\&#x27;&quot;</span>,
+      to: <span class="hljs-string">&quot;jenkinsbooksample@163.com&quot;</span>
+  &#125;
+&#125;
+</code></pre>
+<h4 id="钉钉"><a class="h-anchor" href="#钉钉">#</a>钉钉</h4>
+<p>https://plugins.jenkins.io/dingding-notifications</p>
+<pre><code class="hljs">dingTalk accessToken: <span class="hljs-string">&quot;&lt;accessToken值&gt;&quot;</span>, imageUrl:<span class="hljs-string">&quot;&lt;钉钉群里显示消息的缩略图&gt;&quot;</span>, jenkinsUrl:
+<span class="hljs-string">&quot;&lt;Jenkins的链接&gt;&quot;</span>, message: <span class="hljs-string">&quot;&lt;文本消息&gt;&quot;</span>, notifyPeople: <span class="hljs-string">&quot;&quot;</span>李四<span class="hljs-string">&quot;</span>
+</code></pre>
+<h4 id="http-request"><a class="h-anchor" href="#http-request">#</a>HTTP Request</h4>
+<p>https://plugins.jenkins.io/http_request</p>
+<pre><code class="hljs">steps &#123;
+  script&#123;
+    def response = <span class="hljs-title function_ invoke__">httpRequest</span>(<span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;http://192.168.88.3:8081&#x27;</span>,
+                               <span class="hljs-attr">acceptType</span>:<span class="hljs-string">&quot;APPLICATION JSON&quot;</span>,
+                               <span class="hljs-attr">contentType</span>: <span class="hljs-string">&quot;APPLICATION_JSON&quot;</span>,
+                               <span class="hljs-attr">httpMode</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+                               <span class="hljs-attr">authentication</span>: <span class="hljs-string">&quot;http_request&quot;</span>,
+                               <span class="hljs-attr">customHeaders</span>:[
+                                 [<span class="hljs-attr">name</span>: <span class="hljs-string">&quot;headername&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&quot;headerValue&quot;</span>],
+                                 [<span class="hljs-attr">name</span>: <span class="hljs-string">&quot;token&quot;</span>, <span class="hljs-attr">value</span>:<span class="hljs-string">&quot;secret&quot;</span>, <span class="hljs-attr">maskValue</span>: <span class="hljs-literal">true</span>]
+                               ],
+                               <span class="hljs-attr">requestBody</span>: <span class="hljs-string">&quot;&#123; &#x27;buildNumber&#x27;:&#x27;$&#123;env.BUILD_NUMBER&#125;&#x27;&#125;&quot;</span>,
+                               <span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span>,
+                               <span class="hljs-attr">validResponseCodes</span>: <span class="hljs-string">&quot;200:302&quot;</span>)
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;$&#123;response.status&#125;&quot;</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;$&#123;response.content&#125;&quot;</span>
+  &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="其他步骤"><a class="h-anchor" href="#其他步骤">#</a>其他步骤</h3>
+<div class="section">
+<ul>
+<li>
+<p><code>error</code>：主动报错，中止当前pipelineerror 步骤的执行类似于抛出一个异常。</p>
+<p>它只有一个必需参数：message。通常省略参数：error（&quot;there's an error&quot;）。</p>
+</li>
+<li>
+<p><code>waitUntil</code>：等待条件满足不断重复waitUntil块内的代码，直到条件为true。</p>
+<p>waitUntil不负责处理块内代码的异常，遇到异常时直接向外抛出。</p>
+<p>waitUntil步骤最好与timeout步骤共同使用，避免死循环。示例如下：</p>
+<pre><code class="hljs"><span class="hljs-title function_">timeout</span>(<span class="hljs-params"><span class="hljs-number">50</span></span>) &#123;
+  waitUntil &#123;
+    script &#123;
+      def r = sh <span class="hljs-attr">script</span>: <span class="hljs-string">&#x27;curl http://exmaple&#x27;</span>, <span class="hljs-attr">returnStatus</span>: <span class="hljs-literal">true</span>
+      <span class="hljs-keyword">return</span> (r == <span class="hljs-number">0</span>)
+    &#125;
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>retry</code>：重复执行块执行N 次闭包内的脚本。</p>
+<p>如果其中某次执行抛出异常，则只中止本次执行，并不会中止整个retry的执行。同时，在执行retry的过程中，用户是无法中止pipeline的。</p>
+<pre><code class="hljs">steps&#123;
+  <span class="hljs-title function_">retry</span>(<span class="hljs-params"><span class="hljs-number">20</span></span>)&#123;
+    script&#123;
+      sh <span class="hljs-attr">script</span>: <span class="hljs-string">&#x27;curl http://exmaple&#x27;</span>, <span class="hljs-attr">returnStatus</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125; 
+&#125;
+</code></pre>
+</li>
+<li>
+<p><code>sleep</code>：让pipeline休眠一段时间sleep步骤可用于简单地暂停pipeline，</p>
+<p>其支持的参数有：</p>
+<ul>
+<li>
+<p>time：整型，休眠时间。</p>
+</li>
+<li>
+<p>unit（可选）：时间单位，支持的值有NANOSECONDS、MICROSECONDS、MILLISECONDS、SECONDS（默认）、MINUTES、HOURS、DAYS。</p>
+<pre><code class="hljs"><span class="hljs-function"><span class="hljs-title">sleep</span><span class="hljs-params">(<span class="hljs-number">120</span>)</span></span> <span class="hljs-comment">//休眠120秒</span>
+<span class="hljs-function"><span class="hljs-title">sleep</span><span class="hljs-params">(time:<span class="hljs-string">&#x27;2&#x27;</span>, unit:<span class="hljs-string">&quot;MINUTES&quot;</span>)</span></span> <span class="hljs-comment">//休眠2分钟</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Workspace Cleanup</code>使用Workspace Cleanup插件清理空间通常，当pipeline执行完成后，并不会自动清理空间。如果需要（通常需要）清理工作空间，则可以通过Workspace Cleanup插件实现。</p>
+<ol>
+<li>安装Workspace Cleanup插件（地址为https：//plugins.jenkins.io/ws-cleanup）。</li>
+<li>在pipeline的post部分加入插件步骤。</li>
+</ol>
+<pre><code class="hljs">post&#123;
+  always &#123;
+  	<span class="hljs-built_in">cleanWs</span>()
+  &#125;
+&#125;
+</code></pre>
+</li>
+</ul>
+<p>更多步骤  https://jenkins.io/doc/pipeline/steps/</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="agent-节点"><a class="h-anchor" href="#agent-节点">#</a>agent 节点</h2>
+<div class="h3-wrap-list">
+<ul>
+<li>
+<p>任意节点</p>
+<pre><code class="hljs">pipeline &#123;
+  agent <span class="hljs-built_in">any</span>
+&#125;
+</code></pre>
+</li>
+<li>
+<p>指定节点标签</p>
+<pre><code class="hljs">pipeline &#123;
+  agent &#123;
+    <span class="hljs-keyword">label</span><span class="language-bash"> <span class="hljs-string">&#x27;jdk8&#x27;</span></span>
+  &#125;
+&#125;
+
+pipeline &#123;
+  agent &#123;
+    node &#123;
+      <span class="hljs-keyword">label</span><span class="language-bash"> <span class="hljs-string">&#x27;jdk8&#x27;</span></span>
+      customWorkspacke <span class="hljs-string">&#x27;/tmp&#x27;</span>
+    &#125;
+  &#125;
+&#125;
+
+pipeline &#123;
+  agent &#123;
+    <span class="hljs-keyword">label</span><span class="language-bash"> <span class="hljs-string">&#x27;windeos &amp;&amp; jdk8&#x27;</span></span>
+  &#125;
+&#125;
+</code></pre>
+</li>
+<li>
+<p>不分配节点</p>
+<pre><code class="hljs">pipeline &#123;
+  <span class="hljs-built_in">agent</span> none
+  stages &#123;
+    stage(<span class="hljs-string">&#x27;test&#x27;</span>) &#123;
+      <span class="hljs-built_in">agent</span> &#123; label <span class="hljs-string">&#x27;mvn&#x27;</span>&#125;
+      setps &#123;
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hi&quot;</span>
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+</li>
+<li>
+<p>docker 节点</p>
+<pre><code class="hljs">pipeline &#123;
+  <span class="hljs-built_in">agent</span> &#123;
+    docker &#123;
+      label <span class="hljs-string">&#x27;docker&#x27;</span>
+      <span class="hljs-built_in">image</span> <span class="hljs-string">&#x27;maven:3-alpine&#x27;</span>
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+</li>
+</ul>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="脚本"><a class="h-anchor" href="#脚本">#</a>脚本</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="script"><a class="h-anchor" href="#script">#</a>script</h3>
+<div class="section">
+<p><code>script</code>步骤获取一个脚本化管道块，并在声明性管道中执行它。 脚本管道实际上是用Groovy构建的通用DSL 。</p>
+<pre><code class="hljs">pipeline &#123;
+    agent <span class="hljs-keyword">any</span>
+    stages &#123;
+        stage(<span class="hljs-string">&#x27;Example&#x27;</span>) &#123;
+            steps &#123;
+                echo <span class="hljs-string">&#x27;Hello World&#x27;</span>
+
+                script &#123;
+                    <span class="hljs-keyword">def</span> browsers = [<span class="hljs-string">&#x27;chrome&#x27;</span>, <span class="hljs-string">&#x27;firefox&#x27;</span>]
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; browsers.<span class="hljs-keyword">size</span>(); ++i) &#123;
+                        echo <span class="hljs-string">&quot;Testing the $&#123;browsers[i]&#125; browser&quot;</span>
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="流程控制"><a class="h-anchor" href="#流程控制">#</a>流程控制</h3>
+<div class="section">
+<pre><code class="hljs">node &#123;
+    stage(&#x27;Example&#x27;) &#123;
+       <span class="hljs-built_in"> if </span>(env.BRANCH_NAME == &#x27;master&#x27;) &#123;
+            echo &#x27;I only<span class="hljs-built_in"> execute </span>on the master branch&#x27;
+        &#125; else &#123;
+            echo &#x27;I<span class="hljs-built_in"> execute </span>elsewhere&#x27;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="try-catch"><a class="h-anchor" href="#try-catch">#</a>try/catch</h3>
+<div class="section">
+<pre><code class="hljs">node &#123;
+    <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Example&#x27;</span></span>) &#123;
+        <span class="hljs-keyword">try</span> &#123;
+            sh <span class="hljs-string">&#x27;exit 1&#x27;</span>
+        &#125;
+        <span class="hljs-keyword">catch</span> (exc) &#123;
+            echo <span class="hljs-string">&#x27;Something failed, I should sound the klaxons!&#x27;</span>
+            <span class="hljs-keyword">throw</span>
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="定义groovy函数"><a class="h-anchor" href="#定义groovy函数">#</a>定义groovy函数</h3>
+<div class="section">
+<pre><code class="hljs">def <span class="hljs-title function_">createVersion</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> BUILD_NUMBER</span>) &#123;
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">format</span>(<span class="hljs-string">&#x27;yyMM&#x27;</span>) + <span class="hljs-string">&quot;-$&#123;BUILD_NUMBER&#125;&quot;</span>
+&#125;
+
+pipeline &#123;
+  agent <span class="hljs-built_in">any</span>
+  environment &#123;
+    _version = <span class="hljs-title function_">createVersion</span>(<span class="hljs-variable constant_">BUILD_NUMBER</span>)
+  &#125;
+  stages &#123;
+    <span class="hljs-title function_">stage</span>(<span class="hljs-params"> <span class="hljs-string">&#x27;Build&#x27;</span></span>) &#123;
+      steps &#123;
+        echo <span class="hljs-string">&quot;$&#123;_version&#125;&quot;</span> 
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="示例"><a class="h-anchor" href="#示例">#</a>示例</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="java项目发布"><a class="h-anchor" href="#java项目发布">#</a>java项目发布</h3>
+<div class="section">
+<p>https://github.com/jenkins-docs/simple-java-maven-app</p>
+<pre><code class="hljs">pipeline &#123;
+    agent &#123;
+        docker &#123;
+            image <span class="hljs-string">&#x27;maven:3-alpine&#x27;</span>
+            args <span class="hljs-string">&#x27;-v /root/.m2:/root/.m2&#x27;</span>
+        &#125;
+    &#125;
+    options &#123;
+        <span class="hljs-title function_">skipStagesAfterUnstable</span>()
+    &#125;
+    stages &#123;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Build&#x27;</span></span>) &#123;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;mvn -B -DskipTests clean package&#x27;</span>
+            &#125;
+        &#125;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Test&#x27;</span></span>) &#123;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;mvn test&#x27;</span>
+            &#125;
+            post &#123;
+                always &#123;
+                    junit <span class="hljs-string">&#x27;target/surefire-reports/*.xml&#x27;</span>
+                &#125;
+            &#125;
+        &#125;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Deliver&#x27;</span></span>) &#123; 
+            steps &#123;
+                sh <span class="hljs-string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span> 
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="node-js项目发布"><a class="h-anchor" href="#node-js项目发布">#</a>node.js项目发布</h3>
+<div class="section">
+<p>https://github.com/jenkins-docs/simple-node-js-react-npm-app</p>
+<pre><code class="hljs">pipeline &#123;
+    agent &#123;
+        docker &#123;
+            image <span class="hljs-string">&#x27;node:6-alpine&#x27;</span>
+            args <span class="hljs-string">&#x27;-p 3000:3000&#x27;</span>
+        &#125;
+    &#125;
+    environment &#123; 
+        <span class="hljs-variable constant_">CI</span> = <span class="hljs-string">&#x27;true&#x27;</span>
+    &#125;
+    stages &#123;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Build&#x27;</span></span>) &#123;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;npm install&#x27;</span>
+            &#125;
+        &#125;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Test&#x27;</span></span>) &#123;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;./jenkins/scripts/test.sh&#x27;</span>
+            &#125;
+        &#125;
+        <span class="hljs-title function_">stage</span>(<span class="hljs-params"><span class="hljs-string">&#x27;Deliver&#x27;</span></span>) &#123; 
+            steps &#123;
+                sh <span class="hljs-string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span> 
+                input <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Finished using the web site? (Click &quot;Proceed&quot; to continue)&#x27;</span> 
+                sh <span class="hljs-string">&#x27;./jenkins/scripts/kill.sh&#x27;</span> 
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="python项目发布"><a class="h-anchor" href="#python项目发布">#</a>python项目发布</h3>
+<div class="section">
+<p>https://github.com/jenkins-docs/simple-python-pyinstaller-app</p>
+<pre><code class="hljs">pipeline &#123;
+    <span class="hljs-built_in">agent</span> none
+    options &#123;
+        skipStagesAfterUnstable()
+    &#125;
+    stages &#123;
+        stage(<span class="hljs-string">&#x27;Build&#x27;</span>) &#123;
+            <span class="hljs-built_in">agent</span> &#123;
+                docker &#123;
+                    <span class="hljs-built_in">image</span> <span class="hljs-string">&#x27;python:2-alpine&#x27;</span>
+                &#125;
+            &#125;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;python -m py_compile sources/add2vals.py sources/calc.py&#x27;</span>
+                stash(<span class="hljs-built_in">name</span>: <span class="hljs-string">&#x27;compiled-results&#x27;</span>, includes: <span class="hljs-string">&#x27;sources/*.py*&#x27;</span>)
+            &#125;
+        &#125;
+        stage(<span class="hljs-string">&#x27;Test&#x27;</span>) &#123;
+            <span class="hljs-built_in">agent</span> &#123;
+                docker &#123;
+                    <span class="hljs-built_in">image</span> <span class="hljs-string">&#x27;qnib/pytest&#x27;</span>
+                &#125;
+            &#125;
+            steps &#123;
+                sh <span class="hljs-string">&#x27;py.test --junit-xml test-reports/results.xml sources/test_calc.py&#x27;</span>
+            &#125;
+            post &#123;
+                always &#123;
+                    junit <span class="hljs-string">&#x27;test-reports/results.xml&#x27;</span>
+                &#125;
+            &#125;
+        &#125;
+        stage(<span class="hljs-string">&#x27;Deliver&#x27;</span>) &#123; 
+            <span class="hljs-built_in">agent</span> any
+            environment &#123; 
+                VOLUME = <span class="hljs-string">&#x27;$(pwd)/sources:/src&#x27;</span>
+                <span class="hljs-built_in">IMAGE</span> = <span class="hljs-string">&#x27;cdrx/pyinstaller-linux:python2&#x27;</span>
+            &#125;
+            steps &#123;
+                dir(path: env.BUILD_ID) &#123; 
+                    unstash(<span class="hljs-built_in">name</span>: <span class="hljs-string">&#x27;compiled-results&#x27;</span>) 
+                    sh <span class="hljs-string">&quot;docker run -v $&#123;VOLUME&#125; $&#123;IMAGE&#125; &#x27;pyinstaller -F add2vals.py&#x27;&quot;</span> 
+                &#125;
+            &#125;
+            post &#123;
+                success &#123;
+                    archiveArtifacts <span class="hljs-string">&quot;$&#123;env.BUILD_ID&#125;/sources/dist/add2vals&quot;</span> 
+                    sh <span class="hljs-string">&quot;docker run -v $&#123;VOLUME&#125; $&#123;IMAGE&#125; &#x27;rm -rf build dist&#x27;&quot;</span>
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="多分支构建"><a class="h-anchor" href="#多分支构建">#</a>多分支构建</h3>
+<div class="section">
+<pre><code class="hljs">pipeline &#123;
+    agent &#123;
+        docker &#123;
+            image <span class="hljs-string">&#x27;node:6-alpine&#x27;</span>
+            <span class="hljs-keyword">args</span> <span class="hljs-string">&#x27;-p 3000:3000 -p 5000:5000&#x27;</span>
+        &#125;
+    &#125;
+    environment &#123;
+        CI = <span class="hljs-string">&#x27;true&#x27;</span>
+    &#125;
+    stages &#123;
+        stage(<span class="hljs-string">&#x27;Build&#x27;</span>) &#123;
+            steps &#123;
+                <span class="hljs-keyword">sh</span> <span class="hljs-string">&#x27;npm install&#x27;</span>
+            &#125;
+        &#125;
+        stage(<span class="hljs-string">&#x27;Test&#x27;</span>) &#123;
+            steps &#123;
+                <span class="hljs-keyword">sh</span> <span class="hljs-string">&#x27;./jenkins/scripts/test.sh&#x27;</span>
+            &#125;
+        &#125;
+        stage(<span class="hljs-string">&#x27;Deliver for development&#x27;</span>) &#123;
+            when &#123;
+                branch <span class="hljs-string">&#x27;development&#x27;</span> 
+            &#125;
+            steps &#123;
+                <span class="hljs-keyword">sh</span> <span class="hljs-string">&#x27;./jenkins/scripts/deliver-for-development.sh&#x27;</span>
+                <span class="hljs-built_in">input</span> message: <span class="hljs-string">&#x27;Finished using the web site? (Click &quot;Proceed&quot; to continue)&#x27;</span>
+                <span class="hljs-keyword">sh</span> <span class="hljs-string">&#x27;./jenkins/scripts/kill.sh&#x27;</span>
+            &#125;
+        &#125;
+        stage(<span class="hljs-string">&#x27;Deploy for production&#x27;</span>) &#123;
+            when &#123;
+                branch <span class="hljs-string">&#x27;production&#x27;</span>  
+            &#125;
+            steps &#123;
+                <span class="hljs-keyword">sh</span> <span class="hljs-string">&#x27;./jenkins/scripts/deploy-for-production.sh&#x27;</span>
+                <span class="hljs-built_in">input</span> message: <span class="hljs-string">&#x27;Finished using the web site? (Click &quot;Proceed&quot; to continue)&#x27;</span>
+                <span class="hljs-keyword">sh</span> <span class="hljs-string">&#x27;./jenkins/scripts/kill.sh&#x27;</span>
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://jenkins.io/doc/pipeline/examples/">官方例子</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://jenkins.io/doc/book/pipeline/syntax/">Pipeline 语法</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://localhost:8080/job/pipeline_job/pipeline-syntax">片段生成</a></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/jenkins.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/jenkins-pipeline.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins Pipeline <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/sed.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">sed <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/cron.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">cron <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/jenkins.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1671103885533"></script></html>
