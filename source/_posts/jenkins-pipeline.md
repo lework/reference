@@ -2032,3 +2032,4 @@ pipeline {
 - [官方例子](https://jenkins.io/doc/pipeline/examples/)
 - [Pipeline 语法](https://jenkins.io/doc/book/pipeline/syntax/)
 - [片段生成](http://localhost:8080/job/pipeline_job/pipeline-syntax)
+- [Groovy 速查表](https://quickref.leops.cn/groovy.html)
