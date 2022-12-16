@@ -1,0 +1,666 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Groovy Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,groovy,jenkins"><meta name="description" content="Apache Groovy 是一种功能强大的、可选类型的动态语言，具有静态类型和静态编译功能，用于 Java 平台，旨在通过简洁、熟悉和易于学习的语法提高开发人员的工作效率。它可以与任何 Java 程序顺利地集成，并立即"><meta property="og:url" content="https://quickref.leops.cn/groovy.html"><meta property="og:title" content="Groovy Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="Apache Groovy 是一种功能强大的、可选类型的动态语言，具有静态类型和静态编译功能，用于 Java 平台，旨在通过简洁、熟悉和易于学习的语法提高开发人员的工作效率。它可以与任何 Java 程序顺利地集成，并立即"><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=7v6p3f"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Groovy Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="Apache Groovy 是一种功能强大的、可选类型的动态语言，具有静态类型和静态编译功能，用于 Java 平台，旨在通过简洁、熟悉和易于学习的语法提高开发人员的工作效率。它可以与任何 Java 程序顺利地集成，并立即"><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=a60mu"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/groovy.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1671188980702"><link rel="stylesheet" href="/css/style.css?_v=1671188980702"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/groovy.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Groovy</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>Apache <a target="_blank" rel="noopener external nofollow noreferrer" href="https://groovy-lang.org/">Groovy</a> 是一种功能强大的、可选类型的动态语言，具有静态类型和静态编译功能，用于 Java 平台，旨在通过简洁、熟悉和易于学习的语法提高开发人员的工作效率。它可以与任何 Java 程序顺利地集成，并立即为您的应用程序提供强大的功能，包括脚本功能、特定于领域的语言编写、运行时和编译时元编程以及函数式编程。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="开始"><a class="h-anchor" href="#开始">#</a>开始</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="下载安装"><a class="h-anchor" href="#下载安装">#</a>下载安装</h3>
+<div class="section">
+<h4 id="windows"><a class="h-anchor" href="#windows">#</a>windows</h4>
+<pre><code class="hljs"><span class="hljs-attribute">https</span>://groovy.jfrog.io/artifactory/dist-release-local/groovy-windows-installer/groovy-<span class="hljs-number">4</span>.<span class="hljs-number">0</span>.<span class="hljs-number">6</span>/groovy-<span class="hljs-number">4</span>.<span class="hljs-number">0</span>.<span class="hljs-number">6</span>.msi
+</code></pre>
+<h4 id="linux"><a class="h-anchor" href="#linux">#</a>linux</h4>
+<pre><code class="hljs language-bash">$ yum -y install java-11-openjdk
+$ wget https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-4.0.6.zip
+$ unzip apache-groovy-binary-4.0.6.zip
+$ <span class="hljs-built_in">mv</span> groovy-4.0.6 /usr/share/groovy
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export GROOVY_HOME=/usr/share/groovy&#x27;</span> &gt;&gt; /etc/profile
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export PATH=&quot;$PATH:$GROOVY_HOME/bin&quot;&#x27;</span> &gt;&gt; /etc/profile
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export JAVA_HOME=<span class="hljs-subst">$(dirname $(dirname $(realpath $(which java)</span>)))&quot;</span> &gt;&gt; /etc/profile
+$ <span class="hljs-built_in">source</span> /etc/profile
+$ groovy --version
+Groovy Version: 4.0.6 JVM: 11.0.17 Vendor: Red Hat, Inc. OS: Linux
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="命令行执行"><a class="h-anchor" href="#命令行执行">#</a>命令行执行</h3>
+<div class="section">
+<pre><code class="hljs language-bash">$ groovy MyScript.groovy
+$ groovy -e <span class="hljs-string">&quot;print 12.5*Math.PI&quot;</span>
+
+$ <span class="hljs-built_in">echo</span> 12.5  groovy -pe|
+<span class="hljs-string">&quot;line.toDouble() * Math.PI&quot;</span>
+
+$ groovy -i.bak -pe
+<span class="hljs-string">&quot;line.reverse()&quot;</span> data.txt
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="注释"><a class="h-anchor" href="#注释">#</a>注释</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-comment">// 单行注释</span>
+
+<span class="hljs-comment">/* 多行
+   注释 */</span>
+
+println <span class="hljs-number">1</span> <span class="hljs-comment">/* one */</span> + <span class="hljs-number">2</span> <span class="hljs-comment">/* two */</span>
+
+<span class="hljs-comment">/**
+ * 这里是 doc 注释
+ * desc
+ */</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="数据类型"><a class="h-anchor" href="#数据类型">#</a>数据类型</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="基本数据类型"><a class="h-anchor" href="#基本数据类型">#</a>基本数据类型</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">常量</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">java.lang.String</td>
+<td style="text-align:left"><code>&quot;hi&quot;</code>, <code>'hi'</code>, <code>/hi/</code>, <code>$/hi/$</code></td>
+<td style="text-align:left">双引号允许嵌入表达式。 <code>/</code>表示您不需要转义\字符，<code>$/</code>表示您无需转义/字符（适用于正则表达式）。</td>
+</tr>
+<tr>
+<td style="text-align:left">java.lang.Character</td>
+<td style="text-align:left"><code>'H' as char</code></td>
+<td style="text-align:left">单个字符文字</td>
+</tr>
+<tr>
+<td style="text-align:left">java.lang.Boolean</td>
+<td style="text-align:left"><code>true</code>, <code>false</code></td>
+<td style="text-align:left">布尔类型</td>
+</tr>
+<tr>
+<td style="text-align:left">java.lang.Byte</td>
+<td style="text-align:left"><code>0 as byte</code>, <code>-12 as byte</code></td>
+<td style="text-align:left">8位整数。字节值</td>
+</tr>
+<tr>
+<td style="text-align:left">java.lang.Integer</td>
+<td style="text-align:left"><code>0</code>, <code>-12</code></td>
+<td style="text-align:left">32位整数。整数</td>
+</tr>
+<tr>
+<td style="text-align:left">java.lang.Long</td>
+<td style="text-align:left"><code>0L</code>, <code>-12L</code></td>
+<td style="text-align:left">64位整数。长整型</td>
+</tr>
+<tr>
+<td style="text-align:left">java.math.BigInteger</td>
+<td style="text-align:left"><code>0G</code>, <code>-12G</code></td>
+<td style="text-align:left">值没有上限。没有原始的对等</td>
+</tr>
+<tr>
+<td style="text-align:left">java.lang.Float</td>
+<td style="text-align:left"><code>0.0F</code>, <code>-12.12F</code></td>
+<td style="text-align:left">32位单精度浮点数。原始类型:<code>float</code></td>
+</tr>
+<tr>
+<td style="text-align:left">java.lang.Double</td>
+<td style="text-align:left"><code>0.0D</code>, <code>-12.12D</code></td>
+<td style="text-align:left">64位双精度浮点数。 基本类型：双精度</td>
+</tr>
+<tr>
+<td style="text-align:left">java.math.BigDecimal</td>
+<td style="text-align:left"><code>0.0</code>, <code>-12.12</code></td>
+<td style="text-align:left">精确的无上限浮点数。不,原始的等效。</td>
+</tr>
+<tr>
+<td style="text-align:left">java.util.List</td>
+<td style="text-align:left"><code>[]</code>, <code>[1, 2, 3]</code></td>
+<td style="text-align:left">列表</td>
+</tr>
+<tr>
+<td style="text-align:left">java.util.Set</td>
+<td style="text-align:left"><code>[] as Set</code>, <code>[1, 2, 3] as Set</code></td>
+<td style="text-align:left">列表</td>
+</tr>
+<tr>
+<td style="text-align:left">java.util.Map</td>
+<td style="text-align:left"><code>[:]</code>, <code>[one: 1, two: 2]</code></td>
+<td style="text-align:left">使用映射文字时，字符串键不需要引号。</td>
+</tr>
+<tr>
+<td style="text-align:left">groovy.lang.IntRange</td>
+<td style="text-align:left"><code>0..&lt;10</code>, <code>1..100</code></td>
+<td style="text-align:left">第一个字面值排除了上界，而第二个字面值包含了上界。下界总是包含在内的。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="类型转换"><a class="h-anchor" href="#类型转换">#</a>类型转换</h3>
+<div class="section">
+<pre><code class="hljs language-groovy">Set s = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>]
+<span class="hljs-type">char</span> ch = <span class="hljs-string">&#x27;H&#x27;</span>
+<span class="hljs-type">int</span>[] a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+
+<span class="hljs-keyword">def</span> s = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>] <span class="hljs-keyword">as</span> Set
+<span class="hljs-keyword">def</span> ch = <span class="hljs-string">&#x27;H&#x27;</span> <span class="hljs-keyword">as</span> <span class="hljs-type">char</span>
+<span class="hljs-keyword">def</span> a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>] <span class="hljs-keyword">as</span> <span class="hljs-type">int</span>[]
+<span class="hljs-keyword">def</span> strNumber = number.toString();
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="list"><a class="h-anchor" href="#list">#</a>list</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-keyword">def</span> nums = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+<span class="hljs-keyword">def</span> nums1 = [<span class="hljs-number">0</span>,<span class="hljs-string">&quot;23&quot;</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">62</span>,<span class="hljs-literal">false</span>] <span class="hljs-keyword">as</span> LinkedList
+
+println <span class="hljs-string">&quot;nums is $&#123;nums.getClass().getName()&#125; size = $&#123;nums.size()&#125;&quot;</span>
+
+println <span class="hljs-string">&quot;第三个元素是 $&#123;nums1[2]&#125;,倒数第一个是 $&#123;nums1[-1]&#125;;第一个和倒数第一个：$&#123;nums1[0,-1]&#125;&quot;</span>
+println <span class="hljs-string">&quot;第二个到第四个：$&#123;nums1[1..3]&#125;&quot;</span>
+
+<span class="hljs-comment">// add</span>
+<span class="hljs-keyword">def</span> list = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+list.add(<span class="hljs-number">3</span>)
+
+<span class="hljs-comment">// remove</span>
+list.remove(<span class="hljs-number">1</span>)
+
+<span class="hljs-comment">// 遍历</span>
+nums1.each &#123;
+  print <span class="hljs-string">&quot;$it, &quot;</span>
+&#125;
+
+<span class="hljs-comment">// 带有下标的遍历：使用 eachWithIndex 方法</span>
+numList.eachWithIndex &#123; <span class="hljs-type">int</span> value ,<span class="hljs-type">int</span> index-&gt;
+    println <span class="hljs-string">&quot;list[$index] = $value&quot;</span>
+&#125;
+
+<span class="hljs-comment">// 数组</span>
+String [] strings = [<span class="hljs-string">&quot;I&quot;</span>,<span class="hljs-string">&quot;&#x27;&quot;</span>,<span class="hljs-string">&quot;m&quot;</span>,<span class="hljs-string">&quot;is&quot;</span>,<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;dog&quot;</span>,<span class="hljs-string">&quot;.&quot;</span>]
+println <span class="hljs-string">&quot;\n 数组 :$&#123;strings.getClass().getName()&#125;&quot;</span>
+strings.each&#123;
+  print <span class="hljs-string">&quot;$it &quot;</span>
+&#125;
+
+<span class="hljs-comment">// for</span>
+<span class="hljs-keyword">for</span> (item <span class="hljs-keyword">in</span> [<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>]) &#123;
+   println item
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="map"><a class="h-anchor" href="#map">#</a>map</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-keyword">def</span> colors = [<span class="hljs-attr">red:</span><span class="hljs-string">&#x27;#FF0000&#x27;</span>,<span class="hljs-attr">green:</span><span class="hljs-string">&#x27;#00FF00&#x27;</span>,<span class="hljs-attr">blue:</span><span class="hljs-string">&#x27;#0000FF&#x27;</span>]
+
+println <span class="hljs-string">&quot; map calss is $&#123;colors.getClass().getName()&#125;&quot;</span>
+println <span class="hljs-string">&quot;通过 map.key 的方式访问 colors.red = $&#123;colors.red&#125;&quot;</span>
+println <span class="hljs-string">&quot;通过 map[key] 的方式访问 colors[&#x27;red&#x27;] = $&#123;colors[&#x27;red&#x27;]&#125;&quot;</span>
+println <span class="hljs-string">&quot;通过 map.get(key) 的方式访问 colors.get(red) = $&#123;colors.get(&#x27;red&#x27;)&#125;&quot;</span>
+
+<span class="hljs-comment">// 添加元素</span>
+colors[<span class="hljs-string">&#x27;pink&#x27;</span>] = <span class="hljs-string">&#x27;#FF00FF&#x27;</span>
+colors.yellow = <span class="hljs-string">&#x27;#FFFF00&#x27;</span>
+
+<span class="hljs-comment">// 修改元素</span>
+colors.red = <span class="hljs-string">&#x27;red&#x27;</span>
+colors[<span class="hljs-string">&#x27;blue&#x27;</span>] = <span class="hljs-string">&#x27;blue&#x27;</span>
+
+<span class="hljs-comment">// 删除元素</span>
+colors.remove(<span class="hljs-string">&#x27;red&#x27;</span>)
+
+<span class="hljs-comment">// 遍历 </span>
+colors.each&#123;
+    println <span class="hljs-string">&quot;$&#123;it.key&#125; :$&#123;it.value&#125;&quot;</span>
+&#125;
+
+<span class="hljs-comment">// 查找元素 </span>
+<span class="hljs-keyword">def</span> green = colors.find &#123; key ,value -&gt;
+  <span class="hljs-keyword">if</span>(key.equals(<span class="hljs-string">&#x27;green&#x27;</span>)) &#123;
+      <span class="hljs-keyword">return</span> colors[key]
+  &#125;
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
+&#125;
+
+println <span class="hljs-string">&quot;查找结果是 $&#123;green&#125;&quot;</span>
+
+<span class="hljs-keyword">def</span> blue = colors.find &#123; Map.Entry entry -&gt;
+    <span class="hljs-keyword">if</span>(entry.key.equals(<span class="hljs-string">&#x27;blue&#x27;</span>))&#123;
+        <span class="hljs-keyword">return</span> entry.value
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
+&#125;
+println <span class="hljs-string">&quot;查找的结果是 $&#123;blue&#125;&quot;</span>
+
+
+<span class="hljs-comment">// for</span>
+<span class="hljs-keyword">def</span> map = [<span class="hljs-string">&#x27;abc&#x27;</span>:<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;def&#x27;</span>:<span class="hljs-number">2</span>, <span class="hljs-string">&#x27;xyz&#x27;</span>:<span class="hljs-number">3</span>]
+x = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> ( e <span class="hljs-keyword">in</span> map ) &#123;
+    x += e.value
+&#125;
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="运算符"><a class="h-anchor" href="#运算符">#</a>运算符</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="基本运算符"><a class="h-anchor" href="#基本运算符">#</a>基本运算符</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>+</code></td>
+<td style="text-align:left">a.plus(b)</td>
+<td style="text-align:left">加</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:left">a.minus(b)</td>
+<td style="text-align:left">减</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">a.multiply(b)</td>
+<td style="text-align:left">乘</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/</code></td>
+<td style="text-align:left">a.div(b)</td>
+<td style="text-align:left">除</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%</code></td>
+<td style="text-align:left">a.mod(b)</td>
+<td style="text-align:left">取余</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>**</code></td>
+<td style="text-align:left">a.power(b)</td>
+<td style="text-align:left">取幂</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>|</code></td>
+<td style="text-align:left">a.or(b)</td>
+<td style="text-align:left">或</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&amp;</code></td>
+<td style="text-align:left">a.and(b)</td>
+<td style="text-align:left">和</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:left">a.xor(b)</td>
+<td style="text-align:left">异或</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>as</code></td>
+<td style="text-align:left">a.asType(b)</td>
+<td style="text-align:left">类型转换</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a()</code></td>
+<td style="text-align:left">a.call()</td>
+<td style="text-align:left">方法调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a[b]</code></td>
+<td style="text-align:left">a.getAt(b)</td>
+<td style="text-align:left">访问元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a[b] = c</code></td>
+<td style="text-align:left">a.putAt(b, c)</td>
+<td style="text-align:left">列表赋值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a in b</code></td>
+<td style="text-align:left">b.isCase(a)</td>
+<td style="text-align:left">判断是否存在</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;&lt;</code></td>
+<td style="text-align:left">a.leftShift(b)</td>
+<td style="text-align:left">左移位或追加</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;</code></td>
+<td style="text-align:left">a.rightShift(b)</td>
+<td style="text-align:left">右移位</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt;</code></td>
+<td style="text-align:left">a.rightShiftUnsigned(b)</td>
+<td style="text-align:left">无符号右移</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>++</code></td>
+<td style="text-align:left">a.next()</td>
+<td style="text-align:left">自增长</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--</code></td>
+<td style="text-align:left">a.previous()</td>
+<td style="text-align:left">自减</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>+a</code></td>
+<td style="text-align:left">a.positive()</td>
+<td style="text-align:left">Make positive</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-a</code></td>
+<td style="text-align:left">a.negative()</td>
+<td style="text-align:left">Make negative</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>~a</code></td>
+<td style="text-align:left">a.bitwiseNegative()</td>
+<td style="text-align:left">Bitwise negate</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="其他运算符"><a class="h-anchor" href="#其他运算符">#</a>其他运算符</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>a == b</code></td>
+<td style="text-align:left">相等</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a != b</code></td>
+<td style="text-align:left">不相等</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a &lt; b</code></td>
+<td style="text-align:left">小于</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a &lt;= b</code></td>
+<td style="text-align:left">小于等于</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a &gt; b</code></td>
+<td style="text-align:left">大于</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a &gt;= b</code></td>
+<td style="text-align:left">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a &lt;=&gt; b</code></td>
+<td style="text-align:left">比较（如果a小于，等于或大于，则返回-1、0或1）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a =~ b</code></td>
+<td style="text-align:left">正则表达式模式匹配。返回一个匹配器，如果a匹配b的任何部分，则等于true。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a ==~ b</code></td>
+<td style="text-align:left">正则表达式模式精确匹配。如果a与b完全匹配，则返回true。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a?.b</code></td>
+<td style="text-align:left">空导航。如果a或b为空，则返回null。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a ? v1 : v2</code></td>
+<td style="text-align:left">三元操作符(简明if-else)。如果表达式a的值为true，则返回v1，否则返回v2。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a ?: b</code></td>
+<td style="text-align:left">猫王运算符。如果a等于true (Groovy Truth)，则返回值a，否则返回b。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="流程控制"><a class="h-anchor" href="#流程控制">#</a>流程控制</h2>
+<div class="h3-wrap-list">
+<pre><code class="hljs language-groovy"><span class="hljs-keyword">if</span> (&lt;expr&gt;) &#123;          
+    ...
+&#125;
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (&lt;expr&gt;) &#123;      
+    ...
+&#125;
+<span class="hljs-keyword">else</span> &#123;
+    ...
+&#125;
+</code></pre>
+<pre><code class="hljs language-gr">switch (&lt;value&gt;) &#123;
+case &lt;value&gt;:                 
+    ...
+    break                     
+case &lt;value&gt;:                 
+    ...
+    break
+default:                      
+    ...
+    break
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="循环"><a class="h-anchor" href="#循环">#</a>循环</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="for"><a class="h-anchor" href="#for">#</a>for</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span>.&lt;<span class="hljs-number">10</span>) &#123;
+    println(i);
+&#125;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i += <span class="hljs-number">2</span>) &#123;
+    println(i);
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="while"><a class="h-anchor" href="#while">#</a>while</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span>(count&lt;<span class="hljs-number">5</span>) &#123;
+    println(count);
+    count++;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="do-while"><a class="h-anchor" href="#do-while">#</a>do-while</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-keyword">def</span> count = <span class="hljs-number">5</span>
+<span class="hljs-keyword">def</span> fact = <span class="hljs-number">1</span>
+do &#123;
+    fact *= count--
+&#125; <span class="hljs-keyword">while</span>(count &gt; <span class="hljs-number">1</span>)
+<span class="hljs-keyword">assert</span> fact == <span class="hljs-number">120</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="异常"><a class="h-anchor" href="#异常">#</a>异常</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="try-catch"><a class="h-anchor" href="#try-catch">#</a>try/catch</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-keyword">try</span> &#123;
+    <span class="hljs-comment">// Execute the code that might throw an exception</span>
+&#125;
+<span class="hljs-keyword">catch</span> (SpecficException ex) &#123;                 
+    <span class="hljs-comment">// Do something with the exception `ex`</span>
+&#125;
+<span class="hljs-keyword">catch</span> (GenericException ex) &#123;
+    ...
+&#125;
+<span class="hljs-keyword">finally</span> &#123;                                     
+    ...
+&#125;
+
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MyException() <span class="hljs-comment">//抛异常</span>
+
+<span class="hljs-keyword">assert</span> <span class="hljs-number">1</span>==<span class="hljs-number">2</span> :<span class="hljs-string">&quot;1不等于2&quot;</span> <span class="hljs-comment">// 断言</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="class-object"><a class="h-anchor" href="#class-object">#</a>class/object</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="类"><a class="h-anchor" href="#类">#</a>类</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> &#123;
+    String name
+    Date dateOfBirth
+
+    <span class="hljs-type">int</span> getAge() &#123;
+        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">new</span> Date() - dateOfBirth).intdiv(<span class="hljs-number">365</span>)
+    &#125;
+&#125;
+
+<span class="hljs-keyword">def</span> p = <span class="hljs-keyword">new</span> Person()
+<span class="hljs-keyword">def</span> p = <span class="hljs-keyword">new</span> Person(<span class="hljs-attr">name:</span> <span class="hljs-string">&quot;John Doe&quot;</span>, <span class="hljs-attr">dateOfBirth:</span> ...)
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="闭包"><a class="h-anchor" href="#闭包">#</a>闭包</h3>
+<div class="section">
+<p>闭包其实就是一段匿名代码块。</p>
+<p>闭包在<code> Groovy</code> 中是 <code>groovy.lang.Closure</code> 类的实例，这使得闭包可以赋值给变量或字段</p>
+<pre><code class="hljs language-groovy"><span class="hljs-comment">// 定义一个闭包</span>
+<span class="hljs-keyword">def</span> hello = &#123; println <span class="hljs-string">&quot;Hello 闭包&quot;</span> &#125;
+
+<span class="hljs-comment">// 调用</span>
+hello.call()
+hello()
+
+
+<span class="hljs-comment">/*
+  * closure 就是 闭包参数
+*/</span>
+<span class="hljs-keyword">def</span> customEach(closure)&#123;
+    <span class="hljs-comment">//迭代元素</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>)&#123;
+    <span class="hljs-comment">//在闭包后跟上 () 就是调用了 括号里的参数就是闭包要接收的参数</span>
+        closure(i)
+    &#125;
+&#125;
+
+<span class="hljs-comment">// 如果只有一个参数 默认就是 it</span>
+customEach &#123;
+     println it
+&#125;
+
+<span class="hljs-comment">// map闭包</span>
+<span class="hljs-keyword">def</span> eachMap(closure)&#123;
+    <span class="hljs-keyword">def</span> map1 = [<span class="hljs-attr">name:</span><span class="hljs-string">&#x27;map闭包&#x27;</span>,<span class="hljs-attr">age:</span><span class="hljs-number">666</span>]
+    map1.each &#123;
+        closure(it.key,it.value)
+    &#125;
+&#125;
+
+<span class="hljs-comment">// 如果有多个参数，就必须要把参数列出来，使用 -&gt; 将 参数和主体分开</span>
+eachMap &#123; key,value -&gt;
+    println <span class="hljs-string">&quot;$key:$value&quot;</span>
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="方法"><a class="h-anchor" href="#方法">#</a>方法</h3>
+<div class="section">
+<pre><code class="hljs language-groovy"><span class="hljs-comment">/*
+ * 返回大的那个
+ */</span>
+<span class="hljs-keyword">def</span> max(<span class="hljs-type">int</span> a ,<span class="hljs-type">int</span> b)&#123;
+    <span class="hljs-keyword">if</span>(a&gt;b)&#123;
+      <span class="hljs-keyword">return</span>   a
+    &#125;<span class="hljs-keyword">else</span>&#123;
+      <span class="hljs-keyword">return</span>   b
+    &#125;
+&#125;
+
+<span class="hljs-comment">/*
+ * 返回大的那个, return 可以省略
+ */</span>
+<span class="hljs-keyword">def</span> max(<span class="hljs-type">int</span> a ,<span class="hljs-type">int</span> b)&#123;
+    <span class="hljs-keyword">if</span>(a&gt;b)&#123;
+       a
+    &#125;<span class="hljs-keyword">else</span>&#123;
+       b
+    &#125;
+&#125;
+
+<span class="hljs-comment">// 调用</span>
+max (<span class="hljs-number">10</span>,<span class="hljs-number">20</span>)
+max <span class="hljs-number">10</span>,<span class="hljs-number">20</span> <span class="hljs-comment">// 可以省略括号</span>
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://docs.groovy-lang.org/next/html/documentation/">官方文档</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.groovy-lang.org/syntax.html">语法</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/Object.html">API 文档</a></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/jenkins-pipeline.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins Pipeline <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/jenkins.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/groovy.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Groovy <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/jenkins-pipeline.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins Pipeline <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/awk.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">awk <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/sed.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">sed <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1671188980702"></script></html>
