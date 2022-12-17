@@ -190,7 +190,7 @@ while read i; do curl https://example.com/"${i}" \
 
 ### 下载文件，保存文件而不更改其名称 {.col-span-3}
 
-```bash
+```bash  {.wrap}
 curl --remote-name "https://example.com/linux-distro.iso"
 ```
 
