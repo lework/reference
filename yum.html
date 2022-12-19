@@ -1,0 +1,357 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>YUM Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,bash,text,script"><meta name="description" content="这个 YUM 快速参考备忘单显示了它的常用命令使用清单。 "><meta property="og:url" content="https://quickref.leops.cn/yum.html"><meta property="og:title" content="YUM Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="这个 YUM 快速参考备忘单显示了它的常用命令使用清单。 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=bx9yn"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="YUM Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="这个 YUM 快速参考备忘单显示了它的常用命令使用清单。 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=2uhdo"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/yum.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="preload" href="/font/iconfont.woff2?1669773269" as="font" type="font/woff2" crossorigin="anonymous"><link rel="stylesheet" href="/font/iconfont.css?_v=1671440812026"><link rel="stylesheet" href="/css/style.css?_v=1671440812026"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3"><i class="self-center icon icon-logo text-2xl"></i></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><i class="icon icon-search md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"></i> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/yum.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><i class="icon icon-github md:mr-2"></i> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"><i class="icon icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">YUM</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>这个 YUM 快速参考备忘单显示了它的常用命令使用清单。</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="开始"><a class="h-anchor" href="#开始">#</a>开始</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="介绍"><a class="h-anchor" href="#介绍">#</a>介绍</h3>
+<div class="section">
+<p>yum（<code>Y</code>ellow dog <code>U</code>pdater, <code>M</code>odified）是一个在 <code>Fedora</code> 和 <code>RedHat</code> 以及 SUSE 中的 <code>Shell</code> 前端软件包管理器</p>
+<pre><code class="hljs language-bash">yum [options] [<span class="hljs-built_in">command</span>] [package ...]
+</code></pre>
+<hr>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://yum.baseurl.org/">YUM 官方网站</a> <em>(yum.baseurl.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/ch-yum.html">Fedora 中的 Yum 文档</a> <em>(fedoraproject.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.centos.org/PackageManagement/Yum/">CentOS 中的 Yum 文档</a> <em>(wiki.centos.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.scientificlinux.org/documentation/faq/yum.apt.repo">Scientific Linux 中的 Yum 文档</a> <em>(scientificlinux.org)</em></li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="yum-查询"><a class="h-anchor" href="#yum-查询">#</a>YUM 查询</h3>
+<div class="section">
+<p>子命令描述和任务</p>
+<h4 id="help"><a class="h-anchor" href="#help">#</a>help</h4>
+<p>显示 yum 命令和选项</p>
+<pre><code class="hljs language-bash">yum <span class="hljs-built_in">help</span>
+</code></pre>
+<p>显示 yum 子命令和选项</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="单独的包"><a class="h-anchor" href="#单独的包">#</a>单独的包</h3>
+<div class="section">
+<h4 id="list"><a class="h-anchor" href="#list">#</a>list</h4>
+<p>列出存储库中的包名称</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 列出存储库中的包名称</span>
+yum list available
+<span class="hljs-comment"># 列出所有可用的包</span>
+yum list installed
+<span class="hljs-comment"># 列出所有已安装的包</span>
+yum list all
+<span class="hljs-comment"># 列出已安装和可用的软件包</span>
+yum list kernel
+</code></pre>
+<h4 id="info"><a class="h-anchor" href="#info">#</a>info</h4>
+<p>列出已安装和可用的内核包</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 列出有关 `vsftpd` 软件包的信息</span>
+$ yum info vsftpd
+</code></pre>
+<h4 id="deplist"><a class="h-anchor" href="#deplist">#</a>deplist</h4>
+<p>显示包的依赖项</p>
+<pre><code class="hljs language-bash">yum deplist nfs-utils
+</code></pre>
+<p>列出依赖项和提供它们的包</p>
+<h4 id="provides"><a class="h-anchor" href="#provides">#</a>provides</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 查找提供查询文件的包</span>
+$ yum provides “*bin/top”
+<span class="hljs-comment"># 显示包含 README.top 文件的包</span>
+$ yum provides “*/README.top”
+</code></pre>
+<h4 id="search"><a class="h-anchor" href="#search">#</a>search</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 查找名称或描述中带有 samba 的软件包</span>
+$ yum search samba
+</code></pre>
+<h4 id="updateinfo"><a class="h-anchor" href="#updateinfo">#</a>updateinfo</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 获取有关可用软件包更新的信息</span>
+$ yum updateinfo security
+</code></pre>
+<p>获取有关可用 security 更新的信息</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="包组"><a class="h-anchor" href="#包组">#</a>包组</h3>
+<div class="section">
+<h4 id="grouplist"><a class="h-anchor" href="#grouplist">#</a>grouplist</h4>
+<p>列出已安装和可用软件包组的名称</p>
+<h4 id="groupinfo"><a class="h-anchor" href="#groupinfo">#</a>groupinfo</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 查看 Web 服务器组中的包</span>
+$ yum groupinfo <span class="hljs-string">&quot;Web Server&quot;</span>
+</code></pre>
+<h4 id="check-update"><a class="h-anchor" href="#check-update">#</a>check-update</h4>
+<p>查询存储库以获取可用的软件包更新</p>
+</div>
+</div>
+<div class="h3-wrap row-span-1">
+<h3 id="管理-yum-存储库"><a class="h-anchor" href="#管理-yum-存储库">#</a>管理 YUM 存储库</h3>
+<div class="section">
+
+<h4 id="repolist"><a class="h-anchor" href="#repolist">#</a>repolist</h4>
+<p>显示启用的软件存储库</p>
+<h4 id="repoinfo"><a class="h-anchor" href="#repoinfo">#</a>repoinfo</h4>
+<p>显示有关启用的 <code>yum</code> 存储库的信息 *</p>
+<pre><code class="hljs language-bash">yum repoinfo rhel-7-server-rpms
+</code></pre>
+<p>请参阅有关 rhel-7-server-rpms 存储库的信息</p>
+<h4 id="repo-pkgs"><a class="h-anchor" href="#repo-pkgs">#</a>repo-pkgs</h4>
+<p>使用特定存储库中的包 *</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 列出来自 my-rpms 存储库的软件包</span>
+$ yum repo-pkgs my-rpms list
+<span class="hljs-comment"># 从 my-rpms repo 安装所有软件包</span>
+$ yum repo-pkgs my-rpms install
+<span class="hljs-comment"># 从 my-rpms 存储库中删除所有软件包</span>
+$ yum repo-pkgs my-rpms remove
+</code></pre>
+<h4 id="makecache"><a class="h-anchor" href="#makecache">#</a>makecache</h4>
+<p>下载 <code>yum</code> 存储库数据到缓存</p>
+</div>
+</div>
+<div class="h3-wrap row-span-1">
+<h3 id="故障排除和维护-yum"><a class="h-anchor" href="#故障排除和维护-yum">#</a>故障排除和维护 YUM</h3>
+<div class="section">
+
+<h4 id="check"><a class="h-anchor" href="#check">#</a>check</h4>
+<p>检查本地 RPM 数据库是否有问题（运行了很长时间）</p>
+<h4 id="history"><a class="h-anchor" href="#history">#</a>history</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 列出所有 yum 安装、更新和清理操作</span>
+$ yum <span class="hljs-built_in">history</span> list
+<span class="hljs-comment"># 显示 yum info 3 的详细信息</span>
+$ yum <span class="hljs-built_in">history</span> info 3
+<span class="hljs-comment"># 撤消事务 3 中的 yum 操作</span>
+$ yum <span class="hljs-built_in">history</span> undo 3
+<span class="hljs-comment"># 重做事务 3 中撤消的 yum 操作</span>
+$ yum <span class="hljs-built_in">history</span> redo 3
+</code></pre>
+<h4 id="clean"><a class="h-anchor" href="#clean">#</a>clean</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 删除缓存中保存的包</span>
+$ yum clean packages
+<span class="hljs-comment"># 从缓存中清除所有包和元数据</span>
+$ yum clean all
+</code></pre>
+<p>清除缓存的包数据</p>
+<h4 id="fssnapshot"><a class="h-anchor" href="#fssnapshot">#</a>fssnapshot</h4>
+<p>列出 LVM 快照（帮助在包更新后回滚）</p>
+<h4 id="fs"><a class="h-anchor" href="#fs">#</a>fs</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 列出启用的文件系统过滤器</span>
+$ yum fs filters
+<span class="hljs-comment"># 过滤所有正在安装的文档（小心！）</span>
+$ yum fs documentation
+</code></pre>
+<p>对文件系统采取行动（防止在最小系统上安装 doc 或语言文件）非常有用！</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="使用-yum-管理语言包"><a class="h-anchor" href="#使用-yum-管理语言包">#</a>使用 YUM 管理语言包</h3>
+<div class="section">
+<h4 id="langavailable"><a class="h-anchor" href="#langavailable">#</a>langavailable</h4>
+<p>列出已安装的语言 *</p>
+<h4 id="langinfo"><a class="h-anchor" href="#langinfo">#</a>langinfo</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 列出与西班牙语相关的软件包</span>
+$ yum langinfo es
+</code></pre>
+<h4 id="langinstall"><a class="h-anchor" href="#langinstall">#</a>langinstall</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 安装与西班牙语相关的软件包</span>
+$ yum langinstall es
+</code></pre>
+<h4 id="langlist"><a class="h-anchor" href="#langlist">#</a>langlist</h4>
+<p>列出已安装的语言 *</p>
+<h4 id="langremove"><a class="h-anchor" href="#langremove">#</a>langremove</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 删除与西班牙语相关的软件包</span>
+$ yum langremove es
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-1">
+<h3 id="使用-yum-安装、删除和升级软件包"><a class="h-anchor" href="#使用-yum-安装、删除和升级软件包">#</a>使用 YUM 安装、删除和升级软件包</h3>
+<div class="section">
+
+<h4 id="install"><a class="h-anchor" href="#install">#</a>install</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 安装 vsftpd 包</span>
+$ yum install vsftpd
+</code></pre>
+<h4 id="update"><a class="h-anchor" href="#update">#</a>update</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 使用可用更新更新所有软件包</span>
+$ yum update
+<span class="hljs-comment"># 更新 httpd 包（如果可用）</span>
+$ yum update httpd
+<span class="hljs-comment"># 应用与安全相关的包更新</span>
+$ yum update --security
+</code></pre>
+<h4 id="update-to"><a class="h-anchor" href="#update-to">#</a>update-to</h4>
+<p>将一个或所有软件包更新到特定版本</p>
+<h4 id="upgrade"><a class="h-anchor" href="#upgrade">#</a>upgrade</h4>
+<pre><code class="hljs language-bash">yum -y upgrade
+</code></pre>
+<p>更新包考虑过时，只升级所有包，不升级软件和系统内核</p>
+<h4 id="localinstall"><a class="h-anchor" href="#localinstall">#</a>localinstall</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 从本地文件、http 或 ftp 安装包</span>
+$ yum localinstall abc-1-1.i686.rpm
+<span class="hljs-comment"># 从本地目录安装 abc 包</span>
+$ yum localinstall http://myrepo/abc-1-1.i686.rpm
+</code></pre>
+
+<p>从 FTP 站点安装 abc</p>
+<h4 id="downgrade"><a class="h-anchor" href="#downgrade">#</a>downgrade</h4>
+<p>将软件包降级到早期版本</p>
+<pre><code class="hljs language-bash">yum downgrade abc
+</code></pre>
+<p>将 abc 包降级到早期版本</p>
+<h4 id="reinstall"><a class="h-anchor" href="#reinstall">#</a>reinstall</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 重新安装 util-linux（以替换任何已删除的文件）</span>
+$ yum reinstall util-linux
+</code></pre>
+<h4 id="swap"><a class="h-anchor" href="#swap">#</a>swap</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 删除 ftp 包并安装 lftp 包</span>
+$ yum swap ftp lftp
+</code></pre>
+<h4 id="erase-remove"><a class="h-anchor" href="#erase-remove">#</a>erase/remove</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 删除 vsftpd 包和依赖</span>
+$ yum remove vsftpd
+</code></pre>
+<h4 id="autoremove"><a class="h-anchor" href="#autoremove">#</a>autoremove</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 删除 httpd 和其他不需要的包</span>
+$ yum autoremove httpd
+</code></pre>
+<h4 id="groupinstall"><a class="h-anchor" href="#groupinstall">#</a>groupinstall</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 安装 Web 服务器包</span>
+$ yum groupinstall <span class="hljs-string">&quot;Web server&quot;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="更多-yum-相关命令（安装-yum-utils-软件包）"><a class="h-anchor" href="#更多-yum-相关命令（安装-yum-utils-软件包）">#</a>更多 YUM 相关命令（安装 yum-utils 软件包）</h3>
+<div class="section">
+<h4 id="find-repos-of-install"><a class="h-anchor" href="#find-repos-of-install">#</a>find-repos-of-install</h4>
+<p>查找包来自哪个存储库</p>
+<h4 id="needs-restarting"><a class="h-anchor" href="#needs-restarting">#</a>needs-restarting</h4>
+<p>查找已更新且需要重启的进程</p>
+<h4 id="repoclosure"><a class="h-anchor" href="#repoclosure">#</a>repoclosure</h4>
+<p>从存储库中获取未满足的依赖项列表</p>
+<h4 id="repoquery"><a class="h-anchor" href="#repoquery">#</a>repoquery</h4>
+<p>查询远程仓库和本地 <code>RPM</code> 数据库</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 显示依赖包</span>
+$ repoquery --requires --resolve bash
+</code></pre>
+<h4 id="reposync"><a class="h-anchor" href="#reposync">#</a>reposync</h4>
+<p>将 <code>yum</code> 存储库同步到本地目录</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 从 repo 获取包</span>
+$ reposync -r rhel-atomic-host-beta-rpms
+</code></pre>
+<h4 id="repotrack"><a class="h-anchor" href="#repotrack">#</a>repotrack</h4>
+<p>下载一个包及其所有依赖项</p>
+<h4 id="show-installed"><a class="h-anchor" href="#show-installed">#</a>show-installed</h4>
+<p>列出已安装的 RPM 包和统计信息</p>
+<h4 id="verifytree"><a class="h-anchor" href="#verifytree">#</a>verifytree</h4>
+<p>检查本地 yum 存储库的一致性</p>
+<h4 id="yum-complete-transaction"><a class="h-anchor" href="#yum-complete-transaction">#</a>yum-complete-transaction</h4>
+<p>尝试完成未完成的 yum 交易</p>
+<h4 id="yumdb"><a class="h-anchor" href="#yumdb">#</a>yumdb</h4>
+<p>检查或更改 yum 数据库</p>
+<h4 id="yumdownloader"><a class="h-anchor" href="#yumdownloader">#</a>yumdownloader</h4>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 使用本地源离线安装 net-tools 工具包</span>
+$ yumdownloader net-tools.x86_64
+<span class="hljs-comment"># 使用 –destdir 参数设置下载的目标目录</span>
+$ yumdownloader net-tools.x86_64 --destdir=/usr/local/bin/
+<span class="hljs-comment"># 使用 –resolve 参数解决依赖关系并下载所需的安装包</span>
+$ yumdownloader net-tools.x86_64 --resolve --destdir=/usr/local/bin/
+</code></pre>
+
+<p>从 repo 下载一个包到当前目录</p>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="不同-yum-命令的常用选项"><a class="h-anchor" href="#不同-yum-命令的常用选项">#</a>不同 YUM 命令的常用选项</h3>
+<div class="section">
+<pre><code class="hljs language-bash">yum --disableplugin=langpacks info vsftpd
+<span class="hljs-comment"># 显示与正在运行的进程相关的包</span>
+yum --enableplugin=ps ps
+yum install docker \
+  --enablerepo=rhel-7-server-extras-rpm
+yum list available --disablerepo=epel
+<span class="hljs-comment"># 下载 vsftpd 包到缓存</span>
+yum install --downloadonly vsftpd
+</code></pre>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">:-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-y</code></td>
+<td>如果出现提示，假设是</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--assumeno</code></td>
+<td>如果提示，则假设否</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-q</code></td>
+<td>不产生任何输出</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-v</code></td>
+<td>产生额外的调试输出</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--noplugins</code></td>
+<td>运行命令而不加载任何 yum 插件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--disableplugin=</code></td>
+<td>禁用单个命令的特定插件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--enableplugin=</code></td>
+<td>启用已安装但当前已禁用的插件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--enablerepo=</code></td>
+<td>为单个命令启用当前禁用的 repo（通配符可以）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--disablerepo=</code></td>
+<td>为单个命令禁用当前启用的 repo（通配符可以）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--downloadonly</code></td>
+<td>下载到 <code>/var/cache/yum/arch/prod/repo/packages/</code>，但不要安装</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--filter-???=</code></td>
+<td>代替???与vendors, rpm-groups, arches 和其他人一起过滤输出</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--changelog</code></td>
+<td>显示包的变更日志信息</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://yum.baseurl.org/">YUM 官方网站</a> <em>(yum.baseurl.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf">YUM 备忘清单(适用于红帽 RedHat 企业 Linux)</a> <em>(access.redhat.com)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://prefetch.net/articles/yum.html">用 yum 管理软件包</a> <em>(prefetch.net)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.fedoraproject.org/en-US/Fedora/15/html/Deployment_Guide/ch-yum.html">Fedora 中的 Yum 文档</a> <em>(fedoraproject.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://wiki.centos.org/PackageManagement/Yum/">CentOS 中的 Yum 文档</a> <em>(wiki.centos.org)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.scientificlinux.org/documentation/faq/yum.apt.repo">Scientific Linux 中的 Yum 文档</a> <em>(scientificlinux.org)</em></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><i class="icon icon-search text-2xl text-emerald-500"></i></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/awk.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">awk <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/curl.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">curl <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/grep.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">grep <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/sed.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">sed <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/git.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">git <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/curl.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">curl <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/groovy.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Groovy <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/jenkins-pipeline.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Jenkins Pipeline <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"> <a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2022 leops, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1671440812026"></script></html>
