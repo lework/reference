@@ -13,18 +13,45 @@ intro: 用于设置常用软件的国内镜像，以便加速下载资源。
 
 
 
-测速
+国内镜像  {.cols-2}
 --------------------
 
-### 镜像下载测速 {.col-span-3}
+### 国内镜像
+#### 大学
+- [华北-清华大学](https://mirror.tuna.tsinghua.edu.cn/)
+- [华北-北京交通大学](https://mirror.bjtu.edu.cn/)
+- [华东-中国科学技术](http://mirrors.ustc.edu.cn/)
+- [华东-上海交通大学](https://mirror.sjtu.edu.cn/)
+- [华东-浙江大学](http://mirrors.zju.edu.cn/)
+- [华东-南京大学](https://mirrors.nju.edu.cn/)
+- [西北-兰州大学](http://mirror.lzu.edu.cn/)
+- [东北-东北大学](http://mirror.neu.edu.cn/)
+- [东北-东软信息](http://mirrors.neusoft.edu.cn/)
+- [东北-哈尔滨工业大学](https://mirrors.hit.edu.cn/)
+- [西南-重庆大学](http://mirrors.cqu.edu.cn/)
+{.cols-3}
+
+#### 商业公司
+- [阿里云](http://mirrors.aliyun.com/)
+- [腾讯](https://mirrors.cloud.tencent.com/)
+- [网易](http://mirrors.cn99.com/)
+- [搜狐](http://mirrors.sohu.com/)
+- [华为](https://mirrors.huaweicloud.com/)
+- [微软azure](http://mirror.azure.cn/)
+- [pypi-豆瓣](http://pypi.doubanio.com/)
+- [npm-淘宝](https://npmmirror.com/)
+{.cols-3}
+
+### 镜像下载测速
 ```bash
 # 系统软件源测速
-curl -sSL https://cdn.jsdelivr.net/gh/lework/script/shell/os_repo_speed_test.sh | bash
+curl -sSL \
+	https://cdn.jsdelivr.net/gh/lework/script/shell/os_repo_speed_test.sh | bash
 
 # Docker hub 测速
-curl -sSL https://cdn.jsdelivr.net/gh/lework/script/shell/docker_hub_speed_test.sh | bash
+curl -sSL \
+	https://cdn.jsdelivr.net/gh/lework/script/shell/docker_hub_speed_test.sh | bash
 ```
-
 
 
 系统镜像
@@ -32,6 +59,10 @@ curl -sSL https://cdn.jsdelivr.net/gh/lework/script/shell/docker_hub_speed_test.
 
 ### centos {.col-span-3}
 ```bash
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-6.10.repo
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo
+
 sed -e 's!^#baseurl=!baseurl=!g' \
        -e  's!^mirrorlist=!#mirrorlist=!g' \
        -e 's!mirror.centos.org!mirrors.ustc.edu.cn!g' \
@@ -103,6 +134,23 @@ ports 软件源
 MASTER_SITE_OVERRIDE?=http://mirrors.ustc.edu.cn/freebsd-ports/distfiles/${DIST_SUBDIR}/
 ```
 
+### Kali
+
+```
+#deb https://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+#deb-src https://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+```
+
+### Rocky 
+
+```
+sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.aliyun.com/rockylinux|g' \
+    -i.bak \
+    /etc/yum.repos.d/Rocky-*.repo
+
+dnf makecache
+```
 
 软件镜像
 --------------------
@@ -209,6 +257,21 @@ npm config list
 ```bash
 yarn config set registry https://registry.npmmirror.com
 yarn config list
+```
+
+### luarocks {.col-span-2}
+```bash
+luarocks install kong --server https://luarocks.cn
+
+
+# cat .luarocks/upload_config.lua
+rocks_servers = {
+    "https://luarocks.cn"
+}
+
+# cat ~/.luarocks/upload_config.lua
+key = "<Your API Key>"
+server = "https://luarocks.cn"
 ```
 
 ### go {.col-span-2 .row-span-2}
