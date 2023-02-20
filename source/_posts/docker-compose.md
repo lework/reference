@@ -22,6 +22,8 @@ intro: Docker-Compose 项目是 Docker 官方的开源项目，负责实现对 D
 ### docker-compose 文件示例 {.col-span-2 }
 
 ```yaml
+# https://docs.docker.com/compose/compose-file/
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
 # docker-compose.yml
 version: '3.7'
 web:
@@ -74,11 +76,11 @@ web:
 
   # 设置dns
   dns:
-      - 8.8.8.8
+    - 8.8.8.8
 
   # 设置 host地址绑定
   extra_hosts:
-      - "somehost:192.168.1.100"
+    - "somehost:192.168.1.100"
       
   # 健康检查
   
@@ -96,6 +98,21 @@ web:
   
   # 重启策略
   restart: always
+  
+  # 系统限制
+  sysctls:
+    net.core.somaxconn: 1024
+  
+  ulimits:
+    nproc: 65535
+    nofile:
+      soft: 20000
+      hard: 40000
+  cap_add:
+    - SYS_PTRACE
+  cap_drop:
+    - NET_ADMIN
+  privileged: true
 
 networks:
   frontend:
