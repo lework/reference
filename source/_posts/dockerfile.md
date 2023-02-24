@@ -1,7 +1,6 @@
 ---
 title: Dockerfile
 date: 2022-12-06 21:19:41
-icon: icon-docker
 background: bg-[#58aee9]
 label: dokcer
 tags:

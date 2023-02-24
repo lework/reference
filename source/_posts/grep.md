@@ -1,6 +1,5 @@
 ---
 title: grep
-icon: icon-grep
 background: bg-[#faa755]
 tags:
   - egrep

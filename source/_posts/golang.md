@@ -1,7 +1,6 @@
 ---
 title: Golang
 date: 2022-12-11 10:21:41
-icon: icon-golang
 background: bg-[#4ba4cc]
 tags:
     - Go

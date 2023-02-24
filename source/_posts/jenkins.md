@@ -1,6 +1,5 @@
 ---
 title: Jenkins
-icon: icon-style
 background: bg-red-700
 tags:
   - ci

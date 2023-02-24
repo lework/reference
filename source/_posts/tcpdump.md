@@ -1,6 +1,5 @@
 ---
 title: tcpdump
-icon: icon-style
 background: bg-green-200
 tags:
     - tcpdump

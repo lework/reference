@@ -1,7 +1,6 @@
 ---
 title: Groovy
 date: 2022-12-16 18:59:41
-icon: icon-style
 background: bg-[#4298b8]
 tags:
     - groovy

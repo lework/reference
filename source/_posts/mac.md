@@ -1,6 +1,5 @@
 ---
 title: Mac
-icon: icon-logo
 background: bg-[#34495e]
 tags:
     - tools

@@ -1,6 +1,5 @@
 ---
 title: cron
-icon: icon-cron
 background: bg-[#6950a1]
 tags:
   - schedule

@@ -1,6 +1,5 @@
 ---
 title: Nginx
-icon: icon-nginx
 background: bg-[#00ad43]
 tags:
   - tools

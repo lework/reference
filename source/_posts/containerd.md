@@ -1,7 +1,6 @@
 ---
 title: Containerd
 date: 2022-12-10 17:48:04
-icon: icon-docker
 background: bg-slate-800
 tags:
     - container

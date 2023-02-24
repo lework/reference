@@ -1,7 +1,6 @@
 ---
 title: 常见软件镜像
 date: 2022-12-04 16:45:04
-icon: icon-style
 background: bg-blue-500
 tags:
     - software

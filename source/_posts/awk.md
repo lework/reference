@@ -1,6 +1,5 @@
 ---
 title: awk
-icon: icon-style
 background: bg-[#543044]
 tags:
   - bash

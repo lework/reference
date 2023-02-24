@@ -1,6 +1,5 @@
 ---
 title: curl
-icon: icon-style
 background: bg-[#53261f]
 tags:
   - bash

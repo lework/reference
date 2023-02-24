@@ -1,6 +1,5 @@
 ---
 title: rsync
-icon: icon-style
 background: bg-green-300
 tags:
     - rsync

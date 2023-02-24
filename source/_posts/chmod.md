@@ -1,6 +1,5 @@
 ---
 title: chmod
-icon: icon-permission
 background: bg-red-400
 tags:
   - linux

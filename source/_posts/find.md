@@ -1,6 +1,5 @@
 ---
 title: find
-icon: icon-search
 background: bg-blue-500
 tags:
   - linux

@@ -1,6 +1,5 @@
 ---
 title: Jenkins Pipeline
-icon: icon-style
 background: bg-red-600
 label: jenkins
 tags:

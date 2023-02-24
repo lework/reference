@@ -1,7 +1,6 @@
 ---
 title: Docker-Compose
 date: 2022-12-09 18:58:46
-icon: icon-docker
 background: bg-[#6d94c7]
 label: dokcer
 tags:

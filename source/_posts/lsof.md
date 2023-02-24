@@ -1,6 +1,5 @@
 ---
 title: lsof
-icon: icon-style
 background: bg-[#76624c]
 tags:
   - port

@@ -1,6 +1,5 @@
 ---
 title: git
-icon: icon-git
 background: bg-[#005344]
 tags:
   - git

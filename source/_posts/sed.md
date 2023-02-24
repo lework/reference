@@ -1,6 +1,5 @@
 ---
 title: sed
-icon: icon-sed
 background: bg-[#6c4c49]
 tags:
   - editor

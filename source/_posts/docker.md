@@ -1,7 +1,6 @@
 ---
 title: Docker
 date: 2022-12-05 21:17:56
-icon: icon-docker
 background: bg-[#488fdf]
 tags:
     - container

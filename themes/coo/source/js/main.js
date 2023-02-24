@@ -2,7 +2,7 @@ let Utils = (function () {
     return {
         LIBRARY: {
             gtag: {
-                lib: ['https://www.googletagmanager.com/gtag/js?id='],
+                lib: ['https://www.googletagmanager.com/gtag/js?id=G-6SZEXN62V8'],
                 instance: 'gtag',
                 attr: {async: true}
             },
@@ -72,17 +72,29 @@ window.addEventListener('load', () => {
         localStorage.theme = isDarkMode ? "dark" : "";
     });
 
+    /******** List Collapsible ***********/
+    document.querySelectorAll("ul.collapsible > li > strong").forEach(function (strong) {
+        let li = strong.parentElement;
+        li.classList.add("active");
+        strong.classList.toggle("arrow-down");
+        strong.addEventListener("click", function () {
+            li.classList.toggle("active");
+            this.classList.toggle("arrow-down");
+        });
+    });
+
+
     /******** google analytics ***********/
-    // Utils.externalLibrary(Utils.LIBRARY.gtag).then(() => {
-    //     window.dataLayer = window.dataLayer || [];
+    Utils.externalLibrary(Utils.LIBRARY.gtag).then(() => {
+        window.dataLayer = window.dataLayer || [];
 
-    //     function gtag() {
-    //         dataLayer.push(arguments);
-    //     }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-    //     gtag('js', new Date());
-    //     gtag('config', '');
-    // });
+        gtag('js', new Date());
+        gtag('config', 'G-6SZEXN62V8');
+    });
 
     /******** Remove bottom border noise ********/
     document.querySelectorAll(".h3-wrap ul").forEach(function (ul, i) {
@@ -139,6 +151,7 @@ window.addEventListener('load', () => {
         start: function () {
             const _this = this;
 
+            _this.fetchData(); // Prepare search data
             this.search = document.querySelector(this.container);
             this.box = document.querySelector("#mysearch-box");
             this.input = document.querySelector("#mysearch-input");
@@ -423,7 +436,7 @@ window.addEventListener('load', () => {
                                 <a href="${hit.path}" class="flex justify-between items-center rounded-lg py-1 px-4 transition-colors duration-100 ease-in-out overflow-hidden">
                                     <div class="flex items-start">
                                         <div class="flex justify-center items-center w-5 mr-5 mt-2 flex-none">
-                                            <i class="icon ${hit.icon === undefined ? "icon-placeholder" : hit.icon} text-2xl"></i>
+                                            <i class="icon text-2xl">${hit.icon}</i>
                                         </div>
                                         <div class="flex flex-col truncate">
                                             <span class="font-semibold dark:text-slate-300 dark:group-hover:text-white">${hit.title}</span>
@@ -443,7 +456,7 @@ window.addEventListener('load', () => {
             this.addEventToResult();
         },
         renderPreview() {
-            const active = document.querySelector("li.active");
+            const active = this.search.querySelector("li.active");
             if (active == null) {
                 return;
             }
@@ -470,7 +483,7 @@ window.addEventListener('load', () => {
             document.querySelector(".preview-panel").innerHTML = `<section class="w-full py-3 px-5">
                 <div class="flex justify-center pt-1 pb-4">
                     <div class="flex justify-center items-center w-8 h-8 rounded ${hit.background === undefined ? 'bg-emerald-500' : hit.background} shadow-lg">
-                        <i class="icon ${hit.icon === undefined ? "icon-placeholder" : hit.icon} text-2xl text-slate-100"></i>
+                        <i class="text-2xl text-slate-100">${hit.icon}</i>
                     </div>
                 </div>
                 <div class="flex justify-center items-center font-medium flex-wrap dark:text-slate-200">${hit.title}</div>

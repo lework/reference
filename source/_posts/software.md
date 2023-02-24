@@ -1,7 +1,6 @@
 ---
 title: 常见软件下载
 date: 2023-02-06 19:47:03
-icon: icon-style
 background: bg-blue-600
 tags:
     - software
