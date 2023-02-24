@@ -173,3 +173,4 @@ docker-compose scale web=2 worker=3
 - [compose 撰写规范](https://docs.docker.com/compose/compose-file/)
 - [compose-file-v3](https://docs.docker.com/compose/compose-file/compose-file-v3/)
 - [compose-file-v2](https://docs.docker.com/compose/compose-file/compose-file-v2/)
+- [awesome-compose](https://github.com/docker/awesome-compose)
