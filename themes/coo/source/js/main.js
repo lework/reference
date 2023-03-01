@@ -2,7 +2,7 @@ let Utils = (function () {
     return {
         LIBRARY: {
             gtag: {
-                lib: ['https://www.googletagmanager.com/gtag/js?id=G-6SZEXN62V8'],
+                lib: ['https://www.googletagmanager.com/gtag/js?id='],
                 instance: 'gtag',
                 attr: {async: true}
             },
@@ -85,16 +85,16 @@ window.addEventListener('load', () => {
 
 
     /******** google analytics ***********/
-    Utils.externalLibrary(Utils.LIBRARY.gtag).then(() => {
-        window.dataLayer = window.dataLayer || [];
+    // Utils.externalLibrary(Utils.LIBRARY.gtag).then(() => {
+    //     window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+    //     function gtag() {
+    //         dataLayer.push(arguments);
+    //     }
 
-        gtag('js', new Date());
-        gtag('config', 'G-6SZEXN62V8');
-    });
+    //     gtag('js', new Date());
+    //     gtag('config', '');
+    // });
 
     /******** Remove bottom border noise ********/
     document.querySelectorAll(".h3-wrap ul").forEach(function (ul, i) {
