@@ -1,7 +1,7 @@
 ---
 title: Containerd
 date: 2022-12-10 17:48:04
-background: bg-slate-800
+background: bg-[#575757]
 tags:
     - container
     - virtual

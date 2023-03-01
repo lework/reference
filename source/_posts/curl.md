@@ -1,6 +1,6 @@
 ---
 title: curl
-background: bg-[#53261f]
+background: bg-[#0a3754]
 tags:
   - bash
   - text
