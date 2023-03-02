@@ -19,6 +19,7 @@
 <summary>云原生</summary>
 
 - [Helm3](https://quickref.leops.cn/helm3.html): Helm 是 Deis 开发的一个用于 Kubernetes 应用的包管理工具,主要用来管理 Charts
+- [kubectl](https://quickref.leops.cn/kubectl.html): Kubernetes 提供 [kubectl](https://kubernetes.io/zh-cn/docs/reference/kubectl/) 是使用 Kubernetes API 与 Kubernetes 集群的控制面进行通信的命令行工具。
 - [Containerd](https://quickref.leops.cn/containerd.html): Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。Containerd 可以在宿主机中管理完整的容器生命周期：容器镜像的传输和存储、容器的执行和管理、存储和网络等。
 - [Docker-Compose](https://quickref.leops.cn/docker-compose.html): Docker-Compose 项目是 Docker 官方的开源项目，负责实现对 Docker 容器集群的快速编排。
 - [Dockerfile](https://quickref.leops.cn/dockerfile.html): 这是 [Dockerfile](https://docs.docker.com/engine/reference/builder/) 的快速参考备忘单。
