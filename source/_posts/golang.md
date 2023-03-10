@@ -114,6 +114,27 @@ const (
 
 
 
+Golang 类型转换 {.cols-2}
+--------
+
+### list To string
+
+```go
+// []string into string
+A := []string {"a","b","c"}
+strings.Join(A,",")
+
+
+// []int into string
+A := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+strings.Trim(strings.Join(strings.Fields(fmt.Sprint(A)), ","), "[]")
+strings.Trim(strings.Replace(fmt.Sprint(A), " ", ",", -1), "[]")
+```
+
+
+
+
+
 Golang 基础类型
 --------
 
