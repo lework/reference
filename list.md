@@ -48,6 +48,7 @@
 <details>
 <summary>工具</summary>
 
+- [运维常用工具](https://quickref.leops.cn/ops-tools.html): 中小型公司的运维小伙伴常用工具。
 - [Nginx](https://quickref.leops.cn/nginx.html): 这个 [nginx](https://nginx.org/en/) 快速参考备忘单显示了它的常用命和配置使用清单。
 
 </details>
