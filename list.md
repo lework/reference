@@ -38,6 +38,7 @@
 <details>
 <summary>编程</summary>
 
+- [JavaScript](https://quickref.leops.cn/javascript.html): 包含最重要概念、函数、方法等的 JavaScript 备忘单。
 - [Groovy](https://quickref.leops.cn/groovy.html): Apache [Groovy](https://groovy-lang.org/) 是一种功能强大的、可选类型的动态语言，具有静态类型和静态编译功能，用于 Java 平台，旨在通过简洁、熟悉和易于学习的语法提高开发人员的工作效率。它可以与任何 Java 程序顺利地集成，并立即为您的应用程序提供强大的功能，包括脚本功能、特定于领域的语言编写、运行时和编译时元编程以及函数式编程。
 - [Golang](https://quickref.leops.cn/golang.html): [Golang](https://golang.org/) 的基本语法和使用.
 - [Bash](https://quickref.leops.cn/bash.html): 这是一份快速参考速查表，用于入门linux bash shell脚本。.
