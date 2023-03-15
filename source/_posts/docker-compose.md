@@ -14,11 +14,27 @@ intro: Docker-Compose 项目是 Docker 官方的开源项目，负责实现对 D
 ---
 
 
-开始
+开始 {.cols-2}	
 ---------------
 
+### 安装
 
-### docker-compose 文件示例 {.col-span-2 }
+#### linux
+
+```bash
+curl -L \
+  "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" \
+  -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+```
+#### windows
+```powershell
+Start-BitsTransfer -Source "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-Windows-x86_64.exe" -Destination $Env:ProgramFiles\Docker\docker-compose.exe
+```
+
+
+### docker-compose 文件示例 {.row-span-2}
 
 ```yaml
 # https://docs.docker.com/compose/compose-file/
@@ -120,21 +136,8 @@ volumes:
   db-data:
 ```
 
-### 安装
 
-#### linux
-
-```bash
-curl -L "https://github.com/docker/compose/releases/download/2.14.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-curl -L https://raw.githubusercontent.com/docker/compose/2.14.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
-chmod +x /usr/local/bin/docker-compose
-```
-#### windows
-```powershell
-Start-BitsTransfer -Source "https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-Windows-x86_64.exe" -Destination $Env:ProgramFiles\Docker\docker-compose.exe
-```
-
-### 命令  {.col-span-2 }
+### 命令
 
 ```bash
 docker-compose up         # 启动yml定义的所有服务
