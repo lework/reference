@@ -16,6 +16,16 @@
 </details>
 
 <details>
+<summary>错误码</summary>
+
+- [HTTP 状态码](https://quickref.leops.cn/http-status-code.html): HTTP 状态码由三个十进制数字组成，第一个十进制数字定义了状态码的类型。
+- [AD 错误码](https://quickref.leops.cn/ad-code.html): Active Directory 相关错误码。
+- [MySQL 错误码](https://quickref.leops.cn/mysql-code.html): MySQL 相关错误码。
+- [Nginx 错误码](https://quickref.leops.cn/nginx-code.html): Nginx 相关错误。
+
+</details>
+
+<details>
 <summary>云原生</summary>
 
 - [Helm3](https://quickref.leops.cn/helm3.html): Helm 是 Deis 开发的一个用于 Kubernetes 应用的包管理工具,主要用来管理 Charts
@@ -38,6 +48,8 @@
 <details>
 <summary>编程</summary>
 
+- [CSS 3](https://quickref.leops.cn/css.html): 这是一份关于 CSS 优点的快速参考备忘单，列出了选择器语法、属性、单位和其他有用的信息
+- [HTML](https://quickref.leops.cn/html.html): 此 HTML 快速参考备忘单以可读布局列出了常见的 `HTML` 和 `HTML5` 标记。
 - [JavaScript](https://quickref.leops.cn/javascript.html): 包含最重要概念、函数、方法等的 JavaScript 备忘单。
 - [Groovy](https://quickref.leops.cn/groovy.html): Apache [Groovy](https://groovy-lang.org/) 是一种功能强大的、可选类型的动态语言，具有静态类型和静态编译功能，用于 Java 平台，旨在通过简洁、熟悉和易于学习的语法提高开发人员的工作效率。它可以与任何 Java 程序顺利地集成，并立即为您的应用程序提供强大的功能，包括脚本功能、特定于领域的语言编写、运行时和编译时元编程以及函数式编程。
 - [Golang](https://quickref.leops.cn/golang.html): [Golang](https://golang.org/) 的基本语法和使用.

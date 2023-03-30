@@ -1,0 +1,2276 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>CSS 3 Cheat Sheet & Quick Reference</title><meta name="keywords" content="reference,cheatsheet,code table,snippets,linux,ops,devops,web,css,style"><meta name="description" content="这是一份关于 CSS 优点的快速参考备忘单，列出了选择器语法、属性、单位和其他有用的信息 "><meta property="og:url" content="https://quickref.leops.cn/css.html"><meta property="og:title" content="CSS 3 Cheat Sheet & Quick Reference"><meta property="og:site_name" content="运维速查表"><meta property="og:description" content="这是一份关于 CSS 优点的快速参考备忘单，列出了选择器语法、属性、单位和其他有用的信息 "><meta property="og:image" content="https://quickref.leops.cn/assets/image/preview.png?v=y3kw5"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CSS 3 Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@lework"><meta name="twitter:creator" content="@lework"><meta name="twitter:description" content="这是一份关于 CSS 优点的快速参考备忘单，列出了选择器语法、属性、单位和其他有用的信息 "><meta name="twitter:image" content="https://quickref.leops.cn/assets/image/preview.png?v=p1wqo"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://quickref.leops.cn/css.html"><link rel="prefetch" href="https://quickref.leops.cn"><link rel="prerender" href="https://quickref.leops.cn"><link rel="alternate" href="/atom.xml" title="运维速查表" type="application/atom+xml"><link rel="stylesheet" href="/css/style.css?_v=1680153110712"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3 text-2xl"><div class="self-center"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M303.55291933 951.35043811c-1.84934059-3.43448917-12.68119097-22.19208477-24.04142536-41.74225521l-20.07855218-35.4016586 5.01963776-9.51089265c2.90610631-5.01963776 13.20957383-23.24885049 22.9846585-40.15710664l17.70082986-31.17459456h366.69778034l6.86897834-11.09604238c3.43448917-6.34059549 13.73795669-23.77723335 22.72046763-39.10033977 8.71831893-15.32310642 22.19208477-38.30776491 29.85363797-51.51733873 7.66155321-12.94538297 16.37987214-28.00429739 19.02178646-33.02393629 2.90610631-5.28382976 14.00214869-24.30561621 24.56980821-42.27063694 10.56765952-18.22921273 29.85363797-51.51733987 43.06321181-73.97361551 12.94538297-22.45627563 35.93004146-62.08499826 51.25314787-87.71157333 15.05891442-25.89076594 28.53268025-49.93219015 29.85363797-53.63087132 3.43448917-8.98251093 8.45412693-8.18993607 12.94538184 2.11353259 2.11353145 4.4912549 8.71831893 16.90825501 14.79472355 26.94753166 6.34059549 10.30346752 20.60693618 35.13746773 32.23136143 55.48021077s25.62657394 44.38416953 30.91040369 53.63087133l9.77508466 16.64406414-6.07640462 9.77508466c-3.43448917 5.28382976-7.13317035 11.62442525-8.71831893 14.00214869-2.90610631 4.7554469-13.73795669 23.77723335-24.83399908 43.3274038-3.96287203 7.39736121-13.47376583 23.77723335-21.13531904 36.45842432-7.39736121 12.94538297-13.47376583 24.04142535-13.47376583 24.56980821 0 .79257486-3.43448917 6.34059549-7.39736121 12.41699898-4.22706403 6.07640462-9.51089379 15.32310642-12.15280811 20.34274531-2.37772345 5.01963776-6.86897835 12.94538297-9.77508465 17.17244587-2.64191431 4.4912549-5.81221262 10.03927666-6.60478749 12.68119096-1.05676573 2.37772345-2.64191431 4.4912549-3.69868117 4.49125604s-2.64191431 2.11353145-3.43448918 4.75544576c-1.05676573 2.37772345-5.28382976 10.56765952-9.77508466 17.70082987-4.22706403 7.39736121-10.56765952 17.96502073-13.47376582 23.77723335-3.17029831 5.81221262-10.83185038 19.28597845-17.17244587 29.58944597-6.34059549 10.56765952-11.62442525 20.07855331-11.62442525 21.13531904 0 .79257486-1.58514859 3.69868117-3.69868117 5.81221263-2.11353145 2.37772345-8.71831893 13.73795669-14.79472355 25.36238307s-18.22921273 33.81651001-26.94753053 49.66799815l-16.11568128 28.26848939H307.25159936l-3.69868003-5.81221263z"></path><path d="M523.88861725 694.82050674c-31.70297856-20.60693618-68.95397774-44.11997753-70.01074347-44.11997753-.79257486 0-10.03927666-5.81221262-20.60693618-13.20957383-10.83185038-7.13317035-22.72046763-14.53053155-26.68333966-16.11568128-3.69868117-1.84934059-6.86897835-3.96287203-6.86897835-5.01963776 0-.79257486-4.7554469-4.22706403-10.56765952-7.66155321l-10.30346752-5.81221262-.79257486-98.27923172c-.52838286-54.15925419 0-99.33599744.79257486-100.3927643 1.05676573-1.32095773 27.74010539 12.94538297 59.44308395 31.96716942 31.96716942 18.75759559 69.21816861 40.42129749 82.95612529 48.61123356l25.09819108 14.26633956.264192 103.56306148c.264192 73.7094235-.52838286 103.56306147-2.64191545 103.56306261-1.58514859 0-10.56765952-5.01963776-20.07855217-11.36023438zm0-61.29242453c0-11.09604238-.79257486-12.15280811-11.09604239-18.2292116-6.34059549-3.43448917-33.28812715-19.02178645-59.97146681-34.34489287s-48.87542443-28.00429739-49.40380842-28.00429739-1.05676573 5.28382976-1.05676573 11.62442525v11.36023325l60.23565881 34.60908486c33.02393515 19.28597845 60.23565881 34.87327573 60.76404054 34.87327574.264192 0 .52838286-5.28382976.528384-11.88861724zm0-42.27063695c0-11.09604238-.79257486-12.15280811-11.09604239-18.22921273-6.34059549-3.43448917-33.28812715-19.02178645-59.97146681-34.34489287s-48.87542443-28.00429739-49.40380842-28.00429739-1.05676573 5.28382976-1.05676573 11.62442525v11.36023438l60.23565881 34.60908373c33.02393515 19.28597845 60.23565881 34.87327573 60.76404054 34.87327688.264192 0 .52838286-5.28382976.528384-11.88861725zm-1.84934059-54.42344619c-2.11353145-2.11353145-117.30101931-68.42559488-118.88616789-68.42559374-.52838286 0-.79257486 5.28382976-.79257487 11.62442525v11.36023324l60.23565881 34.60908487 59.97146681 34.60908488.79257373-10.83185152c.52838286-5.81221262 0-11.62442525-1.32095659-12.94538298z"></path><path d="M109.10798734 615.82725347c-3.69868117-7.39736121-10.56765952-20.34274418-15.58729841-28.26848938-7.92574407-13.47376583-49.66799929-84.80546589-61.2924234-105.41240206-7.13317035-12.15280811-6.34059549-15.85148928 6.34059548-37.77938205 24.56980821-42.00644608 41.21387122-70.27493433 45.96931812-78.99325326 7.13317035-12.41700011 49.66799929-86.12642361 81.37097671-141.34244466 14.53053155-24.56980821 40.68548835-70.27493433 58.12212622-101.18533803l32.23136143-56.27278563h229.05401685c159.30746539 0 230.37497458 1.05676573 232.75269689 2.90610631 1.84934059 1.58514859 10.56765952 15.58729728 19.55017045 31.17459456 8.71831893 15.58729728 18.75759559 33.02393515 22.45627563 38.83614777l6.34059548 10.83185152-8.9825098 14.26633955c-5.01963776 7.92574407-15.32310642 25.89076594-22.72046762 39.62872264s-13.73795669 25.62657394-14.2663407 25.89076594c-.264192.52838286-83.2203173.79257486-184.40565532.79257486l-183.6130816-.264192-9.5108938 14.53053155c-5.01963776 7.92574407-9.24670179 15.85148928-9.24670179 17.17244701 0 1.58514859-1.05676573 2.64191431-2.64191431 2.64191431-1.32095773 0-2.64191431 1.05676573-2.64191545 2.11353145 0 2.90610631-29.32525511 55.21601991-48.61123243 87.18319047-8.18993607 13.47376583-14.79472355 25.09819107-14.79472355 25.8907648 0 1.05676573-3.43448917 6.86897835-7.92574407 13.47376583-4.22706403 6.34059549-7.92574407 12.15280811-7.92574521 12.94538297 0 .52838286-2.90610631 5.54802062-6.07640349 11.09604238-3.43448917 5.28382976-9.24670179 15.05891442-12.94538296 21.6637019s-20.07855331 35.13746773-36.45842546 63.40595599-31.96716942 55.21601991-34.34489288 59.44308394c-2.64191431 4.4912549-8.18993607 14.26634069-12.94538182 21.92789276-4.4912549 7.66155321-8.18993607 14.53053155-8.18993608 15.32310642 0 2.37772345-19.28597845 30.11782883-20.87112704 30.11782884-.79257486 0-4.4912549-6.34059549-8.18993607-13.7379567z"></path><path d="M625.60233813 601.56091278c-15.85148928-10.56765952-31.17459456-21.13531904-33.81651-23.51304135-4.22706403-3.69868117-4.7554469-9.24670179-4.4912549-56.00859477.264192-39.89291463-.264192-52.3099136-3.17029832-54.95182905-1.84934059-1.84934059-21.13531904-13.73795669-43.0632118-26.4191488-21.6637019-12.68119097-41.74225408-25.09819107-44.11997753-27.21172252-4.22706403-3.43448917-4.7554469-9.51089379-4.75544689-50.72476502 0-25.62657394.52838286-47.29027584 1.58514858-48.08284956.79257486-.79257486 8.18993607 2.90610631 16.37987214 8.45412693s25.36238194 15.85148928 37.77938205 22.72046763c12.41700011 7.13317035 43.06321181 25.09819107 67.89721201 40.15710549l45.44093526 27.21172366-.52838286 103.29886948c-.52838286 66.31206229-1.84934059 103.56306147-3.43448918 103.82725347-1.32095773.264192-15.58729728-8.18993607-31.70297856-18.75759559z"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><div class="md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div> <span class="hidden md:inline dark:text-slate-300">搜索</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/lework/reference/blob/master/source/_posts/css.md" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-slate-200 dark:bg-gray-900 text-slate-700 dark:text-gray-300 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:bg-slate-300 md:dark:hover:bg-slate-800"><div class="md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M989.86666667 512a464.21333333 464.21333333 0 0 1-91.47733334 280.91733333 469.33333333 469.33333333 0 0 1-235.17866666 172.71466667 28.672 28.672 0 0 1-24.576-4.43733333 24.23466667 24.23466667 0 0 1-7.50933334-18.77333334v-131.072a111.616 111.616 0 0 0-32.42666666-88.40533333 443.73333333 443.73333333 0 0 0 63.488-10.92266667 232.78933333 232.78933333 0 0 0 58.368-24.576 175.78666667 175.78666667 0 0 0 50.176-40.96 196.26666667 196.26666667 0 0 0 34.13333333-65.536 313.344 313.344 0 0 0 12.97066667-93.86666666 179.88266667 179.88266667 0 0 0-49.49333334-128 165.20533333 165.20533333 0 0 0-4.77866666-126.976 81.57866667 81.57866667 0 0 0-50.176 6.82666666 320.512 320.512 0 0 0-57.344 27.30666667l-23.552 14.67733333a443.73333333 443.73333333 0 0 0-238.93333334 0c-6.82666667-4.77866667-15.36-9.89866667-26.28266666-16.72533333A347.81866667 347.81866667 0 0 0 314.02666667 238.93333333a88.40533333 88.40533333 0 0 0-53.58933334-8.53333333 167.25333333 167.25333333 0 0 0-4.43733333 128 185.344 185.344 0 0 0-49.152 128.68266667A307.2 307.2 0 0 0 219.81866667 580.26666667a209.57866667 209.57866667 0 0 0 34.13333333 65.536 162.13333333 162.13333333 0 0 0 50.176 41.64266666 285.696 285.696 0 0 0 58.368 24.576 441.68533333 441.68533333 0 0 0 63.82933333 10.92266667 98.64533333 98.64533333 0 0 0-30.72 64.17066667 105.81333333 105.81333333 0 0 1-28.33066666 8.87466666 178.51733333 178.51733333 0 0 1-34.13333334 3.072A73.728 73.728 0 0 1 289.45066667 785.06666667a116.736 116.736 0 0 1-34.13333334-38.912 102.4 102.4 0 0 0-30.03733333-32.42666667 86.016 86.016 0 0 0-30.72-15.01866667h-12.288a44.37333333 44.37333333 0 0 0-18.09066667 2.73066667q-5.12 3.072-3.072 7.168a47.104 47.104 0 0 0 5.80266667 8.53333333 59.05066667 59.05066667 0 0 0 8.192 7.85066667l4.43733333 2.73066667a83.28533333 83.28533333 0 0 1 27.30666667 23.552 168.27733333 168.27733333 0 0 1 19.456 31.40266666l6.144 14.336a77.14133333 77.14133333 0 0 0 27.30666667 38.57066667 102.4 102.4 0 0 0 41.30133333 17.74933333 209.23733333 209.23733333 0 0 0 43.008 4.43733334 194.21866667 194.21866667 0 0 0 34.13333333-2.38933334l14.336-2.38933333v89.42933333a24.576 24.576 0 0 1-8.192 18.77333334 29.696 29.696 0 0 1-24.91733333 4.43733333 467.28533333 467.28533333 0 0 1-233.81333333-173.73866667A456.36266667 456.36266667 0 0 1 34.13333333 512a466.60266667 466.60266667 0 0 1 64.17066667-238.93333333A473.088 473.088 0 0 1 273.06666667 98.304 466.60266667 466.60266667 0 0 1 512 34.13333333a466.60266667 466.60266667 0 0 1 238.93333333 64.17066667A473.088 473.088 0 0 1 925.696 273.06666667 465.92 465.92 0 0 1 989.86666667 512z"></path></svg></div> <span class="hidden md:inline text-sm">编辑</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"> <i class="icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M512 31.40266667c14.19946667 0 26.935296 8.14830933 31.93787733 20.447232l29.40381867 72.50466133c12.713984 31.30436267-4.456448 66.21320533-38.33856 77.96599467A70.34197333 70.34197333 0 0 1 512 206.16533333c-36.19771733 0-65.536-27.11005867-65.536-60.555264 0-7.25265067 1.41994667-14.46161067 4.17245867-21.25550933l29.425664-72.50466133C485.04285867 39.550976 497.75684267 31.40266667 512 31.40266667zm0 961.19466666c-14.221312 0-26.95714133-8.14830933-31.93787733-20.447232l-29.425664-72.50466133a56.492032 56.492032 0 0 1-4.17245867-21.25550933C446.464 844.96657067 475.80228267 817.83466667 512 817.83466667c7.86432 0 15.64125867 1.31072 23.003136 3.84477866 33.882112 11.75278933 51.052544 46.661632 38.33856 77.98784l-29.40381867 72.482816c-5.00258133 12.29892267-17.73841067 20.447232-31.93787733 20.447232zm480.59733333-480.59733333c0 14.19946667-8.14830933 26.935296-20.447232 31.93787733l-72.50466133 29.40381867c-31.30436267 12.713984-66.21320533-4.456448-77.96599467-38.33856A70.34197333 70.34197333 0 0 1 817.83466667 512c0-36.19771733 27.11005867-65.536 60.555264-65.536 7.25265067 0 14.46161067 1.41994667 21.25550933 4.17245867l72.50466133 29.425664c12.29892267 4.980736 20.447232 17.69472 20.447232 31.93787733zM31.40266667 512c0-14.221312 8.14830933-26.95714133 20.447232-31.93787733l72.50466133-29.425664c6.77205333-2.752512 13.98101333-4.17245867 21.25550933-4.17245867C179.03342933 446.464 206.16533333 475.80228267 206.16533333 512c0 7.86432-1.31072 15.64125867-3.84477866 23.003136-11.75278933 33.882112-46.661632 51.052544-77.98784 38.33856l-72.482816-29.40381867C39.550976 538.935296 31.40266667 526.19946667 31.40266667 512zM172.15214933 172.17399467c10.04885333-10.04885333 24.81629867-13.28196267 37.04968534-8.126464l72.06775466 30.45239466c31.1296 13.172736 43.66882133 49.98212267 28.00571734 82.24768a70.34197333 70.34197333 0 0 1-13.54410667 19.00544c-25.58088533 25.58088533-65.49230933 27.15374933-89.12896 3.49525334a56.492032 56.492032 0 0 1-12.10231467-17.97870934L164.04753067 209.22368c-5.177344-12.23338667-1.94423467-27.000832 8.10461866-37.04968533zm679.673856 679.673856c-10.04885333 10.04885333-24.81629867 13.28196267-37.04968533 8.10461866l-72.04590933-30.45239466a56.492032 56.492032 0 0 1-18.00055467-12.08046934c-23.63665067-23.658496-22.06378667-63.56992 3.51709867-89.15080533a70.34197333 70.34197333 0 0 1 19.00544-13.54410667c32.26555733-15.663104 69.074944-3.12388267 82.24768 28.00571734l30.45239466 72.06775466c5.15549867 12.23338667 1.92238933 26.97898667-8.126464 37.04968534zm0-679.69570134c10.04885333 10.04885333 13.28196267 24.81629867 8.126464 37.04968534l-30.45239466 72.06775466c-13.172736 31.1296-49.98212267 43.66882133-82.24768 28.00571734a70.34197333 70.34197333 0 0 1-19.00544-13.54410667c-25.58088533-25.58088533-27.15374933-65.49230933-3.49525334-89.12896 5.111808-5.15549867 11.206656-9.240576 17.97870934-12.10231467l72.04590933-30.45239466c12.23338667-5.177344 27.000832-1.94423467 37.04968533 8.10461866zM172.15214933 851.82600533c-10.04885333-10.04885333-13.28196267-24.81629867-8.10461866-37.04968533l30.45239466-72.04590933c2.83989333-6.77205333 6.946816-12.86690133 12.08046934-18.00055467 23.658496-23.63665067 63.56992-22.06378667 89.15080533 3.51709867 5.57056 5.57056 10.15808 12.01493333 13.54410667 19.00544 15.663104 32.26555733 3.12388267 69.074944-28.00571734 82.24768l-72.06775466 30.45239466c-12.23338667 5.15549867-26.97898667 1.92238933-37.04968534-8.126464zM512 752.29866667c-132.7104 0-240.29866667-107.58826667-240.29866667-240.29866667s107.58826667-240.29866667 240.29866667-240.29866667 240.29866667 107.58826667 240.29866667 240.29866667-107.58826667 240.29866667-240.29866667 240.29866667z"></path></svg></i></button></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">CSS 3</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>这是一份关于 CSS 优点的快速参考备忘单，列出了选择器语法、属性、单位和其他有用的信息</p></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="入门"><a class="h-anchor" href="#入门">#</a>入门</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-3">
+<h3 id="介绍"><a class="h-anchor" href="#介绍">#</a>介绍</h3>
+<div class="section">
+<p>CSS 功能丰富，不仅仅是布局页面</p>
+<h4 id="外部样式表-link"><a class="h-anchor" href="#外部样式表-link">#</a>外部样式表 <code>&lt;link&gt;</code></h4>
+<pre><code class="hljs wrap language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./path/to/stylesheet/style.css&quot;</span>
+  <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>
+  <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>
+&gt;</span>
+</code></pre>
+<h4 id="内部样式表-style"><a class="h-anchor" href="#内部样式表-style">#</a>内部样式表 <code>&lt;style&gt;</code></h4>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+  <span class="hljs-selector-tag">body</span> &#123;
+    <span class="hljs-attribute">background-color</span>: linen;
+  &#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<h4 id="内联样式-style"><a class="h-anchor" href="#内联样式-style">#</a>内联样式 <code>style</code></h4>
+<pre><code class="hljs wrap language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: center;&quot;</span>&gt;</span>
+  居中文本
+<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: blue; font-size: 18px;&quot;</span>&gt;</span>
+  蓝色，18像素文本
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="添加-class-类"><a class="h-anchor" href="#添加-class-类">#</a>添加 class 类</h3>
+<div class="section">
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;classname&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;class1 ... classn&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>支持一个元素上的多个类</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="important"><a class="h-anchor" href="#important">#</a>!important</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.post-title</span> &#123;
+    <span class="hljs-attribute">color</span>: blue <span class="hljs-meta">!important</span>;
+&#125;
+</code></pre>
+<p>覆盖所有以前的样式规则</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="选择器"><a class="h-anchor" href="#选择器">#</a>选择器</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">h1</span> &#123; &#125; 
+<span class="hljs-selector-id">#job-title</span> &#123; &#125;
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.hero</span> &#123; &#125;
+<span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">p</span> &#123; &#125;
+</code></pre>
+<p>查看: <a href="#css-%E9%80%89%E6%8B%A9%E5%99%A8">CSS 选择器</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="文本颜色"><a class="h-anchor" href="#文本颜色">#</a>文本颜色</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">color</span>: <span class="hljs-number">#2a2aff</span>;
+<span class="hljs-attribute">color</span>: green;
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">34</span>, <span class="hljs-number">12</span>, <span class="hljs-number">64</span>, <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsla</span>(<span class="hljs-number">30</span> <span class="hljs-number">100%</span> <span class="hljs-number">50%</span> / <span class="hljs-number">0.6</span>);
+</code></pre>
+<p>查看: <a href="#css-%E9%A2%9C%E8%89%B2">Colors</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="背景"><a class="h-anchor" href="#背景">#</a>背景</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">background-color</span>: blue;
+<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;nyan-cat.gif&quot;</span>);
+<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;../image.png&quot;</span>);
+</code></pre>
+<p>查看: <a href="#css-%E8%83%8C%E6%99%AF">Backgrounds</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="字体"><a class="h-anchor" href="#字体">#</a>字体</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.page-title</span> &#123;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;Courier New&quot;</span>;
+&#125;
+</code></pre>
+<p>查看: <a href="#css-%E5%AD%97%E4%BD%93">Fonts</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="定位"><a class="h-anchor" href="#定位">#</a>定位</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.box</span> &#123;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">20px</span>;
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://learn-the-web.algonquindesign.ca/topics/css-layout-cheat-sheet/">Position</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="动画"><a class="h-anchor" href="#动画">#</a>动画</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">animation</span>: <span class="hljs-number">300ms</span> linear <span class="hljs-number">0s</span> infinite;
+<span class="hljs-attribute">animation</span>: bounce <span class="hljs-number">300ms</span> linear infinite;
+</code></pre>
+<p>查看: <a href="#css-%E5%8A%A8%E7%94%BB">Animation</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="注释"><a class="h-anchor" href="#注释">#</a>注释</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-comment">/* 这是一行注释 */</span>
+<span class="hljs-comment">/* 这是
+   多行注释 */</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="flex-布局"><a class="h-anchor" href="#flex-布局">#</a>Flex 布局</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+&#125;
+<span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: flex-start;
+&#125;
+</code></pre>
+<p>查看: <a href="#css-flexbox">Flexbox</a> | <a href="#css-flexbox-%E6%8A%80%E5%B7%A7">Flex Tricks</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="grid-布局"><a class="h-anchor" href="#grid-布局">#</a>Grid 布局</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#container</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+s  <span class="hljs-attribute">grid</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">2</span>, <span class="hljs-number">60px</span>) / auto-flow <span class="hljs-number">80px</span>;
+&#125;
+<span class="hljs-selector-id">#container</span> &gt; <span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#8ca0ff</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+&#125;
+</code></pre>
+<p>查看: <a href="#grid-%E5%B8%83%E5%B1%80">Grid Layout</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="变量和计数器"><a class="h-anchor" href="#变量和计数器">#</a>变量和计数器</h3>
+<div class="section">
+<pre><code class="hljs language-css">counter-set: subsection;
+<span class="hljs-attribute">counter-increment</span>: subsection;
+<span class="hljs-attribute">counter-reset</span>: subsection <span class="hljs-number">0</span>;
+<span class="hljs-selector-pseudo">:root</span> &#123;
+  <span class="hljs-attr">--bg-color</span>: brown;
+&#125;
+element &#123;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--bg-color);
+&#125;
+</code></pre>
+<p>查看: <a href="#css-%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9">动态内容</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-选择器"><a class="h-anchor" href="#css-选择器">#</a>CSS 选择器</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="示例"><a class="h-anchor" href="#示例">#</a>示例</h3>
+<div class="section">
+<h4 id="组选择器"><a class="h-anchor" href="#组选择器">#</a>组选择器</h4>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span> &#123;
+    <span class="hljs-attribute">color</span>: red;
+&#125;
+</code></pre>
+<h4 id="链选择器"><a class="h-anchor" href="#链选择器">#</a>链选择器</h4>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">h3</span><span class="hljs-selector-class">.section-heading</span> &#123;
+    <span class="hljs-attribute">color</span>: blue;
+&#125;
+</code></pre>
+<h4 id="属性选择器"><a class="h-anchor" href="#属性选择器">#</a>属性选择器</h4>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[attribute=<span class="hljs-string">&quot;SomeValue&quot;</span>]</span> &#123;
+    <span class="hljs-attribute">background-color</span>: red;
+&#125;
+</code></pre>
+<h4 id="第一个子选择器"><a class="h-anchor" href="#第一个子选择器">#</a>第一个子选择器</h4>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-child &#123;
+    <span class="hljs-attribute">font-weight</span>: bold;
+&#125;
+</code></pre>
+<h4 id="无子选择器"><a class="h-anchor" href="#无子选择器">#</a>无子选择器</h4>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.box</span><span class="hljs-selector-pseudo">:empty</span> &#123;
+  <span class="hljs-attribute">background</span>: lime;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">80px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">80px</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="基础"><a class="h-anchor" href="#基础">#</a>基础</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">所有元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div</code></td>
+<td style="text-align:left">所有 div 标签</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>.classname</code></td>
+<td style="text-align:left">具有类的所有元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>#idname</code></td>
+<td style="text-align:left">带 ID 的元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div,p</code></td>
+<td style="text-align:left">所有 div 和段落</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>#idname *</code></td>
+<td style="text-align:left">#idname 中的所有元素</td>
+</tr>
+</tbody>
+</table>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Type_selectors">元素</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Class_selectors">类</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/ID_selectors">ID</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Universal_selectors">通配</a> 选择器</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="组合器"><a class="h-anchor" href="#组合器">#</a>组合器</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>div.classname</code></td>
+<td style="text-align:left">具有特定类名的 div</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div#idname</code></td>
+<td style="text-align:left">具有特定 ID 的 div</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div p</code></td>
+<td style="text-align:left">div 中的所有段落</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div &gt; p</code></td>
+<td style="text-align:left">父元素是 div 的 <code>P</code> 标签</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div + p</code></td>
+<td style="text-align:left">div 之后的第一个同级 <code>P</code> 标签</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div ~ p</code></td>
+<td style="text-align:left">div 之后所有的同级 <code>P</code> 标签</td>
+</tr>
+</tbody>
+</table>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_combinator">相邻兄弟</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/General_sibling_combinator">通用兄弟</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Child_combinator">子</a> 选择器</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="属性选择器-2"><a class="h-anchor" href="#属性选择器-2">#</a>属性选择器</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>a[target]</code></td>
+<td style="text-align:left">带有 <yel>target</yel> 属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attr">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a[target=&quot;_blank&quot;]</code></td>
+<td style="text-align:left">在新标签中打开 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a[href^=&quot;/index&quot;]</code></td>
+<td style="text-align:left">以 <yel>/index</yel> 开头 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_4">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[class\|=&quot;chair&quot;]</code></td>
+<td style="text-align:left">以<yel>chair</yel>开头 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_3">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[class*=&quot;chair&quot;]</code></td>
+<td style="text-align:left">包含<yel>chair</yel> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_6">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[title~=&quot;chair&quot;]</code></td>
+<td style="text-align:left">包含单词 <yel>chair</yel> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_2">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a[href$=&quot;.doc&quot;]</code></td>
+<td style="text-align:left">以 <yel>.doc</yel> 结尾 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_5">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[type=&quot;button&quot;]</code></td>
+<td style="text-align:left">指定类型 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue">#</a></td>
+</tr>
+</tbody>
+</table>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors">属性选择器</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="用户操作伪类"><a class="h-anchor" href="#用户操作伪类">#</a>用户操作伪类</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>a:link</code></td>
+<td style="text-align:left">链接正常 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:link">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a:active</code></td>
+<td style="text-align:left">链接处于点击状态 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a:hover</code></td>
+<td style="text-align:left">鼠标悬停链接 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:hover">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a:visited</code></td>
+<td style="text-align:left">访问链接 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:visited">#</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<pre><code class="hljs language-css"><span class="hljs-comment">/* 未访问链接 */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:link</span> &#123; <span class="hljs-attribute">color</span>: blue; &#125;        
+<span class="hljs-comment">/* 已访问链接 */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> &#123; <span class="hljs-attribute">color</span>: purple; &#125;   
+<span class="hljs-comment">/* 用户鼠标悬停 */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123; <span class="hljs-attribute">background</span>: yellow; &#125;
+<span class="hljs-comment">/* 激活链接 */</span>
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> &#123; <span class="hljs-attribute">color</span>: red; &#125;       
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="伪类"><a class="h-anchor" href="#伪类">#</a>伪类</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>p::after</code></td>
+<td style="text-align:left">在 p 之后添加内容 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p::before</code></td>
+<td style="text-align:left">在 p 之前添加内容 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p::first-letter</code></td>
+<td style="text-align:left">p中的第一个字母 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p::first-line</code></td>
+<td style="text-align:left">p 中的第一行 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>::selection</code></td>
+<td style="text-align:left">由用户选择 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::selection">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>::placeholder</code></td>
+<td style="text-align:left"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder">占位符</a> 属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:root</code></td>
+<td style="text-align:left">文档根元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:target</code></td>
+<td style="text-align:left">突出显示活动锚点 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:target">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>div:empty</code></td>
+<td style="text-align:left">没有子元素的元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:empty">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:lang(en)</code></td>
+<td style="text-align:left">带有 en 语言属性的 P <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:lang">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:not(span)</code></td>
+<td style="text-align:left">不是跨度的元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:not">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:host</code></td>
+<td style="text-align:left">shadowDOM 中选择自定义元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>::backdrop</code></td>
+<td style="text-align:left">处于全屏模式的元素样式 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::backdrop">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>::marker</code></td>
+<td style="text-align:left"><code>li</code> 项目符号或者数字 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::marker">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>::file-selector-button</code></td>
+<td style="text-align:left">type=&quot;file&quot; <code>input</code> 按钮 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::file-selector-button">#</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="输入伪类"><a class="h-anchor" href="#输入伪类">#</a>输入伪类</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>input:checked</code></td>
+<td style="text-align:left">检查 <code>input</code> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:disabled</code></td>
+<td style="text-align:left">禁用 <code>input</code> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:disabled">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:enabled</code></td>
+<td style="text-align:left">启用的 <code>input</code> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:enabled">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:default</code></td>
+<td style="text-align:left">有默认值的元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:default">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:blank</code></td>
+<td style="text-align:left">空的输入框 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:blank">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:focus</code></td>
+<td style="text-align:left"><code>input</code> 有焦点 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:in-range</code></td>
+<td style="text-align:left">范围内的值 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:in-range">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:out-of-range</code></td>
+<td style="text-align:left"><code>input</code> 值超出范围 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:out-of-range">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:valid</code></td>
+<td style="text-align:left"><code>input</code> 有效值 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:invalid</code></td>
+<td style="text-align:left"><code>input</code> 无效值 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:invalid">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:optional</code></td>
+<td style="text-align:left">没有必需的属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:optional">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:required</code></td>
+<td style="text-align:left">带有必需属性的 <code>input</code> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:required">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:read-only</code></td>
+<td style="text-align:left">具有只读属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:read-only">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:read-write</code></td>
+<td style="text-align:left">没有只读属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:read-write">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input:indeterminate</code></td>
+<td style="text-align:left">带有 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:indeterminate">indeterminate</a> 状态 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:indeterminate">#</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="结构伪类"><a class="h-anchor" href="#结构伪类">#</a>结构伪类</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选择器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>p:first-child</code></td>
+<td style="text-align:left">第一个孩子 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-child">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:last-child</code></td>
+<td style="text-align:left">最后一个孩子 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:last-child">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:first-of-type</code></td>
+<td style="text-align:left">第一个 p 类型的元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-of-type">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:last-of-type</code></td>
+<td style="text-align:left">某种类型的最后一个 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:last-of-type">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:nth-child(2)</code></td>
+<td style="text-align:left">其父母的第二个孩子 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:nth-child(3n42)</code></td>
+<td style="text-align:left">Nth-child(an + b) 公式 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:nth-last-child(2)</code></td>
+<td style="text-align:left">后面的二孩 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-last-child">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:nth-of-type(2)</code></td>
+<td style="text-align:left">其父级的第二个 p <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:nth-last-of-type(2)</code></td>
+<td style="text-align:left">...从后面 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-last-of-type">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:only-of-type</code></td>
+<td style="text-align:left">其父级的唯一性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:only-of-type">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>p:only-child</code></td>
+<td style="text-align:left">其父母的唯一孩子 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:only-child">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:is(header, div) p</code></td>
+<td style="text-align:left">可以选择的元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:is">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>:where(header, div) p</code></td>
+<td style="text-align:left">与 <code>:is</code> 相同 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:where">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>a:has(&gt; img)</code></td>
+<td style="text-align:left">包含 <code>img</code> 元素的 <code>a</code> 元素 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:has">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>::first-letter</code></td>
+<td style="text-align:left">第一行的第一个字母 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>::first-line</code></td>
+<td style="text-align:left">第一行应用样式 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line">#</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-字体"><a class="h-anchor" href="#css-字体">#</a>CSS 字体</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-3">
+<h3 id="属性"><a class="h-anchor" href="#属性">#</a>属性</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>font-family:</code></td>
+<td style="text-align:left">字体族名或通用字体族名 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-family">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>font-size:</code></td>
+<td style="text-align:left">字体的大小 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-size">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>letter-spacing:</code></td>
+<td style="text-align:left">文本字符的间距 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/letter-spacing">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>line-height:</code></td>
+<td style="text-align:left">多行文本间距 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>font-weight:</code></td>
+<td style="text-align:left">粗细程度 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-weight">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>font-style:</code></td>
+<td style="text-align:left">字体样式 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-style">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>text-decoration:</code></td>
+<td style="text-align:left">文本的修饰线外观 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>text-align:</code></td>
+<td style="text-align:left">相对它的块父元素对齐 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>text-transform:</code></td>
+<td style="text-align:left">指定文本大小写 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-transform">#</a></td>
+</tr>
+</tbody>
+</table>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font">Font</a></p>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="速记"><a class="h-anchor" href="#速记">#</a>速记</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">font</span>: italic    <span class="hljs-number">400</span>     <span class="hljs-number">14px</span>    /     <span class="hljs-number">1.5</span>        sans-serif
+      ┈┈┬┈┈┈    ┈┬┈     ┈┬┈┈          ┈┬┈        ┈┬┈┈┈┈┈┈┈┈
+       样式      粗细    大小(必需的)    行高        字体(必需的)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="示例-2"><a class="h-anchor" href="#示例-2">#</a>示例</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+<span class="hljs-attribute">font-size</span>: <span class="hljs-number">12pt</span>;
+<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.02em</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="大小写"><a class="h-anchor" href="#大小写">#</a>大小写</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-comment">/* 首字母大写 Hello */</span>
+  <span class="hljs-attribute">text-transform</span>: capitalize;
+  <span class="hljs-comment">/* 字母大写 HELLO */</span>
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-comment">/* 字母小写 hello */</span>
+  <span class="hljs-attribute">text-transform</span>: lowercase;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="font-face"><a class="h-anchor" href="#font-face">#</a>@font-face</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-keyword">@font-face</span> &#123;
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;Glegoo&#x27;</span>;
+  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;../Glegoo.woff&#x27;</span>);
+&#125;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-颜色"><a class="h-anchor" href="#css-颜色">#</a>CSS 颜色</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="命名颜色"><a class="h-anchor" href="#命名颜色">#</a>命名颜色</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">color</span>: red;
+<span class="hljs-attribute">color</span>: orange;
+<span class="hljs-attribute">color</span>: tan;
+<span class="hljs-attribute">color</span>: rebeccapurple;
+</code></pre>
+<p>更多标准<a href="./colors-named.md">颜色名称</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="十六进制颜色"><a class="h-anchor" href="#十六进制颜色">#</a>十六进制颜色</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">color</span>: <span class="hljs-number">#090</span>;
+<span class="hljs-attribute">color</span>: <span class="hljs-number">#009900</span>;
+<span class="hljs-attribute">color</span>: <span class="hljs-number">#090a</span>;
+<span class="hljs-attribute">color</span>: <span class="hljs-number">#009900aa</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="rgb-颜色"><a class="h-anchor" href="#rgb-颜色">#</a>rgb() 颜色</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">34</span>, <span class="hljs-number">12</span>, <span class="hljs-number">64</span>, <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">34</span>, <span class="hljs-number">12</span>, <span class="hljs-number">64</span>, <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">34</span> <span class="hljs-number">12</span> <span class="hljs-number">64</span> / <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">34</span> <span class="hljs-number">12</span> <span class="hljs-number">64</span> / <span class="hljs-number">0.3</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">34.0</span> <span class="hljs-number">12</span> <span class="hljs-number">64</span> / <span class="hljs-number">60%</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">34.6</span> <span class="hljs-number">12</span> <span class="hljs-number">64</span> / <span class="hljs-number">30%</span>);
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="hsl-颜色"><a class="h-anchor" href="#hsl-颜色">#</a>HSL 颜色</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsl</span>(<span class="hljs-number">30</span>, <span class="hljs-number">100%</span>, <span class="hljs-number">50%</span>, <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsla</span>(<span class="hljs-number">30</span>, <span class="hljs-number">100%</span>, <span class="hljs-number">50%</span>, <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsl</span>(<span class="hljs-number">30</span> <span class="hljs-number">100%</span> <span class="hljs-number">50%</span> / <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsla</span>(<span class="hljs-number">30</span> <span class="hljs-number">100%</span> <span class="hljs-number">50%</span> / <span class="hljs-number">0.6</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsl</span>(<span class="hljs-number">30.0</span> <span class="hljs-number">100%</span> <span class="hljs-number">50%</span> / <span class="hljs-number">60%</span>);
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsla</span>(<span class="hljs-number">30.2</span> <span class="hljs-number">100%</span> <span class="hljs-number">50%</span> / <span class="hljs-number">60%</span>);
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="其它"><a class="h-anchor" href="#其它">#</a>其它</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">color</span>: inherit;
+<span class="hljs-attribute">color</span>: initial;
+<span class="hljs-attribute">color</span>: unset;
+<span class="hljs-attribute">color</span>: transparent;
+<span class="hljs-attribute">color</span>: currentcolor; <span class="hljs-comment">/* 关键字 */</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="全局值"><a class="h-anchor" href="#全局值">#</a>全局值</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-comment">/* 全局值 */</span>
+<span class="hljs-attribute">color</span>: inherit;
+<span class="hljs-attribute">color</span>: initial;
+<span class="hljs-attribute">color</span>: unset;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-背景"><a class="h-anchor" href="#css-背景">#</a>CSS 背景</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="属性-2"><a class="h-anchor" href="#属性-2">#</a>属性</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>background:</code></td>
+<td style="text-align:left"><em>(<a href="#%E9%80%9F%E8%AE%B0-1">速记</a>)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>background-color:</code></td>
+<td style="text-align:left">查看: <a href="#css-%E9%A2%9C%E8%89%B2">Colors</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>background-image:</code></td>
+<td style="text-align:left">一个或者多个背景图像</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>background-position:</code></td>
+<td style="text-align:left">背景图片设置初始位置</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>background-size:</code></td>
+<td style="text-align:left">背景图片大小</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>background-clip:</code></td>
+<td style="text-align:left">背景(图片或颜色)是否延伸到边框、内边距盒子、内容盒子下面</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>background-repeat:</code></td>
+<td style="text-align:left">图像重复方式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>background-attachment:</code></td>
+<td style="text-align:left"><code>scroll</code>/<code>fixed</code>/<code>local</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="速记-2"><a class="h-anchor" href="#速记-2">#</a>速记</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">background</span>: <span class="hljs-number">#ff0</span>   <span class="hljs-built_in">url</span>(<span class="hljs-string">a.jpg</span>)   left     top    /  <span class="hljs-number">100px</span> auto   no-repeat   fixed;
+            <span class="hljs-selector-id">#abc</span>   url(<span class="hljs-selector-tag">b</span><span class="hljs-selector-class">.png</span>)   center   center /  cover        repeat-x    local;
+            ┈┬┈┈    ┈┬┈┈┈┈┈┈┈   ┈┬┈┈     ┈┬┈       ┈┈┬┈┈┈┈┈┈┈   ┈┈┬┈┈┈┈┈┈   ┈┈┬┈┈┈
+            颜色     图片         位置x    位置x       图片大小     图像重复方式  位置是在视口内固定
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="示例-3"><a class="h-anchor" href="#示例-3">#</a>示例</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">img_flwr.gif</span>) right bottom no-repeat, <span class="hljs-built_in">url</span>(<span class="hljs-string">paper.gif</span>) left top repeat;
+<span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">img_man.jpg</span>) no-repeat center;
+<span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">36</span>);
+<span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">90deg</span>, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">36</span>,<span class="hljs-number">1</span>) <span class="hljs-number">0%</span>,
+  <span class="hljs-built_in">rgba</span>(<span class="hljs-number">13</span>,<span class="hljs-number">232</span>,<span class="hljs-number">230</span>,<span class="hljs-number">1</span>) <span class="hljs-number">35%</span>,
+  <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">212</span>,<span class="hljs-number">255</span>,<span class="hljs-number">1</span>) <span class="hljs-number">100%</span>);
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-盒子模型"><a class="h-anchor" href="#css-盒子模型">#</a>CSS 盒子模型</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="最大值-最小值"><a class="h-anchor" href="#最大值-最小值">#</a>最大值/最小值</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.column</span> &#123;
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">200px</span>; <span class="hljs-comment">/* 最大宽度 200 像素 */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;     <span class="hljs-comment">/* 宽度 500 像素 */</span>
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/max-width">max-width</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/min-width">min-width</a> /  <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/max-height">max-height</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/min-height">min-height</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="边距-补白"><a class="h-anchor" href="#边距-补白">#</a>边距/补白</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.block-one</span> &#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span>;  <span class="hljs-comment">/* 边距 20 像素 */</span>
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>; <span class="hljs-comment">/* 补白 10 像素 */</span>
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin">边距(margin)</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding">补白(padding)</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="box-sizing"><a class="h-anchor" href="#box-sizing">#</a>Box-sizing</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-comment">/* 设置的边框和补白的值是包含在 width 内的 */</span>
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Box-sizing">box-sizing</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="能见度"><a class="h-anchor" href="#能见度">#</a>能见度</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.invisible-elements</span> &#123;
+  <span class="hljs-attribute">visibility</span>: hidden; <span class="hljs-comment">/* 隐藏元素 */</span>
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/visibility">Visibility</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="auto-关键字"><a class="h-anchor" href="#auto-关键字">#</a>Auto 关键字</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-comment">/* 览器自己选择一个合适的外边距 */</span>
+  <span class="hljs-attribute">margin</span>: auto;
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin">边距(margin)</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="溢出-overflow"><a class="h-anchor" href="#溢出-overflow">#</a>溢出(Overflow)</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.small-block</span> &#123;
+  <span class="hljs-comment">/* 浏览器总是显示滚动条 */</span>
+  <span class="hljs-attribute">overflow</span>: scroll;
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow">溢出(overflow)</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap col-5">
+<h2 id="css-动画"><a class="h-anchor" href="#css-动画">#</a>CSS 动画</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-5">
+<h3 id="速记-3"><a class="h-anchor" href="#速记-3">#</a>速记</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">animation</span>:  bounce   <span class="hljs-number">300ms</span>      linear     <span class="hljs-number">100ms</span>    infinite   alternate-reverse  both                   reverse  
+            ┈┬┈┈     ┈┬┈┈┈      ┈┬┈┈┈┈     ┈┈┬┈┈    ┈┈┈┬┈┈┈┈   ┈┈┬┈┈┈┈┈┈┈┈┈┈┈┈┈┈  ┈┈┬┈┈┈                 ┈┈┬┈┈┈
+            动画名    动画时间     缓动函数    延迟     运行的次数   动画是否反向播放      如何将样式应用于其目标    是否运行或者暂停
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2 col-span-3">
+<h3 id="属性-3"><a class="h-anchor" href="#属性-3">#</a>属性</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>animation:</code></td>
+<td style="text-align:left"><em>(<a href="#%E9%80%9F%E8%AE%B0-2">速记</a>)</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-name:</code></td>
+<td style="text-align:left">动画名 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-name">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-duration:</code></td>
+<td style="text-align:left">动画周期的时长 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-duration">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-timing-function:</code></td>
+<td style="text-align:left">缓动函数 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-timing-function">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-delay:</code></td>
+<td style="text-align:left">延迟 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-delay">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-iteration-count:</code></td>
+<td style="text-align:left">运行的次数 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-iteration-count">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-direction:</code></td>
+<td style="text-align:left">动画是否反向播放 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-direction">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-fill-mode:</code></td>
+<td style="text-align:left">如何将样式应用于其目标 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode">#</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-play-state:</code></td>
+<td style="text-align:left">是否运行或者暂停 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-play-state">#</a></td>
+</tr>
+</tbody>
+</table>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation">动画(Animation)</a></p>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="示例-4"><a class="h-anchor" href="#示例-4">#</a>示例</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-comment">/* @keyframes duration | timing-function | delay |
+   iteration-count | direction | fill-mode | play-state | name */</span>
+<span class="hljs-attribute">animation</span>: <span class="hljs-number">3s</span> ease-in <span class="hljs-number">1s</span> <span class="hljs-number">2</span> reverse both paused slidein;
+<span class="hljs-comment">/* @keyframes duration | timing-function | delay | name */</span>
+<span class="hljs-attribute">animation</span>: <span class="hljs-number">3s</span> linear <span class="hljs-number">1s</span> slidein;
+<span class="hljs-comment">/* @keyframes duration | name */</span>
+<span class="hljs-attribute">animation</span>: <span class="hljs-number">3s</span> slidein;
+<span class="hljs-attribute">animation</span>: <span class="hljs-number">4s</span> linear <span class="hljs-number">0s</span> infinite alternate move_eye;
+<span class="hljs-attribute">animation</span>: bounce <span class="hljs-number">300ms</span> linear <span class="hljs-number">0s</span> infinite normal;
+<span class="hljs-attribute">animation</span>: bounce <span class="hljs-number">300ms</span> linear infinite;
+<span class="hljs-attribute">animation</span>: bounce <span class="hljs-number">300ms</span> linear infinite alternate-reverse;
+<span class="hljs-attribute">animation</span>: bounce <span class="hljs-number">300ms</span> linear <span class="hljs-number">2s</span> infinite alternate-reverse forwards normal;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="javascript-事件"><a class="h-anchor" href="#javascript-事件">#</a>Javascript 事件</h3>
+<div class="section">
+<pre><code class="hljs language-js">.<span class="hljs-title function_">one</span>(<span class="hljs-string">&#x27;webkitAnimationEnd oanimationend msAnimationEnd animationend&#x27;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="css-flexbox"><a class="h-anchor" href="#css-flexbox">#</a>CSS Flexbox</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="简单实例"><a class="h-anchor" href="#简单实例">#</a>简单实例</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+&#125;
+</code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> auto;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="容器"><a class="h-anchor" href="#容器">#</a>容器</h3>
+<div class="section">
+<pre><code 2-3,5-8,10-11,13-16,18-23="" class="language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">display</span>: inline-flex;
+  
+  <span class="hljs-attribute">flex-direction</span>: row;            <span class="hljs-comment">/* ltr - 行(左向右) ▶ */</span>
+  <span class="hljs-attribute">flex-direction</span>: row-reverse;    <span class="hljs-comment">/* rtl - 行(右向左) ◀ */</span>
+  <span class="hljs-attribute">flex-direction</span>: column;         <span class="hljs-comment">/* top-bottom ▼ */</span>
+  <span class="hljs-attribute">flex-direction</span>: column-reverse; <span class="hljs-comment">/* bottom-top ▲ */</span>
+  
+  <span class="hljs-attribute">flex-wrap</span>: nowrap;       <span class="hljs-comment">/* 摆放到一行 */</span>
+  <span class="hljs-attribute">flex-wrap</span>: wrap;         <span class="hljs-comment">/* 被打断到多个行中 */</span>
+  
+  <span class="hljs-attribute">align-items</span>: flex-start; <span class="hljs-comment">/* 垂直对齐 - 顶部 */</span>
+  <span class="hljs-attribute">align-items</span>: flex-end;   <span class="hljs-comment">/* 垂直对齐 - 底部 */</span>
+  <span class="hljs-attribute">align-items</span>: center;     <span class="hljs-comment">/* 垂直对齐 - 中间 */</span>
+  <span class="hljs-attribute">align-items</span>: stretch;    <span class="hljs-comment">/* 所有人都一样的高度 (默认) */</span>
+  
+  <span class="hljs-attribute">justify-content</span>: flex-start;    <span class="hljs-comment">/* [◀◀◀        ] */</span>
+  <span class="hljs-attribute">justify-content</span>: center;        <span class="hljs-comment">/* [    ■■■    ] */</span>
+  <span class="hljs-attribute">justify-content</span>: flex-end;      <span class="hljs-comment">/* [        ▶▶▶] */</span>
+  <span class="hljs-attribute">justify-content</span>: space-between; <span class="hljs-comment">/* [◀    ■    ▶] */</span>
+  <span class="hljs-attribute">justify-content</span>: space-around;  <span class="hljs-comment">/* [ ■   ■   ■ ] */</span>
+  <span class="hljs-attribute">justify-content</span>: space-evenly;  <span class="hljs-comment">/* [  ■  ■  ■  ] */</span>
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="子元素"><a class="h-anchor" href="#子元素">#</a>子元素</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-tag">div</span> &#123;
+
+  <span class="hljs-comment">/* 这个: */</span>
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> auto;
+  <span class="hljs-comment">/* 相当于这个： */</span>
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">flex-basis</span>: auto;
+
+  <span class="hljs-attribute">order</span>: <span class="hljs-number">1</span>;
+
+  <span class="hljs-attribute">align-self</span>: flex-start;  <span class="hljs-comment">/* left */</span>
+  <span class="hljs-attribute">margin-left</span>: auto;       <span class="hljs-comment">/* right */</span>
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="justify-content"><a class="h-anchor" href="#justify-content">#</a>justify-content</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">justify-content</span>: flex-start | flex-end | center | space-between
+</code></pre>
+<p><code>flex-start</code>：左对齐(默认值)</p>
+<pre><code class="hljs language-bash">╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆╭┈┈╮╭┈╮╭┈┈┈╮                     ┆
+┆╰┈┈╯╰┈╯╰┈┈┈╯                     ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+<p><code>flex-end</code>：右对齐</p>
+<pre><code class="hljs language-bash">╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆                     ╭┈┈╮╭┈╮╭┈┈┈╮┆
+┆                     ╰┈┈╯╰┈╯╰┈┈┈╯┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+<p><code>center</code>： 居中</p>
+<pre><code class="hljs language-bash">╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆          ╭┈┈╮╭┈╮╭┈┈┈╮           ┆
+┆          ╰┈┈╯╰┈╯╰┈┈┈╯           ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+<p><code>space-between</code>：两端对齐，项目之间的间隔都相等</p>
+<pre><code class="hljs language-bash">╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆╭┈┈╮           ╭┈╮          ╭┈┈┈╮┆
+┆╰┈┈╯           ╰┈╯          ╰┈┈┈╯┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+<p><code>space-around</code>：每个项目两侧的间隔相等，项目之间的间隔比项目与边框的间隔大一倍</p>
+<pre><code class="hljs language-bash">╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆   ╭┈┈╮        ╭┈╮       ╭┈┈┈╮   ┆
+┆   ╰┈┈╯        ╰┈╯       ╰┈┈┈╯   ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+<p>上面示例，假设主轴为从左到右</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="flex-wrap"><a class="h-anchor" href="#flex-wrap">#</a>flex-wrap</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;
+</code></pre>
+<p><code>nowrap</code>：不换行(默认)</p>
+<pre><code class="hljs language-css">╭<span class="hljs-number">1</span>╮╭<span class="hljs-number">2</span>╮╭<span class="hljs-number">3</span>╮╭<span class="hljs-number">4</span>╮╭<span class="hljs-number">5</span>╮╭<span class="hljs-number">6</span>╮╭<span class="hljs-number">7</span>╮╭<span class="hljs-number">8</span>╮╭<span class="hljs-number">9</span>╮╭<span class="hljs-number">10</span>╮
+╰┈╯╰┈╯╰┈╯╰┈╯╰┈╯╰┈╯╰┈╯╰┈╯╰┈╯╰┈┈╯
+</code></pre>
+<p><code>wrap</code>：换行，第一行在 <strong><code>上方</code></strong></p>
+<pre><code class="hljs language-css">╭<span class="hljs-number">1</span>┈╮ ╭<span class="hljs-number">2</span>┈╮ ╭<span class="hljs-number">3</span>┈╮ ╭<span class="hljs-number">4</span>┈╮ ╭<span class="hljs-number">5</span>┈╮ ╭<span class="hljs-number">6</span>┈╮ ╭<span class="hljs-number">7</span>┈╮
+╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯
+╭<span class="hljs-number">8</span>┈╮ ╭<span class="hljs-number">9</span>┈╮ ╭<span class="hljs-number">10</span>╮
+╰┈┈╯ ╰┈┈╯ ╰┈┈╯
+</code></pre>
+<p><code>wrap-reverse</code>：换行，第一行在 <strong><code>下方</code></strong></p>
+<pre><code class="hljs language-css">╭<span class="hljs-number">8</span>┈╮ ╭<span class="hljs-number">9</span>┈╮ ╭<span class="hljs-number">10</span>╮
+╰┈┈╯ ╰┈┈╯ ╰┈┈╯
+╭<span class="hljs-number">1</span>┈╮ ╭<span class="hljs-number">2</span>┈╮ ╭<span class="hljs-number">3</span>┈╮ ╭<span class="hljs-number">4</span>┈╮ ╭<span class="hljs-number">5</span>┈╮ ╭<span class="hljs-number">6</span>┈╮ ╭<span class="hljs-number">7</span>┈╮
+╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯
+</code></pre>
+<p>项目都排在一条线（又称&quot;轴线&quot;）上</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="flex-direction"><a class="h-anchor" href="#flex-direction">#</a>flex-direction</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">flex-direction</span>: row | row-reverse | column | column-reverse;
+</code></pre>
+<hr>
+<pre><code class="hljs language-bash">╭┈┈╮  ▲         ╭┈┈╮  ┆
+╰┈┈╯  ┆         ╰┈┈╯  ┆
+╭┈┈╮  ┆         ╭┈┈╮  ┆
+╰┈┈╯  ┆         ╰┈┈╯  ┆     ┈┈┈┈┈┈┈┈┈┈┈▶    ◀┈┈┈┈┈┈┈┈┈┈┈
+╭┈┈╮  ┆         ╭┈┈╮  ┆    ╭┈┈╮ ╭┈┈╮ ╭┈┈╮  ╭┈┈╮ ╭┈┈╮ ╭┈┈╮
+╰┈┈╯  ┆         ╰┈┈╯  ▼    ╰┈┈╯ ╰┈┈╯ ╰┈┈╯  ╰┈┈╯ ╰┈┈╯ ╰┈┈╯
+┈┬┈┈┈┈┈┈        ┈┬┈┈┈┈┈┈    ┈┬┈┈┈┈┈┈┈┈┈┈┈   ┈┬┈┈┈┈┈┈┈┈┈┈┈ 
+column-reverse  column       row             row-reverse
+</code></pre>
+<p>属性决定主轴的方向（即项目的排列方向）</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="align-items"><a class="h-anchor" href="#align-items">#</a>align-items</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;
+</code></pre>
+<hr>
+<pre><code class="hljs language-css">  ▶ <span class="hljs-attribute">flex</span>-start(起点对齐)    ▶ <span class="hljs-attribute">flex</span>-end(终点对齐)
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮  ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆ ╭┈┈╮ ╭┈┈╮ ╭┈┈╮ ╭┈┈╮ ┆  ┆                     ┆
+┆ ┆  ┆ ┆  ┆ ╰┈┈╯ ┆  ┆ ┆  ┆      ╭┈┈╮           ┆
+┆ ╰┈┈╯ ┆  ┆      ╰┈┈╯ ┆  ┆ ╭┈┈╮ ┆  ┆      ╭┈┈╮ ┆
+┆      ╰┈┈╯           ┆  ┆ ┆  ┆ ┆  ┆ ╭┈┈╮ ┆  ┆ ┆
+┆                     ┆  ┆ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯  ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+  ▶ center(中点对齐)        ▶ stretch(占满整个容器的高度)
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮  ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆      ╭┈┈╮           ┆  ┆ ╭┈┈╮ ╭┈┈╮ ╭┈┈╮ ╭┈┈╮ ┆
+┆ ╭┈┈╮ ┆  ┆      ╭┈┈╮ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆
+┆ ┆  ┆ ┆  ┆ ╭┈┈╮ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆
+┆ ┆  ┆ ┆  ┆ ╰┈┈╯ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆
+┆ ╰┈┈╯ ┆  ┆      ╰┈┈╯ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆  ┆ ┆
+┆      ╰┈┈╯           ┆  ┆ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈╯ ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯  ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+  ▶ baseline(第一行文字的基线对齐)
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆  ╭┈┈┈┈┈┈╮               ╭┈┈┈┈┈┈╮             ┆
+┆  ┆      ┆ ╭┈┈┈┈╮ ╭┈┈┈┈╮ ┆      ┆ ╭┈┈┈┈╮╭┈┈┈┈╮┆
+┆  ┆ text ┆ ┆text┆ ┆text┆ ┆ text ┆ ┆text┆┆text┆┆
+┆  ┆      ┆ ╰┈┈┈┈╯ ┆    ┆ ┆      ┆ ╰┈┈┈┈╯┆    ┆┆
+┆  ╰┈┈┈┈┈┈╯        ╰┈┈┈┈╯ ╰┈┈┈┈┈┈╯       ╰┈┈┈┈╯┆
+┆                                              ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="align-content"><a class="h-anchor" href="#align-content">#</a>align-content</h3>
+<div class="section">
+<pre><code class="hljs wrap language-css"><span class="hljs-attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;
+</code></pre>
+<hr>
+<pre><code class="hljs language-css"> ▶ <span class="hljs-attribute">flex</span>-start(起点对齐)     ▶ <span class="hljs-attribute">flex</span>-end(终点对齐)
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮  ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆ ╭┈┈╮╭┈╮╭┈┈┈╮╭╮╭┈┈┈┈╮ ┆  ┆                      ┆
+┆ ╰┈┈╯╰┈╯╰┈┈┈╯╰╯╰┈┈┈┈╯ ┆  ┆ ╭┈┈╮╭┈╮╭┈┈┈╮╭╮╭┈┈┈┈╮ ┆
+┆ ╭┈┈┈╮╭╮              ┆  ┆ ╰┈┈╯╰┈╯╰┈┈┈╯╰╯╰┈┈┈┈╯ ┆
+┆ ╰┈┈┈╯╰╯              ┆  ┆ ╭┈┈┈╮╭╮              ┆
+┆                      ┆  ┆ ╰┈┈┈╯╰╯              ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯  ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+ ▶ center(中点对齐)         ▶ stretch(满整个交叉轴)
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮  ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆                      ┆  ┆ ╭┈┈╮╭┈╮╭┈┈┈╮╭╮╭┈┈┈┈╮ ┆
+┆ ╭┈┈╮╭┈╮╭┈┈┈╮╭╮╭┈┈┈┈╮ ┆  ┆ ┆  ┆┆ ┆┆   ┆┆┆┆    ┆ ┆
+┆ ╰┈┈╯╰┈╯╰┈┈┈╯╰╯╰┈┈┈┈╯ ┆  ┆ ╰┈┈╯╰┈╯╰┈┈┈╯╰╯╰┈┈┈┈╯ ┆
+┆ ╭┈┈┈╮╭╮              ┆  ┆ ╭┈┈┈╮╭╮╭┈╮           ┆
+┆ ╰┈┈┈╯╰╯              ┆  ┆ ┆   ┆┆┆┆ ┆           ┆
+┆                      ┆  ┆ ╰┈┈┈╯╰╯╰┈╯           ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯  ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+ ▶ space-between(两端对齐)  ▶ space-around(均匀分布项目)
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮  ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮ 
+┆ ╭┈┈╮╭┈┈╮╭┈┈╮╭┈┈╮╭┈┈╮ ┆  ┆                      ┆ 
+┆ ╰┈┈╯╰┈┈╯╰┈┈╯╰┈┈╯╰┈┈╯ ┆  ┆ ╭┈┈╮╭┈┈╮╭┈┈╮╭┈┈╮╭┈┈╮ ┆ 
+┆                      ┆  ┆ ╰┈┈╯╰┈┈╯╰┈┈╯╰┈┈╯╰┈┈╯ ┆ 
+┆                      ┆  ┆                      ┆ 
+┆                      ┆  ┆ ╭┈┈╮                 ┆ 
+┆ ╭┈┈╮                 ┆  ┆ ╰┈┈╯                 ┆ 
+┆ ╰┈┈╯                 ┆  ┆                      ┆ 
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯  ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯ 
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="order"><a class="h-anchor" href="#order">#</a>order</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">order</span>: &lt;integer&gt;;
+&#125;
+</code></pre>
+<hr>
+<pre><code class="hljs language-css">╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮ ╭┈┈┈┈┈┈┈┈┈╮
+┆ ╭<span class="hljs-number">1</span>┈╮ ╭<span class="hljs-number">1</span>┈┈╮ ╭<span class="hljs-number">1</span>┈╮ ╭<span class="hljs-number">2</span>┈╮ ╭<span class="hljs-number">3</span>┈┈┈┈┈┈╮ ┆ ┆ ╭<span class="hljs-number">2</span>┈┈┈┈╮ ┆
+┆ ╰┈┈╯ ╰┈┈┈╯ ╰┈┈╯ ╰┈┈╯ ╰┈┈┈┈┈┈┈╯ ┆ ┆ ╰┈┈┈┈┈╯ ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯ ┆ ╭<span class="hljs-number">2</span>┈┈┈┈╮ ┆
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮ ┆ ╰┈┈┈┈┈╯ ┆
+┆ ╭-┈┈╮ ╭┈┈┈╮ ╭┈┈┈┈┈┈┈┈╮ ╭┈┈┈╮   ┆ ┆ ╭<span class="hljs-number">99</span>┈┈┈╮ ┆
+┆ ┆-<span class="hljs-number">1</span> ┆ ┆ <span class="hljs-number">1</span> ┆ ┆ <span class="hljs-number">2</span>      ┆ ┆ <span class="hljs-number">5</span> ┆   ┆ ┆ ┆     ┆ ┆
+┆ ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈┈┈┈┈┈╯ ╰┈┈┈╯   ┆ ┆ ╰┈┈┈┈┈╯ ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯ ╰┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+<p>属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/order">order</a> 定义项目的排列顺序。数值越小，排列越靠前，默认为 <code>0</code></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="flex-grow"><a class="h-anchor" href="#flex-grow">#</a>flex-grow</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">flex-grow</span>: &lt;number&gt;; <span class="hljs-comment">/* default 0 */</span>
+&#125;
+</code></pre>
+<hr>
+<pre><code class="hljs language-css">╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆ ╭┈┈<span class="hljs-number">1</span>┈┈╮╭┈┈<span class="hljs-number">2</span>┈┈╮╭┈┈<span class="hljs-number">1</span>┈┈╮ ┆
+┆ ╰┈┈┈┈┈╯╰┈┈┈┈┈╯╰┈┈┈┈┈╯ ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+┆ ╭┈<span class="hljs-number">1</span>┈╮╭┈┈┈┈<span class="hljs-number">2</span>┈┈┈┈╮╭┈<span class="hljs-number">1</span>┈╮ ┆
+┆ ╰┈┈┈╯╰┈┈┈┈┈┈┈┈┈╯╰┈┈┈╯ ┆
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
+</code></pre>
+<p>属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow">flex-grow</a> 定义项目的放大比例，默认为<code>0</code>，即如果存在剩余空间，也不放大</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-flexbox-技巧"><a class="h-anchor" href="#css-flexbox-技巧">#</a>CSS Flexbox 技巧</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="垂直中心"><a class="h-anchor" href="#垂直中心">#</a>垂直中心</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+&#125;
+<span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">margin</span>: auto;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="垂直中心-2"><a class="h-anchor" href="#垂直中心-2">#</a>垂直中心 (2)</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-comment">/* 垂直的 */</span>
+  <span class="hljs-attribute">align-items</span>: center; 
+  <span class="hljs-comment">/* 水平的 */</span>
+  <span class="hljs-attribute">justify-content</span>: center;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="重新排序"><a class="h-anchor" href="#重新排序">#</a>重新排序</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-class">.top</span> &#123;
+ <span class="hljs-attribute">order</span>: <span class="hljs-number">1</span>;
+&#125;
+<span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-class">.bottom</span> &#123;
+ <span class="hljs-attribute">order</span>: <span class="hljs-number">2</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="移动布局"><a class="h-anchor" href="#移动布局">#</a>移动布局</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+&#125;
+<span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-class">.top</span> &#123;
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">100px</span>;
+&#125;
+<span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-class">.content</span> &#123;
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> auto;
+&#125;
+</code></pre>
+<p>一个固定高度的顶部栏和一个动态高度的内容区域</p>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="table-like-像表格"><a class="h-anchor" href="#table-like-像表格">#</a>Table-like 像表格</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">display</span>: flex;
+&#125;
+<span class="hljs-comment">/* 这里的“px”值只是建议的百分比 */</span>
+<span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-class">.checkbox</span> &#123; <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">20px</span>; &#125;
+<span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-class">.subject</span>  &#123; <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">400px</span>; &#125;
+<span class="hljs-selector-class">.container</span> &gt; <span class="hljs-selector-class">.date</span>     &#123; <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">120px</span>; &#125;
+</code></pre>
+<p>这会创建具有不同宽度的列，但会根据情况相应地调整大小</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="vertical-垂直的"><a class="h-anchor" href="#vertical-垂直的">#</a>Vertical 垂直的</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">align-items</span>: center;
+&#125;
+</code></pre>
+<p>垂直居中所有项目</p>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="左和右"><a class="h-anchor" href="#左和右">#</a>左和右</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.menu</span> &gt; <span class="hljs-selector-class">.left</span>  &#123; <span class="hljs-attribute">align-self</span>: flex-start; &#125;
+<span class="hljs-selector-class">.menu</span> &gt; <span class="hljs-selector-class">.right</span> &#123; <span class="hljs-attribute">align-self</span>: flex-end; &#125;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-grid-网格布局"><a class="h-anchor" href="#css-grid-网格布局">#</a>CSS Grid 网格布局</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="网格模板列"><a class="h-anchor" href="#网格模板列">#</a>网格模板列</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#grid-container</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">20px</span> <span class="hljs-number">20%</span> <span class="hljs-number">60%</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="fr-相对单位"><a class="h-anchor" href="#fr-相对单位">#</a>fr 相对单位</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.grid</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">60px</span> <span class="hljs-number">1</span>fr;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="grid-gap-网格间隙"><a class="h-anchor" href="#grid-gap-网格间隙">#</a>Grid Gap 网格间隙</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-comment">/* 行间距为 20px */</span>
+<span class="hljs-comment">/* 列之间的距离是 10px */</span>
+<span class="hljs-selector-id">#grid-container</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">20px</span> <span class="hljs-number">10px</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="css-网格行"><a class="h-anchor" href="#css-网格行">#</a>CSS 网格行</h3>
+<div class="section">
+<p>CSS 语法:</p>
+<ul>
+<li>grid-row: grid-row-start / grid-row-end;</li>
+</ul>
+<h4 id="实例"><a class="h-anchor" href="#实例">#</a>实例</h4>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / span <span class="hljs-number">2</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="css-块级网格"><a class="h-anchor" href="#css-块级网格">#</a>CSS 块级网格</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#grid-container</span> &#123;
+    <span class="hljs-attribute">display</span>: block;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="css-内联级别网格"><a class="h-anchor" href="#css-内联级别网格">#</a>CSS 内联级别网格</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#grid-container</span> &#123;
+  <span class="hljs-attribute">display</span>: inline-grid;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="css-网格行间隙"><a class="h-anchor" href="#css-网格行间隙">#</a>CSS 网格行间隙</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">grid-row</span>-<span class="hljs-attribute">gap</span>: length;
+</code></pre>
+<p>任何合法的长度值，例如 <code>px</code> 或 <code>%</code>。<code>0</code> 是默认值</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="css-网格区域"><a class="h-anchor" href="#css-网格区域">#</a>CSS 网格区域</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.item1</span> &#123;
+  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">2</span> / <span class="hljs-number">1</span> / span <span class="hljs-number">2</span> / span <span class="hljs-number">3</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="minmax-函数"><a class="h-anchor" href="#minmax-函数">#</a>minmax() 函数</h3>
+<div class="section">
+<pre><code class="hljs wrap language-css"><span class="hljs-selector-class">.grid</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">100px</span> <span class="hljs-built_in">minmax</span>(<span class="hljs-number">100px</span>, <span class="hljs-number">500px</span>) <span class="hljs-number">100px</span>; 
+&#125;
+</code></pre>
+<p>定义了一个长宽范围的闭区间</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="grid-row-start-grid-row-end"><a class="h-anchor" href="#grid-row-start-grid-row-end">#</a>grid-row-start &amp; grid-row-end</h3>
+<div class="section">
+<p>CSS 语法:</p>
+<ul>
+<li>grid-row-start: auto|row-line;</li>
+<li>grid-row-end: auto|row-line|span n;</li>
+</ul>
+<h4 id="实例-2"><a class="h-anchor" href="#实例-2">#</a>实例</h4>
+<pre><code class="hljs language-css"><span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">2</span>;
+<span class="hljs-attribute">grid-row-end</span>: span <span class="hljs-number">2</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="对齐项目"><a class="h-anchor" href="#对齐项目">#</a>对齐项目</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#container</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  justify-items: center;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">10px</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="css-网格模板区域"><a class="h-anchor" href="#css-网格模板区域">#</a>CSS 网格模板区域</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">grid-area</span>: nav;
+&#125;
+<span class="hljs-selector-class">.grid-container</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-areas</span>:
+  <span class="hljs-string">&#x27;nav nav . .&#x27;</span>
+  <span class="hljs-string">&#x27;nav nav . .&#x27;</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="justify-self"><a class="h-anchor" href="#justify-self">#</a>Justify Self</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#grid-container</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  justify-items: start;
+&#125;
+<span class="hljs-selector-class">.grid-items</span> &#123;
+  justify-self: end;
+&#125;
+</code></pre>
+<p>网格项目位于行的右侧（末尾）</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="对齐项目-2"><a class="h-anchor" href="#对齐项目-2">#</a>对齐项目</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#container</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">align-items</span>: start;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">10px</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-动态内容"><a class="h-anchor" href="#css-动态内容">#</a>CSS 动态内容</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="变量"><a class="h-anchor" href="#变量">#</a>变量</h3>
+<div class="section">
+<p>定义 CSS 变量</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-pseudo">:root</span> &#123;
+  <span class="hljs-attr">--first-color</span>: <span class="hljs-number">#16f</span>;
+  <span class="hljs-attr">--second-color</span>: <span class="hljs-number">#ff7</span>;
+&#125;
+</code></pre>
+<p>变量用法</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-id">#firstParagraph</span> &#123;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--first-color);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--second-color);
+&#125;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*">CSS Variable</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="计数器"><a class="h-anchor" href="#计数器">#</a>计数器</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-comment">/* Set &quot;my-counter&quot; to 0 */</span>
+counter-set: my-counter;
+</code></pre>
+<pre><code class="hljs language-css"><span class="hljs-comment">/* Increment &quot;my-counter&quot; by 1 */</span>
+<span class="hljs-attribute">counter-increment</span>: my-counter;
+</code></pre>
+<pre><code class="hljs language-css"><span class="hljs-comment">/* Decrement &quot;my-counter&quot; by 1 */</span>
+<span class="hljs-attribute">counter-increment</span>: my-counter -<span class="hljs-number">1</span>;
+</code></pre>
+<pre><code class="hljs language-css"><span class="hljs-comment">/* Reset &quot;my-counter&quot; to 0 */</span>
+<span class="hljs-attribute">counter-reset</span>: my-counter;
+</code></pre>
+<p>更多: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-set">Counter set</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="使用计数器"><a class="h-anchor" href="#使用计数器">#</a>使用计数器</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> &#123; <span class="hljs-attribute">counter-reset</span>: section; &#125;
+<span class="hljs-selector-tag">h3</span><span class="hljs-selector-pseudo">::before</span> &#123;
+  <span class="hljs-attribute">counter-increment</span>: section; 
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;Section.&quot;</span> <span class="hljs-built_in">counter</span>(section);
+&#125;
+</code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">ol</span> &#123;
+  <span class="hljs-attribute">counter-reset</span>: section;   
+  <span class="hljs-attribute">list-style-type</span>: none;
+&#125;
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">::before</span> &#123;
+  <span class="hljs-attribute">counter-increment</span>: section;
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counters</span>(section, <span class="hljs-string">&quot;.&quot;</span>) <span class="hljs-string">&quot; &quot;</span>; 
+&#125;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-函数"><a class="h-anchor" href="#css-函数">#</a>CSS 函数</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="calc"><a class="h-anchor" href="#calc">#</a>calc()</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">80px</span>);
+</code></pre>
+<p>声明 CSS 属性值时执行一些计算</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="clamp"><a class="h-anchor" href="#clamp">#</a>clamp()</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">font-size</span>: <span class="hljs-built_in">clamp</span>(<span class="hljs-number">1rem</span>, <span class="hljs-number">10vw</span>, <span class="hljs-number">2rem</span>);
+</code></pre>
+<p>设置随窗口大小改变的字体大小</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="attr"><a class="h-anchor" href="#attr">#</a>attr()</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:before</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(data-foo) <span class="hljs-string">&quot; &quot;</span>;
+&#125;
+</code></pre>
+<p>获取选择到的元素的某一 HTML 属性值</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="counter"><a class="h-anchor" href="#counter">#</a>counter()</h3>
+<div class="section">
+<p>返回一个代表计数器的当前值的字符串</p>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+</code></pre>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">ol</span> &#123;
+  <span class="hljs-attribute">counter-reset</span>: listCounter;
+&#125;
+<span class="hljs-selector-tag">li</span> &#123;
+  <span class="hljs-attribute">counter-increment</span>: listCounter;
+&#125;
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">::after</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;[&quot;</span> <span class="hljs-built_in">counter</span>(listCounter) <span class="hljs-string">&quot;] == [&quot;</span>
+    <span class="hljs-built_in">counter</span>(listCounter, upper-roman) <span class="hljs-string">&quot;]&quot;</span>;
+&#125;
+</code></pre>
+<p>显示</p>
+<pre><code class="hljs"><span class="hljs-number">1</span>. [<span class="hljs-number">1</span>]<span class="hljs-operator">=</span><span class="hljs-operator">=</span>[I]
+<span class="hljs-number">2</span>. [<span class="hljs-number">2</span>]<span class="hljs-operator">=</span><span class="hljs-operator">=</span>[II]
+<span class="hljs-number">3</span>. [<span class="hljs-number">3</span>]<span class="hljs-operator">=</span><span class="hljs-operator">=</span>[III]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="counters"><a class="h-anchor" href="#counters">#</a>counters()</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">ol</span> &#123;
+  <span class="hljs-attribute">counter-reset</span>: count;
+&#125;
+<span class="hljs-selector-tag">li</span> &#123;
+  <span class="hljs-attribute">counter-increment</span>: count;
+&#125;
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">::marker</span> &#123;
+   <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counters</span>(count, <span class="hljs-string">&#x27;.&#x27;</span>, upper-alpha) <span class="hljs-string">&#x27;) &#x27;</span>;
+&#125;
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">::before</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counters</span>(count, <span class="hljs-string">&quot;.&quot;</span>, decimal-leading-zero) <span class="hljs-string">&quot; == &quot;</span> <span class="hljs-built_in">counters</span>(count, <span class="hljs-string">&quot;.&quot;</span>, lower-alpha);
+&#125;
+</code></pre>
+<p>嵌套计数器，返回表示指定计数器当前值的连接字符串</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="env"><a class="h-anchor" href="#env">#</a>env()</h3>
+<div class="section">
+<pre><code class="hljs wrap language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;... viewport-fit=cover&quot;</span>&gt;</span>
+</code></pre>
+<hr>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">padding</span>:
+    <span class="hljs-built_in">env</span>(safe-area-inset-top, <span class="hljs-number">20px</span>)
+    <span class="hljs-built_in">env</span>(safe-area-inset-right, <span class="hljs-number">20px</span>)
+    <span class="hljs-built_in">env</span>(safe-area-inset-bottom, <span class="hljs-number">20px</span>)
+    <span class="hljs-built_in">env</span>(safe-area-inset-left, <span class="hljs-number">20px</span>);
+&#125;
+</code></pre>
+<p>用户代理定义的环境变量值插入你的 CSS 中</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="fit-content"><a class="h-anchor" href="#fit-content">#</a>fit-content()</h3>
+<div class="section">
+<pre><code class="hljs language-css">fit-<span class="hljs-attribute">content</span>(<span class="hljs-number">200px</span>)
+fit-<span class="hljs-attribute">content</span>(<span class="hljs-number">5cm</span>)
+fit-<span class="hljs-attribute">content</span>(<span class="hljs-number">30vw</span>)
+fit-<span class="hljs-attribute">content</span>(<span class="hljs-number">100ch</span>)
+</code></pre>
+<p>将给定大小夹紧为可用大小</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="max"><a class="h-anchor" href="#max">#</a>max()</h3>
+<div class="section">
+<p>从一个逗号分隔的表达式列表中选择最大（正方向）的值作为属性的值</p>
+<pre><code class="hljs language-css"><span class="hljs-attribute">width</span>: <span class="hljs-built_in">max</span>(<span class="hljs-number">10vw</span>, <span class="hljs-number">4em</span>, <span class="hljs-number">80px</span>);
+</code></pre>
+<p>例子中，宽度最小会是 80px，除非视图宽度大于 800px 或者是一个 em 比 20px 宽</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="min"><a class="h-anchor" href="#min">#</a>min()</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-attribute">width</span>: <span class="hljs-built_in">min</span>(<span class="hljs-number">1vw</span>, <span class="hljs-number">4em</span>, <span class="hljs-number">80px</span>);
+</code></pre>
+<p>从逗号分隔符表达式中选择一个最小值作为 CSS 的属性值</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="minmax"><a class="h-anchor" href="#minmax">#</a>minmax()</h3>
+<div class="section">
+<pre><code class="hljs language-css">minmax(<span class="hljs-number">200px</span>, <span class="hljs-number">1</span>fr)
+minmax(<span class="hljs-number">400px</span>, <span class="hljs-number">50%</span>)
+minmax(<span class="hljs-number">30%</span>, <span class="hljs-number">300px</span>)
+minmax(<span class="hljs-number">100px</span>, max-<span class="hljs-attribute">content</span>)
+minmax(min-<span class="hljs-attribute">content</span>, <span class="hljs-number">400px</span>)
+minmax(max-<span class="hljs-attribute">content</span>, auto)
+minmax(auto, <span class="hljs-number">300px</span>)
+minmax(min-<span class="hljs-attribute">content</span>, auto)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="repeat-轨道列表的重复片段"><a class="h-anchor" href="#repeat-轨道列表的重复片段">#</a>repeat() 轨道列表的重复片段</h3>
+<div class="section">
+<pre><code class="hljs language-css">repeat(auto-fill, <span class="hljs-number">250px</span>)
+repeat(auto-fit, <span class="hljs-number">250px</span>)
+repeat(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>fr)
+repeat(<span class="hljs-number">4</span>, <span class="hljs-selector-attr">[col-start]</span> <span class="hljs-number">250px</span> <span class="hljs-selector-attr">[col-end]</span>)
+repeat(<span class="hljs-number">4</span>, <span class="hljs-selector-attr">[col-start]</span> <span class="hljs-number">60%</span> <span class="hljs-selector-attr">[col-end]</span>)
+</code></pre>
+<p>定义了一个长宽范围的闭区间</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="url"><a class="h-anchor" href="#url">#</a>url()</h3>
+<div class="section">
+<pre><code class="hljs wrap language-css"><span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;topbanner.png&quot;</span>) <span class="hljs-number">#00D</span> no-repeat fixed;
+<span class="hljs-attribute">list-style</span>: square <span class="hljs-built_in">url</span>(<span class="hljs-string">http://www.example.com/redball.png</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="var"><a class="h-anchor" href="#var">#</a>var()</h3>
+<div class="section">
+<pre><code class="hljs wrap language-css"><span class="hljs-selector-pseudo">:root</span> &#123;
+  <span class="hljs-attr">--main-bg-color</span>: pink;
+&#125;
+
+<span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--main-bg-color);
+&#125;
+</code></pre>
+<p>代替元素中任何属性中的值的任何部分</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="css-技巧"><a class="h-anchor" href="#css-技巧">#</a>CSS 技巧</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="强制不换行"><a class="h-anchor" href="#强制不换行">#</a>强制不换行</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">white-space</span>:nowrap;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="强制换行"><a class="h-anchor" href="#强制换行">#</a>强制换行</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">word-break</span>:break-all; <span class="hljs-comment">/* 英文 */</span>
+  <span class="hljs-attribute">white-space</span>:pre-wrap; <span class="hljs-comment">/* 中文 */</span>
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="滚动条平滑"><a class="h-anchor" href="#滚动条平滑">#</a>滚动条平滑</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span> &#123;
+  scroll-behavior: smooth;
+&#125;
+</code></pre>
+<p><a href="#%E5%85%A5%E9%97%A8">点击我</a>页面会平滑滚动到入门</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="忽略用作间距的换行符-br"><a class="h-anchor" href="#忽略用作间距的换行符-br">#</a>忽略用作间距的换行符 &lt;br /&gt;</h3>
+<div class="section">
+<pre><code class="hljs language-css">br + br &#123;
+  <span class="hljs-attribute">display</span>: none;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="使用-empty-隐藏空-html-元素"><a class="h-anchor" href="#使用-empty-隐藏空-html-元素">#</a>使用 :empty 隐藏空 HTML 元素</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-pseudo">:empty</span> &#123;
+  <span class="hljs-attribute">display</span>: none;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="css-重置"><a class="h-anchor" href="#css-重置">#</a>CSS 重置</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span> &#123;
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+&#125;
+*, *<span class="hljs-selector-pseudo">::before</span>, *<span class="hljs-selector-pseudo">::after</span> &#123;
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+&#125;
+</code></pre>
+<p>有助于在不同的浏览器之间强制样式一致性，并为样式元素提供干净的盒子</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="设置光标样式"><a class="h-anchor" href="#设置光标样式">#</a>设置光标样式</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">caret-color</span>: red;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="设置整个页面灰色"><a class="h-anchor" href="#设置整个页面灰色">#</a>设置整个页面灰色</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span> &#123;
+  -webkit-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">grayscale</span>(.<span class="hljs-number">95</span>);
+&#125;
+</code></pre>
+<p>上面示例设置了当前卡片灰色</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="使用-unset-而不是重置所有属性"><a class="h-anchor" href="#使用-unset-而不是重置所有属性">#</a>使用 unset 而不是重置所有属性</h3>
+<div class="section">
+<p>使用 <code>all</code> 速记来指定元素的所有属性。将值设置为 <code>unset</code> 会将元素的属性更改为其初始值：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">button</span> &#123;
+  <span class="hljs-attribute">all</span>: unset;
+&#125;
+</code></pre>
+<p>注意：<code>IE11</code> 不支持 <code>all</code> 和 <code>unset</code> 速记</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="超出显示省略号"><a class="h-anchor" href="#超出显示省略号">#</a>超出显示省略号</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">overflow</span>: hidden;<span class="hljs-comment">/*超出部分隐藏*/</span>
+  <span class="hljs-comment">/* 超出部分显示省略号 */</span>
+  <span class="hljs-attribute">text-overflow</span>:ellipsis;
+  <span class="hljs-comment">/* 规定段落中的文本不进行换行 */</span>
+  <span class="hljs-attribute">white-space</span>: nowrap;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">250px</span>;<span class="hljs-comment">/*需要配合宽度来使用*/</span>
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="给正文添加行高"><a class="h-anchor" href="#给正文添加行高">#</a>给正文添加行高</h3>
+<div class="section">
+<p>您不需要为每个 <code>&lt;p&gt;</code>、<code>&lt;h*&gt;</code> 等添加行高。相反，将其添加到正文：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.5</span>;
+&#125;
+</code></pre>
+<p>这样文本元素可以很容易地从 <code>body</code> 继承</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="使用图像作为光标"><a class="h-anchor" href="#使用图像作为光标">#</a>使用图像作为光标</h3>
+<div class="section">
+<pre><code class="hljs wrap language-css"><span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">cursor</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;path-to-image.png&#x27;</span>), <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;path-to-fallback-image.png&#x27;</span>), auto;
+  <span class="hljs-comment">/* 表情符号作为光标 */</span>
+  <span class="hljs-attribute">cursor</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml;utf8,&lt;svg xmlns=&#x27;http://www.w3.org/2000/svg&#x27;  width=&#x27;40&#x27; height=&#x27;48&#x27; viewport=&#x27;0 0 100 100&#x27; style=&#x27;fill:black;font-size:24px;&#x27;&gt;&lt;text y=&#x27;50%&#x27;&gt;🚀&lt;/text&gt;&lt;/svg&gt;&quot;</span>), auto;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="文本溢出显示省略号"><a class="h-anchor" href="#文本溢出显示省略号">#</a>文本溢出显示省略号</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.overflow-ellipsis</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">white-space</span>: nowrap;
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">text-overflow</span>: ellipsis;
+&#125;
+</code></pre>
+<p>一行文本截断显示省略号 <em>(...)</em></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="将文本截断到特定的行数"><a class="h-anchor" href="#将文本截断到特定的行数">#</a>将文本截断到特定的行数</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.overflow-truncate</span> &#123;
+  <span class="hljs-attribute">display</span>: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: <span class="hljs-number">3</span>;
+  <span class="hljs-attribute">overflow</span>: hidden;
+&#125;
+</code></pre>
+<p>多行文本截断到特定的行数，末尾显示省略号 <em>(...)</em></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="计算函数"><a class="h-anchor" href="#计算函数">#</a>计算函数</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">30px</span>);
+  <span class="hljs-attribute">height</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">30px</span>);
+&#125;
+</code></pre>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc"><code>calc()</code></a> CSS 函数允许您在指定 CSS 属性值时执行计算</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="粘性定位元素"><a class="h-anchor" href="#粘性定位元素">#</a>粘性定位元素</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.sticky</span> &#123;
+  <span class="hljs-attribute">position</span>: sticky;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+&#125;
+</code></pre>
+<p>属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position#sticky">sticky</a> 能在滚动到顶部的位置固定住元素</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="使用带有空链接的属性选择器"><a class="h-anchor" href="#使用带有空链接的属性选择器">#</a>使用带有空链接的属性选择器</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href^=<span class="hljs-string">&quot;http&quot;</span>]</span><span class="hljs-selector-pseudo">:empty</span><span class="hljs-selector-pseudo">::before</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(href);
+&#125;
+</code></pre>
+<p>如果 <code>&lt;a&gt;</code> 标签里面没有内容，将 <code>href</code> 的值作为内容展示</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="使用-root-表示灵活类型"><a class="h-anchor" href="#使用-root-表示灵活类型">#</a>使用 :root 表示灵活类型</h3>
+<div class="section">
+<p>响应式布局中的字体大小应该能够根据每个视口进行调整，您可以使用 <code>:root</code> 根据视口高度和宽度计算字体大小</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-pseudo">:root</span> &#123;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">1vw</span> + <span class="hljs-number">1vh</span> + .<span class="hljs-number">5vmin</span>);
+&#125;
+</code></pre>
+<p>您可以根据 <code>:root</code> 计算的值使用根 <code>em</code> 单位：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">font</span>: <span class="hljs-number">1rem</span>/<span class="hljs-number">1.6</span> sans-serif;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="吸附滚动"><a class="h-anchor" href="#吸附滚动">#</a>吸附滚动</h3>
+<div class="section">
+<pre><code 5,12="" class="language-css"><span class="hljs-selector-class">.container</span> &#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">250px</span>;
+  <span class="hljs-attribute">overflow-x</span>: scroll;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">scroll-snap-type</span>: x mandatory;
+  <span class="hljs-attribute">column-gap</span>: <span class="hljs-number">10px</span>;
+&#125;
+<span class="hljs-selector-class">.child</span> &#123;
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">66%</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">250px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#663399</span>;
+  <span class="hljs-attribute">scroll-snap-align</span>: center;
+&#125;
+</code></pre>
+<p>可用于 <code>轮播图</code> 效果，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://codesandbox.io/embed/pensive-leftpad-w9p8rk?fontsize=14&amp;hidenavigation=1&amp;theme=dark">效果预览</a></p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="类似-contenteditable-的样式"><a class="h-anchor" href="#类似-contenteditable-的样式">#</a>类似 contenteditable 的样式</h3>
+<div class="section">
+<pre><code class="hljs wrap language-css"><span class="hljs-selector-tag">div</span> &#123;
+  -webkit-user-modify: 
+    read-write-plaintext-only;
+&#125;
+</code></pre>
+<p>通过样式来控制一个元素 <code>div</code> 是否可以编辑</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="定义容器的长宽比"><a class="h-anchor" href="#定义容器的长宽比">#</a>定义容器的长宽比</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span> &#123;
+  aspect-ratio: <span class="hljs-number">1</span>/<span class="hljs-number">1</span> 
+&#125;
+</code></pre>
+<p>属性 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/aspect-ratio">aspect-ratio</a> 可以非常容易的定义一个容器的长宽比</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="等宽表格单元格"><a class="h-anchor" href="#等宽表格单元格">#</a>等宽表格单元格</h3>
+<div class="section">
+<p>尝试使用 <code>table-layout: fixed</code> 以保持单元格宽度相等：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">table</span> &#123;
+  <span class="hljs-attribute">table-layout</span>: fixed;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="利用属性选择器来选择空链接"><a class="h-anchor" href="#利用属性选择器来选择空链接">#</a>利用属性选择器来选择空链接</h3>
+<div class="section">
+<p>当 <code>&lt;a&gt;</code> 元素没有文本内容，但有 <code>href</code> 属性的时候，显示它的 <code>href</code> 属性：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href^=<span class="hljs-string">&quot;http&quot;</span>]</span><span class="hljs-selector-pseudo">:empty</span><span class="hljs-selector-pseudo">::before</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(href);
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="给-“默认”-链接定义样式"><a class="h-anchor" href="#给-“默认”-链接定义样式">#</a>给 “默认” 链接定义样式</h3>
+<div class="section">
+<p>给 “默认” 链接定义样式：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-attr">[class]</span>) &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#008000</span>;
+  <span class="hljs-attribute">text-decoration</span>: underline;
+&#125;
+</code></pre>
+<p>通常没有 <code>class</code> 属性，以上样式可以甄别它们，而且不会影响其它样式</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="用-rem-调整全局大小；用-em-调整局部大小"><a class="h-anchor" href="#用-rem-调整全局大小；用-em-调整局部大小">#</a>用 rem 调整全局大小；用 em 调整局部大小</h3>
+<div class="section">
+<p>在根元素设置基本字体大小后 (<code>html &#123; font-size: 100%; &#125;</code>), 使用 em 设置文本元素的字体大小:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">h2</span> &#123; 
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2em</span>;
+&#125;
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
+&#125;
+</code></pre>
+<p>然后设置模块的字体大小为 rem:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">article</span> &#123;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.25rem</span>;
+&#125;
+<span class="hljs-selector-tag">aside</span> <span class="hljs-selector-class">.module</span> &#123;
+  <span class="hljs-attribute">font-size</span>: .<span class="hljs-number">9rem</span>;
+&#125;
+</code></pre>
+<p>现在，每个模块变得独立，更容易、灵活的样式便于维护</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="隐藏没有静音、自动播放的影片"><a class="h-anchor" href="#隐藏没有静音、自动播放的影片">#</a>隐藏没有静音、自动播放的影片</h3>
+<div class="section">
+<p>这是一个自定义用户样式表的不错的技巧。避免在加载页面时自动播放。如果没有静音，则不显示视频：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">video</span><span class="hljs-selector-attr">[autoplay]</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-attr">[muted]</span>) &#123;
+  <span class="hljs-attribute">display</span>: none;
+&#125;
+</code></pre>
+<p>再次，我们利用了 <code>:not()</code> 的优点</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="为更好的移动体验，为表单元素设置字体大小"><a class="h-anchor" href="#为更好的移动体验，为表单元素设置字体大小">#</a>为更好的移动体验，为表单元素设置字体大小</h3>
+<div class="section">
+<p>当触发 <code>&lt;select&gt;</code> 的下拉列表时，为了避免表单元素在移动浏览器（iOS Safari 和其它）上的缩放，加上font-size：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=<span class="hljs-string">&quot;text&quot;</span>]</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=<span class="hljs-string">&quot;number&quot;</span>]</span>,
+select,
+<span class="hljs-selector-tag">textarea</span> &#123;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="使用指针事件来控制鼠标事件"><a class="h-anchor" href="#使用指针事件来控制鼠标事件">#</a>使用指针事件来控制鼠标事件</h3>
+<div class="section">
+<p>指针事件允许您指定鼠标如何与其触摸的元素进行交互。要禁用按钮上的默认指针事件，例如：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:disabled</span> &#123;
+  <span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>;
+  <span class="hljs-attribute">pointer-events</span>: none;
+&#125;
+</code></pre>
+<p>就这么简单</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="子元素选中父元素"><a class="h-anchor" href="#子元素选中父元素">#</a>子元素选中父元素</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:has</span>(<span class="hljs-selector-tag">img</span>) &#123;
+  <span class="hljs-attribute">background</span>: black;
+&#125;
+</code></pre>
+<p>设置包含子元素 <code>img</code> 的 <code>div</code> 元素样式，还可以嵌套：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:has</span>(<span class="hljs-selector-tag">h2</span>)<span class="hljs-selector-pseudo">:has</span>(<span class="hljs-selector-tag">ul</span>) &#123;
+  <span class="hljs-attribute">background</span>: black;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="在用作间距的换行符上设置-display-none"><a class="h-anchor" href="#在用作间距的换行符上设置-display-none">#</a>在用作间距的换行符上设置 <code>display: none</code></h3>
+<div class="section">
+<p>用户使用额外的换行符</p>
+<pre><code class="hljs language-css">br + br &#123;
+  <span class="hljs-attribute">display</span>: none;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="给-body-添加行高"><a class="h-anchor" href="#给-body-添加行高">#</a>给 <code>body</code> 添加行高</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.5</span>;
+&#125;
+</code></pre>
+<p>您不需要为每个 <code>&lt;p&gt;</code>、<code>&lt;h*&gt;</code> 等分别添加行高。相反，将其添加到正文</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="检查本地是否安装了字体"><a class="h-anchor" href="#检查本地是否安装了字体">#</a>检查本地是否安装了字体</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-keyword">@font-face</span> &#123;
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;Dank Mono&quot;</span>;
+  <span class="hljs-attribute">src</span>:
+    <span class="hljs-comment">/* Full name */</span>
+    <span class="hljs-built_in">local</span>(<span class="hljs-string">&quot;Dank Mono&quot;</span>),
+    <span class="hljs-comment">/* Postscript name */</span>
+    <span class="hljs-built_in">local</span>(<span class="hljs-string">&quot;Dank-Mono&quot;</span>),
+    <span class="hljs-comment">/* 否则，请下载它！ */</span>
+    <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;//...a.server/DankMono.woff&quot;</span>);
+&#125;
+
+<span class="hljs-selector-tag">code</span> &#123;
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;Dank Mono&quot;</span>,
+        system-ui-monospace;
+&#125;
+</code></pre>
+<p>您可以在远程获取字体之前检查是否在本地安装了字体，这也是一个很好的性能提示</p>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="获取-html-元素的属性"><a class="h-anchor" href="#获取-html-元素的属性">#</a>获取 HTML 元素的属性</h3>
+<div class="section">
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span>超链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>attr HTML 元素的属性名。</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:after</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot; (&quot;</span> <span class="hljs-built_in">attr</span>(href) <span class="hljs-string">&quot;)&quot;</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="为表单元素设置-focus"><a class="h-anchor" href="#为表单元素设置-focus">#</a>为表单元素设置 <code>:focus</code></h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:focus</span>,
+select<span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-tag">textarea</span><span class="hljs-selector-pseudo">:focus</span> &#123;
+  <span class="hljs-attribute">box-shadow</span>: none;
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">#000</span> dotted <span class="hljs-number">2px</span>;
+  <span class="hljs-attribute">outline-offset</span>: .<span class="hljs-number">05em</span>;
+&#125;
+</code></pre>
+<p>有视力的键盘用户依靠焦点来确定键盘事件在页面中的位置。使表单元素的焦点比浏览器的默认实现更加突出和一致</p>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="垂直居中任何东西"><a class="h-anchor" href="#垂直居中任何东西">#</a>垂直居中任何东西</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span>, <span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+&#125;
+
+<span class="hljs-selector-tag">body</span> &#123;
+  -webkit-<span class="hljs-attribute">align-items</span>: center;
+  -ms-<span class="hljs-attribute">flex</span>-align: center;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">display</span>: -webkit-flex;
+  <span class="hljs-attribute">display</span>: flex;
+&#125;
+</code></pre>
+<p>...还有 CSS 网格：</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  place-items: center center;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="逗号分隔列表"><a class="h-anchor" href="#逗号分隔列表">#</a>逗号分隔列表</h3>
+<div class="section">
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">ul</span> &gt; <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-pseudo">:last-child</span>)<span class="hljs-selector-pseudo">::after</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;,&quot;</span>;
+&#125;
+</code></pre>
+<p>使列表项看起来像一个真实的逗号分隔列表，使用 <code>:not()</code> 伪类，最后一项不会添加逗号</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="更多资源"><a class="h-anchor" href="#更多资源">#</a>更多资源</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://frontend30.com/css-selectors-cheatsheet/">CSS selectors cheatsheet</a> <em>(frontend30.com)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Flexible_boxes">MDN: Using CSS flexbox</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html">Ultimate flexbox cheatsheet</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://grid.malven.co/">GRID: A simple visual cheatsheet</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks: A Complete Guide to Grid</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://caniuse.com/#feat=css-grid">Browser support</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">Flex 布局教程：语法篇</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/AllThingsSmitty/css-protips/tree/master/translations/zh-CN">CSS 专业技巧</a></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><div class="text-2xl text-emerald-500"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="输入关键字来搜索" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 w-24 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> 取消</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">相关的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/html.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">HTML <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/javascript.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">近期的 <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/http-status-code.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">HTTP 状态码 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/ad-code.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">AD 错误码 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/mysql-code.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">MySQL 错误码 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/nginx-code.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Nginx 错误码 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center w-10 h-10 md:w-12 md:h-12 text-white p-2 bg-emerald-500 rounded-full mr-3 text-2xl"><div class="self-center"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M303.55291933 951.35043811c-1.84934059-3.43448917-12.68119097-22.19208477-24.04142536-41.74225521l-20.07855218-35.4016586 5.01963776-9.51089265c2.90610631-5.01963776 13.20957383-23.24885049 22.9846585-40.15710664l17.70082986-31.17459456h366.69778034l6.86897834-11.09604238c3.43448917-6.34059549 13.73795669-23.77723335 22.72046763-39.10033977 8.71831893-15.32310642 22.19208477-38.30776491 29.85363797-51.51733873 7.66155321-12.94538297 16.37987214-28.00429739 19.02178646-33.02393629 2.90610631-5.28382976 14.00214869-24.30561621 24.56980821-42.27063694 10.56765952-18.22921273 29.85363797-51.51733987 43.06321181-73.97361551 12.94538297-22.45627563 35.93004146-62.08499826 51.25314787-87.71157333 15.05891442-25.89076594 28.53268025-49.93219015 29.85363797-53.63087132 3.43448917-8.98251093 8.45412693-8.18993607 12.94538184 2.11353259 2.11353145 4.4912549 8.71831893 16.90825501 14.79472355 26.94753166 6.34059549 10.30346752 20.60693618 35.13746773 32.23136143 55.48021077s25.62657394 44.38416953 30.91040369 53.63087133l9.77508466 16.64406414-6.07640462 9.77508466c-3.43448917 5.28382976-7.13317035 11.62442525-8.71831893 14.00214869-2.90610631 4.7554469-13.73795669 23.77723335-24.83399908 43.3274038-3.96287203 7.39736121-13.47376583 23.77723335-21.13531904 36.45842432-7.39736121 12.94538297-13.47376583 24.04142535-13.47376583 24.56980821 0 .79257486-3.43448917 6.34059549-7.39736121 12.41699898-4.22706403 6.07640462-9.51089379 15.32310642-12.15280811 20.34274531-2.37772345 5.01963776-6.86897835 12.94538297-9.77508465 17.17244587-2.64191431 4.4912549-5.81221262 10.03927666-6.60478749 12.68119096-1.05676573 2.37772345-2.64191431 4.4912549-3.69868117 4.49125604s-2.64191431 2.11353145-3.43448918 4.75544576c-1.05676573 2.37772345-5.28382976 10.56765952-9.77508466 17.70082987-4.22706403 7.39736121-10.56765952 17.96502073-13.47376582 23.77723335-3.17029831 5.81221262-10.83185038 19.28597845-17.17244587 29.58944597-6.34059549 10.56765952-11.62442525 20.07855331-11.62442525 21.13531904 0 .79257486-1.58514859 3.69868117-3.69868117 5.81221263-2.11353145 2.37772345-8.71831893 13.73795669-14.79472355 25.36238307s-18.22921273 33.81651001-26.94753053 49.66799815l-16.11568128 28.26848939H307.25159936l-3.69868003-5.81221263z"></path><path d="M523.88861725 694.82050674c-31.70297856-20.60693618-68.95397774-44.11997753-70.01074347-44.11997753-.79257486 0-10.03927666-5.81221262-20.60693618-13.20957383-10.83185038-7.13317035-22.72046763-14.53053155-26.68333966-16.11568128-3.69868117-1.84934059-6.86897835-3.96287203-6.86897835-5.01963776 0-.79257486-4.7554469-4.22706403-10.56765952-7.66155321l-10.30346752-5.81221262-.79257486-98.27923172c-.52838286-54.15925419 0-99.33599744.79257486-100.3927643 1.05676573-1.32095773 27.74010539 12.94538297 59.44308395 31.96716942 31.96716942 18.75759559 69.21816861 40.42129749 82.95612529 48.61123356l25.09819108 14.26633956.264192 103.56306148c.264192 73.7094235-.52838286 103.56306147-2.64191545 103.56306261-1.58514859 0-10.56765952-5.01963776-20.07855217-11.36023438zm0-61.29242453c0-11.09604238-.79257486-12.15280811-11.09604239-18.2292116-6.34059549-3.43448917-33.28812715-19.02178645-59.97146681-34.34489287s-48.87542443-28.00429739-49.40380842-28.00429739-1.05676573 5.28382976-1.05676573 11.62442525v11.36023325l60.23565881 34.60908486c33.02393515 19.28597845 60.23565881 34.87327573 60.76404054 34.87327574.264192 0 .52838286-5.28382976.528384-11.88861724zm0-42.27063695c0-11.09604238-.79257486-12.15280811-11.09604239-18.22921273-6.34059549-3.43448917-33.28812715-19.02178645-59.97146681-34.34489287s-48.87542443-28.00429739-49.40380842-28.00429739-1.05676573 5.28382976-1.05676573 11.62442525v11.36023438l60.23565881 34.60908373c33.02393515 19.28597845 60.23565881 34.87327573 60.76404054 34.87327688.264192 0 .52838286-5.28382976.528384-11.88861725zm-1.84934059-54.42344619c-2.11353145-2.11353145-117.30101931-68.42559488-118.88616789-68.42559374-.52838286 0-.79257486 5.28382976-.79257487 11.62442525v11.36023324l60.23565881 34.60908487 59.97146681 34.60908488.79257373-10.83185152c.52838286-5.81221262 0-11.62442525-1.32095659-12.94538298z"></path><path d="M109.10798734 615.82725347c-3.69868117-7.39736121-10.56765952-20.34274418-15.58729841-28.26848938-7.92574407-13.47376583-49.66799929-84.80546589-61.2924234-105.41240206-7.13317035-12.15280811-6.34059549-15.85148928 6.34059548-37.77938205 24.56980821-42.00644608 41.21387122-70.27493433 45.96931812-78.99325326 7.13317035-12.41700011 49.66799929-86.12642361 81.37097671-141.34244466 14.53053155-24.56980821 40.68548835-70.27493433 58.12212622-101.18533803l32.23136143-56.27278563h229.05401685c159.30746539 0 230.37497458 1.05676573 232.75269689 2.90610631 1.84934059 1.58514859 10.56765952 15.58729728 19.55017045 31.17459456 8.71831893 15.58729728 18.75759559 33.02393515 22.45627563 38.83614777l6.34059548 10.83185152-8.9825098 14.26633955c-5.01963776 7.92574407-15.32310642 25.89076594-22.72046762 39.62872264s-13.73795669 25.62657394-14.2663407 25.89076594c-.264192.52838286-83.2203173.79257486-184.40565532.79257486l-183.6130816-.264192-9.5108938 14.53053155c-5.01963776 7.92574407-9.24670179 15.85148928-9.24670179 17.17244701 0 1.58514859-1.05676573 2.64191431-2.64191431 2.64191431-1.32095773 0-2.64191431 1.05676573-2.64191545 2.11353145 0 2.90610631-29.32525511 55.21601991-48.61123243 87.18319047-8.18993607 13.47376583-14.79472355 25.09819107-14.79472355 25.8907648 0 1.05676573-3.43448917 6.86897835-7.92574407 13.47376583-4.22706403 6.34059549-7.92574407 12.15280811-7.92574521 12.94538297 0 .52838286-2.90610631 5.54802062-6.07640349 11.09604238-3.43448917 5.28382976-9.24670179 15.05891442-12.94538296 21.6637019s-20.07855331 35.13746773-36.45842546 63.40595599-31.96716942 55.21601991-34.34489288 59.44308394c-2.64191431 4.4912549-8.18993607 14.26634069-12.94538182 21.92789276-4.4912549 7.66155321-8.18993607 14.53053155-8.18993608 15.32310642 0 2.37772345-19.28597845 30.11782883-20.87112704 30.11782884-.79257486 0-4.4912549-6.34059549-8.18993607-13.7379567z"></path><path d="M625.60233813 601.56091278c-15.85148928-10.56765952-31.17459456-21.13531904-33.81651-23.51304135-4.22706403-3.69868117-4.7554469-9.24670179-4.4912549-56.00859477.264192-39.89291463-.264192-52.3099136-3.17029832-54.95182905-1.84934059-1.84934059-21.13531904-13.73795669-43.0632118-26.4191488-21.6637019-12.68119097-41.74225408-25.09819107-44.11997753-27.21172252-4.22706403-3.43448917-4.7554469-9.51089379-4.75544689-50.72476502 0-25.62657394.52838286-47.29027584 1.58514858-48.08284956.79257486-.79257486 8.18993607 2.90610631 16.37987214 8.45412693s25.36238194 15.85148928 37.77938205 22.72046763c12.41700011 7.13317035 43.06321181 25.09819107 67.89721201 40.15710549l45.44093526 27.21172366-.52838286 103.29886948c-.52838286 66.31206229-1.84934059 103.56306147-3.43448918 103.82725347-1.32095773.264192-15.58729728-8.18993607-31.70297856-18.75759559z"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">运维<span class="text-emerald-400">速查</span>表</span></a><h4 class="mt-5 text-sm text-slate-500">适用于运维人员的速查表.</h4><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"> <a class="mr-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://facebook.com/sharer/sharer.php?u=https://quickref.leops.cn/css.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M594.74346667 51.53066667c-28.95893333 0-56.30826667 3.2192-88.48533334 16.0896-65.9616 27.34826667-98.13653333 88.48533333-98.13653333 186.6208v94.91946666h-91.70026667v157.66186667h91.70026667v455.28853333h186.6208v-455.28853333h127.09546667l17.696-157.66186667h-144.7936v-70.7872c0-22.52266667 1.60853333-38.61013333 8.04266666-46.65706666 8.04266667-14.47786667 24.13226667-20.91413333 49.872-20.91413334h85.26613334v-157.66186666h-143.184z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://twitter.com/intent/tweet/?text=%E8%BF%99%E6%98%AF%E4%B8%80%E4%BB%BD%E5%85%B3%E4%BA%8E%20CSS%20%E4%BC%98%E7%82%B9%E7%9A%84%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83%E5%A4%87%E5%BF%98%E5%8D%95%EF%BC%8C%E5%88%97%E5%87%BA%E4%BA%86%E9%80%89%E6%8B%A9%E5%99%A8%E8%AF%AD%E6%B3%95%E3%80%81%E5%B1%9E%E6%80%A7%E3%80%81%E5%8D%95%E4%BD%8D%E5%92%8C%E5%85%B6%E4%BB%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF%20&url=https://quickref.leops.cn/css.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://reddit.com/submit/?url=https://quickref.leops.cn/css.html&resubmit=true&title=%E8%BF%99%E6%98%AF%E4%B8%80%E4%BB%BD%E5%85%B3%E4%BA%8E%20CSS%20%E4%BC%98%E7%82%B9%E7%9A%84%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83%E5%A4%87%E5%BF%98%E5%8D%95%EF%BC%8C%E5%88%97%E5%87%BA%E4%BA%86%E9%80%89%E6%8B%A9%E5%99%A8%E8%AF%AD%E6%B3%95%E3%80%81%E5%B1%9E%E6%80%A7%E3%80%81%E5%8D%95%E4%BD%8D%E5%92%8C%E5%85%B6%E4%BB%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M830.73813333 279.88586667c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 0 29.1712 24.02453333 54.9152 54.9152 54.9152zM518.416 741.504c-97.81333333 0-154.44693333-41.184-154.44693333-41.184-5.1488-3.4336-10.29653333-1.71626667-12.01386667 3.4336l-10.29653333 18.87573333c-1.71626667 5.1488-1.71626667 12.01386667 3.4336 15.4432 0 0 48.048 49.76746667 173.32266666 49.76746667s169.888-53.1968 169.888-53.1968c3.4336-3.4336 3.4336-10.29653333 1.71626667-13.728l-12.01386667-17.16266667c-3.4336-3.4336-8.5792-5.1488-13.728-1.71626666 0-1.71626667-48.048 39.46986667-145.8656 39.46986666zM341.66506667 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 1.71626667 30.8896 25.7408 54.9152 54.9152 54.9152zM667.71413333 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152-54.9152 24.02453333-54.9152 54.9152c0 30.8896 24.02453333 54.9152 54.9152 54.9152zM722.6272 216.39466667c-8.5792-3.4336-101.24693333-34.31893333-140.7168-6.86293334-41.184 29.1712-39.46986667 125.2704-36.0384 125.2704 90.9504 6.86293333 175.0368 34.31893333 238.53013333 77.2224 5.1488 3.4336 60.06186667-44.61653333 120.1248-34.31893333 60.06186667 10.29653333 101.24693333 66.9248 82.37013334 130.4192-18.87573333 61.77813333-77.2224 80.656-75.50613334 99.5296v15.4432c0 159.5936-181.9008 288.29653333-406.704 288.29653333s-406.704-128.70293333-406.704-288.29653333c0-8.5792 0-15.4432 1.71626667-24.02453333 0-1.71626667-41.184-24.02453333-56.62933333-61.77813334-15.4432-36.0384-8.5792-78.9376 6.86293333-104.67946666 25.7408-39.46986667 56.62933333-54.9152 99.5296-54.9152s89.2352 25.7408 90.9504 25.7408c68.6432-41.184 157.87626667-66.9248 253.97333333-68.6432 3.4336 0-6.86293333-116.6912 58.34666667-159.5936 66.9248-42.90133333 176.752 0 178.46933333 0v3.4336c17.16266667-37.7536 54.9152-63.49333333 97.81333334-63.49333334 60.06186667 0 108.11306667 49.76746667 108.11306666 109.82613334 0 60.06186667-48.048 109.82613333-108.11306666 109.82613333s-108.11306667-49.76746667-108.11306667-109.82613333c0-3.4336 0-6.86293333 1.71626667-8.5792z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://pinterest.com/pin/create/button/?url=https://quickref.leops.cn/css.html&description=%E8%BF%99%E6%98%AF%E4%B8%80%E4%BB%BD%E5%85%B3%E4%BA%8E%20CSS%20%E4%BC%98%E7%82%B9%E7%9A%84%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83%E5%A4%87%E5%BF%98%E5%8D%95%EF%BC%8C%E5%88%97%E5%87%BA%E4%BA%86%E9%80%89%E6%8B%A9%E5%99%A8%E8%AF%AD%E6%B3%95%E3%80%81%E5%B1%9E%E6%80%A7%E3%80%81%E5%8D%95%E4%BD%8D%E5%92%8C%E5%85%B6%E4%BB%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M977 512c0 256.875-208.125 465-465 465-48 0-94.125-7.3125-137.625-20.8125 18.9375-30.9375 47.25-81.5625 57.75-121.875 5.625-21.75 28.875-110.625 28.875-110.625 15.1875 28.875 59.4375 53.4375 106.5 53.4375 140.25 0 241.3125-129 241.3125-289.3125 0-153.5625-125.4375-268.5-286.6875-268.5-200.625 0-307.3125 134.625-307.3125 281.4375 0 68.25 36.375 153.1875 94.3125 180.1875 8.8125 4.125 13.5 2.25 15.5625-6.1875 1.5-6.375 9.375-38.0625 12.9375-52.6875 1.125-4.6875.5625-8.8125-3.1875-13.3125-18.9375-23.4375-34.3125-66.1875-34.3125-106.125 0-102.5625 77.625-201.75 210-201.75 114.1875 0 194.25 77.8125 194.25 189.1875 0 125.8125-63.5625 213-146.25 213-45.5625 0-79.875-37.6875-68.8125-84 13.125-55.3125 38.4375-114.9375 38.4375-154.875 0-35.625-19.125-65.4375-58.875-65.4375-46.6875 0-84.1875 48.1875-84.1875 112.875 0 41.25 13.875 69 13.875 69s-45.9375 194.625-54.375 231c-9.375 40.125-5.625 96.75-1.6875 133.5C169.625 877.4375 47 709.0625 47 512 47 255.125 255.125 47 512 47s465 208.125 465 465z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://www.linkedin.com/shareArticle?url=https://quickref.leops.cn/css.html&title=CSS%203%20Cheat%20Sheet%20&%20Quick%20Reference&summary=%E8%BF%99%E6%98%AF%E4%B8%80%E4%BB%BD%E5%85%B3%E4%BA%8E%20CSS%20%E4%BC%98%E7%82%B9%E7%9A%84%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83%E5%A4%87%E5%BF%98%E5%8D%95%EF%BC%8C%E5%88%97%E5%87%BA%E4%BA%86%E9%80%89%E6%8B%A9%E5%99%A8%E8%AF%AD%E6%B3%95%E3%80%81%E5%B1%9E%E6%80%A7%E3%80%81%E5%8D%95%E4%BD%8D%E5%92%8C%E5%85%B6%E4%BB%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M387.20790124 931.03893333h183.53386665v-355.35146666c0-17.5712 1.952-37.0976 7.80906668-48.81173334 11.7152-35.1456 42.95573333-72.24106667 93.7184-72.24106665 66.38613333 0 93.7184 54.66773333 93.7184 132.76799999v341.68426666h183.53386667v-365.11466665c0-181.58293333-89.8144-265.53706667-210.86826667-265.53706668-97.62559999 0-158.14933333 58.576-181.58293333 97.6256h-3.90720001l-7.80906666-83.95626667h-160.10453333c1.952 54.66773333 3.9072 119.10186667 3.9072 197.20320001v421.73759999zM149.00310124 46.56213332c-58.576 0-97.62559999 41.00373333-95.67146668 97.62560001-1.952 52.7168 37.0976 95.67146668 95.67146668 95.67146668 60.52586667 0 99.5776-42.95573333 99.5776-95.67146668-3.9072-56.624-41.00373333-97.62559999-99.5776-97.62559999zM240.7705679 931.03893333v-616.98346666h-183.53386666v616.98346666h183.53386666z"></path></svg></a><a class="ml-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://social-plugins.line.me/lineit/share?url=https://quickref.leops.cn/css.html" rel="external nofollow noreferrer" target="_blank"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1672903354277" class="icon" viewBox="0 0 1107 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11220" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"><path d="M551.3440625 32C264.509375 32 32 215.0290625 32 440.7875c0 209.7046875 200.7028125 382.425 459.1471875 405.9534375a31.60125001 31.60125001 0 0 1 21.105 13.7859375c11.4721875 18.8859375 3.320625 59.1271875-5.5875 104.2471875s39.5334375 21.7021875 50.25 16.4775c8.53125001-4.1390625 228.103125-127.91625001 358.820625-249.3009375 95.5903125-74.15625001 154.921875-177.20625001 154.921875-291.148125C1070.688125 215.0290625 838.16375001 32 551.3440625 32zM378.2290625 547.7721875a27.6984375 27.6984375 0 0 1-27.91875 27.44625H255.3659375c-16.760625 0-39.091875-5.791875-39.091875-32.9390625v-203.01562499a27.6825 27.6825 0 0 1 27.91875-27.44718751h5.5865625a27.6825 27.6825 0 0 1 27.91875 27.44625v175.5703125h72.59812499a27.6984375 27.6984375 0 0 1 27.93375001 27.44625v5.4928125zm78.264375-5.46093749a27.886875 27.886875 0 0 1-55.77468751 0V345.085625a27.886875 27.886875 0 0 1 55.77468751 0v197.22562499zm245.634375 0a30.8625 30.8625 0 0 1-27.91875 27.44624999 31.60125001 31.60125001 0 0 1-32.908125-15.7378125l-89.956875-126.16875v114.4284375a27.91875001 27.91875001 0 0 1-55.8215625 0V344.7396875a27.6665625 27.6665625 0 0 1 27.9028125-27.43125 35.315625 35.315625 0 0 1 31.6490625 20.0971875c8.655 12.7790625 91.27875001 127.9790625 91.27875 127.9790625V344.740625a27.9346875 27.9346875 0 0 1 55.8525 0v197.5396875zm167.5275-126.20062501a27.44624999 27.44624999 0 1 1 0 54.8925H797.05625001v43.8928125h72.59812499a27.44624999 27.44624999 0 1 1 0 54.8775H760.765625a24.8971875 24.8971875 0 0 1-25.1803125-24.676875V342.033125a24.8971875 24.8971875 0 0 1 25.18125-24.6928125h108.88875a27.44624999 27.44624999 0 1 1 0 54.8775H797.05625001v43.9078125h72.59812499z" fill="currentColor" p-id="11221"></path></svg></a></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2023 leops, All rights reserved.</p></div></footer><div id="carbon_container"></div></body><script src="/js/main.js?_v=1680153110712"></script><script>
+        // Get all pre > code elements
+        const codeBlocks = document.querySelectorAll('pre > code');
+        const initInnerHTML = '<svg height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path> </svg>';
+        const successInnerHTML = '<svg height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+        codeBlocks.forEach(function (codeBlock) {
+            // Create a copy button element
+            const copyButton = document.createElement('button');
+            copyButton.className = 'bg-emerald-500 p-2 text-white fadeIn shadow-xl rounded flex items-center absolute top-2 right-2';
+            copyButton.innerHTML = initInnerHTML;
+            copyButton.style.opacity = "0";
+            const parent = codeBlock.parentNode;
+
+            parent.style = "position: relative;"
+            parent.insertBefore(copyButton, codeBlock);
+
+            // Add click event listener to copy button
+            copyButton.addEventListener('click', () => {
+                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                    copyButton.innerHTML = successInnerHTML;
+                    setTimeout(() => {
+                        copyButton.innerHTML = initInnerHTML;
+                    }, 1000);
+                });
+            });
+
+            parent.addEventListener('mouseenter', () => {
+                copyButton.style.opacity = "1";
+            });
+            parent.addEventListener('mouseleave', () => {
+                copyButton.style.opacity = "0";
+            });
+        });
+    </script></html>
