@@ -5,6 +5,7 @@ recent_posts_limits: 4
 index_categories:
   - 公共服务
   - SRE
+  - 错误码
   - 云原生
   - CICD
   - 编程

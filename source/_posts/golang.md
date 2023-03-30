@@ -117,6 +117,24 @@ const (
 Golang 类型转换 {.cols-2}
 --------
 
+### 
+
+```go
+//string到int 
+int, err := strconv.Atoi(string) 
+//string到int64 
+int64, err := strconv.ParseInt(string, 10, 64) 
+//int到string 
+string := strconv.Itoa(int) 
+//int64到string 
+string := strconv.FormatInt(int64,10)
+//string到float32(float64)
+float,err := strconv.ParseFloat(string,32/64)
+//float到string
+string := strconv.FormatFloat(float32, 'E', -1, 32)
+string := strconv.FormatFloat(float64, 'E', -1, 64)
+```
+
 ### list To string
 
 ```go
@@ -131,7 +149,38 @@ strings.Trim(strings.Join(strings.Fields(fmt.Sprint(A)), ","), "[]")
 strings.Trim(strings.Replace(fmt.Sprint(A), " ", ",", -1), "[]")
 ```
 
+### string To list
 
+```go
+// string into []string
+str := "1,2,3,4,5"
+strSlice := strings.Split(str, ",")
+intSlice := make([]int64, 0, len(strSlice))
+for _, s := range strSlice {
+    i, err := strconv.ParseInt(s, 10, 64)
+    if err != nil {
+        fmt.Println("ParseInt error:", err)
+        return
+    }
+    intSlice = append(intSlice, i)
+}
+fmt.Println(intSlice)
+
+
+// string into []int64
+str := "1,2,3,4,5"
+strSlice := strings.Split(str, ",")
+intSlice := make([]int64, 0, len(strSlice))
+for _, s := range strSlice {
+    i, err := strconv.ParseInt(s, 10, 64)
+    if err != nil {
+        fmt.Println("ParseInt error:", err)
+        return
+    }
+    intSlice = append(intSlice, i)
+}
+fmt.Println(intSlice)
+```
 
 
 
