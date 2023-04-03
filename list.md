@@ -69,6 +69,7 @@
 <details>
 <summary>命令</summary>
 
+- [ps](https://quickref.leops.cn/ps.html): Linux 为我们提供了一个名为ps的实用程序，用于查看与系统上的进程相关的信息，它是Process Status的缩写,这份ps命令备忘清单的快速参考列表，包含常用选项和示例。
 - [rsync](https://quickref.leops.cn/rsync.html): 使用 [rsync](https://rsync.samba.org/) 可提供快速增量文件传输。
 - [tcpdump](https://quickref.leops.cn/tcpdump.html): 使用 [TCPDump](https://www.tcpdump.org) 可以将网络中传送的数据包完全截获下来提供分析。
 - [lsof](https://quickref.leops.cn/lsof.html): 这个快速参考备忘单提供了使用 lsof 命令的各种方法。
