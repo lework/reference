@@ -11,7 +11,7 @@
 <details>
 <summary>SRE</summary>
 
-- [SLA](https://quickref.leops.cn/sla.html): SLA是Service-Level Agreement的缩写，也就是服务等级协议，指的是系统服务提供者（Provider）对客户（Customer）的一个服务承诺，也可以理解为服务提供者和客户之间签订的协议或者合约，是具有法律效力的，不能随便承诺。同时SLA也是衡量一个系统是否健康的常见方法。
+- [可用性](https://quickref.leops.cn/sla.html): 在现代软件开发中，系统和服务往往需要保证高可用性、高性能和稳定性等方面的要求。这些要求可以通过使用 SLI、SLO 和 SLA 指标来度量和管理。在服务水平管理中，SLI 表示服务的关键指标。SLO 则是对于客户需求的回应，确保服务满足其性能期望。而 SLA 则是一种合同或协议，以确保服务提供商履行服务承诺，并对违约行为进行赔偿。
 
 </details>
 
@@ -50,6 +50,7 @@
 
 - [CSS 3](https://quickref.leops.cn/css.html): 这是一份关于 CSS 优点的快速参考备忘单，列出了选择器语法、属性、单位和其他有用的信息
 - [HTML](https://quickref.leops.cn/html.html): 此 HTML 快速参考备忘单以可读布局列出了常见的 `HTML` 和 `HTML5` 标记。
+- [Vue 2](https://quickref.leops.cn/vue2.html): Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。
 - [JavaScript](https://quickref.leops.cn/javascript.html): 包含最重要概念、函数、方法等的 JavaScript 备忘单。
 - [Groovy](https://quickref.leops.cn/groovy.html): Apache [Groovy](https://groovy-lang.org/) 是一种功能强大的、可选类型的动态语言，具有静态类型和静态编译功能，用于 Java 平台，旨在通过简洁、熟悉和易于学习的语法提高开发人员的工作效率。它可以与任何 Java 程序顺利地集成，并立即为您的应用程序提供强大的功能，包括脚本功能、特定于领域的语言编写、运行时和编译时元编程以及函数式编程。
 - [Golang](https://quickref.leops.cn/golang.html): [Golang](https://golang.org/) 的基本语法和使用.
