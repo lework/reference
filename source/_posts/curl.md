@@ -157,6 +157,9 @@ curl -sSL https://get.rvm.io | bash
 `curl -T cryptopp552.zip -u test:test ftp://10.32.99.187/` | curl `ftp` 上传
 `curl -u test:test ftp://10.32.99.187/cryptopp552.zip -o cryptopp552.zip` | curl `ftp` 下载
 `curl -v -u admin:admin123 --upload-file package1.zip http://mysever:8081/dir/package1.zip` | 使用凭证 `curl` 上传
+`curl -u john:RHvxC6wUA -O scp://ssh.example.com/file.tar.gz` | curl `scp` 下载
+`curl -u daniel sftp://example.com/~/todo.txt`  | curl `sftp` 下载
+
 {.wrap}
 
 ### 检查网站响应时间 {.col-span-4}
@@ -271,5 +274,20 @@ curl --config file
 $HOME/.curlrc # 类 UNIX 系统中的默认配置文件
 ```
 
+### Sftp  {.col-span-3}
+
+```bash
+curl smtp://mail.example.com --mail-from myself@example.com --mail-rcpt \
+receiver@example.com --upload-file email.txt
+
+# email.txt
+From: John Smith <john@example.com>
+To: Joe Smith <smith@example.com>
+Subject: an example.com example email
+Date: Mon, 7 Nov 2016 08:45:16
+
+Dear Joe,
+Welcome to this example email. What a lovely day.
+```
 
 

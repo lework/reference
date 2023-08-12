@@ -28,6 +28,7 @@ Nginx  {.cols-1}
 | 413 Request Entity Too Large | 请求的实体太大，服务器无法处理                   |
 | 414 Request-URI Too Long     | 请求的URI太长，服务器无法处理                    |
 | 415 Unsupported Media Type   | 请求的媒体类型不受支持                           |
+| 499 Client has closed connection   | 客户端主动断开了连接                           |
 | 500 Internal Server Error    | 服务器遇到了意外情况，无法完成请求               |
 | 502 Bad Gateway              | 作为代理或网关的服务器从上游服务器接收到无效响应 |
 | 503 Service Unavailable      | 服务器当前无法处理请求，可能是由于超载或维护     |

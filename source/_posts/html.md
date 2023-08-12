@@ -884,3 +884,5 @@ Facebook、Instagram、Pinterest、LinkedIn 等使用。
 --------
 
 - [HTML 4.01 Specification](https://www.w3.org/TR/REC-html40/cover.html#minitoc) _(w3.org)_
+- [HTML5 Security Cheat Sheet](https://html5sec.org/)
+- [OWASP’s Cross Site Scripting (XSS) Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)

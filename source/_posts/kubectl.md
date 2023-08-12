@@ -498,6 +498,31 @@ kubectl get pods -A -o=custom-columns='DATA:metadata.*'
 有关更多示例，请参看 kubectl [参考文档](https://github.com/kubernetes/website/blob/main/zh-cn/docs/reference/kubectl/#custom-columns)。
 
 
+### 批量处理
+
+```bash
+# 获取 limits 数据
+kubectl get deployment -o jsonpath='{range .items[*]}{.metadata.name} {.spec.replicas}  {.spec.template.spec.containers[0].resources.limits}{"\n"}{end}' | sort -k2 -r | while read line; do printf "%-30s %-10d %-10s\n" ${line} ; done 
+
+# 批量重启deployment
+for i in $(kubectl get deployment  -o custom-columns=name:.metadata.name --no-headers);do /usr/local/bin/kubectl patch deploy ${i} --patch '{"spec": {"template": {"metadata": {"annotations": {"kubectl.kubernetes.io/restartedAt": "20230812"}}}}}';sleep 3;done
+
+# 批量更新hpa
+for i in $(kubectl get hpa.v2beta2.autoscaling  -o custom-columns=name:.metadata.name --no-headers);do kubectl patch hpa.v2beta2.autoscaling ${i} --type json -p='[{"op": "replace", "path": "/spec/minReplicas", "value":3},{"op": "replace", "path": "/spec/maxReplicas", "value":6},{"op": "replace", "path": "/spec/metrics/0/resource/target/averageUtilization", "value":600},{"op": "replace", "path": "/spec/metrics/1/resource/target/averageUtilization", "value":600}]'; sleep 3;done
+
+# 批量更新 Requests 和 limits
+for i in $(kubectl get deployment  -o custom-columns=name:.metadata.name  --no-headers );do kubectl patch deployment ${i} --type json -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/resources/requests/cpu", "value":"250m"},{"op": "replace", "path": "/spec/template/spec/containers/0/resources/requests/memory", "value":"500Mi"},{"op": "replace", "path": "/spec/template/spec/containers/0/resources/limits/cpu", "value":"1"},{"op": "replace", "path": "/spec/template/spec/containers/0/resources/limits/memory", "value":"2Gi"}]'; sleep 3;done
+
+# 批量扩缩容
+for i in $(kubectl get deployment -o custom-columns=name:.metadata.name --no-headers );do /usr/local/bin/kubectl --kubeconfig scale --replicas=1 deploy/${i};sleep 3;done
+
+# 批量更新存活检查
+for i in $(kubectl get deployment -o custom-columns=name:.metadata.name --no-headers);do kubectl patch deployment $i --type json -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/livenessProbe/timeoutSeconds", "value":6},{"op": "replace", "path": "/spec/template/spec/containers/0/livenessProbe/periodSeconds", "value":30},{"op": "replace", "path": "/spec/template/spec/containers/0/livenessProbe/failureThreshold", "value":6},{"op": "add", "path": "/spec/template/spec/containers/0/env/-", "value":{"name": "BUILD_TIME","value": ""}}]'; sleep 3;done
+
+# 批量新增环境变量
+for i in $(kubectl get deployment -o custom-columns=name:.metadata.name --no-headers);do kubectl patch deployment $i --type json -p='[{"op": "add", "path": "/spec/template/spec/containers/0/env/-", "value":{"name": "BUILD_TIME","value": ""}}]'; sleep 3;done
+```
+
 更多资源
 ---
 

@@ -85,6 +85,7 @@ HTTP 状态码
 
 - [RFC 2616](https://tools.ietf.org/html/rfc2616)
 - [RFC 7231](https://tools.ietf.org/html/rfc7231)
+- [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes)
 - [HTTP 响应状态码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status) _(developer.mozilla.org)_
 - [httpcode](http://httpcode.info/) _(httpcode.info)_
 
