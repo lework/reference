@@ -33,6 +33,7 @@ intro: 用于设置常用软件的国内镜像，以便加速下载资源。
 #### 商业公司
 - [阿里云](http://mirrors.aliyun.com/)
 - [腾讯](https://mirrors.cloud.tencent.com/)
+- [火山引擎](https://mirrors.volces.com)
 - [网易](http://mirrors.cn99.com/)
 - [搜狐](http://mirrors.sohu.com/)
 - [华为](https://mirrors.huaweicloud.com/)
@@ -133,14 +134,14 @@ ports 软件源
 MASTER_SITE_OVERRIDE?=http://mirrors.ustc.edu.cn/freebsd-ports/distfiles/${DIST_SUBDIR}/
 ```
 
-### Kali
+### Kali {.col-span-3}
 
 ```
 #deb https://mirrors.aliyun.com/kali kali-rolling main non-free contrib
 #deb-src https://mirrors.aliyun.com/kali kali-rolling main non-free contrib
 ```
 
-### Rocky 
+### Rocky {.col-span-3}
 
 ```
 sed -e 's|^mirrorlist=|#mirrorlist=|g' \
@@ -149,6 +150,13 @@ sed -e 's|^mirrorlist=|#mirrorlist=|g' \
     /etc/yum.repos.d/Rocky-*.repo
 
 dnf makecache
+```
+
+### alpine  {.col-span-3}
+
+```
+sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+apk update
 ```
 
 软件镜像
@@ -273,6 +281,13 @@ key = "<Your API Key>"
 server = "https://luarocks.cn"
 ```
 
+### Hex
+
+```
+export HEX_MIRROR="https://hexpm.upyun.com"
+export HEX_CDN="https://hexpm.upyun.com"
+```
+
 ### go {.col-span-2 .row-span-2}
 
 - https://mirrors.aliyun.com/goproxy/ 
@@ -341,6 +356,7 @@ https://mirrors.tuna.tsinghua.edu.cn/cygwin/
 curl -o /etc/yum.repos.d/docker-ce.repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
 sed -i 's#download.docker.com#mirrors.ustc.edu.cn/docker-ce#g' /etc/yum.repos.d/docker-ce.repo
 ```
+
 #### Debian
 ```bash
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -351,6 +367,7 @@ sudo add-apt-repository \
 sudo apt-get update
 sudo apt-get install docker-ce
 ```
+
 #### Ubuntu
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -363,6 +380,7 @@ sudo apt-get install docker-ce
 ```
 
 ### kubernetes  {.col-span-3}
+
 #### CentOS/RHEL/Fedora
 ```bash
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -378,6 +396,7 @@ setenforce 0
 yum install -y kubelet kubeadm kubectl
 systemctl enable kubelet && systemctl start kubelet
 ```
+
 #### Debian/Ubuntu
 ```bash
 apt-get update && apt-get install -y apt-transport-https
@@ -389,10 +408,6 @@ apt-get update
 apt-get install -y kubelet kubeadm kubectl
 ```
 
-
-
-
-
 ### NuGet
 选择工程-》NuGet 包管理器-》程序包管理器设置
 
@@ -400,11 +415,30 @@ apt-get install -y kubelet kubeadm kubectl
 https://nuget.cdn.azure.cn/v3/index.json
 https://repo.huaweicloud.com/repository/nuget/v3/index.json
 ```
-### Hex
+
+### rustup
 
 ```
-export HEX_MIRROR="https://hexpm.upyun.com"
-export HEX_CDN="https://hexpm.upyun.com"
+# linux
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
+# windows
+setx RUSTUP_DIST_SERVER "https://rsproxy.cn"
+setx RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
+```
+
+### crates.io
+```
+# ~/.cargo/config
+[source.crates-io]
+replace-with = 'hustmirror'
+
+[source.hustmirror]
+registry = "https://mirrors.hust.edu.cn/crates.io-index/"
 ```
 
 容器镜像
@@ -506,4 +540,4 @@ https://git.yumenaka.net | 美国洛杉矶
 - https://cdnjs.com/ 
 - http://www.staticfile.org/ 
 - http://jscdn.upai.com 
-- https://cdn.baomitu.com/ 
+- https://cdn.baomitu.com/
