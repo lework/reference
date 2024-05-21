@@ -40,6 +40,7 @@
 <details>
 <summary>CICD</summary>
 
+- [GitLab CI/CD](https://quickref.leops.cn/gitlab-ci.html): 本备忘单总结了 [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) 常用的配置说明，以供快速参考。
 - [Jenkins Pipeline](https://quickref.leops.cn/jenkins-pipeline.html): Jenkins Pipeline是一套插件，将持续交付的实现和实施集成到 Jenkins 中。
 - [Jenkins](https://quickref.leops.cn/jenkins.html): Jenkins 是一个免费的开源自动化服务器。[Jenkins](https://www.jenkins.io/) 通过持续集成和促进持续交付的技术方面，帮助自动化软件开发过程中的非人工部分。它是一个基于服务器的系统，运行在servlet容器(如Apache Tomcat)中。
 
