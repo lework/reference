@@ -402,3 +402,37 @@ $ find . -type f -name "*.java" | xargs tar rvf myfile.tar
 ```shell
 $ find . -type f -name "*.js" -not -path "./node_modules/*"
 ```
+
+### 场景示例
+
+find使用广度优先遍历查找文件
+```shell
+seq 1 10 | xargs -n2 -P5 sh -c 'find / -iname "xxx" -mindepth $1 -maxdepth $2 2>/dev/null' _
+```
+
+配合grep查找文件内关键字
+```shell
+seq 1 10 | xargs -n2 -P5 sh -c 'find / -type f -mindepth $1 -maxdepth $2 -exec grep -inl "keyword" {} 2>/dev/null \;' _
+```
+
+find查找指定时间段内变动的文件
+```shell
+find / -newermt "2023-12-31 23:00" ! -newermt "2024-01-01 01:00" -exec ls -lh {} \; 2>/dev/null
+```
+
+查找带s位的文件
+```shell
+find / \( -perm -4000 -o -perm -2000 \) -type f -exec ls -lh {} \; 2>/dev/null
+```
+
+find 目录取反
+```shell
+find / -path /usr -prune -o -type f -executable
+```
+
+find 并行操作
+> 当使用 + 结束时，find 命令会尽可能多地将匹配的文件名作为参数一次性传递给 -exec 后面指定的命令，这样命令可能只执行一次。
+
+```shell
+find /targetDir -type f -executable -exec tar -rvf executables.tar {} +
+```

@@ -258,6 +258,26 @@ npm --registry=https://registry.npmmirror.com install
 
 npm config set registry https://registry.npmmirror.com
 npm config list
+
+
+cat << EOF > ${HOME}/.npmrc
+# 指定源
+registry=https://registry.npmmirror.com
+
+disturl=https://registry.npmmirror.com/-/binary/node/
+# node-sass预编译二进制文件下载地址
+sass_binary_site=https://registry.npmmirror.com/-/binary/node-sass
+# sharp预编译共享库, 截止2022-09-20 sharp@0.31.0的预编译共享库并未同步到镜像, 入安装失败可切换到sharp@0.30.7使用
+sharp_libvips_binary_host=https://registry.npmmirror.com/-/binary/sharp-libvips
+python_mirror=https://registry.npmmirror.com/-/binary/python/
+electron_mirror=https://registry.npmmirror.com/-/binary/electron/
+electron_builder_binaries_mirror=https://registry.npmmirror.com/-/binary/electron-builder-binaries/
+# 无特殊配置参考{pkg-name}_binary_host_mirror={mirror}
+canvas_binary_host_mirror=https://registry.npmmirror.com/-/binary/canvas
+node_sqlite3_binary_host_mirror=https://registry.npmmirror.com/-/binary/sqlite3
+better_sqlite3_binary_host_mirror=https://registry.npmmirror.com/-/binary/better-sqlite3
+EOF
+
 ```
 
 ### yarn  {.col-span-2}
@@ -457,13 +477,14 @@ cat > /etc/docker/daemon.json <<EOF
     "live-restore": true,
     "max-concurrent-downloads": 10,
     "max-concurrent-uploads": 10,
-    "storage-driver": "overlay2",
-    "storage-opts": [
-        "overlay2.override_kernel_check=true"
-    ],
-    "exec-opts": ["native.cgroupdriver=systemd"],
     "registry-mirrors": [
-        "https://uyah70su.mirror.aliyuncs.com"
+     "https://hub.rat.dev",
+     "https://docker.1panel.dev",
+     "https://docker.amingg.com",
+     "https://hub.nat.tf",
+     "https://hub1.nat.tf",
+     "https://hub2.nat.tf",
+     "https://docker.awsl9527.cn"
     ]
 }
 EOF
