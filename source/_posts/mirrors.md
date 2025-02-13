@@ -114,7 +114,18 @@ apt-get -o Acquire::Check-Valid-Until=false update
 
 ### ubuntu {.col-span-3}
 ```bash
-sudo sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+sed -i 's/cn.archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list  /etc/apt/sources.list.d/*
+sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list /etc/apt/sources.list.d/*
+```
+ppa
+```
+cat << EOF > /etc/apt/sources.list.d/deadsnakes-ubuntu-ppa-focal.list 
+deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu focal main
+EOF
+
+sed -i 's/ppa.launchpad.net/launchpad.proxy.ustclug.org/g' /etc/apt/sources.list /etc/apt/sources.list.d/*
+sed -i 's/ppa.launchpadcontent.net/launchpad.proxy.ustclug.org/g' /etc/apt/sources.list /etc/apt/sources.list.d/*
+
 ```
 
 ### freebsd {.col-span-3}
@@ -484,7 +495,9 @@ cat > /etc/docker/daemon.json <<EOF
      "https://hub.nat.tf",
      "https://hub1.nat.tf",
      "https://hub2.nat.tf",
-     "https://docker.awsl9527.cn"
+     "https://docker.awsl9527.cn",
+	 "https://dockerpull.com",
+	 "https://docker.1ms.run"
     ]
 }
 EOF
