@@ -14,8 +14,8 @@ github: 'https://github.com/lework/reference'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://lework.github.io/reference/
-root: /
+url: https://lework.github.io
+root: /reference/
 permalink: :name.html
 permalink_defaults:
 pretty_urls:
