@@ -78,16 +78,21 @@ sed -e 's!^mirrorlist=!#mirrorlist=!g' \
 ```
 ### debain {.col-span-3}
 ```bash
+codename="$(lsb_release -c -s)"
 cp /etc/apt/sources.list{,-bak}
 cat > /etc/apt/sources.list <<EOF
-deb http://mirrors.aliyun.com/debian/ stretch main
-deb-src http://mirrors.aliyun.com/debian/ stretch main
-deb http://mirrors.aliyun.com/debian/ stretch-updates main
-deb-src http://mirrors.aliyun.com/debian/ stretch-updates main
-deb http://mirrors.aliyun.com/debian-security stretch/updates main
-deb-src http://mirrors.aliyun.com/debian-security stretch/updates main
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename} main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename} main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-updates main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-updates main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-backports main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-backports main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ ${codename}/updates main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ ${codename}/updates main contrib non-free
 EOF
+
 apt-get update
+apt-get update --allow-insecure-repositories
 ```
 #### 直接替换 
 ```
@@ -99,7 +104,9 @@ sudo sed -e 's/deb.debian.org/mirrors.163.com/g' \
 ### debian archive {.col-span-3}
 debian 旧版本系统(2[hamm ]-7[wheezy])源都放在 debian-archive 中，
 ```bash
+codename="$(lsb_release -c -s)"
 cp /etc/apt/sources.list{,-bak}
+
 cat << EOF > /etc/apt/sources.list
 deb http://mirrors.163.com/debian-archive/debian/ wheezy main non-free contrib
 deb http://mirrors.163.com/debian-archive/debian/ wheezy-backports main non-free contrib
@@ -185,6 +192,10 @@ apk update
 #### 下载时使用
 
 ```bash
+# 使用环境变量
+export PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple
+
+# 安装时
 pip install numpy -i https://mirrors.aliyun.com/pypi/simple
 ```
 #### 永久修改
@@ -201,6 +212,19 @@ windows : `C:\User\用户\pip\pip.ini`
 ```ini
 [global]
 index-url = https://mirrors.aliyun.com/pypi/simple
+```
+
+### uv {.col-span-3}
+
+```
+配置环境变量:
+
+UV_DEFAULT_INDEX=https://mirrors.aliyun.com/pypi/simple
+或写入配置文件 ~/.config/uv/uv.toml (*nix) / %APPDATA%\uv\uv.toml (Windows):
+
+[[index]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true
 ```
 
 ### easy_install {.col-span-3}
@@ -489,15 +513,12 @@ cat > /etc/docker/daemon.json <<EOF
     "max-concurrent-downloads": 10,
     "max-concurrent-uploads": 10,
     "registry-mirrors": [
-     "https://hub.rat.dev",
      "https://docker.1panel.dev",
-     "https://docker.amingg.com",
-     "https://hub.nat.tf",
-     "https://hub1.nat.tf",
-     "https://hub2.nat.tf",
-     "https://docker.awsl9527.cn",
-	 "https://dockerpull.com",
-	 "https://docker.1ms.run"
+     "https://docker.fxxk.dedyn.io",
+     "https://docker.xn--6oq72ry9d5zx.cn",
+     "https://docker.m.daocloud.io",
+     "https://a.ussh.net",
+     "https://docker.zhai.cm"
     ]
 }
 EOF
