@@ -17,11 +17,11 @@ jobs:
       uses: actions/checkout@master
       
     - name: Use Node.js 16.x
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: "16"
     - name: Cache NPM dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: node_modules
         key: ${{ runner.OS }}-npm-cache
