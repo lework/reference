@@ -83,12 +83,16 @@ cp /etc/apt/sources.list{,-bak}
 cat > /etc/apt/sources.list <<EOF
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename} main contrib non-free
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename} main contrib non-free
+
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security ${codename}-security main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security ${codename}-security main contrib non-free
+
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-updates main contrib non-free
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-updates main contrib non-free
-deb https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-backports main contrib non-free
-deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-backports main contrib non-free
-deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ ${codename}/updates main contrib non-free
-deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ ${codename}/updates main contrib non-free
+# 如非特殊需要，backports 建议注释
+#deb https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-backports main contrib non-free
+#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ ${codename}-backports main contrib non-free
+
 EOF
 
 apt-get update
@@ -102,21 +106,29 @@ sudo sed -e 's/deb.debian.org/mirrors.163.com/g' \
 ```
 
 ### debian archive {.col-span-3}
-debian 旧版本系统(2[hamm ]-7[wheezy])源都放在 debian-archive 中，
+debian 旧版本系统(2[hamm ]-7[buster])源都放在 debian-archive 中，
 ```bash
 codename="$(lsb_release -c -s)"
 cp /etc/apt/sources.list{,-bak}
 
 cat << EOF > /etc/apt/sources.list
-deb http://mirrors.163.com/debian-archive/debian/ wheezy main non-free contrib
-deb http://mirrors.163.com/debian-archive/debian/ wheezy-backports main non-free contrib
-deb-src http://mirrors.163.com/debian-archive/debian/ wheezy main non-free contrib
-deb-src http://mirrors.163.com/debian-archive/debian/ wheezy-backports main non-free contrib
-deb http://mirrors.163.com/debian-archive/debian-security/ wheezy/updates main non-free contrib
-deb-src http://mirrors.163.com/debian-archive/debian-security/ wheezy/updates main non-free contrib
+deb [trusted=yes] http://mirrors.163.com/debian-archive/debian/ ${codename} main non-free contrib
+deb-src [trusted=yes] http://mirrors.163.com/debian-archive/debian/ ${codename} main non-free contrib
+deb [trusted=yes] http://mirrors.163.com/debian-archive/debian/ ${codename}-backports main non-free contrib
+deb-src [trusted=yes] http://mirrors.163.com/debian-archive/debian/ ${codename}-backports main non-free contrib
+deb [trusted=yes] http://mirrors.163.com/debian-archive/debian-security/ ${codename}/updates main non-free contrib
+deb-src [trusted=yes] http://mirrors.163.com/debian-archive/debian-security/ ${codename}/updates main non-free contrib
 EOF
 
 apt-get -o Acquire::Check-Valid-Until=false update
+
+-----
+codename="$(lsb_release -c -s)"
+cp /etc/apt/sources.list{,-bak}
+cat << EOF > /etc/apt/sources.list
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-elts ${codename} main contrib non-free
+EOF
+
 ```
 
 ### ubuntu {.col-span-3}
